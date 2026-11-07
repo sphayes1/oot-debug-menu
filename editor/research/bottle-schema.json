@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "enum_count": 130,
+  "descriptor_from_bool": 576,
+  "stride": 56,
+  "current_offset": 28,
+  "legal_count_offset": 40,
+  "legal_values_pointer_offset": 48,
+  "source_schema": "editor/data/gamedata-schema.json",
+  "source_schema_sha256": "bcfbd776b02304da7f30b3a547139be9784b647e06da3701a7ef2ba756640b28",
+  "slots": {
+    "BottleA": {
+      "hash": "7d48df76",
+      "index": 60,
+      "name": "PlayerStatus.AssignableItem.BottleInfo.BottleA.BottleItem",
+      "values": {
+        "Empty": 3194609225,
+        "RedPotion": 3938082919,
+        "GreenPotion": 77412289,
+        "BluePotion": 4085503717,
+        "BlueFire": 472462615,
+        "Fish": 511921912,
+        "Letter": 254076936,
+        "BigPoe": 3452048497,
+        "Poe": 34099102,
+        "Bug": 1960193739,
+        "Fairy": 1867113303,
+        "MaxMilk": 1932879911,
+        "HalfMilk": 4009157808
+      },
+      "valid_hash": "f39ce410",
+      "valid_index": 10756,
+      "valid_name": "PlayerStatus.AssignableItem.BottleInfo.BottleA.IsValid"
+    },
+    "BottleB": {
+      "hash": "1edd164a",
+      "index": 61,
+      "name": "PlayerStatus.AssignableItem.BottleInfo.BottleB.BottleItem",
+      "values": {
+        "Empty": 3194609225,
+        "RedPotion": 3938082919,
+        "GreenPotion": 77412289,
+        "BluePotion": 4085503717,
+        "BlueFire": 472462615,
+        "Fish": 511921912,
+        "Letter": 254076936,
+        "BigPoe": 3452048497,
+        "Poe": 34099102,
+        "Bug": 1960193739,
+        "Fairy": 1867113303,
+        "MaxMilk": 1932879911,
+        "HalfMilk": 4009157808
+      },
+      "valid_hash": "000ff6ea",
+      "valid_index": 10757,
+      "valid_name": "PlayerStatus.AssignableItem.BottleInfo.BottleB.IsValid"
+    },
+    "BottleC": {
+      "hash": "b80c70a8",
+      "index": 62,
+      "name": "PlayerStatus.AssignableItem.BottleInfo.BottleC.BottleItem",
+      "values": {
+        "Empty": 3194609225,
+        "RedPotion": 3938082919,
+        "GreenPotion": 77412289,
+        "BluePotion": 4085503717,
+        "BlueFire": 472462615,
+        "Fish": 511921912,
+        "Letter": 254076936,
+        "BigPoe": 3452048497,
+        "Poe": 34099102,
+        "Bug": 1960193739,
+        "Fairy": 1867113303,
+        "MaxMilk": 1932879911,
+        "HalfMilk": 4009157808
+      },
+      "valid_hash": "f63b1194",
+      "valid_index": 10758,
+      "valid_name": "PlayerStatus.AssignableItem.BottleInfo.BottleC.IsValid"
+    },
+    "BottleD": {
+      "hash": "e4c1b1fc",
+      "index": 63,
+      "name": "PlayerStatus.AssignableItem.BottleInfo.BottleD.BottleItem",
+      "values": {
+        "Empty": 3194609225,
+        "RedPotion": 3938082919,
+        "GreenPotion": 77412289,
+        "BluePotion": 4085503717,
+        "BlueFire": 472462615,
+        "Fish": 511921912,
+        "Letter": 254076936,
+        "BigPoe": 3452048497,
+        "Poe": 34099102,
+        "Bug": 1960193739,
+        "Fairy": 1867113303,
+        "MaxMilk": 1932879911,
+        "HalfMilk": 4009157808
+      },
+      "valid_hash": "b7f052ce",
+      "valid_index": 10759,
+      "valid_name": "PlayerStatus.AssignableItem.BottleInfo.BottleD.IsValid"
+    },
+    "BottleE": {
+      "hash": "365e1953",
+      "index": 64,
+      "name": "PlayerStatus.AssignableItem.BottleInfo.BottleE.BottleItem",
+      "values": {
+        "Empty": 3194609225,
+        "RedPotion": 3938082919,
+        "GreenPotion": 77412289,
+        "BluePotion": 4085503717,
+        "BlueFire": 472462615,
+        "Fish": 511921912,
+        "Letter": 254076936,
+        "BigPoe": 3452048497,
+        "Poe": 34099102,
+        "Bug": 1960193739,
+        "Fairy": 1867113303,
+        "MaxMilk": 1932879911,
+        "HalfMilk": 4009157808
+      },
+      "valid_hash": "e27b136d",
+      "valid_index": 10760,
+      "valid_name": "PlayerStatus.AssignableItem.BottleInfo.BottleE.IsValid"
+    }
+  }
+}

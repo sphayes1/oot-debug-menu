@@ -1,0 +1,213 @@
+{
+  "version": 1,
+  "root_struct": "f80f8077",
+  "fields": {
+    "Rupee": {
+      "hash": "e0010a50",
+      "index": 976,
+      "legal_values": [
+        200,
+        500,
+        1000
+      ]
+    },
+    "DekuSeed": {
+      "hash": "ae8cc742",
+      "index": 974,
+      "legal_values": [
+        0,
+        30,
+        40,
+        50
+      ]
+    },
+    "Bomb": {
+      "hash": "e753508b",
+      "index": 972,
+      "legal_values": [
+        0,
+        20,
+        30,
+        40
+      ]
+    },
+    "Arrow": {
+      "hash": "418db791",
+      "index": 971,
+      "legal_values": [
+        0,
+        30,
+        40,
+        50
+      ]
+    },
+    "DekuStick": {
+      "hash": "457616b0",
+      "index": 975,
+      "legal_values": [
+        0,
+        10,
+        20,
+        30
+      ]
+    },
+    "DekuNut": {
+      "hash": "735b00f7",
+      "index": 973,
+      "legal_values": [
+        0,
+        20,
+        30,
+        40
+      ]
+    }
+  },
+  "upgrades": {
+    "bullet_bag": {
+      "semantic": "DekuSeed",
+      "choices": {
+        "Item_BulletBag_Large": 50,
+        "Item_BulletBag_Medium": 40,
+        "Item_BulletBag_Small": 30
+      },
+      "none_capacity": 0,
+      "expansion_actors": [
+        "Work/Actor/Item_DekuSeed.engine__actor__ActorParam.gyml"
+      ],
+      "stock_fill_flags": {
+        "Item_BulletBag_Large": {
+          "IsItemStockMaxIfGet": true
+        },
+        "Item_BulletBag_Medium": {
+          "IsItemStockMaxIfGet": true
+        },
+        "Item_BulletBag_Small": {
+          "IsItemStockMaxIfGet": true
+        }
+      }
+    },
+    "quiver": {
+      "semantic": "Arrow",
+      "choices": {
+        "Item_Quiver_Large": 50,
+        "Item_Quiver_Medium": 40,
+        "Item_Quiver_Small": 30
+      },
+      "none_capacity": 0,
+      "expansion_actors": [
+        "Work/Actor/Item_Arrow_Normal.engine__actor__ActorParam.gyml"
+      ],
+      "stock_fill_flags": {
+        "Item_Quiver_Large": {
+          "IsItemStockMaxIfGet": true
+        },
+        "Item_Quiver_Medium": {
+          "IsItemStockMaxIfGet": true
+        },
+        "Item_Quiver_Small": {
+          "IsItemStockMaxIfGet": true
+        }
+      }
+    },
+    "bomb_bag": {
+      "semantic": "Bomb",
+      "choices": {
+        "Item_BombBag_Large": 40,
+        "Item_BombBag_Medium": 30,
+        "Item_BombBag_Small": 20
+      },
+      "none_capacity": 0,
+      "expansion_actors": [
+        "Work/Actor/Item_Bomb.engine__actor__ActorParam.gyml",
+        "Work/Actor/Item_Bombchu.engine__actor__ActorParam.gyml"
+      ],
+      "stock_fill_flags": {
+        "Item_BombBag_Large": {
+          "IsItemStockMaxIfGet": true,
+          "ActorFullOnlyIfIsGetWhenGetBag": "Work/Actor/Item_Bombchu.engine__actor__ActorParam.gyml"
+        },
+        "Item_BombBag_Medium": {
+          "IsItemStockMaxIfGet": true,
+          "ActorFullOnlyIfIsGetWhenGetBag": "Work/Actor/Item_Bombchu.engine__actor__ActorParam.gyml"
+        },
+        "Item_BombBag_Small": {
+          "IsItemStockMaxIfGet": true,
+          "ActorFullOnlyIfIsGetWhenGetBag": "Work/Actor/Item_Bombchu.engine__actor__ActorParam.gyml"
+        }
+      }
+    },
+    "wallet": {
+      "semantic": "Rupee",
+      "choices": {
+        "Item_Wallet_Large": 1000,
+        "Item_Wallet_Medium": 500,
+        "Item_Wallet_Small": 200
+      },
+      "none_capacity": 200,
+      "expansion_actors": [
+        "Work/Actor/Obj_Rupee_Green.engine__actor__ActorParam.gyml"
+      ],
+      "stock_fill_flags": {
+        "Item_Wallet_Large": {},
+        "Item_Wallet_Medium": {},
+        "Item_Wallet_Small": {}
+      }
+    },
+    "stick_bag": {
+      "semantic": "DekuStick",
+      "choices": {
+        "Item_StickBag_Large": 30,
+        "Item_StickBag_Medium": 20,
+        "Item_StickBag_Small": 10
+      },
+      "none_capacity": 0,
+      "expansion_actors": [
+        "Work/Actor/Item_DekuStick.engine__actor__ActorParam.gyml"
+      ],
+      "stock_fill_flags": {
+        "Item_StickBag_Large": {
+          "IsItemStockMaxIfGet": true
+        },
+        "Item_StickBag_Medium": {
+          "IsItemStockMaxIfGet": true
+        },
+        "Item_StickBag_Small": {}
+      }
+    },
+    "nut_bag": {
+      "semantic": "DekuNut",
+      "choices": {
+        "Item_NutBag_Large": 40,
+        "Item_NutBag_Medium": 30,
+        "Item_NutBag_Small": 20
+      },
+      "none_capacity": 0,
+      "expansion_actors": [
+        "Work/Actor/Item_DekuNut.engine__actor__ActorParam.gyml"
+      ],
+      "stock_fill_flags": {
+        "Item_NutBag_Large": {
+          "IsItemStockMaxIfGet": true
+        },
+        "Item_NutBag_Medium": {
+          "IsItemStockMaxIfGet": true
+        },
+        "Item_NutBag_Small": {}
+      }
+    }
+  },
+  "shared_capacity": {
+    "Bomb": [
+      "Item_Bomb",
+      "Item_Bombchu"
+    ]
+  },
+  "source": "romfs/RSDB/PouchActorInfo.Product.111.rstbl.byml.zs",
+  "notes": [
+    "No capacity mutation performed during schema discovery.",
+    "Rupee current/save200 independently matched initial wallet.",
+    "Root six local names exactly equal RSDB MaxNumGameData names.",
+    "Nonewallet retains minimum200; zero ammo caps model no bag.",
+    "Stock fills and game equip callbacks are separate from capacity; do not assume them from ownership."
+  ]
+}

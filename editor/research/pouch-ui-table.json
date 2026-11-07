@@ -1,0 +1,1383 @@
+{
+  "AutoRotateDegree": 0.5,
+  "AutoRotateStartFrame": 30.0,
+  "CollectArray": [
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Token_Gold",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Token_Gold"
+        }
+      ],
+      "BtnName": "Pa_SkullSign_00"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Token_Gerudo",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_Token_Gerudo"
+        }
+      ],
+      "BtnName": "Pa_Membership_00"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_FairyBless_MP",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_FairyBless_MP"
+        }
+      ],
+      "BtnName": "Pa_Fairy_00"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_FairyBless_MPDouble",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_FairyBless_MPDouble"
+        }
+      ],
+      "BtnName": "Pa_Fairy_01"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_FairyBless_DefenseDouble",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_FairyBless_DefenseDouble"
+        }
+      ],
+      "BtnName": "Pa_Fairy_02"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Armor_Adult_Gauntlet_Gold",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_Gauntlet_Gold"
+        },
+        {
+          "ActorShort": "Armor_Adult_Gauntlet_Silver",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_Gauntlet_Silver"
+        }
+      ],
+      "BtnName": "Pa_Gauntlet_01"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Armor_Child_Gauntlet_Goron",
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Gauntlet_Goron"
+        }
+      ],
+      "BtnName": "Pa_Gauntlet_00"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Scale_Gold",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Scale_Gold"
+        },
+        {
+          "ActorShort": "Item_Scale_Silver",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Scale_Silver"
+        }
+      ],
+      "BtnName": "Pa_Scales_00"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Wallet_Large",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Wallet_Large"
+        },
+        {
+          "ActorShort": "Item_Wallet_Medium",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Wallet_Medium"
+        },
+        {
+          "ActorShort": "Item_Wallet_Small",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Wallet_Small"
+        }
+      ],
+      "BtnName": "Pa_Bag_00",
+      "IsChangeMenuIfInputLeftRight": true,
+      "IsChangeRouteByAmiiboMask": true,
+      "RightBtnParts": "Pa_Equip_00/Pa_HeadEquip_02",
+      "RightBtnPartsConsiderAmiiboMask": "Pa_Equip_00/Pa_HeadEquip_03",
+      "SpecialDeal": "Wallet"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_StickBag_Large",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_StickBag_Large"
+        },
+        {
+          "ActorShort": "Item_StickBag_Medium",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_StickBag_Medium"
+        },
+        {
+          "ActorShort": "Item_StickBag_Small",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_StickBag_Small"
+        }
+      ],
+      "BtnName": "Pa_Bag_01",
+      "IsChangeMenuIfInputLeftRight": true,
+      "RightBtnParts": "Pa_Equip_00/Pa_HeadEquip_02"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_NutBag_Large",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_NutBag_Large"
+        },
+        {
+          "ActorShort": "Item_NutBag_Medium",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_NutBag_Medium"
+        },
+        {
+          "ActorShort": "Item_NutBag_Small",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_NutBag_Small"
+        }
+      ],
+      "BtnName": "Pa_Bag_02",
+      "IsChangeMenuIfInputLeftRight": true,
+      "RightBtnParts": "Pa_Equip_00/Pa_HeadEquip_02"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_BulletBag_Large",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_BulletBag_Large"
+        },
+        {
+          "ActorShort": "Item_BulletBag_Medium",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_BulletBag_Medium"
+        },
+        {
+          "ActorShort": "Item_BulletBag_Small",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_BulletBag_Small"
+        }
+      ],
+      "BtnName": "Pa_Bag_03",
+      "IsChangeMenuIfInputLeftRight": true,
+      "RightBtnParts": "Pa_Equip_00/Pa_FootEquip_00"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_BombBag_Large",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_BombBag_Large"
+        },
+        {
+          "ActorShort": "Item_BombBag_Medium",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_BombBag_Medium"
+        },
+        {
+          "ActorShort": "Item_BombBag_Small",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_BombBag_Small"
+        }
+      ],
+      "BtnName": "Pa_Bag_04",
+      "IsChangeMenuIfInputLeftRight": true,
+      "RightBtnParts": "Pa_Equip_00/Pa_FootEquip_00"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Quiver_Large",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Quiver_Large"
+        },
+        {
+          "ActorShort": "Item_Quiver_Medium",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Quiver_Medium"
+        },
+        {
+          "ActorShort": "Item_Quiver_Small",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Quiver_Small"
+        }
+      ],
+      "BtnName": "Pa_Bag_05",
+      "IsChangeMenuIfInputLeftRight": true,
+      "RightBtnParts": "Pa_Equip_00/Pa_HeadEquip_00"
+    }
+  ],
+  "EquipCameraMoveSpeed": 0.20000000298023224,
+  "EquipmentArray": [
+    {
+      "Actor": [
+        {
+          "ActorShort": "Weapon_Sword_Biggoron",
+          "IsUsableAdult": true
+        },
+        {
+          "ActorShort": "Weapon_Sword_Giant",
+          "IsUsableAdult": true
+        },
+        {
+          "ActorShort": "Weapon_Sword_BrokenGiant",
+          "IsUsableAdult": true
+        }
+      ],
+      "BtnName": "Pa_Epuipment_00",
+      "IsChangeMenuIfInputLeftRight": true,
+      "RightBtnParts": "Pa_Item_00/Pa_ItemIcon_00",
+      "SpecialDeal": "Biggoron"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Weapon_Sword_Master",
+          "IsUsableAdult": true
+        }
+      ],
+      "BtnName": "Pa_Epuipment_01"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Weapon_Sword_Kokiri",
+          "IsUsableAdult": false,
+          "IsUsableChild": true
+        }
+      ],
+      "BtnName": "Pa_Epuipment_02"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Weapon_Shield_Mirror",
+          "IsUsableAdult": true,
+          "IsUsableChild": false
+        }
+      ],
+      "BtnName": "Pa_Epuipment_03",
+      "IsChangeMenuIfInputLeftRight": true,
+      "RightBtnParts": "Pa_Item_00/Pa_ItemIcon_04"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Weapon_Shield_Hylian",
+          "IsUsableAdult": true,
+          "IsUsableChild": true
+        }
+      ],
+      "BtnName": "Pa_Epuipment_04"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Weapon_Shield_Deku",
+          "IsUsableAdult": false,
+          "IsUsableChild": true
+        }
+      ],
+      "BtnName": "Pa_Epuipment_05"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Armor_Adult_Zora",
+          "IsUsableAdult": true,
+          "IsUsableChild": false
+        }
+      ],
+      "BtnName": "Pa_Epuipment_06",
+      "IsChangeMenuIfInputLeftRight": true,
+      "RightBtnParts": "Pa_Item_00/Pa_ItemIcon_03"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Armor_Adult_Goron",
+          "IsUsableAdult": true
+        }
+      ],
+      "BtnName": "Pa_Epuipment_07"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Obj_Armor_Child_Normal",
+          "IsUsableAdult": false,
+          "IsUsableChild": true
+        },
+        {
+          "ActorShort": "Armor_Adult_Normal",
+          "IsUsableAdult": true
+        }
+      ],
+      "BtnName": "Pa_Epuipment_08"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_AgonyStone",
+          "IsUsableAdult": true,
+          "IsUsableChild": true
+        }
+      ],
+      "BtnName": "Pa_HeadEquip_00",
+      "IsChangeMenuIfInputLeftRight": true,
+      "LeftBtnParts": "Pa_Collect_00/Pa_Bag_05"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Armor_GlassTruth",
+          "IsUsableAdult": true,
+          "IsUsableChild": true
+        }
+      ],
+      "BtnName": "Pa_HeadEquip_01",
+      "SpecialDeal": "GlassTruth"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Armor_Child_Mask_Amiibo0",
+          "IsUsableAdult": true,
+          "IsUsableChild": true
+        },
+        {
+          "ActorShort": "Armor_Child_Mask_Amiibo1",
+          "IsUsableAdult": true,
+          "IsUsableChild": true
+        }
+      ],
+      "BtnName": "Pa_HeadEquip_03",
+      "IsChangeMenuIfInputLeftRight": true,
+      "LeftBtnParts": "Pa_Collect_00/Pa_Bag_00",
+      "SpecialDeal": "amiibo"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Armor_Child_Mask_Truth",
+          "IsUsableAdult": true,
+          "IsUsableChild": true
+        },
+        {
+          "ActorShort": "Armor_Child_Mask_Goron",
+          "IsUsableAdult": true,
+          "IsUsableChild": true
+        },
+        {
+          "ActorShort": "Armor_Child_Mask_Zora",
+          "IsUsableAdult": true,
+          "IsUsableChild": true
+        },
+        {
+          "ActorShort": "Armor_Child_Mask_Gerudo",
+          "IsUsableAdult": true,
+          "IsUsableChild": true
+        },
+        {
+          "ActorShort": "Armor_Child_Mask_Bunny",
+          "IsUsableAdult": true,
+          "IsUsableChild": true
+        },
+        {
+          "ActorShort": "Armor_Child_Mask_Spooky",
+          "IsUsableAdult": true,
+          "IsUsableChild": true
+        },
+        {
+          "ActorShort": "Armor_Child_Mask_Skull",
+          "IsUsableAdult": true,
+          "IsUsableChild": true
+        },
+        {
+          "ActorShort": "Armor_Child_Mask_Keaton",
+          "IsUsableAdult": true,
+          "IsUsableChild": true
+        }
+      ],
+      "BtnName": "Pa_HeadEquip_02",
+      "IsChangeMenuIfInputLeftRight": true,
+      "LeftBtnParts": "Pa_Collect_00/Pa_Bag_01",
+      "SpecialDeal": "Mask"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Armor_Adult_HoverBoot",
+          "IsUsableAdult": true,
+          "IsUsableChild": false
+        }
+      ],
+      "BtnName": "Pa_FootEquip_00",
+      "IsChangeMenuIfInputLeftRight": true,
+      "LeftBtnParts": "Pa_Collect_00/Pa_Bag_03",
+      "RightBtnParts": "",
+      "SpecialDeal": "Boot"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Armor_Adult_HeavyBoot",
+          "IsUsableAdult": true
+        }
+      ],
+      "BtnName": "Pa_FootEquip_01",
+      "SpecialDeal": "Boot"
+    }
+  ],
+  "FitSEStartFrameOffset": -3.0,
+  "ImportantActorApproachRatio": 0.15000000596046448,
+  "ImportantDoF": [
+    {
+      "DoFType": 98902570,
+      "ForcalDist": 1.409999966621399,
+      "ForcalRange": 0.004999999888241291
+    },
+    {
+      "DoFType": 884627160,
+      "ForcalDist": 1.409999966621399,
+      "ForcalRange": 0.004999999888241291
+    }
+  ],
+  "ImportantInCameraSpeed": 0.25,
+  "ImportantInOutPos": {
+    "X": 0.20000000298023224,
+    "Y": -1.659999966621399,
+    "Z": 5.980000019073486
+  },
+  "ImportantOutCameraSpeed": 0.029999999329447746,
+  "ImportantRotateFrameOffset": 0.0,
+  "ImportantStoneOnlyCameraAt": {
+    "X": 0.0,
+    "Y": -0.4699999988079071,
+    "Z": 1.6100000143051147
+  },
+  "ImportantStoneOnlyCameraPos": {
+    "X": 0.0,
+    "Y": -0.8700000047683716,
+    "Z": 3.3499999046325684
+  },
+  "ImportantStoneOnlyFovy": 11.0,
+  "ItemArray": [
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_DekuStick",
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_DekuStick"
+        }
+      ],
+      "BtnName": "Pa_ItemIcon_00",
+      "IsChangeMenuIfInputLeftRight": true,
+      "LeftBtnParts": "Pa_Equip_00/Pa_Epuipment_00"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Weapon_Range_SlingShot",
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Range_SlingShot"
+        }
+      ],
+      "BtnName": "Pa_ItemIcon_01"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Boomerang",
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Boomerang"
+        }
+      ],
+      "BtnName": "Pa_ItemIcon_02"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_DekuNut",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_DekuNut"
+        }
+      ],
+      "BtnName": "Pa_ItemIcon_03",
+      "IsChangeMenuIfInputLeftRight": true,
+      "LeftBtnParts": "Pa_Equip_00/Pa_Epuipment_06"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Bomb",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bomb"
+        }
+      ],
+      "BtnName": "Pa_ItemIcon_04",
+      "IsChangeMenuIfInputLeftRight": true,
+      "LeftBtnParts": "Pa_Equip_00/Pa_Epuipment_03"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Bombchu",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bombchu"
+        }
+      ],
+      "BtnName": "Pa_ItemIcon_05"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Hammer",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_Hammer"
+        }
+      ],
+      "BtnName": "Pa_ItemIcon_06"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Longshot",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_Longshot"
+        },
+        {
+          "ActorShort": "Item_Hookshot",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_Hookshot"
+        }
+      ],
+      "BtnName": "Pa_ItemIcon_07"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Arrow_Normal",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_Arrow_Normal"
+        },
+        {
+          "ActorShort": "Weapon_Range_Bow",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_Range_BowAndArrow_Normal"
+        }
+      ],
+      "BtnName": "Pa_ItemIcon_08",
+      "IsChangeActorEquipState": true
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Arrow_Fire",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_Arrow_Fire"
+        },
+        {
+          "ActorShort": "Pouch_Range_BowAndArrow_Fire",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_Range_BowAndArrow_Fire"
+        }
+      ],
+      "BtnName": "Pa_ItemIcon_09",
+      "IsChangeActorEquipState": true
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Arrow_Ice",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_Arrow_Ice"
+        },
+        {
+          "ActorShort": "Pouch_Range_BowAndArrow_Ice",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_Range_BowAndArrow_Ice"
+        }
+      ],
+      "BtnName": "Pa_ItemIcon_10",
+      "IsChangeActorEquipState": true
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Arrow_Light",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_Arrow_Light"
+        },
+        {
+          "ActorShort": "Pouch_Range_BowAndArrow_Light",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_Range_BowAndArrow_Light"
+        }
+      ],
+      "BtnName": "Pa_ItemIcon_11",
+      "IsChangeActorEquipState": true
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_MagicBean",
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_MagicBean"
+        }
+      ],
+      "BtnName": "Pa_ItemIcon_12",
+      "IsChangeMenuIfInputLeftRight": true,
+      "LeftBtnParts": "Pa_Equip_00/Pa_Epuipment_00"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_DinFire",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_DinFire"
+        }
+      ],
+      "BtnName": "Pa_ItemIcon_14"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_FaroreWind",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_FaroreWind"
+        }
+      ],
+      "BtnName": "Pa_ItemIcon_15"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_NayruLove",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_NayruLove"
+        }
+      ],
+      "BtnName": "Pa_ItemIcon_16"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Bottle",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle"
+        },
+        {
+          "ActorShort": "Item_Bottle_BigPoe",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_BigPoe"
+        },
+        {
+          "ActorShort": "Item_Bottle_BlueFire",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_BlueFire"
+        },
+        {
+          "ActorShort": "Item_Bottle_BluePotion",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_BluePotion"
+        },
+        {
+          "ActorShort": "Item_Bottle_Bug",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Bug"
+        },
+        {
+          "ActorShort": "Item_Bottle_Fairy",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Fairy"
+        },
+        {
+          "ActorShort": "Item_Bottle_Fish",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Fish"
+        },
+        {
+          "ActorShort": "Item_Bottle_GreenPotion",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_GreenPotion"
+        },
+        {
+          "ActorShort": "Item_Bottle_HalfMilk",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_HalfMilk"
+        },
+        {
+          "ActorShort": "Item_Bottle_Letter",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Letter"
+        },
+        {
+          "ActorShort": "Item_Bottle_Milk",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Milk"
+        },
+        {
+          "ActorShort": "Item_Bottle_Poe",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Poe"
+        },
+        {
+          "ActorShort": "Item_Bottle_RedPotion",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_RedPotion"
+        }
+      ],
+      "AssignableItemEnum": 583476108,
+      "BtnName": "Pa_ItemIcon_17",
+      "IsChangeMenuIfInputLeftRight": true,
+      "LeftBtnParts": "Pa_Equip_00/Pa_Epuipment_06"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Bottle",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle"
+        },
+        {
+          "ActorShort": "Item_Bottle_BigPoe",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_BigPoe"
+        },
+        {
+          "ActorShort": "Item_Bottle_BlueFire",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_BlueFire"
+        },
+        {
+          "ActorShort": "Item_Bottle_BluePotion",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_BluePotion"
+        },
+        {
+          "ActorShort": "Item_Bottle_Bug",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Bug"
+        },
+        {
+          "ActorShort": "Item_Bottle_Fairy",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Fairy"
+        },
+        {
+          "ActorShort": "Item_Bottle_Fish",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Fish"
+        },
+        {
+          "ActorShort": "Item_Bottle_GreenPotion",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_GreenPotion"
+        },
+        {
+          "ActorShort": "Item_Bottle_HalfMilk",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_HalfMilk"
+        },
+        {
+          "ActorShort": "Item_Bottle_Letter",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Letter"
+        },
+        {
+          "ActorShort": "Item_Bottle_Milk",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Milk"
+        },
+        {
+          "ActorShort": "Item_Bottle_Poe",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Poe"
+        },
+        {
+          "ActorShort": "Item_Bottle_RedPotion",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_RedPotion"
+        }
+      ],
+      "AssignableItemEnum": 2894634965,
+      "BtnName": "Pa_ItemIcon_18"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Bottle",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle"
+        },
+        {
+          "ActorShort": "Item_Bottle_BigPoe",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_BigPoe"
+        },
+        {
+          "ActorShort": "Item_Bottle_BlueFire",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_BlueFire"
+        },
+        {
+          "ActorShort": "Item_Bottle_BluePotion",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_BluePotion"
+        },
+        {
+          "ActorShort": "Item_Bottle_Bug",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Bug"
+        },
+        {
+          "ActorShort": "Item_Bottle_Fairy",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Fairy"
+        },
+        {
+          "ActorShort": "Item_Bottle_Fish",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Fish"
+        },
+        {
+          "ActorShort": "Item_Bottle_GreenPotion",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_GreenPotion"
+        },
+        {
+          "ActorShort": "Item_Bottle_HalfMilk",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_HalfMilk"
+        },
+        {
+          "ActorShort": "Item_Bottle_Letter",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Letter"
+        },
+        {
+          "ActorShort": "Item_Bottle_Milk",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Milk"
+        },
+        {
+          "ActorShort": "Item_Bottle_Poe",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Poe"
+        },
+        {
+          "ActorShort": "Item_Bottle_RedPotion",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_RedPotion"
+        }
+      ],
+      "AssignableItemEnum": 2816034321,
+      "BtnName": "Pa_ItemIcon_19"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Bottle",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle"
+        },
+        {
+          "ActorShort": "Item_Bottle_BigPoe",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_BigPoe"
+        },
+        {
+          "ActorShort": "Item_Bottle_BlueFire",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_BlueFire"
+        },
+        {
+          "ActorShort": "Item_Bottle_BluePotion",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_BluePotion"
+        },
+        {
+          "ActorShort": "Item_Bottle_Bug",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Bug"
+        },
+        {
+          "ActorShort": "Item_Bottle_Fairy",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Fairy"
+        },
+        {
+          "ActorShort": "Item_Bottle_Fish",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Fish"
+        },
+        {
+          "ActorShort": "Item_Bottle_GreenPotion",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_GreenPotion"
+        },
+        {
+          "ActorShort": "Item_Bottle_HalfMilk",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_HalfMilk"
+        },
+        {
+          "ActorShort": "Item_Bottle_Letter",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Letter"
+        },
+        {
+          "ActorShort": "Item_Bottle_Milk",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Milk"
+        },
+        {
+          "ActorShort": "Item_Bottle_Poe",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Poe"
+        },
+        {
+          "ActorShort": "Item_Bottle_RedPotion",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_RedPotion"
+        }
+      ],
+      "AssignableItemEnum": 3042895075,
+      "BtnName": "Pa_ItemIcon_20"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Bottle",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle"
+        },
+        {
+          "ActorShort": "Item_Bottle_BigPoe",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_BigPoe"
+        },
+        {
+          "ActorShort": "Item_Bottle_BlueFire",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_BlueFire"
+        },
+        {
+          "ActorShort": "Item_Bottle_BluePotion",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_BluePotion"
+        },
+        {
+          "ActorShort": "Item_Bottle_Bug",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Bug"
+        },
+        {
+          "ActorShort": "Item_Bottle_Fairy",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Fairy"
+        },
+        {
+          "ActorShort": "Item_Bottle_Fish",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Fish"
+        },
+        {
+          "ActorShort": "Item_Bottle_GreenPotion",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_GreenPotion"
+        },
+        {
+          "ActorShort": "Item_Bottle_HalfMilk",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_HalfMilk"
+        },
+        {
+          "ActorShort": "Item_Bottle_Letter",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Letter"
+        },
+        {
+          "ActorShort": "Item_Bottle_Milk",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Milk"
+        },
+        {
+          "ActorShort": "Item_Bottle_Poe",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_Poe"
+        },
+        {
+          "ActorShort": "Item_Bottle_RedPotion",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Bottle_RedPotion"
+        }
+      ],
+      "AssignableItemEnum": 3637260296,
+      "BtnName": "Pa_ItemIcon_21"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_ScrubBusinessSeed",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_ScrubBusinessSeed"
+        }
+      ],
+      "BtnName": "Pa_ItemIcon_22"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_ClaimCheck",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_ClaimCheck"
+        },
+        {
+          "ActorShort": "Item_EyeDrop",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_EyeDrop"
+        },
+        {
+          "ActorShort": "Item_EyeballFrog",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_EyeballFrog"
+        },
+        {
+          "ActorShort": "Item_Prescription",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_Prescription"
+        },
+        {
+          "ActorShort": "Item_BrokenSword",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_BrokenSword"
+        },
+        {
+          "ActorShort": "Item_PoacherSaw",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_PoacherSaw"
+        },
+        {
+          "ActorShort": "Item_OddPowder",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_OddPowder"
+        },
+        {
+          "ActorShort": "Item_OddMushroom",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_OddMushroom"
+        },
+        {
+          "ActorShort": "Item_CojiroCucco",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_CojiroCucco"
+        },
+        {
+          "ActorShort": "Item_PocketCucco",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_PocketCucco"
+        },
+        {
+          "ActorShort": "Item_PocketEgg",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Pouch_PocketEgg"
+        },
+        {
+          "ActorShort": "Item_ZeldaLetter",
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_ZeldaLetter"
+        },
+        {
+          "ActorShort": "Item_AlarmCucco",
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_AlarmCoucco"
+        },
+        {
+          "ActorShort": "Item_WeirdEgg",
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_WeirdEgg"
+        }
+      ],
+      "BtnName": "Pa_ItemIcon_23",
+      "SpecialDeal": "SwordBigGoronChallenge"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Pouch_Amiibo",
+          "IsUsableAdult": true,
+          "IsUsableChild": true
+        }
+      ],
+      "BtnName": "Pa_ItemIcon_24"
+    }
+  ],
+  "MedalArray": [
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Medal_Light",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Item_Medal_Light_ImportantMenu"
+        }
+      ],
+      "BtnName": "N_Info_03"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Medal_Forest",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Item_Medal_Forest_ImportantMenu"
+        }
+      ],
+      "BtnName": "N_Info_04"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Medal_Fire",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Item_Medal_Fire_ImportantMenu"
+        }
+      ],
+      "BtnName": "N_Info_05"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Medal_Water",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Item_Medal_Water_ImportantMenu"
+        }
+      ],
+      "BtnName": "N_Info_06"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Medal_Shadow",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Item_Medal_Shadow_ImportantMenu"
+        }
+      ],
+      "BtnName": "N_Info_08"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Medal_Spirit",
+          "IsUsableAdult": true,
+          "PouchActorShort": "Item_Medal_Spirit_ImportantMenu"
+        }
+      ],
+      "BtnName": "N_Info_07"
+    }
+  ],
+  "NoDisplayArray": [
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_DekuSeed",
+          "IsUsableChild": true
+        }
+      ]
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Obj_Heart_Piece",
+          "PouchActorShort": "Pouch_Heart_Piece"
+        }
+      ],
+      "IsChangeMenuIfInputLeftRight": true,
+      "RightBtnParts": "Pa_Equip_00/Pa_HeadEquip_02"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_NormalBoot",
+          "IsUsableAdult": true,
+          "IsUsableChild": true
+        }
+      ]
+    }
+  ],
+  "OcarinaArray": [
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Ocarina_Fairy",
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Ocarina_Fairy"
+        }
+      ],
+      "BtnName": "Pa_Ocarina_00",
+      "IsChangeActorEquipState": true,
+      "IsChangeMenuIfInputLeftRight": true,
+      "RightBtnParts": "Pa_Equip_00/Pa_FootEquip_00"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Ocarina_Time",
+          "IsUsableAdult": true,
+          "IsUsableChild": true,
+          "PouchActorShort": "Pouch_Ocarina_Time"
+        }
+      ],
+      "BtnName": "Pa_Ocarina_01",
+      "IsChangeMenuIfInputLeftRight": false,
+      "RightBtnParts": "Pa_Equip_00/Pa_HeadEquip_00",
+      "SpecialDeal": "PouchIcon"
+    }
+  ],
+  "StoneArray": [
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Stone_Forest",
+          "PouchActorShort": "Item_Stone_Forest_ImportantMenu"
+        }
+      ],
+      "BtnName": "N_Info_00"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Stone_Fire",
+          "PouchActorShort": "Item_Stone_Fire_ImportantMenu"
+        }
+      ],
+      "BtnName": "N_Info_01"
+    },
+    {
+      "Actor": [
+        {
+          "ActorShort": "Item_Stone_Water",
+          "PouchActorShort": "Item_Stone_Water_ImportantMenu"
+        }
+      ],
+      "BtnName": "N_Info_02"
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "version": 1,
+  "fields": {
+    "DiveDepth": {
+      "hash": "61466c21",
+      "type": "Float",
+      "index": 71,
+      "default": "3.0",
+      "name": "PlayerStatus.DiveDepth",
+      "legal_values": [
+        3.0,
+        6.0,
+        9.0
+      ]
+    },
+    "LiftGrade": {
+      "hash": "59979321",
+      "type": "Enum",
+      "index": 67,
+      "default": "!u 0xb6eede09",
+      "name": "PlayerStatus.LiftGrade",
+      "values": {
+        "None": 3069107721,
+        "Low": 3655598229,
+        "Middle": 3064057055,
+        "High": 375060617
+      }
+    },
+    "MP": {
+      "hash": "76b18200",
+      "type": "Int",
+      "index": 965,
+      "default": "0",
+      "name": "PlayerStatus.MP"
+    },
+    "MPMax": {
+      "hash": "12d63a97",
+      "type": "Int",
+      "index": 967,
+      "default": "0",
+      "name": "PlayerStatus.MPMax",
+      "legal_values": [
+        0,
+        24,
+        48
+      ]
+    },
+    "IsDefenseUP": {
+      "hash": "56bbe07c",
+      "type": "Bool",
+      "index": 10766,
+      "default": "false",
+      "name": "PlayerStatus.IsDefenseUP"
+    }
+  },
+  "types": {
+    "Float": {
+      "count": 89,
+      "descriptor_from_bool": 384,
+      "stride": 40
+    },
+    "Enum": {
+      "count": 130,
+      "descriptor_from_bool": 576,
+      "stride": 56
+    },
+    "Int": {
+      "count": 1259,
+      "descriptor_from_bool": 192,
+      "stride": 40
+    },
+    "Bool": {
+      "count": 11292,
+      "descriptor_from_bool": 0,
+      "stride": 24
+    }
+  },
+  "tiers": {
+    "scale": {
+      "none": {
+        "DiveDepth": 3.0
+      },
+      "choices": {
+        "Item_Scale_Silver": {
+          "DiveDepth": 6.0
+        },
+        "Item_Scale_Gold": {
+          "DiveDepth": 9.0
+        }
+      }
+    },
+    "strength": {
+      "none": {
+        "LiftGrade": "None"
+      },
+      "choices": {
+        "Armor_Child_Gauntlet_Goron": {
+          "LiftGrade": "Low"
+        },
+        "Armor_Adult_Gauntlet_Silver": {
+          "LiftGrade": "Middle"
+        },
+        "Armor_Adult_Gauntlet_Gold": {
+          "LiftGrade": "High"
+        }
+      }
+    },
+    "magic": {
+      "none": {
+        "MPMax": 0,
+        "MP": 0
+      },
+      "choices": {
+        "Item_FairyBless_MP": {
+          "MPMax": 24,
+          "MP": 24
+        },
+        "Item_FairyBless_MPDouble": {
+          "MPMax": 48,
+          "MP": 48
+        }
+      }
+    },
+    "defense": {
+      "none": {
+        "IsDefenseUP": false
+      },
+      "choices": {
+        "Item_FairyBless_DefenseDouble": {
+          "IsDefenseUP": true
+        }
+      }
+    }
+  },
+  "source": "research/pouch-actor-info.json",
+  "notes": [
+    "Plans only; main verifies actualgameeffect.",
+    "Magic tier explicitlyrefillsMP to selectedcapacity.",
+    "No health fields included.",
+    "Defense relationship inferred from explicitPouchSpecialDeal andnamedGameData; verifyphysicaleffect."
+  ]
+}

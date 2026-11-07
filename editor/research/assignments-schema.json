@@ -1,0 +1,3229 @@
+{
+  "version": 1,
+  "types": {
+    "Enum": {
+      "descriptor_from_bool": 576,
+      "count": 130,
+      "stride": 56
+    },
+    "String64": {
+      "descriptor_from_bool": 1536,
+      "count": 54,
+      "stride": 264
+    }
+  },
+  "fields": {
+    "Adult": {
+      "name": "PlayerStatus.AssignableItem.Adult",
+      "hash": "bc32ce24",
+      "index": 59,
+      "type": "Enum",
+      "values": {
+        "Empty": 3194609225,
+        "DekuStick": 4192551701,
+        "DekuNut": 2211636230,
+        "Bomb": 3237216321,
+        "Boomerang": 3518489183,
+        "SlingShot": 3852308563,
+        "Hookshot": 3010012571,
+        "Longshot": 3730986747,
+        "Hammer": 85358548,
+        "GlassTruth": 3800292985,
+        "Bombchu": 2565786591,
+        "DinFire": 377949856,
+        "FaroreWind": 3444556003,
+        "NayruLove": 869652085,
+        "MagicBean": 3306849497,
+        "BottleA": 583476108,
+        "BottleB": 2894634965,
+        "BottleC": 2816034321,
+        "BottleD": 3042895075,
+        "FishingRod": 2517083565,
+        "Lure": 2298413722,
+        "KeatonMask": 2698187353,
+        "SkullMask": 4148600782,
+        "SpookyMask": 71464852,
+        "BunnyMask": 1793025727,
+        "TruthMask": 1515164552,
+        "GoronMask": 665170100,
+        "ZoraMask": 136251478,
+        "GerudoMask": 656338736,
+        "HeavyBoot": 4289547193,
+        "HoverBoot": 823709501,
+        "Bow": 1399920009,
+        "WeirdEgg": 3214238938,
+        "AlarmCucco": 1797318366,
+        "ZeldaLetter": 2982866657,
+        "PocketEgg": 670574489,
+        "PocketCucco": 2990124558,
+        "CojiroCucco": 100752591,
+        "OddMushroom": 2057583463,
+        "OddPowder": 3011952870,
+        "PoacherSaw": 660520958,
+        "BrokenSword": 1414309152,
+        "Prescription": 1284648611,
+        "EyeballFrog": 4239265969,
+        "EyeDrop": 1569836440,
+        "ClaimCheck": 4187158766,
+        "SheikahWarp": 401440334,
+        "FireArrow": 2246798938,
+        "IceArrow": 3740198074,
+        "LightArrow": 2253000957,
+        "ScrubBusinessSeed": 2478608874,
+        "BottleE": 3637260296,
+        "Amiibo": 4238714961,
+        "SinkLure": 2160596541,
+        "NormalLure": 3982508132
+      }
+    },
+    "Child": {
+      "name": "PlayerStatus.AssignableItem.Child",
+      "hash": "a0029837",
+      "index": 65,
+      "type": "Enum",
+      "values": {
+        "Empty": 3194609225,
+        "DekuStick": 4192551701,
+        "DekuNut": 2211636230,
+        "Bomb": 3237216321,
+        "Boomerang": 3518489183,
+        "SlingShot": 3852308563,
+        "Hookshot": 3010012571,
+        "Longshot": 3730986747,
+        "Hammer": 85358548,
+        "GlassTruth": 3800292985,
+        "Bombchu": 2565786591,
+        "DinFire": 377949856,
+        "FaroreWind": 3444556003,
+        "NayruLove": 869652085,
+        "MagicBean": 3306849497,
+        "BottleA": 583476108,
+        "BottleB": 2894634965,
+        "BottleC": 2816034321,
+        "BottleD": 3042895075,
+        "FishingRod": 2517083565,
+        "Lure": 2298413722,
+        "KeatonMask": 2698187353,
+        "SkullMask": 4148600782,
+        "SpookyMask": 71464852,
+        "BunnyMask": 1793025727,
+        "TruthMask": 1515164552,
+        "GoronMask": 665170100,
+        "ZoraMask": 136251478,
+        "GerudoMask": 656338736,
+        "HeavyBoot": 4289547193,
+        "HoverBoot": 823709501,
+        "Bow": 1399920009,
+        "WeirdEgg": 3214238938,
+        "AlarmCucco": 1797318366,
+        "ZeldaLetter": 2982866657,
+        "PocketEgg": 670574489,
+        "PocketCucco": 2990124558,
+        "CojiroCucco": 100752591,
+        "OddMushroom": 2057583463,
+        "OddPowder": 3011952870,
+        "PoacherSaw": 660520958,
+        "BrokenSword": 1414309152,
+        "Prescription": 1284648611,
+        "EyeballFrog": 4239265969,
+        "EyeDrop": 1569836440,
+        "ClaimCheck": 4187158766,
+        "SheikahWarp": 401440334,
+        "FireArrow": 2246798938,
+        "IceArrow": 3740198074,
+        "LightArrow": 2253000957,
+        "ScrubBusinessSeed": 2478608874,
+        "BottleE": 3637260296,
+        "Amiibo": 4238714961,
+        "SinkLure": 2160596541,
+        "NormalLure": 3982508132
+      }
+    },
+    "EquipWeapon": {
+      "name": "PlayerStatus.EquipWeapon",
+      "hash": "a95a3521",
+      "index": 23,
+      "type": "String64"
+    },
+    "EquipShield": {
+      "name": "PlayerStatus.EquipShield",
+      "hash": "ee463235",
+      "index": 22,
+      "type": "String64"
+    },
+    "EquipHeadArmor": {
+      "name": "PlayerStatus.EquipHeadArmor",
+      "hash": "59d9c7b3",
+      "index": 20,
+      "type": "String64"
+    },
+    "EquipArmor": {
+      "name": "PlayerStatus.EquipArmor",
+      "hash": "008d7f0c",
+      "index": 16,
+      "type": "String64"
+    },
+    "EquipBoot": {
+      "name": "PlayerStatus.EquipBoot",
+      "hash": "d107a85d",
+      "index": 18,
+      "type": "String64"
+    },
+    "EquipOcarina": {
+      "name": "PlayerStatus.EquipOcarina",
+      "hash": "b72cd3fc",
+      "index": 21,
+      "type": "String64"
+    },
+    "EquipHandArmor": {
+      "name": "PlayerStatus.EquipHandArmor",
+      "hash": "7ce1cb81",
+      "index": 19,
+      "type": "String64"
+    }
+  },
+  "symbol_actors": {
+    "AlarmCucco": [
+      "Item_AlarmCucco",
+      "Pouch_AlarmCoucco"
+    ],
+    "FireArrow": [
+      "Item_Arrow_Fire",
+      "Obj_Arrow_Fire",
+      "Pouch_Arrow_Fire",
+      "Pouch_Range_BowAndArrow_Fire"
+    ],
+    "IceArrow": [
+      "Item_Arrow_Ice",
+      "Pouch_Arrow_Ice",
+      "Pouch_Range_BowAndArrow_Ice",
+      "Pouch_Range_BowAndArrow_Normal"
+    ],
+    "LightArrow": [
+      "Item_Arrow_Light",
+      "Pouch_Arrow_Light",
+      "Pouch_Range_BowAndArrow_Light"
+    ],
+    "Bow": [
+      "Item_Arrow_Normal",
+      "Pouch_Arrow_Normal",
+      "Weapon_Range_Bow",
+      "Weapon_Range_Bow_MiniGame_HitTarget"
+    ],
+    "Bomb": [
+      "Item_Bomb",
+      "Npc_Hylia_ImperialSoldier_Bomb"
+    ],
+    "Bombchu": [
+      "Item_Bombchu"
+    ],
+    "Boomerang": [
+      "Item_Boomerang",
+      "Pouch_Boomerang",
+      "Weapon_Boomerang"
+    ],
+    "BottleA": [
+      "Item_Bottle",
+      "Item_Bottle_BigPoe",
+      "Item_Bottle_BlueFire",
+      "Item_Bottle_BluePotion",
+      "Item_Bottle_Bug",
+      "Item_Bottle_Fairy",
+      "Item_Bottle_Fish",
+      "Item_Bottle_GreenPotion",
+      "Item_Bottle_HalfMilk",
+      "Item_Bottle_Letter",
+      "Item_Bottle_Milk",
+      "Item_Bottle_Poe",
+      "Item_Bottle_RedPotion"
+    ],
+    "BrokenSword": [
+      "Item_BrokenSword",
+      "Pouch_BrokenSword"
+    ],
+    "ClaimCheck": [
+      "Item_ClaimCheck",
+      "Pouch_ClaimCheck"
+    ],
+    "CojiroCucco": [
+      "Item_CojiroCucco",
+      "Pouch_CojiroCucco"
+    ],
+    "DekuNut": [
+      "Item_DekuNut",
+      "Shootable_ScrubBusinessSees"
+    ],
+    "DekuStick": [
+      "Item_DekuStick",
+      "Pouch_DekuStick",
+      "Shop_DekuStick",
+      "Shop_DekuStickBundle_Medium",
+      "Weapon_DekuStick"
+    ],
+    "DinFire": [
+      "Item_DinFire",
+      "Pouch_DinFire"
+    ],
+    "EyeDrop": [
+      "Item_EyeDrop",
+      "Pouch_EyeDrop"
+    ],
+    "EyeballFrog": [
+      "Item_EyeballFrog",
+      "Pouch_EyeballFrog"
+    ],
+    "FaroreWind": [
+      "Item_FaroreWind",
+      "Pouch_FaroreWind"
+    ],
+    "FishingRod": [
+      "Item_FishingRod",
+      "Weapon_FishingRod"
+    ],
+    "Hammer": [
+      "Item_Hammer",
+      "Pouch_Hammer",
+      "Weapon_Hammer"
+    ],
+    "Hookshot": [
+      "Item_Hookshot",
+      "Pouch_Hookshot"
+    ],
+    "Longshot": [
+      "Item_Longshot",
+      "Pouch_Longshot"
+    ],
+    "MagicBean": [
+      "Item_MagicBean",
+      "Pouch_MagicBean"
+    ],
+    "NayruLove": [
+      "Item_NayruLove",
+      "Pouch_NayruLove"
+    ],
+    "OddMushroom": [
+      "Item_OddMushroom",
+      "Pouch_OddMushroom"
+    ],
+    "OddPowder": [
+      "Item_OddPowder",
+      "Pouch_OddPowder"
+    ],
+    "PoacherSaw": [
+      "Item_PoacherSaw",
+      "Pouch_PoacherSaw"
+    ],
+    "PocketCucco": [
+      "Item_PocketCucco",
+      "Pouch_PocketCucco"
+    ],
+    "PocketEgg": [
+      "Item_PocketEgg",
+      "Pouch_PocketEgg"
+    ],
+    "Prescription": [
+      "Item_Prescription",
+      "Pouch_Prescription"
+    ],
+    "ScrubBusinessSeed": [
+      "Item_ScrubBusinessSeed"
+    ],
+    "WeirdEgg": [
+      "Item_WeirdEgg",
+      "Pouch_WeirdEgg"
+    ],
+    "ZeldaLetter": [
+      "Item_ZeldaLetter",
+      "Pouch_ZeldaLetter"
+    ],
+    "Amiibo": [
+      "Pouch_Amiibo"
+    ],
+    "SlingShot": [
+      "Pouch_Range_SlingShot",
+      "Weapon_Range_SlingShot",
+      "Weapon_Range_SlingShot_MiniGame_HitTarget"
+    ],
+    "NormalLure": [
+      "Weapon_Lure"
+    ],
+    "SinkLure": [
+      "Weapon_SinkingLure"
+    ],
+    "BottleB": [
+      "Item_Bottle",
+      "Item_Bottle_BigPoe",
+      "Item_Bottle_BlueFire",
+      "Item_Bottle_BluePotion",
+      "Item_Bottle_Bug",
+      "Item_Bottle_Fairy",
+      "Item_Bottle_Fish",
+      "Item_Bottle_GreenPotion",
+      "Item_Bottle_HalfMilk",
+      "Item_Bottle_Letter",
+      "Item_Bottle_Milk",
+      "Item_Bottle_Poe",
+      "Item_Bottle_RedPotion"
+    ],
+    "BottleC": [
+      "Item_Bottle",
+      "Item_Bottle_BigPoe",
+      "Item_Bottle_BlueFire",
+      "Item_Bottle_BluePotion",
+      "Item_Bottle_Bug",
+      "Item_Bottle_Fairy",
+      "Item_Bottle_Fish",
+      "Item_Bottle_GreenPotion",
+      "Item_Bottle_HalfMilk",
+      "Item_Bottle_Letter",
+      "Item_Bottle_Milk",
+      "Item_Bottle_Poe",
+      "Item_Bottle_RedPotion"
+    ],
+    "BottleD": [
+      "Item_Bottle",
+      "Item_Bottle_BigPoe",
+      "Item_Bottle_BlueFire",
+      "Item_Bottle_BluePotion",
+      "Item_Bottle_Bug",
+      "Item_Bottle_Fairy",
+      "Item_Bottle_Fish",
+      "Item_Bottle_GreenPotion",
+      "Item_Bottle_HalfMilk",
+      "Item_Bottle_Letter",
+      "Item_Bottle_Milk",
+      "Item_Bottle_Poe",
+      "Item_Bottle_RedPotion"
+    ],
+    "BottleE": [
+      "Item_Bottle",
+      "Item_Bottle_BigPoe",
+      "Item_Bottle_BlueFire",
+      "Item_Bottle_BluePotion",
+      "Item_Bottle_Bug",
+      "Item_Bottle_Fairy",
+      "Item_Bottle_Fish",
+      "Item_Bottle_GreenPotion",
+      "Item_Bottle_HalfMilk",
+      "Item_Bottle_Letter",
+      "Item_Bottle_Milk",
+      "Item_Bottle_Poe",
+      "Item_Bottle_RedPotion"
+    ]
+  },
+  "actor_metadata": {
+    "Animal_Fish_Blue": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "Empty",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Animal_Insect": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "Empty",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Armor_Adult_AgonyStone": {
+      "ActionGuideType": "HeadShortcut",
+      "AdultEquipment": "Work/Actor/Armor_Adult_AgonyStone.engine__actor__ActorParam.gyml",
+      "ChildEquipment": "Work/Actor/Armor_Child_AgonyStone.engine__actor__ActorParam.gyml",
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "AgonyStone",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_Adult_Default_Head": {
+      "ActionGuideType": "HeadShortcut",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_Adult_Gauntlet_Gold": {
+      "AdultEquipment": "Work/Actor/Armor_Adult_Gauntlet_Gold.engine__actor__ActorParam.gyml",
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Gauntlet",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Armor_Adult_Gauntlet_Silver": {
+      "AdultEquipment": "Work/Actor/Armor_Adult_Gauntlet_Silver.engine__actor__ActorParam.gyml",
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Gauntlet",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Armor_Adult_GlassTruth": {
+      "ActionGuideType": "HeadShortcut",
+      "AdultEquipment": "Work/Actor/Armor_Adult_GlassTruth.engine__actor__ActorParam.gyml",
+      "ChildEquipment": "Work/Actor/Armor_Child_GlassTruth.engine__actor__ActorParam.gyml",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "GlassTruth",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_Adult_Goron": {
+      "ActionGuideType": "EquipmentMenu",
+      "PouchCategory": "Armor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_Adult_HeavyBoot": {
+      "ActionGuideType": "BootShortcut",
+      "PouchCategory": "Boot",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_Adult_HoverBoot": {
+      "ActionGuideType": "BootShortcut",
+      "PouchCategory": "Boot",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_Adult_Normal": {
+      "PouchCategory": "Armor",
+      "PouchSpecialDeal": "DefaultArmor",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_Adult_Zora": {
+      "ActionGuideType": "EquipmentMenu",
+      "PouchCategory": "Armor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_Child_AgonyStone": {
+      "ActionGuideType": "HeadShortcut",
+      "AdultEquipment": "Work/Actor/Armor_Adult_AgonyStone.engine__actor__ActorParam.gyml",
+      "ChildEquipment": "Work/Actor/Armor_Child_AgonyStone.engine__actor__ActorParam.gyml",
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "AgonyStone",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_Child_Default_Head": {
+      "ActionGuideType": "HeadShortcut",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_Child_Gauntlet_Goron": {
+      "ActionGuideType": "GoronGauntlet",
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "GoronGauntlet",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Armor_Child_GlassTruth": {
+      "ActionGuideType": "HeadShortcut",
+      "AdultEquipment": "Work/Actor/Armor_Adult_GlassTruth.engine__actor__ActorParam.gyml",
+      "ChildEquipment": "Work/Actor/Armor_Child_GlassTruth.engine__actor__ActorParam.gyml",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "GlassTruth",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_Child_Mask_Amiibo0": {
+      "ActionGuideType": "HeadShortcut",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_Child_Mask_Amiibo1": {
+      "ActionGuideType": "HeadShortcut",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_Child_Mask_Bunny": {
+      "ActionGuideType": "HeadShortcut",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_Child_Mask_Gerudo": {
+      "ActionGuideType": "HeadShortcut",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_Child_Mask_Goron": {
+      "ActionGuideType": "HeadShortcut",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_Child_Mask_Keaton": {
+      "ActionGuideType": "HeadShortcut",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_Child_Mask_Skull": {
+      "ActionGuideType": "HeadShortcut",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_Child_Mask_Spooky": {
+      "ActionGuideType": "HeadShortcut",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_Child_Mask_Truth": {
+      "ActionGuideType": "HeadShortcut",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_Child_Mask_Zora": {
+      "ActionGuideType": "HeadShortcut",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_GlassTruth": {
+      "ActionGuideType": "HeadShortcut",
+      "AdultEquipment": "Work/Actor/Armor_Adult_GlassTruth.engine__actor__ActorParam.gyml",
+      "ChildEquipment": "Work/Actor/Armor_Child_GlassTruth.engine__actor__ActorParam.gyml",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "GlassTruth",
+      "PouchTabCategory": "Equipment"
+    },
+    "Armor_Mask_Base": {
+      "ActionGuideType": "HeadShortcut",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_AgonyStone": {
+      "ActionGuideType": "HeadShortcut",
+      "AdultEquipment": "Work/Actor/Armor_Adult_AgonyStone.engine__actor__ActorParam.gyml",
+      "ChildEquipment": "Work/Actor/Armor_Child_AgonyStone.engine__actor__ActorParam.gyml",
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "AgonyStone",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_AlarmCucco": {
+      "AssignableItem": "AlarmCucco",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Arrow_Fire": {
+      "ActionGuideType": "FireArrow",
+      "AssignableItem": "FireArrow",
+      "PouchCategory": "Bow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Arrow_Ice": {
+      "ActionGuideType": "IceArrow",
+      "AssignableItem": "IceArrow",
+      "PouchCategory": "Bow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Arrow_Light": {
+      "ActionGuideType": "LightArrow",
+      "AssignableItem": "LightArrow",
+      "PouchCategory": "Bow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Arrow_Normal": {
+      "AssignableItem": "Bow",
+      "PouchCategory": "Arrow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_Bomb": {
+      "ActionGuideType": "Bomb",
+      "AssignableItem": "Bomb",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_BombBag_Large": {
+      "ActionGuideType": "Bomb",
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_BombBag_Medium": {
+      "ActionGuideType": "Bomb",
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_BombBag_Small": {
+      "ActionGuideType": "Bomb",
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_BombBundle_Small": {
+      "ActionGuideType": "Bomb",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Bombchu": {
+      "ActionGuideType": "Bombchu",
+      "AssignableItem": "Bombchu",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_BombchuBundle_Large": {
+      "ActionGuideType": "Bombchu",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_BombchuBundle_Medium": {
+      "ActionGuideType": "Bombchu",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_BombchuBundle_Small": {
+      "ActionGuideType": "Bombchu",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Boomerang": {
+      "ActionGuideType": "Boomerang",
+      "AssignableItem": "Boomerang",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Bottle": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Bottle_BigPoe": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Bottle_BlueFire": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Bottle_BluePotion": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Bottle_Bug": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Bottle_Fairy": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Bottle_Fish": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Bottle_GreenPotion": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Bottle_HalfMilk": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Bottle_Letter": {
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Bottle_Milk": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Bottle_Poe": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Bottle_RedPotion": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Item_BrokenSword": {
+      "AssignableItem": "BrokenSword",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_BulletBag_Large": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_BulletBag_Medium": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_BulletBag_Small": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_ClaimCheck": {
+      "AssignableItem": "ClaimCheck",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_CojiroCucco": {
+      "AssignableItem": "CojiroCucco",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_DekuNut": {
+      "ActionGuideType": "DekuNut",
+      "AssignableItem": "DekuNut",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_DekuSeed": {
+      "PouchCategory": "Arrow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_DekuStick": {
+      "ActionGuideType": "DekuStick",
+      "AssignableItem": "DekuStick",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_DekuStickBundle_Small": {
+      "ActionGuideType": "DekuStick",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_DinFire": {
+      "ActionGuideType": "DinFire",
+      "AssignableItem": "DinFire",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Dungeon_BossKey": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Dungeon_Compass": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Dungeon_Map": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Dungeon_SmallKey": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "SmallKey",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_EventObject_Base": {
+      "PouchCategory": "Weapon",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_EyeDrop": {
+      "AssignableItem": "EyeDrop",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_EyeballFrog": {
+      "AssignableItem": "EyeballFrog",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_FairyBless_DefenseDouble": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "FairyBlessDefenseDouble",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_FairyBless_MP": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "FairyBlessMP",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_FairyBless_MPDouble": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "FairyBlessMPDouble",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_FaroreWind": {
+      "ActionGuideType": "FaroreWind",
+      "AssignableItem": "FaroreWind",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_FishingRod": {
+      "AssignableItem": "FishingRod",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Gauntlet_Gold": {
+      "AdultEquipment": "Work/Actor/Armor_Adult_Gauntlet_Gold.engine__actor__ActorParam.gyml",
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Gauntlet",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Gauntlet_Goron": {
+      "ActionGuideType": "GoronGauntlet",
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "GoronGauntlet",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Gauntlet_Silver": {
+      "AdultEquipment": "Work/Actor/Armor_Adult_Gauntlet_Silver.engine__actor__ActorParam.gyml",
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Gauntlet",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_GlassTruth": {
+      "ActionGuideType": "HeadShortcut",
+      "AdultEquipment": "Work/Actor/Armor_Adult_GlassTruth.engine__actor__ActorParam.gyml",
+      "ChildEquipment": "Work/Actor/Armor_Child_GlassTruth.engine__actor__ActorParam.gyml",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "GlassTruth",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_Hammer": {
+      "ActionGuideType": "Hammer",
+      "AssignableItem": "Hammer",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_HeavyBoot": {
+      "ActionGuideType": "BootShortcut",
+      "AdultEquipment": "Work/Actor/Armor_Adult_HeavyBoot.engine__actor__ActorParam.gyml",
+      "PouchCategory": "Boot",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_Hookshot": {
+      "ActionGuideType": "Hookshot",
+      "AssignableItem": "Hookshot",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_HoverBoot": {
+      "ActionGuideType": "BootShortcut",
+      "AdultEquipment": "Work/Actor/Armor_Adult_HoverBoot.engine__actor__ActorParam.gyml",
+      "PouchCategory": "Boot",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_Longshot": {
+      "ActionGuideType": "Longshot",
+      "AssignableItem": "Longshot",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_MagicBean": {
+      "ActionGuideType": "MagicBean",
+      "AssignableItem": "MagicBean",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Mask_Bunny": {
+      "ActionGuideType": "HeadShortcut",
+      "ChildEquipment": "Work/Actor/Armor_Child_Mask_Bunny.engine__actor__ActorParam.gyml",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_Mask_Gerudo": {
+      "ActionGuideType": "HeadShortcut",
+      "ChildEquipment": "Work/Actor/Armor_Child_Mask_Gerudo.engine__actor__ActorParam.gyml",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_Mask_Goron": {
+      "ActionGuideType": "HeadShortcut",
+      "ChildEquipment": "Work/Actor/Armor_Child_Mask_Goron.engine__actor__ActorParam.gyml",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_Mask_Keaton": {
+      "ActionGuideType": "HeadShortcut",
+      "ChildEquipment": "Work/Actor/Armor_Child_Mask_Keaton.engine__actor__ActorParam.gyml",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_Mask_Skull": {
+      "ActionGuideType": "HeadShortcut",
+      "ChildEquipment": "Work/Actor/Armor_Child_Mask_Skull.engine__actor__ActorParam.gyml",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_Mask_Spooky": {
+      "ActionGuideType": "HeadShortcut",
+      "ChildEquipment": "Work/Actor/Armor_Child_Mask_Spooky.engine__actor__ActorParam.gyml",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_Mask_Truth": {
+      "ActionGuideType": "HeadShortcut",
+      "ChildEquipment": "Work/Actor/Armor_Child_Mask_Truth.engine__actor__ActorParam.gyml",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_Mask_Zora": {
+      "ActionGuideType": "HeadShortcut",
+      "ChildEquipment": "Work/Actor/Armor_Child_Mask_Zora.engine__actor__ActorParam.gyml",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_Medal_Fire": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Medal_Forest": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Medal_Light": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Medal_Shadow": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Medal_Spirit": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Medal_Water": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Melody_EponaSong": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Melody",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Melody_FireBolero": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Melody",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Melody_ForestMinuet": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Melody",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Melody_LightPrelude": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Melody",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Melody_SariaSong": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Melody",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Melody_ScarecrowSong": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Melody",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Melody_ShadowNocturne": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Melody",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Melody_SpiritRequiem": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Melody",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Melody_StormSong": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Melody",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Melody_SunSong": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Melody",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Melody_TimeSong": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Melody",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Melody_WaterSerenade": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Melody",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Melody_ZeldaLullaby": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Melody",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_NayruLove": {
+      "ActionGuideType": "NayruLove",
+      "AssignableItem": "NayruLove",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_NutBag_Large": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_NutBag_Medium": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_NutBag_Small": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Ocarina_Fairy": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Ocarina",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Ocarina_Time": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Ocarina",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_OddMushroom": {
+      "AssignableItem": "OddMushroom",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_OddPowder": {
+      "AssignableItem": "OddPowder",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_PoacherSaw": {
+      "AssignableItem": "PoacherSaw",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_PocketCucco": {
+      "AssignableItem": "PocketCucco",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_PocketEgg": {
+      "AssignableItem": "PocketEgg",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Prescription": {
+      "AssignableItem": "Prescription",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Quiver_Large": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Quiver_Medium": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Quiver_Small": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Range_Bow": {
+      "ActionGuideType": "Bow",
+      "PouchCategory": "Bow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_Range_SlingShot": {
+      "ActionGuideType": "SlingShot",
+      "PouchCategory": "Bow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_Scale_Gold": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Scale_Silver": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_ScrubBusinessSeed": {
+      "AssignableItem": "ScrubBusinessSeed",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_Shield_Mirror": {
+      "ActionGuideType": "EquipmentMenu",
+      "AdultEquipment": "Work/Actor/Weapon_Shield_Mirror.engine__actor__ActorParam.gyml",
+      "ChildEquipment": "Work/Actor/Weapon_Shield_Mirror.engine__actor__ActorParam.gyml",
+      "PouchCategory": "Shield",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_StickBag_Large": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_StickBag_Medium": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_StickBag_Small": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Stone_Fire": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Stone_Forest": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Stone_Water": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Sword_Biggoron": {
+      "ActionGuideType": "EquipmentMenu",
+      "AdultEquipment": "Work/Actor/Weapon_Sword_Biggoron.engine__actor__ActorParam.gyml",
+      "ChildEquipment": "Work/Actor/Weapon_Sword_Biggoron.engine__actor__ActorParam.gyml",
+      "PouchCategory": "Weapon",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_Sword_BrokenGiant": {
+      "ActionGuideType": "EquipmentMenu",
+      "AdultEquipment": "Work/Actor/Weapon_Sword_BrokenGiant.engine__actor__ActorParam.gyml",
+      "ChildEquipment": "Work/Actor/Weapon_Sword_BrokenGiant.engine__actor__ActorParam.gyml",
+      "PouchCategory": "Weapon",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_Sword_Giant": {
+      "ActionGuideType": "EquipmentMenu",
+      "AdultEquipment": "Work/Actor/Weapon_Sword_Giant.engine__actor__ActorParam.gyml",
+      "ChildEquipment": "Work/Actor/Weapon_Sword_Giant.engine__actor__ActorParam.gyml",
+      "PouchCategory": "Weapon",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_Sword_Kokiri": {
+      "ActionGuideType": "AttackByWeapon",
+      "ChildEquipment": "Work/Actor/Weapon_Sword_Kokiri.engine__actor__ActorParam.gyml",
+      "PouchCategory": "Weapon",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Item_Token_Gerudo": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Token_Gold": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "TokenGold",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Wallet_Large": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Wallet_Medium": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_Wallet_Small": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Item_WeirdEgg": {
+      "AssignableItem": "WeirdEgg",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Item_ZeldaLetter": {
+      "AssignableItem": "ZeldaLetter",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "NormalArrow": {
+      "PouchCategory": "Arrow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Npc_Hylia_ImperialSoldier_Bomb": {
+      "ActionGuideType": "Bomb",
+      "AssignableItem": "Bomb",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_Armor_Adult_Normal": {
+      "PouchCategory": "Armor",
+      "PouchSpecialDeal": "PouchExclusiveItem",
+      "PouchTabCategory": "Equipment"
+    },
+    "Obj_Armor_Child_Normal": {
+      "PouchCategory": "Armor",
+      "PouchSpecialDeal": "PouchExclusiveItem",
+      "PouchTabCategory": "Equipment"
+    },
+    "Obj_Armor_Goron": {
+      "ActionGuideType": "EquipmentMenu",
+      "AdultEquipment": "Work/Actor/Armor_Adult_Goron.engine__actor__ActorParam.gyml",
+      "PouchCategory": "Armor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Obj_Armor_Zora": {
+      "ActionGuideType": "EquipmentMenu",
+      "AdultEquipment": "Work/Actor/Armor_Adult_Zora.engine__actor__ActorParam.gyml",
+      "PouchCategory": "Armor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Obj_ArrowBundle_Large": {
+      "PouchCategory": "Arrow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Obj_ArrowBundle_Medium": {
+      "PouchCategory": "Arrow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Obj_ArrowBundle_Small": {
+      "PouchCategory": "Arrow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Obj_Arrow_Fire": {
+      "ActionGuideType": "FireArrow",
+      "AssignableItem": "FireArrow",
+      "PouchCategory": "Bow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_BlueFire_A_01": {
+      "ActionGuideType": "Bottle",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_BlueFire_A_03": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "Empty",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_BlueFire_A_04": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "Empty",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_BlueFire_A_05": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "Empty",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_BlueFire_A_06": {
+      "ActionGuideType": "Bottle",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_Bomb": {
+      "ActionGuideType": "Bomb",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_BombFlower_A_01": {},
+    "Obj_BombFlower_A_04": {},
+    "Obj_BombFlower_Fruit_For_Break_Obj_DeathMtTrail_BrokenRock_A_01": {},
+    "Obj_Bombchu": {
+      "ActionGuideType": "Bombchu",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_Bottle_Letter": {
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_DekuNut": {
+      "ActionGuideType": "DekuNut",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_DekuSeed": {
+      "PouchCategory": "Arrow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Obj_DekuStick": {
+      "ActionGuideType": "DekuStick",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_Dungeon_SmallKey": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "SmallKey",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Obj_Dungeon_SmallKey_GerudoFortress_01": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "SmallKey",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Obj_Dungeon_SmallKey_GerudoFortress_02": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "SmallKey",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Obj_Dungeon_SmallKey_GerudoFortress_03": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "SmallKey",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Obj_Dungeon_SmallKey_GerudoFortress_04": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "SmallKey",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Obj_Fairy": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "Empty",
+      "PouchCategory": "CureItem",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_FairySpirit": {
+      "PouchCategory": "CureItem",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_Fairy_FromButterfly": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "Empty",
+      "PouchCategory": "CureItem",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_Fairy_HidingHole_FairyFountain": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "Empty",
+      "PouchCategory": "CureItem",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_GerudoValley_Heart_Piece": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "HeartPiece",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Obj_Heart": {
+      "PouchCategory": "CureItem",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_Heart_Container": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "HeartContainer",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Obj_Heart_InWater": {
+      "PouchCategory": "CureItem",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_Heart_Piece": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "HeartPiece",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Obj_Heart_Piece_Digging_Hole": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "HeartPiece",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Obj_Heart_Piece_MiniGame": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "HeartPiece",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Obj_Heart_Shootable": {
+      "PouchCategory": "CureItem",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_Item_Base": {
+      "PouchCategory": "Weapon",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Obj_MagicJar_Large": {
+      "PouchCategory": "CureItem",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_MagicJar_Small": {
+      "PouchCategory": "CureItem",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_Mask_Amiibo0": {
+      "ActionGuideType": "HeadShortcut",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "AmiiboMask",
+      "PouchTabCategory": "Equipment"
+    },
+    "Obj_Mask_Amiibo1": {
+      "ActionGuideType": "HeadShortcut",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "AmiiboMask",
+      "PouchTabCategory": "Equipment"
+    },
+    "Obj_MiniGame_ChoiceTreasure_HitPrize": {
+      "PouchCategory": "Rupee",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Obj_MiniGame_SmallKey": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Obj_Ocarina_Time": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Ocarina",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Obj_Rupee_Blue": {
+      "PouchCategory": "Rupee",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Obj_Rupee_Gold": {
+      "PouchCategory": "Rupee",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Obj_Rupee_Green": {
+      "PouchCategory": "Rupee",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Obj_Rupee_Purple": {
+      "PouchCategory": "Rupee",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Obj_Rupee_Red": {
+      "PouchCategory": "Rupee",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Obj_ScrubBusinessSeed": {
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_Shield_Deku": {
+      "AdultEquipment": "Work/Actor/Weapon_Shield_Deku.engine__actor__ActorParam.gyml",
+      "ChildEquipment": "Work/Actor/Weapon_Shield_Deku.engine__actor__ActorParam.gyml",
+      "PouchCategory": "Shield",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Obj_Shield_Hylian": {
+      "ActionGuideType": "EquipmentMenu",
+      "AdultEquipment": "Work/Actor/Weapon_Shield_Hylian.engine__actor__ActorParam.gyml",
+      "ChildEquipment": "Work/Actor/Weapon_Shield_Hylian.engine__actor__ActorParam.gyml",
+      "PouchCategory": "Shield",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Obj_SinkingLure": {
+      "ActionGuideType": "SinkingLure",
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Obj_Spirit_Poe": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "Empty",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_Spirit_PoeFlat": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "Empty",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_Spirit_PoeFlat_Event": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "Empty",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_Spirit_PoeHyrule": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "Empty",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_Spirit_PoeSharp": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "Empty",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_Spirit_PoeSharp_Event": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "Empty",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_Spirit_Poe_Big": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "Empty",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Obj_Token_Gold": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "TokenGold",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_AlarmCoucco": {
+      "AssignableItem": "AlarmCucco",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Amiibo": {
+      "AssignableItem": "Amiibo",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Amiibo",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Arrow_Fire": {
+      "ActionGuideType": "FireArrow",
+      "AssignableItem": "FireArrow",
+      "PouchCategory": "Bow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Arrow_Ice": {
+      "ActionGuideType": "IceArrow",
+      "AssignableItem": "IceArrow",
+      "PouchCategory": "Bow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Arrow_Light": {
+      "ActionGuideType": "LightArrow",
+      "AssignableItem": "LightArrow",
+      "PouchCategory": "Bow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Arrow_Normal": {
+      "AssignableItem": "Bow",
+      "PouchCategory": "Arrow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Pouch_Bomb": {
+      "ActionGuideType": "Bomb",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_BombBag_Large": {
+      "ActionGuideType": "Bomb",
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_BombBag_Medium": {
+      "ActionGuideType": "Bomb",
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_BombBag_Small": {
+      "ActionGuideType": "Bomb",
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_Bombchu": {
+      "ActionGuideType": "Bombchu",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Boomerang": {
+      "ActionGuideType": "Boomerang",
+      "AssignableItem": "Boomerang",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Bottle": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Bottle_BigPoe": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Bottle_BlueFire": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Bottle_BluePotion": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Bottle_Bug": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Bottle_Fairy": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Bottle_Fish": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Bottle_GreenPotion": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Bottle_HalfMilk": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Bottle_Letter": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Bottle_Milk": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Bottle_Poe": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Bottle_RedPotion": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_BrokenSword": {
+      "AssignableItem": "BrokenSword",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_BulletBag_Large": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_BulletBag_Medium": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_BulletBag_Small": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_ClaimCheck": {
+      "AssignableItem": "ClaimCheck",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_CojiroCucco": {
+      "AssignableItem": "CojiroCucco",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_DekuNut": {
+      "ActionGuideType": "DekuNut",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_DekuStick": {
+      "ActionGuideType": "DekuStick",
+      "AssignableItem": "DekuStick",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_DinFire": {
+      "ActionGuideType": "DinFire",
+      "AssignableItem": "DinFire",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_EyeDrop": {
+      "AssignableItem": "EyeDrop",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_EyeballFrog": {
+      "AssignableItem": "EyeballFrog",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_FairyBless_DefenseDouble": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "FairyBlessDefenseDouble",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_FairyBless_MP": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "FairyBlessMP",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_FairyBless_MPDouble": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "FairyBlessMPDouble",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_FaroreWind": {
+      "ActionGuideType": "FaroreWind",
+      "AssignableItem": "FaroreWind",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Gauntlet_Gold": {
+      "AdultEquipment": "Work/Actor/Armor_Adult_Gauntlet_Silver.engine__actor__ActorParam.gyml",
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Gauntlet",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_Gauntlet_Goron": {
+      "ActionGuideType": "GoronGauntlet",
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "GoronGauntlet",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_Gauntlet_Silver": {
+      "AdultEquipment": "Work/Actor/Armor_Adult_Gauntlet_Silver.engine__actor__ActorParam.gyml",
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Gauntlet",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_Hammer": {
+      "ActionGuideType": "Hammer",
+      "AssignableItem": "Hammer",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Heart_Piece": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "HeartPiece",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_Hookshot": {
+      "ActionGuideType": "Hookshot",
+      "AssignableItem": "Hookshot",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Longshot": {
+      "ActionGuideType": "Longshot",
+      "AssignableItem": "Longshot",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_MagicBean": {
+      "ActionGuideType": "MagicBean",
+      "AssignableItem": "MagicBean",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_NayruLove": {
+      "ActionGuideType": "NayruLove",
+      "AssignableItem": "NayruLove",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_NutBag_Large": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_NutBag_Medium": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_NutBag_Small": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_Ocarina_Fairy": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Ocarina",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_Ocarina_Time": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "Ocarina",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_OddMushroom": {
+      "AssignableItem": "OddMushroom",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_OddPowder": {
+      "AssignableItem": "OddPowder",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_PoacherSaw": {
+      "AssignableItem": "PoacherSaw",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_PocketCucco": {
+      "AssignableItem": "PocketCucco",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_PocketEgg": {
+      "AssignableItem": "PocketEgg",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Prescription": {
+      "AssignableItem": "Prescription",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Quiver_Large": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_Quiver_Medium": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_Quiver_Small": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_Range_BowAndArrow_Fire": {
+      "ActionGuideType": "FireArrow",
+      "AssignableItem": "FireArrow",
+      "PouchCategory": "Bow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Range_BowAndArrow_Ice": {
+      "ActionGuideType": "IceArrow",
+      "AssignableItem": "IceArrow",
+      "PouchCategory": "Bow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Range_BowAndArrow_Light": {
+      "ActionGuideType": "LightArrow",
+      "AssignableItem": "LightArrow",
+      "PouchCategory": "Bow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_Range_BowAndArrow_Normal": {
+      "AssignableItem": "IceArrow",
+      "PouchCategory": "Arrow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Pouch_Range_SlingShot": {
+      "ActionGuideType": "SlingShot",
+      "AssignableItem": "SlingShot",
+      "PouchCategory": "Bow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Pouch_Scale_Gold": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_Scale_Silver": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_ScrubBusinessSeed": {
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_StickBag_Large": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_StickBag_Medium": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_StickBag_Small": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_Token_Gerudo": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_Token_Gold": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "TokenGold",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_Wallet_Large": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_Wallet_Medium": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_Wallet_Small": {
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Pouch_WeirdEgg": {
+      "AssignableItem": "WeirdEgg",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Pouch_ZeldaLetter": {
+      "AssignableItem": "ZeldaLetter",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Shootable_DekuSeed": {},
+    "Shootable_ScrubBusinessSees": {
+      "ActionGuideType": "DekuNut",
+      "AssignableItem": "DekuNut",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_Armor_Goron": {
+      "ActionGuideType": "EquipmentMenu",
+      "AdultEquipment": "Work/Actor/Armor_Adult_Goron.engine__actor__ActorParam.gyml",
+      "PouchCategory": "Armor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Shop_Armor_Zora": {
+      "ActionGuideType": "EquipmentMenu",
+      "AdultEquipment": "Work/Actor/Armor_Adult_Zora.engine__actor__ActorParam.gyml",
+      "PouchCategory": "Armor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Shop_ArrowBundle_01": {
+      "PouchCategory": "Arrow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Shop_ArrowBundle_02": {
+      "PouchCategory": "Arrow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Shop_ArrowBundle_03": {
+      "PouchCategory": "Arrow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Shop_BombBundle_01": {
+      "ActionGuideType": "Bomb",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_BombBundle_02": {
+      "ActionGuideType": "Bomb",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_BombBundle_03": {
+      "ActionGuideType": "Bomb",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_BombBundle_04": {
+      "ActionGuideType": "Bomb",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_BombchuBundle_01": {
+      "ActionGuideType": "Bombchu",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_BombchuBundle_02": {
+      "ActionGuideType": "Bombchu",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_BombchuBundle_03": {
+      "ActionGuideType": "Bombchu",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_BombchuBundle_04": {
+      "ActionGuideType": "Bombchu",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_BombchuBundle_05": {
+      "ActionGuideType": "Bombchu",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_BombchuBundle_06": {
+      "ActionGuideType": "Bombchu",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_BombchuBundle_07": {
+      "ActionGuideType": "Bombchu",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_BombchuBundle_08": {
+      "ActionGuideType": "Bombchu",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_Bottle_BlueFire": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_Bottle_Bug": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_Bottle_Fairy": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_Bottle_Fish": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_Bottle_GreenPotion": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_Bottle_HalfMilk": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_Bottle_Poe": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_Bottle_RedPotion": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_DekuNutBundle_01": {
+      "ActionGuideType": "DekuNut",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_DekuNutBundle_02": {
+      "ActionGuideType": "DekuNut",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_DekuSeedBundle_01": {
+      "PouchCategory": "Arrow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Shop_DekuSeedBundle_02": {
+      "PouchCategory": "Arrow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Shop_DekuStick": {
+      "ActionGuideType": "DekuStick",
+      "AssignableItem": "DekuStick",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_DekuStickBundle_Medium": {
+      "ActionGuideType": "DekuStick",
+      "AssignableItem": "DekuStick",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_Heart": {
+      "PouchCategory": "CureItem",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_Heart_Bundle": {
+      "PouchCategory": "CureItem",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_Item_Base": {},
+    "Shop_MagicJar_Small": {
+      "PouchCategory": "CureItem",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "Item"
+    },
+    "Shop_Mask_Bunny": {
+      "ActionGuideType": "HeadShortcut",
+      "ChildEquipment": "Work/Actor/Armor_Child_Mask_Bunny.engine__actor__ActorParam.gyml",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Shop_Mask_Gerudo": {
+      "ActionGuideType": "HeadShortcut",
+      "ChildEquipment": "Work/Actor/Armor_Child_Mask_Gerudo.engine__actor__ActorParam.gyml",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Shop_Mask_Goron": {
+      "ActionGuideType": "HeadShortcut",
+      "ChildEquipment": "Work/Actor/Armor_Child_Mask_Goron.engine__actor__ActorParam.gyml",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Shop_Mask_Keaton": {
+      "ActionGuideType": "HeadShortcut",
+      "ChildEquipment": "Work/Actor/Armor_Child_Mask_Keaton.engine__actor__ActorParam.gyml",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Shop_Mask_Skull": {
+      "ActionGuideType": "HeadShortcut",
+      "ChildEquipment": "Work/Actor/Armor_Child_Mask_Skull.engine__actor__ActorParam.gyml",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Shop_Mask_Spooky": {
+      "ActionGuideType": "HeadShortcut",
+      "ChildEquipment": "Work/Actor/Armor_Child_Mask_Spooky.engine__actor__ActorParam.gyml",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Shop_Mask_Truth": {
+      "ActionGuideType": "HeadShortcut",
+      "ChildEquipment": "Work/Actor/Armor_Child_Mask_Truth.engine__actor__ActorParam.gyml",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Shop_Mask_Zora": {
+      "ActionGuideType": "HeadShortcut",
+      "ChildEquipment": "Work/Actor/Armor_Child_Mask_Zora.engine__actor__ActorParam.gyml",
+      "PouchCategory": "HeadArmor",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Shop_Sword_Giant": {
+      "ActionGuideType": "EquipmentMenu",
+      "PouchCategory": "Weapon",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Shop_Weapon_Shield_Deku": {
+      "AdultEquipment": "Work/Actor/Weapon_Shield_Deku.engine__actor__ActorParam.gyml",
+      "ChildEquipment": "Work/Actor/Weapon_Shield_Deku.engine__actor__ActorParam.gyml",
+      "PouchCategory": "Shield",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Shop_Weapon_Shield_Hylian": {
+      "ActionGuideType": "EquipmentMenu",
+      "AdultEquipment": "Work/Actor/Weapon_Shield_Hylian.engine__actor__ActorParam.gyml",
+      "ChildEquipment": "Work/Actor/Weapon_Shield_Hylian.engine__actor__ActorParam.gyml",
+      "PouchCategory": "Shield",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "TBox_ArrowBundle_Large": {
+      "PouchCategory": "Arrow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "TBox_ArrowBundle_Medium": {
+      "PouchCategory": "Arrow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "TBox_ArrowBundle_Small": {
+      "PouchCategory": "Arrow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "TBox_DekuNutBundle": {
+      "ActionGuideType": "DekuNut",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "TBox_DekuSeedBundle": {
+      "PouchCategory": "Arrow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "TBox_Rupee_Blue": {
+      "PouchCategory": "Rupee",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "TBox_Rupee_Gold": {
+      "PouchCategory": "Rupee",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "TBox_Rupee_Green": {
+      "PouchCategory": "Rupee",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "TBox_Rupee_Purple": {
+      "PouchCategory": "Rupee",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "TBox_Rupee_Red": {
+      "PouchCategory": "Rupee",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "KeyItem"
+    },
+    "TBox_Shield_Deku": {
+      "AdultEquipment": "Work/Actor/Weapon_Shield_Deku.engine__actor__ActorParam.gyml",
+      "ChildEquipment": "Work/Actor/Weapon_Shield_Deku.engine__actor__ActorParam.gyml",
+      "PouchCategory": "Shield",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "TBox_Shield_Hylian": {
+      "ActionGuideType": "EquipmentMenu",
+      "AdultEquipment": "Work/Actor/Weapon_Shield_Hylian.engine__actor__ActorParam.gyml",
+      "ChildEquipment": "Work/Actor/Weapon_Shield_Hylian.engine__actor__ActorParam.gyml",
+      "PouchCategory": "Shield",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Tbox_MagicJar_Large": {
+      "PouchCategory": "CureItem",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "Item"
+    },
+    "Weapon_Boomerang": {
+      "ActionGuideType": "Boomerang",
+      "AssignableItem": "Boomerang",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Weapon_Bottle": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Weapon_Bottle_BigPoe": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Weapon_Bottle_BlueFire": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Weapon_Bottle_BluePotion": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Weapon_Bottle_Bug": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Weapon_Bottle_Fairy": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Weapon_Bottle_Fish": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Weapon_Bottle_GreenPotion": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Weapon_Bottle_HalfMilk": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Weapon_Bottle_Letter": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Weapon_Bottle_Milk": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Weapon_Bottle_Poe": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Weapon_Bottle_RedPotion": {
+      "ActionGuideType": "Bottle",
+      "AssignableItem": "BottleA",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "Bottle",
+      "PouchTabCategory": "Item"
+    },
+    "Weapon_DekuStick": {
+      "ActionGuideType": "DekuStick",
+      "AssignableItem": "DekuStick",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Weapon_FishingRod": {
+      "AssignableItem": "FishingRod",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Weapon_Hammer": {
+      "ActionGuideType": "Hammer",
+      "AssignableItem": "Hammer",
+      "PouchCategory": "Material",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Item"
+    },
+    "Weapon_Lure": {
+      "AssignableItem": "NormalLure",
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Weapon_Range_Bow": {
+      "ActionGuideType": "Bow",
+      "AssignableItem": "Bow",
+      "PouchCategory": "Bow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Weapon_Range_Bow_MiniGame_HitTarget": {
+      "ActionGuideType": "Bow",
+      "AssignableItem": "Bow",
+      "PouchCategory": "Bow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Weapon_Range_SlingShot": {
+      "ActionGuideType": "SlingShot",
+      "AssignableItem": "SlingShot",
+      "PouchCategory": "Bow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Weapon_Range_SlingShot_MiniGame_HitTarget": {
+      "ActionGuideType": "SlingShot",
+      "AssignableItem": "SlingShot",
+      "PouchCategory": "Bow",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Weapon_Shield_DarkLinkShield": {},
+    "Weapon_Shield_Deku": {
+      "AdultEquipment": "Work/Actor/Weapon_Shield_Deku.engine__actor__ActorParam.gyml",
+      "ChildEquipment": "Work/Actor/Weapon_Shield_Deku.engine__actor__ActorParam.gyml",
+      "PouchCategory": "Shield",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Weapon_Shield_Hylian": {
+      "ActionGuideType": "EquipmentMenu",
+      "PouchCategory": "Shield",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Weapon_Shield_Mirror": {
+      "ActionGuideType": "EquipmentMenu",
+      "PouchCategory": "Shield",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Weapon_SinkingLure": {
+      "ActionGuideType": "SinkingLure",
+      "AssignableItem": "SinkLure",
+      "PouchCategory": "KeyItem",
+      "PouchSpecialDeal": "NotPushToPouch",
+      "PouchTabCategory": "KeyItem"
+    },
+    "Weapon_Sword_Biggoron": {
+      "ActionGuideType": "EquipmentMenu",
+      "PouchCategory": "Weapon",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Weapon_Sword_BrokenGiant": {
+      "ActionGuideType": "EquipmentMenu",
+      "PouchCategory": "Weapon",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Weapon_Sword_Giant": {
+      "ActionGuideType": "EquipmentMenu",
+      "PouchCategory": "Weapon",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Weapon_Sword_Kokiri": {
+      "ActionGuideType": "AttackByWeapon",
+      "PouchCategory": "Weapon",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    },
+    "Weapon_Sword_Master": {
+      "PouchCategory": "Weapon",
+      "PouchSpecialDeal": "None",
+      "PouchTabCategory": "Equipment"
+    }
+  },
+  "known_actors": [
+    "Animal_Fish_Blue",
+    "Animal_Insect",
+    "Armor_Adult_AgonyStone",
+    "Armor_Adult_Default_Head",
+    "Armor_Adult_Gauntlet_Gold",
+    "Armor_Adult_Gauntlet_Silver",
+    "Armor_Adult_GlassTruth",
+    "Armor_Adult_Goron",
+    "Armor_Adult_HeavyBoot",
+    "Armor_Adult_HoverBoot",
+    "Armor_Adult_Normal",
+    "Armor_Adult_Zora",
+    "Armor_Child_AgonyStone",
+    "Armor_Child_Default_Head",
+    "Armor_Child_Gauntlet_Goron",
+    "Armor_Child_GlassTruth",
+    "Armor_Child_Mask_Amiibo0",
+    "Armor_Child_Mask_Amiibo1",
+    "Armor_Child_Mask_Bunny",
+    "Armor_Child_Mask_Gerudo",
+    "Armor_Child_Mask_Goron",
+    "Armor_Child_Mask_Keaton",
+    "Armor_Child_Mask_Skull",
+    "Armor_Child_Mask_Spooky",
+    "Armor_Child_Mask_Truth",
+    "Armor_Child_Mask_Zora",
+    "Armor_GlassTruth",
+    "Armor_Mask_Base",
+    "Item_AgonyStone",
+    "Item_AlarmCucco",
+    "Item_Arrow_Fire",
+    "Item_Arrow_Ice",
+    "Item_Arrow_Light",
+    "Item_Arrow_Normal",
+    "Item_Bomb",
+    "Item_BombBag_Large",
+    "Item_BombBag_Medium",
+    "Item_BombBag_Small",
+    "Item_BombBundle_Small",
+    "Item_Bombchu",
+    "Item_BombchuBundle_Large",
+    "Item_BombchuBundle_Medium",
+    "Item_BombchuBundle_Small",
+    "Item_Boomerang",
+    "Item_Bottle",
+    "Item_Bottle_BigPoe",
+    "Item_Bottle_BlueFire",
+    "Item_Bottle_BluePotion",
+    "Item_Bottle_Bug",
+    "Item_Bottle_Fairy",
+    "Item_Bottle_Fish",
+    "Item_Bottle_GreenPotion",
+    "Item_Bottle_HalfMilk",
+    "Item_Bottle_Letter",
+    "Item_Bottle_Milk",
+    "Item_Bottle_Poe",
+    "Item_Bottle_RedPotion",
+    "Item_BrokenSword",
+    "Item_BulletBag_Large",
+    "Item_BulletBag_Medium",
+    "Item_BulletBag_Small",
+    "Item_ClaimCheck",
+    "Item_CojiroCucco",
+    "Item_DekuNut",
+    "Item_DekuSeed",
+    "Item_DekuStick",
+    "Item_DekuStickBundle_Small",
+    "Item_DinFire",
+    "Item_Dungeon_BossKey",
+    "Item_Dungeon_Compass",
+    "Item_Dungeon_Map",
+    "Item_Dungeon_SmallKey",
+    "Item_EventObject_Base",
+    "Item_EyeDrop",
+    "Item_EyeballFrog",
+    "Item_FairyBless_DefenseDouble",
+    "Item_FairyBless_MP",
+    "Item_FairyBless_MPDouble",
+    "Item_FaroreWind",
+    "Item_FishingRod",
+    "Item_Gauntlet_Gold",
+    "Item_Gauntlet_Goron",
+    "Item_Gauntlet_Silver",
+    "Item_GlassTruth",
+    "Item_Hammer",
+    "Item_HeavyBoot",
+    "Item_Hookshot",
+    "Item_HoverBoot",
+    "Item_Longshot",
+    "Item_MagicBean",
+    "Item_Mask_Bunny",
+    "Item_Mask_Gerudo",
+    "Item_Mask_Goron",
+    "Item_Mask_Keaton",
+    "Item_Mask_Skull",
+    "Item_Mask_Spooky",
+    "Item_Mask_Truth",
+    "Item_Mask_Zora",
+    "Item_Medal_Fire",
+    "Item_Medal_Forest",
+    "Item_Medal_Light",
+    "Item_Medal_Shadow",
+    "Item_Medal_Spirit",
+    "Item_Medal_Water",
+    "Item_Melody_EponaSong",
+    "Item_Melody_FireBolero",
+    "Item_Melody_ForestMinuet",
+    "Item_Melody_LightPrelude",
+    "Item_Melody_SariaSong",
+    "Item_Melody_ScarecrowSong",
+    "Item_Melody_ShadowNocturne",
+    "Item_Melody_SpiritRequiem",
+    "Item_Melody_StormSong",
+    "Item_Melody_SunSong",
+    "Item_Melody_TimeSong",
+    "Item_Melody_WaterSerenade",
+    "Item_Melody_ZeldaLullaby",
+    "Item_NayruLove",
+    "Item_NutBag_Large",
+    "Item_NutBag_Medium",
+    "Item_NutBag_Small",
+    "Item_Ocarina_Fairy",
+    "Item_Ocarina_Time",
+    "Item_OddMushroom",
+    "Item_OddPowder",
+    "Item_PoacherSaw",
+    "Item_PocketCucco",
+    "Item_PocketEgg",
+    "Item_Prescription",
+    "Item_Quiver_Large",
+    "Item_Quiver_Medium",
+    "Item_Quiver_Small",
+    "Item_Range_Bow",
+    "Item_Range_SlingShot",
+    "Item_Scale_Gold",
+    "Item_Scale_Silver",
+    "Item_ScrubBusinessSeed",
+    "Item_Shield_Mirror",
+    "Item_StickBag_Large",
+    "Item_StickBag_Medium",
+    "Item_StickBag_Small",
+    "Item_Stone_Fire",
+    "Item_Stone_Forest",
+    "Item_Stone_Water",
+    "Item_Sword_Biggoron",
+    "Item_Sword_BrokenGiant",
+    "Item_Sword_Giant",
+    "Item_Sword_Kokiri",
+    "Item_Token_Gerudo",
+    "Item_Token_Gold",
+    "Item_Wallet_Large",
+    "Item_Wallet_Medium",
+    "Item_Wallet_Small",
+    "Item_WeirdEgg",
+    "Item_ZeldaLetter",
+    "NormalArrow",
+    "Npc_Hylia_ImperialSoldier_Bomb",
+    "Obj_Armor_Adult_Normal",
+    "Obj_Armor_Child_Normal",
+    "Obj_Armor_Goron",
+    "Obj_Armor_Zora",
+    "Obj_ArrowBundle_Large",
+    "Obj_ArrowBundle_Medium",
+    "Obj_ArrowBundle_Small",
+    "Obj_Arrow_Fire",
+    "Obj_BlueFire_A_01",
+    "Obj_BlueFire_A_03",
+    "Obj_BlueFire_A_04",
+    "Obj_BlueFire_A_05",
+    "Obj_BlueFire_A_06",
+    "Obj_Bomb",
+    "Obj_BombFlower_A_01",
+    "Obj_BombFlower_A_04",
+    "Obj_BombFlower_Fruit_For_Break_Obj_DeathMtTrail_BrokenRock_A_01",
+    "Obj_Bombchu",
+    "Obj_Bottle_Letter",
+    "Obj_DekuNut",
+    "Obj_DekuSeed",
+    "Obj_DekuStick",
+    "Obj_Dungeon_SmallKey",
+    "Obj_Dungeon_SmallKey_GerudoFortress_01",
+    "Obj_Dungeon_SmallKey_GerudoFortress_02",
+    "Obj_Dungeon_SmallKey_GerudoFortress_03",
+    "Obj_Dungeon_SmallKey_GerudoFortress_04",
+    "Obj_Fairy",
+    "Obj_FairySpirit",
+    "Obj_Fairy_FromButterfly",
+    "Obj_Fairy_HidingHole_FairyFountain",
+    "Obj_GerudoValley_Heart_Piece",
+    "Obj_Heart",
+    "Obj_Heart_Container",
+    "Obj_Heart_InWater",
+    "Obj_Heart_Piece",
+    "Obj_Heart_Piece_Digging_Hole",
+    "Obj_Heart_Piece_MiniGame",
+    "Obj_Heart_Shootable",
+    "Obj_Item_Base",
+    "Obj_MagicJar_Large",
+    "Obj_MagicJar_Small",
+    "Obj_Mask_Amiibo0",
+    "Obj_Mask_Amiibo1",
+    "Obj_MiniGame_ChoiceTreasure_HitPrize",
+    "Obj_MiniGame_SmallKey",
+    "Obj_Ocarina_Time",
+    "Obj_Rupee_Blue",
+    "Obj_Rupee_Gold",
+    "Obj_Rupee_Green",
+    "Obj_Rupee_Purple",
+    "Obj_Rupee_Red",
+    "Obj_ScrubBusinessSeed",
+    "Obj_Shield_Deku",
+    "Obj_Shield_Hylian",
+    "Obj_SinkingLure",
+    "Obj_Spirit_Poe",
+    "Obj_Spirit_PoeFlat",
+    "Obj_Spirit_PoeFlat_Event",
+    "Obj_Spirit_PoeHyrule",
+    "Obj_Spirit_PoeSharp",
+    "Obj_Spirit_PoeSharp_Event",
+    "Obj_Spirit_Poe_Big",
+    "Obj_Token_Gold",
+    "Pouch_AlarmCoucco",
+    "Pouch_Amiibo",
+    "Pouch_Arrow_Fire",
+    "Pouch_Arrow_Ice",
+    "Pouch_Arrow_Light",
+    "Pouch_Arrow_Normal",
+    "Pouch_Bomb",
+    "Pouch_BombBag_Large",
+    "Pouch_BombBag_Medium",
+    "Pouch_BombBag_Small",
+    "Pouch_Bombchu",
+    "Pouch_Boomerang",
+    "Pouch_Bottle",
+    "Pouch_Bottle_BigPoe",
+    "Pouch_Bottle_BlueFire",
+    "Pouch_Bottle_BluePotion",
+    "Pouch_Bottle_Bug",
+    "Pouch_Bottle_Fairy",
+    "Pouch_Bottle_Fish",
+    "Pouch_Bottle_GreenPotion",
+    "Pouch_Bottle_HalfMilk",
+    "Pouch_Bottle_Letter",
+    "Pouch_Bottle_Milk",
+    "Pouch_Bottle_Poe",
+    "Pouch_Bottle_RedPotion",
+    "Pouch_BrokenSword",
+    "Pouch_BulletBag_Large",
+    "Pouch_BulletBag_Medium",
+    "Pouch_BulletBag_Small",
+    "Pouch_ClaimCheck",
+    "Pouch_CojiroCucco",
+    "Pouch_DekuNut",
+    "Pouch_DekuStick",
+    "Pouch_DinFire",
+    "Pouch_EyeDrop",
+    "Pouch_EyeballFrog",
+    "Pouch_FairyBless_DefenseDouble",
+    "Pouch_FairyBless_MP",
+    "Pouch_FairyBless_MPDouble",
+    "Pouch_FaroreWind",
+    "Pouch_Gauntlet_Gold",
+    "Pouch_Gauntlet_Goron",
+    "Pouch_Gauntlet_Silver",
+    "Pouch_Hammer",
+    "Pouch_Heart_Piece",
+    "Pouch_Hookshot",
+    "Pouch_Longshot",
+    "Pouch_MagicBean",
+    "Pouch_NayruLove",
+    "Pouch_NutBag_Large",
+    "Pouch_NutBag_Medium",
+    "Pouch_NutBag_Small",
+    "Pouch_Ocarina_Fairy",
+    "Pouch_Ocarina_Time",
+    "Pouch_OddMushroom",
+    "Pouch_OddPowder",
+    "Pouch_PoacherSaw",
+    "Pouch_PocketCucco",
+    "Pouch_PocketEgg",
+    "Pouch_Prescription",
+    "Pouch_Quiver_Large",
+    "Pouch_Quiver_Medium",
+    "Pouch_Quiver_Small",
+    "Pouch_Range_BowAndArrow_Fire",
+    "Pouch_Range_BowAndArrow_Ice",
+    "Pouch_Range_BowAndArrow_Light",
+    "Pouch_Range_BowAndArrow_Normal",
+    "Pouch_Range_SlingShot",
+    "Pouch_Scale_Gold",
+    "Pouch_Scale_Silver",
+    "Pouch_ScrubBusinessSeed",
+    "Pouch_StickBag_Large",
+    "Pouch_StickBag_Medium",
+    "Pouch_StickBag_Small",
+    "Pouch_Token_Gerudo",
+    "Pouch_Token_Gold",
+    "Pouch_Wallet_Large",
+    "Pouch_Wallet_Medium",
+    "Pouch_Wallet_Small",
+    "Pouch_WeirdEgg",
+    "Pouch_ZeldaLetter",
+    "Shootable_DekuSeed",
+    "Shootable_ScrubBusinessSees",
+    "Shop_Armor_Goron",
+    "Shop_Armor_Zora",
+    "Shop_ArrowBundle_01",
+    "Shop_ArrowBundle_02",
+    "Shop_ArrowBundle_03",
+    "Shop_BombBundle_01",
+    "Shop_BombBundle_02",
+    "Shop_BombBundle_03",
+    "Shop_BombBundle_04",
+    "Shop_BombchuBundle_01",
+    "Shop_BombchuBundle_02",
+    "Shop_BombchuBundle_03",
+    "Shop_BombchuBundle_04",
+    "Shop_BombchuBundle_05",
+    "Shop_BombchuBundle_06",
+    "Shop_BombchuBundle_07",
+    "Shop_BombchuBundle_08",
+    "Shop_Bottle_BlueFire",
+    "Shop_Bottle_Bug",
+    "Shop_Bottle_Fairy",
+    "Shop_Bottle_Fish",
+    "Shop_Bottle_GreenPotion",
+    "Shop_Bottle_HalfMilk",
+    "Shop_Bottle_Poe",
+    "Shop_Bottle_RedPotion",
+    "Shop_DekuNutBundle_01",
+    "Shop_DekuNutBundle_02",
+    "Shop_DekuSeedBundle_01",
+    "Shop_DekuSeedBundle_02",
+    "Shop_DekuStick",
+    "Shop_DekuStickBundle_Medium",
+    "Shop_Heart",
+    "Shop_Heart_Bundle",
+    "Shop_Item_Base",
+    "Shop_MagicJar_Small",
+    "Shop_Mask_Bunny",
+    "Shop_Mask_Gerudo",
+    "Shop_Mask_Goron",
+    "Shop_Mask_Keaton",
+    "Shop_Mask_Skull",
+    "Shop_Mask_Spooky",
+    "Shop_Mask_Truth",
+    "Shop_Mask_Zora",
+    "Shop_Sword_Giant",
+    "Shop_Weapon_Shield_Deku",
+    "Shop_Weapon_Shield_Hylian",
+    "TBox_ArrowBundle_Large",
+    "TBox_ArrowBundle_Medium",
+    "TBox_ArrowBundle_Small",
+    "TBox_DekuNutBundle",
+    "TBox_DekuSeedBundle",
+    "TBox_Rupee_Blue",
+    "TBox_Rupee_Gold",
+    "TBox_Rupee_Green",
+    "TBox_Rupee_Purple",
+    "TBox_Rupee_Red",
+    "TBox_Shield_Deku",
+    "TBox_Shield_Hylian",
+    "Tbox_MagicJar_Large",
+    "Weapon_Boomerang",
+    "Weapon_Bottle",
+    "Weapon_Bottle_BigPoe",
+    "Weapon_Bottle_BlueFire",
+    "Weapon_Bottle_BluePotion",
+    "Weapon_Bottle_Bug",
+    "Weapon_Bottle_Fairy",
+    "Weapon_Bottle_Fish",
+    "Weapon_Bottle_GreenPotion",
+    "Weapon_Bottle_HalfMilk",
+    "Weapon_Bottle_Letter",
+    "Weapon_Bottle_Milk",
+    "Weapon_Bottle_Poe",
+    "Weapon_Bottle_RedPotion",
+    "Weapon_DekuStick",
+    "Weapon_FishingRod",
+    "Weapon_Hammer",
+    "Weapon_Lure",
+    "Weapon_Range_Bow",
+    "Weapon_Range_Bow_MiniGame_HitTarget",
+    "Weapon_Range_SlingShot",
+    "Weapon_Range_SlingShot_MiniGame_HitTarget",
+    "Weapon_Shield_DarkLinkShield",
+    "Weapon_Shield_Deku",
+    "Weapon_Shield_Hylian",
+    "Weapon_Shield_Mirror",
+    "Weapon_SinkingLure",
+    "Weapon_Sword_Biggoron",
+    "Weapon_Sword_BrokenGiant",
+    "Weapon_Sword_Giant",
+    "Weapon_Sword_Kokiri",
+    "Weapon_Sword_Master"
+  ],
+  "unmapped_legal_symbols": [
+    "GlassTruth",
+    "Lure",
+    "KeatonMask",
+    "SkullMask",
+    "SpookyMask",
+    "BunnyMask",
+    "TruthMask",
+    "GoronMask",
+    "ZoraMask",
+    "GerudoMask",
+    "HeavyBoot",
+    "HoverBoot",
+    "SheikahWarp"
+  ],
+  "evidence": {
+    "game_data_schema": "editor/data/gamedata-schema.json",
+    "rsdb": "romfs/RSDB/PouchActorInfo.Product.111.rstbl.byml.zs",
+    "ui": "romfs/UI/Pouch/PouchTable/PouchTable.game__ui__PouchTable.bgyml",
+    "string_getter": "research/equip-string-getter-xrefs.json"
+  },
+  "age_flag": {
+    "name": "Sequence_IsChildhood",
+    "hash": "cea220d3",
+    "index": 10836
+  },
+  "bottle_validity": {
+    "BottleA": {
+      "hash": "f39ce410",
+      "index": 10756
+    },
+    "BottleB": {
+      "hash": "000ff6ea",
+      "index": 10757
+    },
+    "BottleC": {
+      "hash": "f63b1194",
+      "index": 10758
+    },
+    "BottleD": {
+      "hash": "b7f052ce",
+      "index": 10759
+    },
+    "BottleE": {
+      "hash": "e27b136d",
+      "index": 10760
+    }
+  }
+}
