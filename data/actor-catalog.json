@@ -1,0 +1,10 @@
+{
+  "bytes": 66367488,
+  "sha256": "c6377a5d07df5869ca5ae9fce3b66e27262d5c878979315fe6048fa38410e91f",
+  "actors": 8373,
+  "placements": 120834,
+  "explicit_coordinates": 120761,
+  "game_revision": "e7000369f9f8d838cc35e076d756014874f8193a5e0b6cc8e74bb649516de7f1",
+  "hand_selected": 51,
+  "hand_selection_sha256": "88054c17f5fb60fbebe5910f19610ecfae174e4395a30e2ba7779445e1947d1a"
+}
