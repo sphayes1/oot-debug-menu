@@ -1,0 +1,6045 @@
+{
+  "version": 1,
+  "source_sha256": "e7000369f9f8d838cc35e076d756014874f8193a5e0b6cc8e74bb649516de7f1",
+  "plant_root_hash": "820c6b5e",
+  "skulltulas": [
+    {
+      "id": "7460556442932201772",
+      "label": "Bottom Of The Well #1",
+      "variants": [
+        {
+          "banc": "BottomOfTheWell",
+          "age": "Adult",
+          "position": [
+            -8.221013069152832,
+            104.60000305175781,
+            -31.854373931884766
+          ],
+          "rotation": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -8.221013069152832,
+            103.80000305175781,
+            -31.854373931884766
+          ],
+          "source": "romfs/Banc/BottomOfTheWell/BottomOfTheWell_Static.bcett.byml.zs",
+          "source_sha256": "72f311d735d54d4aeefdb0c3b8095a9f26d5b7504e151ecce0569db80e738280",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 5
+          },
+          "presence": {}
+        },
+        {
+          "banc": "BottomOfTheWell",
+          "age": "Child",
+          "position": [
+            -8.221013069152832,
+            104.60000305175781,
+            -31.854373931884766
+          ],
+          "rotation": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -8.221013069152832,
+            103.80000305175781,
+            -31.854373931884766
+          ],
+          "source": "romfs/Banc/BottomOfTheWell/BottomOfTheWell_Static.bcett.byml.zs",
+          "source_sha256": "72f311d735d54d4aeefdb0c3b8095a9f26d5b7504e151ecce0569db80e738280",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 5
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "12165938013608963606",
+      "label": "Bottom Of The Well #2",
+      "variants": [
+        {
+          "banc": "BottomOfTheWell",
+          "age": "Adult",
+          "position": [
+            2.6456260681152344,
+            104.60000305175781,
+            -30.5
+          ],
+          "rotation": [
+            0.0,
+            1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            2.6456260681152344,
+            103.80000305175781,
+            -30.5
+          ],
+          "source": "romfs/Banc/BottomOfTheWell/BottomOfTheWell_Static.bcett.byml.zs",
+          "source_sha256": "72f311d735d54d4aeefdb0c3b8095a9f26d5b7504e151ecce0569db80e738280",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 4
+          },
+          "presence": {}
+        },
+        {
+          "banc": "BottomOfTheWell",
+          "age": "Child",
+          "position": [
+            2.6456260681152344,
+            104.60000305175781,
+            -30.5
+          ],
+          "rotation": [
+            0.0,
+            1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            2.6456260681152344,
+            103.80000305175781,
+            -30.5
+          ],
+          "source": "romfs/Banc/BottomOfTheWell/BottomOfTheWell_Static.bcett.byml.zs",
+          "source_sha256": "72f311d735d54d4aeefdb0c3b8095a9f26d5b7504e151ecce0569db80e738280",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 4
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "3889761319471426870",
+      "label": "Bottom Of The Well #3",
+      "variants": [
+        {
+          "banc": "BottomOfTheWell",
+          "age": "Adult",
+          "position": [
+            31.99060821533203,
+            105.60044555664062,
+            -14.920162200927734
+          ],
+          "rotation": [
+            0.0,
+            -1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            31.99060821533203,
+            104.80044555664062,
+            -14.920162200927734
+          ],
+          "source": "romfs/Banc/BottomOfTheWell/BottomOfTheWell_Static.bcett.byml.zs",
+          "source_sha256": "72f311d735d54d4aeefdb0c3b8095a9f26d5b7504e151ecce0569db80e738280",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 7
+          },
+          "presence": {}
+        },
+        {
+          "banc": "BottomOfTheWell",
+          "age": "Child",
+          "position": [
+            31.99060821533203,
+            105.60044555664062,
+            -14.920162200927734
+          ],
+          "rotation": [
+            0.0,
+            -1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            31.99060821533203,
+            104.80044555664062,
+            -14.920162200927734
+          ],
+          "source": "romfs/Banc/BottomOfTheWell/BottomOfTheWell_Static.bcett.byml.zs",
+          "source_sha256": "72f311d735d54d4aeefdb0c3b8095a9f26d5b7504e151ecce0569db80e738280",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 7
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "18219295034534354574",
+      "label": "Death Mountain Crater #1",
+      "variants": [
+        {
+          "banc": "DeathMountainCrater_Child",
+          "age": "Child",
+          "position": [
+            -2.8718931674957275,
+            128.99378662109376,
+            48.671485900878906
+          ],
+          "rotation": [
+            0.0,
+            -1.5037494897842407,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -2.8718931674957275,
+            128.19378662109375,
+            48.671485900878906
+          ],
+          "source": "romfs/Banc/DeathMountainCrater/DeathMountainCrater_Child_Static.bcett.byml.zs",
+          "source_sha256": "5dfce425917a46e6610776f38b32ea41a221825d87427dca5f757afead0a93ad",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearPlayerCheck": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "6397182598322965076",
+      "label": "Death Mountain Crater #2",
+      "variants": [
+        {
+          "banc": "DeathMountainCrater_Child",
+          "age": "Child",
+          "position": [
+            3.75,
+            112.02280883789062,
+            -0.75
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            3.75,
+            111.22280883789062,
+            -0.75
+          ],
+          "source": "romfs/Banc/DeathMountainCrater/DeathMountainCrater_Child_Static.bcett.byml.zs",
+          "source_sha256": "5dfce425917a46e6610776f38b32ea41a221825d87427dca5f757afead0a93ad",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearPlayerCheck": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true,
+            "Enemy_Skulltula_Gold_IsMagicBeanSoil": true
+          },
+          "presence": {
+            "FlagName": "Gimmick_MagicBeanSoil_DeathMountainCrater",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        }
+      ],
+      "notes": [
+        "release bugs into soil"
+      ]
+    },
+    {
+      "id": "351345377871782696",
+      "label": "Death Mountain Trail #1",
+      "variants": [
+        {
+          "banc": "DeathMountainTrail_Adult",
+          "age": "Adult",
+          "position": [
+            -51.194190979003906,
+            103.59547882080078,
+            27.209787368774414
+          ],
+          "rotation": [
+            0.0,
+            1.2908917665481567,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -51.194190979003906,
+            102.79547882080078,
+            27.209787368774414
+          ],
+          "source": "romfs/Banc/DeathMountainTrail/DeathMountainTrail_Adult_Static.bcett.byml.zs",
+          "source_sha256": "bfd0fcfbb26bc9461d3b31b4825791de63f075a7427a7de1ae199bf1a6ac8c17",
+          "conditions": {},
+          "presence": {}
+        },
+        {
+          "banc": "DeathMountainTrail_Child",
+          "age": "Child",
+          "position": [
+            -51.194190979003906,
+            103.59547882080078,
+            27.209787368774414
+          ],
+          "rotation": [
+            0.0,
+            1.2908917665481567,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -51.194190979003906,
+            102.79547882080078,
+            27.209787368774414
+          ],
+          "source": "romfs/Banc/DeathMountainTrail/DeathMountainTrail_Child_Static.bcett.byml.zs",
+          "source_sha256": "71256fb47486c60c7a8b5e655213e48d25458a1abc218764e8e6bdad837328bc",
+          "conditions": {},
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "17425319789138387506",
+      "label": "Death Mountain Trail #2",
+      "variants": [
+        {
+          "banc": "DeathMountainTrail_Child",
+          "age": "Child",
+          "position": [
+            -45.49999237060547,
+            109.99584655761718,
+            -20.249996185302734
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -45.49999237060547,
+            109.19584655761719,
+            -20.249996185302734
+          ],
+          "source": "romfs/Banc/DeathMountainTrail/DeathMountainTrail_Child_Static.bcett.byml.zs",
+          "source_sha256": "71256fb47486c60c7a8b5e655213e48d25458a1abc218764e8e6bdad837328bc",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearPlayerCheck": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true,
+            "Enemy_Skulltula_Gold_AvoidTargetAngle": 120.0,
+            "Enemy_Skulltula_Gold_IsMagicBeanSoil": true
+          },
+          "presence": {
+            "FlagName": "Gimmick_MagicBeanSoil_DeathMountainTrail",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        }
+      ],
+      "notes": [
+        "release bugs into soil"
+      ]
+    },
+    {
+      "id": "17669199296215821346",
+      "label": "Death Mountain Trail #3",
+      "variants": [
+        {
+          "banc": "DeathMountainTrail_Adult",
+          "age": "Adult",
+          "position": [
+            -30.967592239379883,
+            125.88125305175781,
+            -17.964969635009766
+          ],
+          "rotation": [
+            0.0,
+            0.18180856108665466,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -30.967592239379883,
+            125.08125305175781,
+            -17.964969635009766
+          ],
+          "source": "romfs/Banc/DeathMountainTrail/DeathMountainTrail_Adult_Static.bcett.byml.zs",
+          "source_sha256": "bfd0fcfbb26bc9461d3b31b4825791de63f075a7427a7de1ae199bf1a6ac8c17",
+          "conditions": {},
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "832677387023638406",
+      "label": "Death Mountain Trail #4",
+      "variants": [
+        {
+          "banc": "DeathMountainTrail_Adult",
+          "age": "Adult",
+          "position": [
+            3.1727843284606934,
+            188.09817199707032,
+            -111.29439544677734
+          ],
+          "rotation": [
+            0.0,
+            1.307922124862671,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            3.1727843284606934,
+            187.2981719970703,
+            -111.29439544677734
+          ],
+          "source": "romfs/Banc/DeathMountainTrail/DeathMountainTrail_Adult_Static.bcett.byml.zs",
+          "source_sha256": "bfd0fcfbb26bc9461d3b31b4825791de63f075a7427a7de1ae199bf1a6ac8c17",
+          "conditions": {},
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "15057756765324812936",
+      "label": "Desert Colossus #1",
+      "variants": [
+        {
+          "banc": "DesertColossus_Adult",
+          "age": "Adult",
+          "position": [
+            -170.1173858642578,
+            102.56375579833984,
+            -47.873783111572266
+          ],
+          "rotation": [
+            0.0,
+            -1.0222499370574951,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -170.1173858642578,
+            101.76375579833984,
+            -47.873783111572266
+          ],
+          "source": "romfs/Banc/DesertColossus/DesertColossus_Adult_Static.bcett.byml.zs",
+          "source_sha256": "f819af51e71344fba55e39713d5fe314be7c9ab47aa6f9da209f54a77baf5d3a",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        },
+        {
+          "banc": "DesertColossus_Child",
+          "age": "Child",
+          "position": [
+            -170.1173858642578,
+            102.56375579833984,
+            -47.873783111572266
+          ],
+          "rotation": [
+            0.0,
+            -1.0222499370574951,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -170.1173858642578,
+            101.76375579833984,
+            -47.873783111572266
+          ],
+          "source": "romfs/Banc/DesertColossus/DesertColossus_Child_Static.bcett.byml.zs",
+          "source_sha256": "128ba04e40af0c41c031512df9641a7c1fe039f58ab95b75d7aa2f90c50c43c3",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "234735562946824289",
+      "label": "Desert Colossus #2",
+      "variants": [
+        {
+          "banc": "DesertColossus_Child",
+          "age": "Child",
+          "position": [
+            -157.46372985839844,
+            96.45901184082031,
+            17.185211181640625
+          ],
+          "rotation": [
+            0.0,
+            -1.5669671297073364,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -157.46372985839844,
+            95.65901184082031,
+            17.185211181640625
+          ],
+          "source": "romfs/Banc/DesertColossus/DesertColossus_Child_Static.bcett.byml.zs",
+          "source_sha256": "128ba04e40af0c41c031512df9641a7c1fe039f58ab95b75d7aa2f90c50c43c3",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearPlayerCheck": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true,
+            "Enemy_Skulltula_Gold_IsMagicBeanSoil": true
+          },
+          "presence": {
+            "FlagName": "Gimmick_MagicBeanSoil_DesertColossus",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        }
+      ],
+      "notes": [
+        "release bugs into soil"
+      ]
+    },
+    {
+      "id": "11160993739666517210",
+      "label": "Desert Colossus #3",
+      "variants": [
+        {
+          "banc": "DesertColossus_Adult",
+          "age": "Adult",
+          "position": [
+            -73.9000015258789,
+            106.10000305175781,
+            -5.676787376403809
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -73.9000015258789,
+            105.30000305175781,
+            -5.676787376403809
+          ],
+          "source": "romfs/Banc/DesertColossus/DesertColossus_Adult_Static.bcett.byml.zs",
+          "source_sha256": "f819af51e71344fba55e39713d5fe314be7c9ab47aa6f9da209f54a77baf5d3a",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        },
+        {
+          "banc": "DesertColossus_Child",
+          "age": "Child",
+          "position": [
+            -73.9000015258789,
+            106.10000305175781,
+            -5.676787376403809
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -73.9000015258789,
+            105.30000305175781,
+            -5.676787376403809
+          ],
+          "source": "romfs/Banc/DesertColossus/DesertColossus_Child_Static.bcett.byml.zs",
+          "source_sha256": "128ba04e40af0c41c031512df9641a7c1fe039f58ab95b75d7aa2f90c50c43c3",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "13690401647626643497",
+      "label": "Dodongo Cavern #1",
+      "variants": [
+        {
+          "banc": "DodongoCavern",
+          "age": "Adult",
+          "position": [
+            -48.83503341674805,
+            97.39999847412109,
+            -104.25
+          ],
+          "rotation": [
+            0.0,
+            -1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -48.83503341674805,
+            96.5999984741211,
+            -104.25
+          ],
+          "source": "romfs/Banc/DodongoCavern/DodongoCavern_Static.bcett.byml.zs",
+          "source_sha256": "6b7786913cde298fd06788423df60dfe7fc79e495f1ec5dac0f672aa664bab5f",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 20
+          },
+          "presence": {}
+        },
+        {
+          "banc": "DodongoCavern",
+          "age": "Child",
+          "position": [
+            -48.83503341674805,
+            97.39999847412109,
+            -104.25
+          ],
+          "rotation": [
+            0.0,
+            -1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -48.83503341674805,
+            96.5999984741211,
+            -104.25
+          ],
+          "source": "romfs/Banc/DodongoCavern/DodongoCavern_Static.bcett.byml.zs",
+          "source_sha256": "6b7786913cde298fd06788423df60dfe7fc79e495f1ec5dac0f672aa664bab5f",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 20
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "8470399761714006011",
+      "label": "Dodongo Cavern #2",
+      "variants": [
+        {
+          "banc": "DodongoCavern",
+          "age": "Adult",
+          "position": [
+            -48.42082214355469,
+            121.10813598632812,
+            -40.11746597290039
+          ],
+          "rotation": [
+            0.0,
+            0.00672016991302371,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -48.42082214355469,
+            120.30813598632812,
+            -40.11746597290039
+          ],
+          "source": "romfs/Banc/DodongoCavern/DodongoCavern_Static.bcett.byml.zs",
+          "source_sha256": "6b7786913cde298fd06788423df60dfe7fc79e495f1ec5dac0f672aa664bab5f",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 10
+          },
+          "presence": {}
+        },
+        {
+          "banc": "DodongoCavern",
+          "age": "Child",
+          "position": [
+            -48.42082214355469,
+            121.10813598632812,
+            -40.11746597290039
+          ],
+          "rotation": [
+            0.0,
+            0.00672016991302371,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -48.42082214355469,
+            120.30813598632812,
+            -40.11746597290039
+          ],
+          "source": "romfs/Banc/DodongoCavern/DodongoCavern_Static.bcett.byml.zs",
+          "source_sha256": "6b7786913cde298fd06788423df60dfe7fc79e495f1ec5dac0f672aa664bab5f",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 10
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "4565265801822094851",
+      "label": "Dodongo Cavern #3",
+      "variants": [
+        {
+          "banc": "DodongoCavern",
+          "age": "Adult",
+          "position": [
+            21.472806930541992,
+            113.2000015258789,
+            -55.92611312866211
+          ],
+          "rotation": [
+            0.0,
+            -0.5235986709594727,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            21.472806930541992,
+            112.4000015258789,
+            -55.92611312866211
+          ],
+          "source": "romfs/Banc/DodongoCavern/DodongoCavern_Static.bcett.byml.zs",
+          "source_sha256": "6b7786913cde298fd06788423df60dfe7fc79e495f1ec5dac0f672aa664bab5f",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 18
+          },
+          "presence": {}
+        },
+        {
+          "banc": "DodongoCavern",
+          "age": "Child",
+          "position": [
+            21.472806930541992,
+            113.2000015258789,
+            -55.92611312866211
+          ],
+          "rotation": [
+            0.0,
+            -0.5235986709594727,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            21.472806930541992,
+            112.4000015258789,
+            -55.92611312866211
+          ],
+          "source": "romfs/Banc/DodongoCavern/DodongoCavern_Static.bcett.byml.zs",
+          "source_sha256": "6b7786913cde298fd06788423df60dfe7fc79e495f1ec5dac0f672aa664bab5f",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 18
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "960362013021648957",
+      "label": "Dodongo Cavern #4",
+      "variants": [
+        {
+          "banc": "DodongoCavern",
+          "age": "Adult",
+          "position": [
+            58.177188873291016,
+            105.3,
+            -19.87388801574707
+          ],
+          "rotation": [
+            0.0,
+            0.5235990285873413,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            58.177188873291016,
+            104.5,
+            -19.87388801574707
+          ],
+          "source": "romfs/Banc/DodongoCavern/DodongoCavern_Static.bcett.byml.zs",
+          "source_sha256": "6b7786913cde298fd06788423df60dfe7fc79e495f1ec5dac0f672aa664bab5f",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 2
+          },
+          "presence": {}
+        },
+        {
+          "banc": "DodongoCavern",
+          "age": "Child",
+          "position": [
+            58.177188873291016,
+            105.3,
+            -19.87388801574707
+          ],
+          "rotation": [
+            0.0,
+            0.5235990285873413,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            58.177188873291016,
+            104.5,
+            -19.87388801574707
+          ],
+          "source": "romfs/Banc/DodongoCavern/DodongoCavern_Static.bcett.byml.zs",
+          "source_sha256": "6b7786913cde298fd06788423df60dfe7fc79e495f1ec5dac0f672aa664bab5f",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 2
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "1171854281537584829",
+      "label": "Dodongo Cavern #5",
+      "variants": [
+        {
+          "banc": "DodongoCavern",
+          "age": "Adult",
+          "position": [
+            64.0,
+            99.34999542236328,
+            15.853925704956055
+          ],
+          "rotation": [
+            0.0,
+            -8.742277657347586e-08,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            64.0,
+            98.54999542236328,
+            15.853925704956055
+          ],
+          "source": "romfs/Banc/DodongoCavern/DodongoCavern_Static.bcett.byml.zs",
+          "source_sha256": "6b7786913cde298fd06788423df60dfe7fc79e495f1ec5dac0f672aa664bab5f",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 3
+          },
+          "presence": {}
+        },
+        {
+          "banc": "DodongoCavern",
+          "age": "Child",
+          "position": [
+            64.0,
+            99.34999542236328,
+            15.853925704956055
+          ],
+          "rotation": [
+            0.0,
+            -8.742277657347586e-08,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            64.0,
+            98.54999542236328,
+            15.853925704956055
+          ],
+          "source": "romfs/Banc/DodongoCavern/DodongoCavern_Static.bcett.byml.zs",
+          "source_sha256": "6b7786913cde298fd06788423df60dfe7fc79e495f1ec5dac0f672aa664bab5f",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 3
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "14706322686481615109",
+      "label": "Fire Temple #1",
+      "variants": [
+        {
+          "banc": "FireTemple",
+          "age": "Adult",
+          "position": [
+            11.249996185302734,
+            102.3,
+            -43.23644256591797
+          ],
+          "rotation": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            11.249996185302734,
+            101.5,
+            -43.23644256591797
+          ],
+          "source": "romfs/Banc/FireTemple/FireTemple_Static.bcett.byml.zs",
+          "source_sha256": "4f31711e0d708386f36b567a2df91d7c642b2d778ac2f1e7cdcd1fc14def0e81",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 18
+          },
+          "presence": {}
+        },
+        {
+          "banc": "FireTemple",
+          "age": "Child",
+          "position": [
+            11.249996185302734,
+            102.3,
+            -43.23644256591797
+          ],
+          "rotation": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            11.249996185302734,
+            101.5,
+            -43.23644256591797
+          ],
+          "source": "romfs/Banc/FireTemple/FireTemple_Static.bcett.byml.zs",
+          "source_sha256": "4f31711e0d708386f36b567a2df91d7c642b2d778ac2f1e7cdcd1fc14def0e81",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 18
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "9172014785497046138",
+      "label": "Fire Temple #2",
+      "variants": [
+        {
+          "banc": "FireTemple",
+          "age": "Adult",
+          "position": [
+            36.57268142700195,
+            188.50001220703126,
+            -5.178072452545166
+          ],
+          "rotation": [
+            0.0,
+            1.6499579658102448e-07,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            36.57268142700195,
+            187.70001220703125,
+            -5.178072452545166
+          ],
+          "source": "romfs/Banc/FireTemple/FireTemple_Static.bcett.byml.zs",
+          "source_sha256": "4f31711e0d708386f36b567a2df91d7c642b2d778ac2f1e7cdcd1fc14def0e81",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 8
+          },
+          "presence": {}
+        },
+        {
+          "banc": "FireTemple",
+          "age": "Child",
+          "position": [
+            36.57268142700195,
+            188.50001220703126,
+            -5.178072452545166
+          ],
+          "rotation": [
+            0.0,
+            1.6499579658102448e-07,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            36.57268142700195,
+            187.70001220703125,
+            -5.178072452545166
+          ],
+          "source": "romfs/Banc/FireTemple/FireTemple_Static.bcett.byml.zs",
+          "source_sha256": "4f31711e0d708386f36b567a2df91d7c642b2d778ac2f1e7cdcd1fc14def0e81",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 8
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "5556173334779815044",
+      "label": "Fire Temple #3",
+      "variants": [
+        {
+          "banc": "FireTemple",
+          "age": "Adult",
+          "position": [
+            40.04562759399414,
+            189.90000610351564,
+            -19.75
+          ],
+          "rotation": [
+            0.0,
+            -1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            40.04562759399414,
+            189.10000610351562,
+            -19.75
+          ],
+          "source": "romfs/Banc/FireTemple/FireTemple_Static.bcett.byml.zs",
+          "source_sha256": "4f31711e0d708386f36b567a2df91d7c642b2d778ac2f1e7cdcd1fc14def0e81",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 7
+          },
+          "presence": {}
+        },
+        {
+          "banc": "FireTemple",
+          "age": "Child",
+          "position": [
+            40.04562759399414,
+            189.90000610351564,
+            -19.75
+          ],
+          "rotation": [
+            0.0,
+            -1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            40.04562759399414,
+            189.10000610351562,
+            -19.75
+          ],
+          "source": "romfs/Banc/FireTemple/FireTemple_Static.bcett.byml.zs",
+          "source_sha256": "4f31711e0d708386f36b567a2df91d7c642b2d778ac2f1e7cdcd1fc14def0e81",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 7
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "12751796212121957464",
+      "label": "Fire Temple #4",
+      "variants": [
+        {
+          "banc": "FireTemple",
+          "age": "Adult",
+          "position": [
+            59.04434585571289,
+            149.19515686035157,
+            -29.981725692749023
+          ],
+          "rotation": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            59.04434585571289,
+            148.39515686035156,
+            -29.981725692749023
+          ],
+          "source": "romfs/Banc/FireTemple/FireTemple_Static.bcett.byml.zs",
+          "source_sha256": "4f31711e0d708386f36b567a2df91d7c642b2d778ac2f1e7cdcd1fc14def0e81",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 5
+          },
+          "presence": {}
+        },
+        {
+          "banc": "FireTemple",
+          "age": "Child",
+          "position": [
+            59.04434585571289,
+            149.19515686035157,
+            -29.981725692749023
+          ],
+          "rotation": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            59.04434585571289,
+            148.39515686035156,
+            -29.981725692749023
+          ],
+          "source": "romfs/Banc/FireTemple/FireTemple_Static.bcett.byml.zs",
+          "source_sha256": "4f31711e0d708386f36b567a2df91d7c642b2d778ac2f1e7cdcd1fc14def0e81",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 5
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "6789992996625105554",
+      "label": "Fire Temple #5",
+      "variants": [
+        {
+          "banc": "FireTemple",
+          "age": "Adult",
+          "position": [
+            67.72834014892578,
+            116.10000305175781,
+            -47.0
+          ],
+          "rotation": [
+            0.0,
+            -1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            67.72834014892578,
+            115.30000305175781,
+            -47.0
+          ],
+          "source": "romfs/Banc/FireTemple/FireTemple_Static.bcett.byml.zs",
+          "source_sha256": "4f31711e0d708386f36b567a2df91d7c642b2d778ac2f1e7cdcd1fc14def0e81",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 19
+          },
+          "presence": {}
+        },
+        {
+          "banc": "FireTemple",
+          "age": "Child",
+          "position": [
+            67.72834014892578,
+            116.10000305175781,
+            -47.0
+          ],
+          "rotation": [
+            0.0,
+            -1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            67.72834014892578,
+            115.30000305175781,
+            -47.0
+          ],
+          "source": "romfs/Banc/FireTemple/FireTemple_Static.bcett.byml.zs",
+          "source_sha256": "4f31711e0d708386f36b567a2df91d7c642b2d778ac2f1e7cdcd1fc14def0e81",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 19
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "10970805784153267902",
+      "label": "Forest Temple #1",
+      "variants": [
+        {
+          "banc": "ForestTemple",
+          "age": "Adult",
+          "position": [
+            -38.06084442138672,
+            113.65747528076172,
+            -4.375627517700195
+          ],
+          "rotation": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -38.06084442138672,
+            112.85747528076172,
+            -4.375627517700195
+          ],
+          "source": "romfs/Banc/ForestTemple/ForestTemple_Static.bcett.byml.zs",
+          "source_sha256": "17efca1e536c5b96f8946b668531dcd4fa6d0028f2d8052af676332e10f2d9e8",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 12
+          },
+          "presence": {}
+        },
+        {
+          "banc": "ForestTemple",
+          "age": "Child",
+          "position": [
+            -38.06084442138672,
+            113.65747528076172,
+            -4.375627517700195
+          ],
+          "rotation": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -38.06084442138672,
+            112.85747528076172,
+            -4.375627517700195
+          ],
+          "source": "romfs/Banc/ForestTemple/ForestTemple_Static.bcett.byml.zs",
+          "source_sha256": "17efca1e536c5b96f8946b668531dcd4fa6d0028f2d8052af676332e10f2d9e8",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 12
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "3072474196008424241",
+      "label": "Forest Temple #2",
+      "variants": [
+        {
+          "banc": "ForestTemple",
+          "age": "Adult",
+          "position": [
+            -3.429262399673462,
+            66.40299682617187,
+            17.167165756225586
+          ],
+          "rotation": [
+            0.0,
+            2.1632571588270366e-05,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -3.429262399673462,
+            65.60299682617188,
+            17.167165756225586
+          ],
+          "source": "romfs/Banc/ForestTemple/ForestTemple_Static.bcett.byml.zs",
+          "source_sha256": "17efca1e536c5b96f8946b668531dcd4fa6d0028f2d8052af676332e10f2d9e8",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 27
+          },
+          "presence": {}
+        },
+        {
+          "banc": "ForestTemple",
+          "age": "Child",
+          "position": [
+            -3.429262399673462,
+            66.40299682617187,
+            17.167165756225586
+          ],
+          "rotation": [
+            0.0,
+            2.1632571588270366e-05,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -3.429262399673462,
+            65.60299682617188,
+            17.167165756225586
+          ],
+          "source": "romfs/Banc/ForestTemple/ForestTemple_Static.bcett.byml.zs",
+          "source_sha256": "17efca1e536c5b96f8946b668531dcd4fa6d0028f2d8052af676332e10f2d9e8",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 27
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "17612196129225973969",
+      "label": "Forest Temple #3",
+      "variants": [
+        {
+          "banc": "ForestTemple",
+          "age": "Adult",
+          "position": [
+            8.81517505645752,
+            110.35828857421875,
+            -23.5566463470459
+          ],
+          "rotation": [
+            0.0,
+            0.0872664526104927,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            8.81517505645752,
+            109.55828857421875,
+            -23.5566463470459
+          ],
+          "source": "romfs/Banc/ForestTemple/ForestTemple_Static.bcett.byml.zs",
+          "source_sha256": "17efca1e536c5b96f8946b668531dcd4fa6d0028f2d8052af676332e10f2d9e8",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 2
+          },
+          "presence": {}
+        },
+        {
+          "banc": "ForestTemple",
+          "age": "Child",
+          "position": [
+            8.81517505645752,
+            110.35828857421875,
+            -23.5566463470459
+          ],
+          "rotation": [
+            0.0,
+            0.0872664526104927,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            8.81517505645752,
+            109.55828857421875,
+            -23.5566463470459
+          ],
+          "source": "romfs/Banc/ForestTemple/ForestTemple_Static.bcett.byml.zs",
+          "source_sha256": "17efca1e536c5b96f8946b668531dcd4fa6d0028f2d8052af676332e10f2d9e8",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 2
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "11081821111317815057",
+      "label": "Forest Temple #4",
+      "variants": [
+        {
+          "banc": "ForestTemple",
+          "age": "Adult",
+          "position": [
+            11.277002334594727,
+            120.64398651123047,
+            64.0
+          ],
+          "rotation": [
+            0.0,
+            1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            11.277002334594727,
+            119.84398651123047,
+            64.0
+          ],
+          "source": "romfs/Banc/ForestTemple/ForestTemple_Static.bcett.byml.zs",
+          "source_sha256": "17efca1e536c5b96f8946b668531dcd4fa6d0028f2d8052af676332e10f2d9e8",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 0
+          },
+          "presence": {}
+        },
+        {
+          "banc": "ForestTemple",
+          "age": "Child",
+          "position": [
+            11.277002334594727,
+            120.64398651123047,
+            64.0
+          ],
+          "rotation": [
+            0.0,
+            1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            11.277002334594727,
+            119.84398651123047,
+            64.0
+          ],
+          "source": "romfs/Banc/ForestTemple/ForestTemple_Static.bcett.byml.zs",
+          "source_sha256": "17efca1e536c5b96f8946b668531dcd4fa6d0028f2d8052af676332e10f2d9e8",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 0
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "2014780391754316762",
+      "label": "Forest Temple #5",
+      "variants": [
+        {
+          "banc": "ForestTemple",
+          "age": "Adult",
+          "position": [
+            44.2745246887207,
+            112.86562042236328,
+            -38.244903564453125
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            44.2745246887207,
+            112.06562042236328,
+            -38.244903564453125
+          ],
+          "source": "romfs/Banc/ForestTemple/ForestTemple_Static.bcett.byml.zs",
+          "source_sha256": "17efca1e536c5b96f8946b668531dcd4fa6d0028f2d8052af676332e10f2d9e8",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 14
+          },
+          "presence": {}
+        },
+        {
+          "banc": "ForestTemple",
+          "age": "Child",
+          "position": [
+            44.2745246887207,
+            112.86562042236328,
+            -38.244903564453125
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            44.2745246887207,
+            112.06562042236328,
+            -38.244903564453125
+          ],
+          "source": "romfs/Banc/ForestTemple/ForestTemple_Static.bcett.byml.zs",
+          "source_sha256": "17efca1e536c5b96f8946b668531dcd4fa6d0028f2d8052af676332e10f2d9e8",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 14
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "5626064870824758772",
+      "label": "Ganon Castle #1",
+      "variants": [
+        {
+          "banc": "GanonCastle",
+          "age": "Adult",
+          "position": [
+            78.40133666992188,
+            94.89721374511718,
+            328.3810729980469
+          ],
+          "rotation": [
+            0.0,
+            -0.012038192711770535,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            78.40133666992188,
+            94.09721374511719,
+            328.3810729980469
+          ],
+          "source": "romfs/Banc/GanonCastle/GanonCastle_Static.bcett.byml.zs",
+          "source_sha256": "7edac3b5ab05be45ceb09a77051c48692b66633b2438e72bd3d8008b43e77252",
+          "conditions": {},
+          "presence": {}
+        },
+        {
+          "banc": "GanonCastle",
+          "age": "Child",
+          "position": [
+            78.40133666992188,
+            94.89721374511718,
+            328.3810729980469
+          ],
+          "rotation": [
+            0.0,
+            -0.012038192711770535,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            78.40133666992188,
+            94.09721374511719,
+            328.3810729980469
+          ],
+          "source": "romfs/Banc/GanonCastle/GanonCastle_Static.bcett.byml.zs",
+          "source_sha256": "7edac3b5ab05be45ceb09a77051c48692b66633b2438e72bd3d8008b43e77252",
+          "conditions": {},
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "9362225887419425752",
+      "label": "Gerudo Fortress #1",
+      "variants": [
+        {
+          "banc": "GerudoFortress_Adult",
+          "age": "Adult",
+          "position": [
+            55.2983512878418,
+            132.67165832519532,
+            -70.22035217285156
+          ],
+          "rotation": [
+            0.0,
+            -0.02933593839406967,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            55.2983512878418,
+            131.8716583251953,
+            -70.22035217285156
+          ],
+          "source": "romfs/Banc/GerudoFortress/GerudoFortress_Adult_Static.bcett.byml.zs",
+          "source_sha256": "3c4be6efc19ae063632c43ca70ac1bc314b5a2f3bb2418bdf8a7459519e11a2a",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "13037049463363052038",
+      "label": "Gerudo Fortress #2",
+      "variants": [
+        {
+          "banc": "GerudoFortress_Adult",
+          "age": "Adult",
+          "position": [
+            181.69467163085938,
+            126.35743408203125,
+            -88.60527801513672
+          ],
+          "rotation": [
+            0.0,
+            0.34174400568008423,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            181.69467163085938,
+            125.55743408203125,
+            -88.60527801513672
+          ],
+          "source": "romfs/Banc/GerudoFortress/GerudoFortress_Adult_Static.bcett.byml.zs",
+          "source_sha256": "3c4be6efc19ae063632c43ca70ac1bc314b5a2f3bb2418bdf8a7459519e11a2a",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "13584527502619061465",
+      "label": "Gerudo Valley #1",
+      "variants": [
+        {
+          "banc": "GerudoValley_Adult",
+          "age": "Adult",
+          "position": [
+            -45.68217849731445,
+            107.03309326171875,
+            -35.5576057434082
+          ],
+          "rotation": [
+            0.0,
+            0.5298172235488892,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -45.68217849731445,
+            106.23309326171875,
+            -35.5576057434082
+          ],
+          "source": "romfs/Banc/GerudoValley/GerudoValley_Adult_Static.bcett.byml.zs",
+          "source_sha256": "def6548b1b1939dc64bdf7be99076947feb53e6e98cc57699bee1ab94ee5e30f",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "11535915511003753934",
+      "label": "Gerudo Valley #2",
+      "variants": [
+        {
+          "banc": "GerudoValley_Adult",
+          "age": "Adult",
+          "position": [
+            -34.53456115722656,
+            110.76247863769531,
+            10.28170394897461
+          ],
+          "rotation": [
+            0.0,
+            0.6810728311538696,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -34.53456115722656,
+            109.96247863769531,
+            10.28170394897461
+          ],
+          "source": "romfs/Banc/GerudoValley/GerudoValley_Adult_Static.bcett.byml.zs",
+          "source_sha256": "def6548b1b1939dc64bdf7be99076947feb53e6e98cc57699bee1ab94ee5e30f",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "8326970197618554626",
+      "label": "Gerudo Valley #3",
+      "variants": [
+        {
+          "banc": "GerudoValley_Child",
+          "age": "Child",
+          "position": [
+            -11.040997505187988,
+            48.84132843017578,
+            2.4471940994262695
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -11.040997505187988,
+            48.04132843017578,
+            2.4471940994262695
+          ],
+          "source": "romfs/Banc/GerudoValley/GerudoValley_Child_Static.bcett.byml.zs",
+          "source_sha256": "5607b9788547dc99850708066182efae213bf25348656a783f256e378fa19679",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearPlayerCheck": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true,
+            "Enemy_Skulltula_Gold_IsMagicBeanSoil": true
+          },
+          "presence": {
+            "FlagName": "Gimmick_MagicBeanSoil_GerudoValley",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        }
+      ],
+      "notes": [
+        "release bugs into soil"
+      ]
+    },
+    {
+      "id": "15265071047503310220",
+      "label": "Gerudo Valley #4",
+      "variants": [
+        {
+          "banc": "GerudoValley_Child",
+          "age": "Child",
+          "position": [
+            50.80552673339844,
+            98.20318298339843,
+            5.090764045715332
+          ],
+          "rotation": [
+            0.0,
+            -1.0395723581314087,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            50.80552673339844,
+            97.40318298339844,
+            5.090764045715332
+          ],
+          "source": "romfs/Banc/GerudoValley/GerudoValley_Child_Static.bcett.byml.zs",
+          "source_sha256": "5607b9788547dc99850708066182efae213bf25348656a783f256e378fa19679",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "569390966671955163",
+      "label": "Goron City #1",
+      "variants": [
+        {
+          "banc": "GoronCity_Child",
+          "age": "Child",
+          "position": [
+            -48.25,
+            114.47526245117187,
+            -7.840000152587891
+          ],
+          "rotation": [
+            0.0,
+            -1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -48.25,
+            113.67526245117188,
+            -7.840000152587891
+          ],
+          "source": "romfs/Banc/GoronCity/GoronCity_Child_Static.bcett.byml.zs",
+          "source_sha256": "b152e0a4b3a75f14fe4b9c7de40072ea947b5ec04e62bdb872c335bfb80196e2",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearJumpHight": 0.800000011920929,
+            "Enemy_Skulltula_Gold_AppearJumpSpeed": 0.75,
+            "Enemy_Skulltula_Gold_AppearPlayerCheck": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "18139423190738716302",
+      "label": "Goron City #2",
+      "variants": [
+        {
+          "banc": "GoronCity_Adult",
+          "age": "Adult",
+          "position": [
+            0.4883832037448883,
+            114.15750579833984,
+            -1.2281033992767334
+          ],
+          "rotation": [
+            0.0,
+            0.04818038269877434,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            0.4883832037448883,
+            113.35750579833984,
+            -1.2281033992767334
+          ],
+          "source": "romfs/Banc/GoronCity/GoronCity_Adult_Static.bcett.byml.zs",
+          "source_sha256": "09ff34ddcbb33f24b4d3ff45273b921983b69caef41dfd2479b177d9b13efd6f",
+          "conditions": {},
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "229475726653285413",
+      "label": "Graveyard #1",
+      "variants": [
+        {
+          "banc": "Graveyard_Adult",
+          "age": "Adult",
+          "position": [
+            -20.200000762939453,
+            105.10000305175781,
+            26.399999618530273
+          ],
+          "rotation": [
+            0.0,
+            -0.1848512589931488,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -20.200000762939453,
+            104.30000305175781,
+            26.399999618530273
+          ],
+          "source": "romfs/Banc/Graveyard/Graveyard_Adult_Static.bcett.byml.zs",
+          "source_sha256": "42f60b5695eb6b4615e7de4aee842ba836fdfd3d14bd00cb2b0245de09e11280",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        },
+        {
+          "banc": "Graveyard_Child",
+          "age": "Child",
+          "position": [
+            -20.200000762939453,
+            105.10000305175781,
+            26.399999618530273
+          ],
+          "rotation": [
+            0.0,
+            -0.1848512589931488,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -20.200000762939453,
+            104.30000305175781,
+            26.399999618530273
+          ],
+          "source": "romfs/Banc/Graveyard/Graveyard_Child_Static.bcett.byml.zs",
+          "source_sha256": "548ab2521b54062b04c3b85e93b3cc338e940e8e340f75f42308eaf5a4acbf79",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "16798263777516949500",
+      "label": "Graveyard #2",
+      "variants": [
+        {
+          "banc": "Graveyard_Child",
+          "age": "Child",
+          "position": [
+            -12.147199630737305,
+            104.16949920654297,
+            -12.197487831115723
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -12.147199630737305,
+            103.36949920654297,
+            -12.197487831115723
+          ],
+          "source": "romfs/Banc/Graveyard/Graveyard_Child_Static.bcett.byml.zs",
+          "source_sha256": "548ab2521b54062b04c3b85e93b3cc338e940e8e340f75f42308eaf5a4acbf79",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearPlayerCheck": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true,
+            "Enemy_Skulltula_Gold_IsMagicBeanSoil": true
+          },
+          "presence": {
+            "FlagName": "Gimmick_MagicBeanSoil_Graveyard",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        }
+      ],
+      "notes": [
+        "release bugs into soil"
+      ]
+    },
+    {
+      "id": "14910672274965350769",
+      "label": "Haunted Wasteland #1",
+      "variants": [
+        {
+          "banc": "HountedWasteland_Adult",
+          "age": "Adult",
+          "position": [
+            16.01300048828125,
+            89.64510040283203,
+            -99.79999542236328
+          ],
+          "rotation": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            16.01300048828125,
+            88.84510040283203,
+            -99.79999542236328
+          ],
+          "source": "romfs/Banc/HountedWasteland/HountedWasteland_Adult_Static.bcett.byml.zs",
+          "source_sha256": "d1f5adf183d1b1509cee43c81275940f27ea5cff0e57f9ca6b7588402dde8b42",
+          "conditions": {},
+          "presence": {}
+        },
+        {
+          "banc": "HountedWasteland_Child",
+          "age": "Child",
+          "position": [
+            16.01300048828125,
+            89.64510040283203,
+            -99.79999542236328
+          ],
+          "rotation": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            16.01300048828125,
+            88.84510040283203,
+            -99.79999542236328
+          ],
+          "source": "romfs/Banc/HountedWasteland/HountedWasteland_Child_Static.bcett.byml.zs",
+          "source_sha256": "53ed018a81a0f8d0164428d4ee651007d66f3565a02fbbb5400c165ff3204316",
+          "conditions": {},
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "2504273934093629549",
+      "label": "Hyrule Castle #1",
+      "variants": [
+        {
+          "banc": "HyruleCastle",
+          "age": "Adult",
+          "position": [
+            -12.364601135253906,
+            122.57613830566406,
+            -94.94949340820312
+          ],
+          "rotation": [
+            0.0,
+            0.9020770192146301,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -12.364601135253906,
+            121.77613830566406,
+            -94.94949340820312
+          ],
+          "source": "romfs/Banc/HyruleCastle/HyruleCastle_Static.bcett.byml.zs",
+          "source_sha256": "6378d5557e28c21d9da03dd492ff63e5e76247bb3947a11fdee38c414c7c6057",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearJumpHight": 0.10000000149011612,
+            "Enemy_Skulltula_Gold_AppearPlayerCheck": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true,
+            "Enemy_Skulltula_Gold_AppearWarpRotOffset": 45.0
+          },
+          "presence": {}
+        },
+        {
+          "banc": "HyruleCastle",
+          "age": "Child",
+          "position": [
+            -12.364601135253906,
+            122.57613830566406,
+            -94.94949340820312
+          ],
+          "rotation": [
+            0.0,
+            0.9020770192146301,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -12.364601135253906,
+            121.77613830566406,
+            -94.94949340820312
+          ],
+          "source": "romfs/Banc/HyruleCastle/HyruleCastle_Static.bcett.byml.zs",
+          "source_sha256": "6378d5557e28c21d9da03dd492ff63e5e76247bb3947a11fdee38c414c7c6057",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearJumpHight": 0.10000000149011612,
+            "Enemy_Skulltula_Gold_AppearPlayerCheck": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true,
+            "Enemy_Skulltula_Gold_AppearWarpRotOffset": 45.0
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "9162653017526462607",
+      "label": "Hyrule Castle #2",
+      "variants": [
+        {
+          "banc": "HyruleCastle",
+          "age": "Adult",
+          "position": [
+            39.049591064453125,
+            101.85016326904297,
+            -116.12972259521484
+          ],
+          "rotation": [
+            0.0,
+            -0.23696443438529968,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            39.049591064453125,
+            101.05016326904297,
+            -116.12972259521484
+          ],
+          "source": "romfs/Banc/HyruleCastle/HyruleCastle_Static.bcett.byml.zs",
+          "source_sha256": "6378d5557e28c21d9da03dd492ff63e5e76247bb3947a11fdee38c414c7c6057",
+          "conditions": {},
+          "presence": {}
+        },
+        {
+          "banc": "HyruleCastle",
+          "age": "Child",
+          "position": [
+            39.049591064453125,
+            101.85016326904297,
+            -116.12972259521484
+          ],
+          "rotation": [
+            0.0,
+            -0.23696443438529968,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            39.049591064453125,
+            101.05016326904297,
+            -116.12972259521484
+          ],
+          "source": "romfs/Banc/HyruleCastle/HyruleCastle_Static.bcett.byml.zs",
+          "source_sha256": "6378d5557e28c21d9da03dd492ff63e5e76247bb3947a11fdee38c414c7c6057",
+          "conditions": {},
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "8655370827943125875",
+      "label": "Hyrule Field #1",
+      "variants": [
+        {
+          "banc": "HyruleField_Adult",
+          "age": "Adult",
+          "position": [
+            -295.6242370605469,
+            132.7751892089844,
+            597.7672119140625
+          ],
+          "rotation": [
+            0.0,
+            -0.727522611618042,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -295.6242370605469,
+            131.97518920898438,
+            597.7672119140625
+          ],
+          "source": "romfs/Banc/HyruleField/HyruleField_Adult_Static.bcett.byml.zs",
+          "source_sha256": "7de30a3fc8f5cf19d17ebc6310b72e2b1508f030f2990a544022529740b4802c",
+          "conditions": {},
+          "presence": {}
+        },
+        {
+          "banc": "HyruleField_Child",
+          "age": "Child",
+          "position": [
+            -295.6242370605469,
+            132.7751892089844,
+            597.7672119140625
+          ],
+          "rotation": [
+            0.0,
+            -0.727522611618042,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -295.6242370605469,
+            131.97518920898438,
+            597.7672119140625
+          ],
+          "source": "romfs/Banc/HyruleField/HyruleField_Child_Static.bcett.byml.zs",
+          "source_sha256": "0d423073dd50bed456b06c7a0421cd98044800c8c577b7052e9a266e3bf28b4f",
+          "conditions": {},
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "789492162651991711",
+      "label": "Hyrule Field #2",
+      "variants": [
+        {
+          "banc": "HyruleField_Adult",
+          "age": "Adult",
+          "position": [
+            -196.95042419433594,
+            151.0799987792969,
+            517.3847045898438
+          ],
+          "rotation": [
+            0.0,
+            -1.0008018016815186,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -196.95042419433594,
+            150.27999877929688,
+            517.3847045898438
+          ],
+          "source": "romfs/Banc/HyruleField/HyruleField_Adult_Static.bcett.byml.zs",
+          "source_sha256": "7de30a3fc8f5cf19d17ebc6310b72e2b1508f030f2990a544022529740b4802c",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "13944703896577680014",
+      "label": "Hyrule Field #3",
+      "variants": [
+        {
+          "banc": "HyruleField_Child",
+          "age": "Child",
+          "position": [
+            -178.2529296875,
+            142.7582214355469,
+            426.4041442871094
+          ],
+          "rotation": [
+            0.0,
+            -0.352397084236145,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -178.2529296875,
+            141.95822143554688,
+            426.4041442871094
+          ],
+          "source": "romfs/Banc/HyruleField/HyruleField_Child_Static.bcett.byml.zs",
+          "source_sha256": "0d423073dd50bed456b06c7a0421cd98044800c8c577b7052e9a266e3bf28b4f",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "7388645484070660331",
+      "label": "Hyrule Field #4",
+      "variants": [
+        {
+          "banc": "HyruleField_Adult",
+          "age": "Adult",
+          "position": [
+            -175.11459350585938,
+            129.26214294433595,
+            415.5933837890625
+          ],
+          "rotation": [
+            0.0,
+            -0.727523148059845,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -175.11459350585938,
+            128.46214294433594,
+            415.5933837890625
+          ],
+          "source": "romfs/Banc/HyruleField/HyruleField_Adult_Static.bcett.byml.zs",
+          "source_sha256": "7de30a3fc8f5cf19d17ebc6310b72e2b1508f030f2990a544022529740b4802c",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearPlayerCheck": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true,
+            "Enemy_Skulltula_Gold_AvoidTargetAngle": 120.0,
+            "Enemy_Skulltula_Gold_IsWaterDepthJumpOut": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "7014193622407727514",
+      "label": "Hyrule Field #5",
+      "variants": [
+        {
+          "banc": "HyruleField_Child",
+          "age": "Child",
+          "position": [
+            -167.69143676757812,
+            138.70180969238282,
+            413.48260498046875
+          ],
+          "rotation": [
+            0.0,
+            -0.7274344563484192,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -167.69143676757812,
+            137.9018096923828,
+            413.48260498046875
+          ],
+          "source": "romfs/Banc/HyruleField/HyruleField_Child_Static.bcett.byml.zs",
+          "source_sha256": "0d423073dd50bed456b06c7a0421cd98044800c8c577b7052e9a266e3bf28b4f",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearPlayerCheck": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true,
+            "Enemy_Skulltula_Gold_AvoidTargetAngle": 120.0,
+            "Enemy_Skulltula_Gold_IsMagicBeanSoil": true
+          },
+          "presence": {
+            "FlagName": "Gimmick_MagicBeanSoil_LakeHylia",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        }
+      ],
+      "notes": [
+        "release bugs into soil"
+      ]
+    },
+    {
+      "id": "12007978132755687032",
+      "label": "Hyrule Field #6",
+      "variants": [
+        {
+          "banc": "HyruleField_Adult",
+          "age": "Adult",
+          "position": [
+            -147.92022705078125,
+            130.69300537109376,
+            322.4954833984375
+          ],
+          "rotation": [
+            0.0,
+            -0.8001909255981445,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -147.92022705078125,
+            129.89300537109375,
+            322.4954833984375
+          ],
+          "source": "romfs/Banc/HyruleField/HyruleField_Adult_Static.bcett.byml.zs",
+          "source_sha256": "7de30a3fc8f5cf19d17ebc6310b72e2b1508f030f2990a544022529740b4802c",
+          "conditions": {},
+          "presence": {}
+        },
+        {
+          "banc": "HyruleField_Child",
+          "age": "Child",
+          "position": [
+            -147.92022705078125,
+            130.69300537109376,
+            322.4954833984375
+          ],
+          "rotation": [
+            0.0,
+            -0.8001909255981445,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -147.92022705078125,
+            129.89300537109375,
+            322.4954833984375
+          ],
+          "source": "romfs/Banc/HyruleField/HyruleField_Child_Static.bcett.byml.zs",
+          "source_sha256": "0d423073dd50bed456b06c7a0421cd98044800c8c577b7052e9a266e3bf28b4f",
+          "conditions": {},
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "2730878115209290675",
+      "label": "Hyrule Field #7",
+      "variants": [
+        {
+          "banc": "HyruleField_Adult",
+          "age": "Adult",
+          "position": [
+            -147.4391326904297,
+            160.0058563232422,
+            268.2318115234375
+          ],
+          "rotation": [
+            0.0,
+            3.82137093032941e-15,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -147.4391326904297,
+            159.2058563232422,
+            268.2318115234375
+          ],
+          "source": "romfs/Banc/HyruleField/HyruleField_Adult_Static.bcett.byml.zs",
+          "source_sha256": "7de30a3fc8f5cf19d17ebc6310b72e2b1508f030f2990a544022529740b4802c",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        },
+        {
+          "banc": "HyruleField_Child",
+          "age": "Child",
+          "position": [
+            -147.4391326904297,
+            160.0058563232422,
+            268.2318115234375
+          ],
+          "rotation": [
+            0.0,
+            3.82137093032941e-15,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -147.4391326904297,
+            159.2058563232422,
+            268.2318115234375
+          ],
+          "source": "romfs/Banc/HyruleField/HyruleField_Child_Static.bcett.byml.zs",
+          "source_sha256": "0d423073dd50bed456b06c7a0421cd98044800c8c577b7052e9a266e3bf28b4f",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "15889002414176907668",
+      "label": "Hyrule Field #8",
+      "variants": [
+        {
+          "banc": "HyruleField_Child",
+          "age": "Child",
+          "position": [
+            -63.216087341308594,
+            157.1876647949219,
+            212.38632202148438
+          ],
+          "rotation": [
+            0.0,
+            0.6239373683929443,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -63.216087341308594,
+            156.38766479492188,
+            212.38632202148438
+          ],
+          "source": "romfs/Banc/HyruleField/HyruleField_Child_Static.bcett.byml.zs",
+          "source_sha256": "0d423073dd50bed456b06c7a0421cd98044800c8c577b7052e9a266e3bf28b4f",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "341792603838029977",
+      "label": "Hyrule Field #9",
+      "variants": [
+        {
+          "banc": "HyruleField_Adult",
+          "age": "Adult",
+          "position": [
+            -39.55157470703125,
+            159.04966430664064,
+            200.6729736328125
+          ],
+          "rotation": [
+            0.0,
+            -1.4471497535705566,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -39.55157470703125,
+            158.24966430664062,
+            200.6729736328125
+          ],
+          "source": "romfs/Banc/HyruleField/HyruleField_Adult_Static.bcett.byml.zs",
+          "source_sha256": "7de30a3fc8f5cf19d17ebc6310b72e2b1508f030f2990a544022529740b4802c",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearJumpHight": 0.10000000149011612,
+            "Enemy_Skulltula_Gold_AppearPlayerCheck": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true,
+            "Enemy_Skulltula_Gold_AppearWarpRotOffset": 45.0
+          },
+          "presence": {}
+        },
+        {
+          "banc": "HyruleField_Child",
+          "age": "Child",
+          "position": [
+            -39.55157470703125,
+            159.04966430664064,
+            200.6729736328125
+          ],
+          "rotation": [
+            0.0,
+            -1.4471497535705566,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -39.55157470703125,
+            158.24966430664062,
+            200.6729736328125
+          ],
+          "source": "romfs/Banc/HyruleField/HyruleField_Child_Static.bcett.byml.zs",
+          "source_sha256": "0d423073dd50bed456b06c7a0421cd98044800c8c577b7052e9a266e3bf28b4f",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearJumpHight": 0.10000000149011612,
+            "Enemy_Skulltula_Gold_AppearPlayerCheck": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true,
+            "Enemy_Skulltula_Gold_AppearWarpRotOffset": 45.0
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "9047381233010434881",
+      "label": "Hyrule Field #10",
+      "variants": [
+        {
+          "banc": "HyruleField_Adult",
+          "age": "Adult",
+          "position": [
+            56.51300048828125,
+            127.13322143554687,
+            342.5752258300781
+          ],
+          "rotation": [
+            0.0,
+            -1.1251333951950073,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            56.51300048828125,
+            126.33322143554688,
+            342.5752258300781
+          ],
+          "source": "romfs/Banc/HyruleField/HyruleField_Adult_Static.bcett.byml.zs",
+          "source_sha256": "7de30a3fc8f5cf19d17ebc6310b72e2b1508f030f2990a544022529740b4802c",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearPopOut": true,
+            "Enemy_Skulltula_Gold_IsAgonyStoneBoxConnect": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "2177746409373494991",
+      "label": "Hyrule Field #11",
+      "variants": [
+        {
+          "banc": "HyruleField_Adult",
+          "age": "Adult",
+          "position": [
+            70.53002166748047,
+            168.20742492675782,
+            263.8376159667969
+          ],
+          "rotation": [
+            0.0,
+            1.5352836847305298,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            70.53002166748047,
+            167.4074249267578,
+            263.8376159667969
+          ],
+          "source": "romfs/Banc/HyruleField/HyruleField_Adult_Static.bcett.byml.zs",
+          "source_sha256": "7de30a3fc8f5cf19d17ebc6310b72e2b1508f030f2990a544022529740b4802c",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearJumpHight": 0.10000000149011612,
+            "Enemy_Skulltula_Gold_AppearJumpSpeed": 1.25,
+            "Enemy_Skulltula_Gold_AppearPlayerCheck": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true,
+            "Enemy_Skulltula_Gold_AppearWarpRotOffset": 45.0
+          },
+          "presence": {}
+        },
+        {
+          "banc": "HyruleField_Child",
+          "age": "Child",
+          "position": [
+            70.53002166748047,
+            168.20742492675782,
+            263.8376159667969
+          ],
+          "rotation": [
+            0.0,
+            1.5352836847305298,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            70.53002166748047,
+            167.4074249267578,
+            263.8376159667969
+          ],
+          "source": "romfs/Banc/HyruleField/HyruleField_Child_Static.bcett.byml.zs",
+          "source_sha256": "0d423073dd50bed456b06c7a0421cd98044800c8c577b7052e9a266e3bf28b4f",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearJumpHight": 0.10000000149011612,
+            "Enemy_Skulltula_Gold_AppearJumpSpeed": 1.25,
+            "Enemy_Skulltula_Gold_AppearPlayerCheck": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true,
+            "Enemy_Skulltula_Gold_AppearWarpRotOffset": 45.0
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "14822647495538506998",
+      "label": "Ice Cavern #1",
+      "variants": [
+        {
+          "banc": "IceCavern",
+          "age": "Adult",
+          "position": [
+            -18.1279239654541,
+            109.4768569946289,
+            -16.56170654296875
+          ],
+          "rotation": [
+            0.0,
+            -1.4729009866714478,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -18.1279239654541,
+            108.6768569946289,
+            -16.56170654296875
+          ],
+          "source": "romfs/Banc/IceCavern/IceCavern_Static.bcett.byml.zs",
+          "source_sha256": "1d6fcf6479b82b02dbb91dc54c03380df861ffd2529b9568cf8b2a2ef84c7b31",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 8
+          },
+          "presence": {}
+        },
+        {
+          "banc": "IceCavern",
+          "age": "Child",
+          "position": [
+            -18.1279239654541,
+            109.4768569946289,
+            -16.56170654296875
+          ],
+          "rotation": [
+            0.0,
+            -1.4729009866714478,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -18.1279239654541,
+            108.6768569946289,
+            -16.56170654296875
+          ],
+          "source": "romfs/Banc/IceCavern/IceCavern_Static.bcett.byml.zs",
+          "source_sha256": "1d6fcf6479b82b02dbb91dc54c03380df861ffd2529b9568cf8b2a2ef84c7b31",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 8
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "7165255787572043804",
+      "label": "Ice Cavern #2",
+      "variants": [
+        {
+          "banc": "IceCavern",
+          "age": "Adult",
+          "position": [
+            -1.4165087938308716,
+            108.02708129882812,
+            -6.200536727905273
+          ],
+          "rotation": [
+            0.0,
+            -0.5600444674491882,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -1.4165087938308716,
+            107.22708129882812,
+            -6.200536727905273
+          ],
+          "source": "romfs/Banc/IceCavern/IceCavern_Static.bcett.byml.zs",
+          "source_sha256": "1d6fcf6479b82b02dbb91dc54c03380df861ffd2529b9568cf8b2a2ef84c7b31",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 3
+          },
+          "presence": {}
+        },
+        {
+          "banc": "IceCavern",
+          "age": "Child",
+          "position": [
+            -1.4165087938308716,
+            108.02708129882812,
+            -6.200536727905273
+          ],
+          "rotation": [
+            0.0,
+            -0.5600444674491882,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -1.4165087938308716,
+            107.22708129882812,
+            -6.200536727905273
+          ],
+          "source": "romfs/Banc/IceCavern/IceCavern_Static.bcett.byml.zs",
+          "source_sha256": "1d6fcf6479b82b02dbb91dc54c03380df861ffd2529b9568cf8b2a2ef84c7b31",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 3
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "1612219105489330028",
+      "label": "Ice Cavern #3",
+      "variants": [
+        {
+          "banc": "IceCavern",
+          "age": "Adult",
+          "position": [
+            83.67357635498047,
+            109.05199890136718,
+            -0.4505326747894287
+          ],
+          "rotation": [
+            0.0,
+            -1.0297480821609497,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            83.67357635498047,
+            108.25199890136719,
+            -0.4505326747894287
+          ],
+          "source": "romfs/Banc/IceCavern/IceCavern_Static.bcett.byml.zs",
+          "source_sha256": "1d6fcf6479b82b02dbb91dc54c03380df861ffd2529b9568cf8b2a2ef84c7b31",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 6
+          },
+          "presence": {}
+        },
+        {
+          "banc": "IceCavern",
+          "age": "Child",
+          "position": [
+            83.67357635498047,
+            109.05199890136718,
+            -0.4505326747894287
+          ],
+          "rotation": [
+            0.0,
+            -1.0297480821609497,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            83.67357635498047,
+            108.25199890136719,
+            -0.4505326747894287
+          ],
+          "source": "romfs/Banc/IceCavern/IceCavern_Static.bcett.byml.zs",
+          "source_sha256": "1d6fcf6479b82b02dbb91dc54c03380df861ffd2529b9568cf8b2a2ef84c7b31",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 6
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "11283202900158580106",
+      "label": "Inside Jabu Jabu Belly #1",
+      "variants": [
+        {
+          "banc": "InsideJabuJabuBelly",
+          "age": "Adult",
+          "position": [
+            -15.361268043518066,
+            91.14133148193359,
+            -82.93287658691406
+          ],
+          "rotation": [
+            0.0,
+            -0.034946031868457794,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -15.361268043518066,
+            90.3413314819336,
+            -82.93287658691406
+          ],
+          "source": "romfs/Banc/InsideJabuJabuBelly/InsideJabuJabuBelly_Static.bcett.byml.zs",
+          "source_sha256": "9478eae21a763a4c4081e33a73284df25fe8ddd688d37b9827e4c2670b10eff3",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 3
+          },
+          "presence": {}
+        },
+        {
+          "banc": "InsideJabuJabuBelly",
+          "age": "Child",
+          "position": [
+            -15.361268043518066,
+            91.14133148193359,
+            -82.93287658691406
+          ],
+          "rotation": [
+            0.0,
+            -0.034946031868457794,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -15.361268043518066,
+            90.3413314819336,
+            -82.93287658691406
+          ],
+          "source": "romfs/Banc/InsideJabuJabuBelly/InsideJabuJabuBelly_Static.bcett.byml.zs",
+          "source_sha256": "9478eae21a763a4c4081e33a73284df25fe8ddd688d37b9827e4c2670b10eff3",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 3
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "13852835165271311030",
+      "label": "Inside Jabu Jabu Belly #2",
+      "variants": [
+        {
+          "banc": "InsideJabuJabuBelly",
+          "age": "Adult",
+          "position": [
+            -2.2131662368774414,
+            89.20897369384765,
+            -94.95555114746094
+          ],
+          "rotation": [
+            0.0,
+            0.11700994521379471,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -2.2131662368774414,
+            88.40897369384766,
+            -94.95555114746094
+          ],
+          "source": "romfs/Banc/InsideJabuJabuBelly/InsideJabuJabuBelly_Static.bcett.byml.zs",
+          "source_sha256": "9478eae21a763a4c4081e33a73284df25fe8ddd688d37b9827e4c2670b10eff3",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 3
+          },
+          "presence": {}
+        },
+        {
+          "banc": "InsideJabuJabuBelly",
+          "age": "Child",
+          "position": [
+            -2.2131662368774414,
+            89.20897369384765,
+            -94.95555114746094
+          ],
+          "rotation": [
+            0.0,
+            0.11700994521379471,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -2.2131662368774414,
+            88.40897369384766,
+            -94.95555114746094
+          ],
+          "source": "romfs/Banc/InsideJabuJabuBelly/InsideJabuJabuBelly_Static.bcett.byml.zs",
+          "source_sha256": "9478eae21a763a4c4081e33a73284df25fe8ddd688d37b9827e4c2670b10eff3",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 3
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "11513774157335944149",
+      "label": "Inside Jabu Jabu Belly #3",
+      "variants": [
+        {
+          "banc": "InsideJabuJabuBelly",
+          "age": "Adult",
+          "position": [
+            17.372461318969727,
+            82.51894836425781,
+            -59.27528762817383
+          ],
+          "rotation": [
+            0.0,
+            -0.3860032260417938,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            17.372461318969727,
+            81.71894836425781,
+            -59.27528762817383
+          ],
+          "source": "romfs/Banc/InsideJabuJabuBelly/InsideJabuJabuBelly_Static.bcett.byml.zs",
+          "source_sha256": "9478eae21a763a4c4081e33a73284df25fe8ddd688d37b9827e4c2670b10eff3",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 14
+          },
+          "presence": {}
+        },
+        {
+          "banc": "InsideJabuJabuBelly",
+          "age": "Child",
+          "position": [
+            17.372461318969727,
+            82.51894836425781,
+            -59.27528762817383
+          ],
+          "rotation": [
+            0.0,
+            -0.3860032260417938,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            17.372461318969727,
+            81.71894836425781,
+            -59.27528762817383
+          ],
+          "source": "romfs/Banc/InsideJabuJabuBelly/InsideJabuJabuBelly_Static.bcett.byml.zs",
+          "source_sha256": "9478eae21a763a4c4081e33a73284df25fe8ddd688d37b9827e4c2670b10eff3",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 14
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "15983944335296207002",
+      "label": "Inside Jabu Jabu Belly #4",
+      "variants": [
+        {
+          "banc": "InsideJabuJabuBelly",
+          "age": "Adult",
+          "position": [
+            38.288944244384766,
+            106.92387084960937,
+            -49.08511734008789
+          ],
+          "rotation": [
+            0.0,
+            1.3962633609771729,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            38.288944244384766,
+            106.12387084960938,
+            -49.08511734008789
+          ],
+          "source": "romfs/Banc/InsideJabuJabuBelly/InsideJabuJabuBelly_Static.bcett.byml.zs",
+          "source_sha256": "9478eae21a763a4c4081e33a73284df25fe8ddd688d37b9827e4c2670b10eff3",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 5
+          },
+          "presence": {}
+        },
+        {
+          "banc": "InsideJabuJabuBelly",
+          "age": "Child",
+          "position": [
+            38.288944244384766,
+            106.92387084960937,
+            -49.08511734008789
+          ],
+          "rotation": [
+            0.0,
+            1.3962633609771729,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            38.288944244384766,
+            106.12387084960938,
+            -49.08511734008789
+          ],
+          "source": "romfs/Banc/InsideJabuJabuBelly/InsideJabuJabuBelly_Static.bcett.byml.zs",
+          "source_sha256": "9478eae21a763a4c4081e33a73284df25fe8ddd688d37b9827e4c2670b10eff3",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 5
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "17501688996789643983",
+      "label": "Inside The Deku Tree #1",
+      "variants": [
+        {
+          "banc": "InsideTheDekuTree",
+          "age": "Adult",
+          "position": [
+            -81.90412139892578,
+            87.49369506835937,
+            -7.400758743286133
+          ],
+          "rotation": [
+            0.0,
+            0.7853981852531433,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -81.90412139892578,
+            86.69369506835938,
+            -7.400758743286133
+          ],
+          "source": "romfs/Banc/InsideTheDekuTree/InsideTheDekuTree_Static.bcett.byml.zs",
+          "source_sha256": "1efd6daf7be17e49b0262c012508b00add54f2dd46944e1249f22b5e62c2c078",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 11
+          },
+          "presence": {}
+        },
+        {
+          "banc": "InsideTheDekuTree",
+          "age": "Child",
+          "position": [
+            -81.90412139892578,
+            87.49369506835937,
+            -7.400758743286133
+          ],
+          "rotation": [
+            0.0,
+            0.7853981852531433,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -81.90412139892578,
+            86.69369506835938,
+            -7.400758743286133
+          ],
+          "source": "romfs/Banc/InsideTheDekuTree/InsideTheDekuTree_Static.bcett.byml.zs",
+          "source_sha256": "1efd6daf7be17e49b0262c012508b00add54f2dd46944e1249f22b5e62c2c078",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 11
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "13609975487234437568",
+      "label": "Inside The Deku Tree #2",
+      "variants": [
+        {
+          "banc": "InsideTheDekuTree",
+          "age": "Adult",
+          "position": [
+            -29.764575958251953,
+            121.8026626586914,
+            13.039876937866211
+          ],
+          "rotation": [
+            0.0,
+            -0.025362564250826836,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -29.764575958251953,
+            121.0026626586914,
+            13.039876937866211
+          ],
+          "source": "romfs/Banc/InsideTheDekuTree/InsideTheDekuTree_Static.bcett.byml.zs",
+          "source_sha256": "1efd6daf7be17e49b0262c012508b00add54f2dd46944e1249f22b5e62c2c078",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 3
+          },
+          "presence": {}
+        },
+        {
+          "banc": "InsideTheDekuTree",
+          "age": "Child",
+          "position": [
+            -29.764575958251953,
+            121.8026626586914,
+            13.039876937866211
+          ],
+          "rotation": [
+            0.0,
+            -0.025362564250826836,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -29.764575958251953,
+            121.0026626586914,
+            13.039876937866211
+          ],
+          "source": "romfs/Banc/InsideTheDekuTree/InsideTheDekuTree_Static.bcett.byml.zs",
+          "source_sha256": "1efd6daf7be17e49b0262c012508b00add54f2dd46944e1249f22b5e62c2c078",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 3
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "18075358844331090388",
+      "label": "Inside The Deku Tree #3",
+      "variants": [
+        {
+          "banc": "InsideTheDekuTree",
+          "age": "Adult",
+          "position": [
+            -18.129474639892578,
+            79.49496154785156,
+            -12.980559349060059
+          ],
+          "rotation": [
+            0.0,
+            -0.08396867662668228,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -18.129474639892578,
+            78.69496154785156,
+            -12.980559349060059
+          ],
+          "source": "romfs/Banc/InsideTheDekuTree/InsideTheDekuTree_Static.bcett.byml.zs",
+          "source_sha256": "1efd6daf7be17e49b0262c012508b00add54f2dd46944e1249f22b5e62c2c078",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 4
+          },
+          "presence": {}
+        },
+        {
+          "banc": "InsideTheDekuTree",
+          "age": "Child",
+          "position": [
+            -18.129474639892578,
+            79.49496154785156,
+            -12.980559349060059
+          ],
+          "rotation": [
+            0.0,
+            -0.08396867662668228,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -18.129474639892578,
+            78.69496154785156,
+            -12.980559349060059
+          ],
+          "source": "romfs/Banc/InsideTheDekuTree/InsideTheDekuTree_Static.bcett.byml.zs",
+          "source_sha256": "1efd6daf7be17e49b0262c012508b00add54f2dd46944e1249f22b5e62c2c078",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 4
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "16101480770659370603",
+      "label": "Inside The Deku Tree #4",
+      "variants": [
+        {
+          "banc": "InsideTheDekuTree",
+          "age": "Adult",
+          "position": [
+            3.322671890258789,
+            87.66177825927734,
+            1.1332212686538696
+          ],
+          "rotation": [
+            0.0,
+            1.2154947519302368,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            3.322671890258789,
+            86.86177825927734,
+            1.1332212686538696
+          ],
+          "source": "romfs/Banc/InsideTheDekuTree/InsideTheDekuTree_Static.bcett.byml.zs",
+          "source_sha256": "1efd6daf7be17e49b0262c012508b00add54f2dd46944e1249f22b5e62c2c078",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 4
+          },
+          "presence": {}
+        },
+        {
+          "banc": "InsideTheDekuTree",
+          "age": "Child",
+          "position": [
+            3.322671890258789,
+            87.66177825927734,
+            1.1332212686538696
+          ],
+          "rotation": [
+            0.0,
+            1.2154947519302368,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            3.322671890258789,
+            86.86177825927734,
+            1.1332212686538696
+          ],
+          "source": "romfs/Banc/InsideTheDekuTree/InsideTheDekuTree_Static.bcett.byml.zs",
+          "source_sha256": "1efd6daf7be17e49b0262c012508b00add54f2dd46944e1249f22b5e62c2c078",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 4
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "11629189455828560791",
+      "label": "Kakariko Village #1",
+      "variants": [
+        {
+          "banc": "KakarikoVillage_Child",
+          "age": "Child",
+          "position": [
+            -75.00682830810547,
+            106.08756713867187,
+            2.172684669494629
+          ],
+          "rotation": [
+            0.0,
+            0.7437505125999451,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -75.00682830810547,
+            105.28756713867188,
+            2.172684669494629
+          ],
+          "source": "romfs/Banc/KakarikoVillage/KakarikoVillage_Child_Static.bcett.byml.zs",
+          "source_sha256": "166fbb2abebde992cf0e1345e4b4a06c109e4d5ac228abb1785dc5de3b720dde",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "7677963516305772491",
+      "label": "Kakariko Village #2",
+      "variants": [
+        {
+          "banc": "KakarikoVillage_Child",
+          "age": "Child",
+          "position": [
+            -73.60032653808594,
+            105.25828247070312,
+            43.47663879394531
+          ],
+          "rotation": [
+            0.0,
+            1.396264672279358,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -73.60032653808594,
+            104.45828247070312,
+            43.47663879394531
+          ],
+          "source": "romfs/Banc/KakarikoVillage/KakarikoVillage_Child_Static.bcett.byml.zs",
+          "source_sha256": "166fbb2abebde992cf0e1345e4b4a06c109e4d5ac228abb1785dc5de3b720dde",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearJumpHight": 0.10000000149011612,
+            "Enemy_Skulltula_Gold_AppearJumpSpeed": 2.799999952316284,
+            "Enemy_Skulltula_Gold_AppearPlayerCheck": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true,
+            "Enemy_Skulltula_Gold_AppearWarpRotOffset": 45.0
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "14107117960174262321",
+      "label": "Kakariko Village #3",
+      "variants": [
+        {
+          "banc": "KakarikoVillage_Child",
+          "age": "Child",
+          "position": [
+            -60.71241760253906,
+            102.9308364868164,
+            59.549861907958984
+          ],
+          "rotation": [
+            0.0,
+            -0.029801178723573685,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -60.71241760253906,
+            102.1308364868164,
+            59.549861907958984
+          ],
+          "source": "romfs/Banc/KakarikoVillage/KakarikoVillage_Child_Static.bcett.byml.zs",
+          "source_sha256": "166fbb2abebde992cf0e1345e4b4a06c109e4d5ac228abb1785dc5de3b720dde",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "15118290503807073158",
+      "label": "Kakariko Village #4",
+      "variants": [
+        {
+          "banc": "KakarikoVillage_Child",
+          "age": "Child",
+          "position": [
+            -48.10788345336914,
+            111.70959167480468,
+            18.399999618530273
+          ],
+          "rotation": [
+            0.0,
+            -0.045734621584415436,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -48.10788345336914,
+            110.90959167480469,
+            18.399999618530273
+          ],
+          "source": "romfs/Banc/KakarikoVillage/KakarikoVillage_Child_Static.bcett.byml.zs",
+          "source_sha256": "166fbb2abebde992cf0e1345e4b4a06c109e4d5ac228abb1785dc5de3b720dde",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "3310819903461047792",
+      "label": "Kakariko Village #5",
+      "variants": [
+        {
+          "banc": "KakarikoVillage_Adult",
+          "age": "Adult",
+          "position": [
+            -38.73756790161133,
+            114.4988296508789,
+            115.47581481933594
+          ],
+          "rotation": [
+            0.0,
+            -0.5610979795455933,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -38.73756790161133,
+            113.6988296508789,
+            115.47581481933594
+          ],
+          "source": "romfs/Banc/KakarikoVillage/KakarikoVillage_Adult_Static.bcett.byml.zs",
+          "source_sha256": "e84946a15321a8876bd71cf83040e94c75529a22d348b8611aacbeb9a95a20a6",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        },
+        {
+          "banc": "KakarikoVillage_Adult_Alternative",
+          "age": "Adult",
+          "position": [
+            -38.73756408691406,
+            114.49886016845703,
+            115.47581481933594
+          ],
+          "rotation": [
+            0.0,
+            -0.5610979795455933,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -38.73756408691406,
+            113.69886016845703,
+            115.47581481933594
+          ],
+          "source": "romfs/Banc/KakarikoVillage/KakarikoVillage_Adult_Alternative_Static.bcett.byml.zs",
+          "source_sha256": "a8dc00dced8d2e4ffd11815f5ef1bd54943f6cb2c32a8f356e31a51e5a4b2748",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "15314554401574296838",
+      "label": "Kakariko Village #6",
+      "variants": [
+        {
+          "banc": "KakarikoVillage_Child",
+          "age": "Child",
+          "position": [
+            -29.075544357299805,
+            103.88731079101562,
+            60.51190185546875
+          ],
+          "rotation": [
+            0.0,
+            -0.38629433512687683,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -29.075544357299805,
+            103.08731079101562,
+            60.51190185546875
+          ],
+          "source": "romfs/Banc/KakarikoVillage/KakarikoVillage_Child_Static.bcett.byml.zs",
+          "source_sha256": "166fbb2abebde992cf0e1345e4b4a06c109e4d5ac228abb1785dc5de3b720dde",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "17067594426901953848",
+      "label": "Kokiri Forest #1",
+      "variants": [
+        {
+          "banc": "KokiriForest_Child",
+          "age": "Child",
+          "position": [
+            -83.7901382446289,
+            118.65399627685547,
+            -17.619117736816406
+          ],
+          "rotation": [
+            0.0,
+            -0.6373131275177002,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -83.7901382446289,
+            117.85399627685547,
+            -17.619117736816406
+          ],
+          "source": "romfs/Banc/KokiriForest/KokiriForest_Child_Static.bcett.byml.zs",
+          "source_sha256": "008869c0349bce0ac82378391e8bd79b5e9862c481bf4fe2816d9212ff9d291b",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "9623998892552467148",
+      "label": "Kokiri Forest #2",
+      "variants": [
+        {
+          "banc": "KokiriForest_Child",
+          "age": "Child",
+          "position": [
+            8.242212295532227,
+            113.43771057128906,
+            -23.305742263793945
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            8.242212295532227,
+            112.63771057128906,
+            -23.305742263793945
+          ],
+          "source": "romfs/Banc/KokiriForest/KokiriForest_Child_Static.bcett.byml.zs",
+          "source_sha256": "008869c0349bce0ac82378391e8bd79b5e9862c481bf4fe2816d9212ff9d291b",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearPlayerCheck": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true,
+            "Enemy_Skulltula_Gold_IsMagicBeanSoil": true
+          },
+          "presence": {
+            "FlagName": "Gimmick_MagicBeanSoil_KokiriForest",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        }
+      ],
+      "notes": [
+        "release bugs into soil"
+      ]
+    },
+    {
+      "id": "7116603238806634901",
+      "label": "Kokiri Forest #3",
+      "variants": [
+        {
+          "banc": "KokiriForest_Adult",
+          "age": "Adult",
+          "position": [
+            18.039623260498047,
+            117.97457580566406,
+            18.87630844116211
+          ],
+          "rotation": [
+            0.0,
+            -0.08970428258180618,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            18.039623260498047,
+            117.17457580566406,
+            18.87630844116211
+          ],
+          "source": "romfs/Banc/KokiriForest/KokiriForest_Adult_Static.bcett.byml.zs",
+          "source_sha256": "8f055ded716b20e103e48c62c166196d8fcc8ad71012fc94aecd3390c3e9f2fd",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "9333354743976439033",
+      "label": "Lost Wood #1",
+      "variants": [
+        {
+          "banc": "LostWood_Child",
+          "age": "Child",
+          "position": [
+            -33.187705993652344,
+            100.96835021972656,
+            31.416748046875
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -33.187705993652344,
+            100.16835021972656,
+            31.416748046875
+          ],
+          "source": "romfs/Banc/LostWood/LostWood_Child_Static.bcett.byml.zs",
+          "source_sha256": "5cdb3934979554aca0074245784afe8459860aed0b8cc8821b341ef7d3592592",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearPlayerCheck": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true,
+            "Enemy_Skulltula_Gold_AvoidTargetAngle": 120.0,
+            "Enemy_Skulltula_Gold_IsMagicBeanSoil": true
+          },
+          "presence": {
+            "FlagName": "Gimmick_MagicBeanSoil_LostWood02",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        }
+      ],
+      "notes": [
+        "release bugs into soil"
+      ]
+    },
+    {
+      "id": "17796658857969527112",
+      "label": "Lost Wood #2",
+      "variants": [
+        {
+          "banc": "LostWood_Child",
+          "age": "Child",
+          "position": [
+            10.871164321899414,
+            100.57523803710937,
+            -52.065940856933594
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            10.871164321899414,
+            99.77523803710938,
+            -52.065940856933594
+          ],
+          "source": "romfs/Banc/LostWood/LostWood_Child_Static.bcett.byml.zs",
+          "source_sha256": "5cdb3934979554aca0074245784afe8459860aed0b8cc8821b341ef7d3592592",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearPlayerCheck": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true,
+            "Enemy_Skulltula_Gold_IsMagicBeanSoil": true,
+            "Enemy_Skulltula_Gold_IsOverwriteAgonyStonePos": true
+          },
+          "presence": {
+            "FlagName": "Gimmick_MagicBeanSoil_LostWood01",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        }
+      ],
+      "notes": [
+        "release bugs into soil"
+      ]
+    },
+    {
+      "id": "4335656213162247230",
+      "label": "Lost Wood #3",
+      "variants": [
+        {
+          "banc": "LostWood_Adult",
+          "age": "Adult",
+          "position": [
+            14.450913429260254,
+            106.65079956054687,
+            -56.41813278198242
+          ],
+          "rotation": [
+            0.0,
+            0.7921924591064453,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            14.450913429260254,
+            105.85079956054688,
+            -56.41813278198242
+          ],
+          "source": "romfs/Banc/LostWood/LostWood_Adult_Static.bcett.byml.zs",
+          "source_sha256": "5e415ea7611fc7fa31eb1360a2f813cbdf5e1ca4c14391d0e2d3cf86301025e1",
+          "conditions": {
+            "Enemy_Skulltula_Gold_IsOverwriteAgonyStonePos": true
+          },
+          "presence": {}
+        },
+        {
+          "banc": "LostWood_Child",
+          "age": "Child",
+          "position": [
+            14.450913429260254,
+            106.65079956054687,
+            -56.41813278198242
+          ],
+          "rotation": [
+            0.0,
+            0.7921924591064453,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            14.450913429260254,
+            105.85079956054688,
+            -56.41813278198242
+          ],
+          "source": "romfs/Banc/LostWood/LostWood_Child_Static.bcett.byml.zs",
+          "source_sha256": "5cdb3934979554aca0074245784afe8459860aed0b8cc8821b341ef7d3592592",
+          "conditions": {
+            "Enemy_Skulltula_Gold_IsOverwriteAgonyStonePos": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "8942465719711548237",
+      "label": "Market #1",
+      "variants": [
+        {
+          "banc": "Market_Child",
+          "age": "Child",
+          "position": [
+            17.38143539428711,
+            102.89561920166015,
+            58.356998443603516
+          ],
+          "rotation": [
+            0.0,
+            -1.0706983804702759,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            17.38143539428711,
+            102.09561920166016,
+            58.356998443603516
+          ],
+          "source": "romfs/Banc/Market/Market_Child_Static.bcett.byml.zs",
+          "source_sha256": "5ed751f63083964aafa1c47b9b48e999ffcca598691a8ba9e1bbf379e26e06b5",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearPopOut": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "14473218207379268379",
+      "label": "Sacred Forest Meadow #1",
+      "variants": [
+        {
+          "banc": "SacredForestMeadow_Adult",
+          "age": "Adult",
+          "position": [
+            7.752925395965576,
+            108.17591552734375,
+            13.20976734161377
+          ],
+          "rotation": [
+            0.0,
+            0.10127799212932587,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            7.752925395965576,
+            107.37591552734375,
+            13.20976734161377
+          ],
+          "source": "romfs/Banc/SacredForestMeadow/SacredForestMeadow_Adult_Static.bcett.byml.zs",
+          "source_sha256": "6df011a5552aa5475c9c6f3654d533db8c5090cd319c1485b0c98682c00f4441",
+          "conditions": {},
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "10270336409167849808",
+      "label": "Shadow Temple #1",
+      "variants": [
+        {
+          "banc": "ShadowTemple",
+          "age": "Adult",
+          "position": [
+            -212.26614379882812,
+            42.10322265625,
+            -37.39935302734375
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -212.26614379882812,
+            41.30322265625,
+            -37.39935302734375
+          ],
+          "source": "romfs/Banc/ShadowTemple/ShadowTemple_Static.bcett.byml.zs",
+          "source_sha256": "a4233f8731ec01ef3e16cb18f1f4df66bdf802d939a1698141941963a67d1587",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 20,
+            "Enemy_Skulltula_Gold_AppearJumpSpeed": 4.0,
+            "Enemy_Skulltula_Gold_AppearMessageWarp": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true
+          },
+          "presence": {}
+        },
+        {
+          "banc": "ShadowTemple",
+          "age": "Child",
+          "position": [
+            -212.26614379882812,
+            42.10322265625,
+            -37.39935302734375
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -212.26614379882812,
+            41.30322265625,
+            -37.39935302734375
+          ],
+          "source": "romfs/Banc/ShadowTemple/ShadowTemple_Static.bcett.byml.zs",
+          "source_sha256": "a4233f8731ec01ef3e16cb18f1f4df66bdf802d939a1698141941963a67d1587",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 20,
+            "Enemy_Skulltula_Gold_AppearJumpSpeed": 4.0,
+            "Enemy_Skulltula_Gold_AppearMessageWarp": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "15148554628675590606",
+      "label": "Shadow Temple #2",
+      "variants": [
+        {
+          "banc": "ShadowTemple",
+          "age": "Adult",
+          "position": [
+            33.3664665222168,
+            74.56506805419922,
+            86.19779968261719
+          ],
+          "rotation": [
+            0.0,
+            1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            33.3664665222168,
+            73.76506805419922,
+            86.19779968261719
+          ],
+          "source": "romfs/Banc/ShadowTemple/ShadowTemple_Static.bcett.byml.zs",
+          "source_sha256": "a4233f8731ec01ef3e16cb18f1f4df66bdf802d939a1698141941963a67d1587",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 11,
+            "Enemy_Skulltula_Gold_IsOverwriteAgonyStonePos": true
+          },
+          "presence": {}
+        },
+        {
+          "banc": "ShadowTemple",
+          "age": "Child",
+          "position": [
+            33.3664665222168,
+            74.56506805419922,
+            86.19779968261719
+          ],
+          "rotation": [
+            0.0,
+            1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            33.3664665222168,
+            73.76506805419922,
+            86.19779968261719
+          ],
+          "source": "romfs/Banc/ShadowTemple/ShadowTemple_Static.bcett.byml.zs",
+          "source_sha256": "a4233f8731ec01ef3e16cb18f1f4df66bdf802d939a1698141941963a67d1587",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 11,
+            "Enemy_Skulltula_Gold_IsOverwriteAgonyStonePos": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "15564367841356014861",
+      "label": "Shadow Temple #3",
+      "variants": [
+        {
+          "banc": "ShadowTemple",
+          "age": "Adult",
+          "position": [
+            75.83562469482422,
+            54.20935134887695,
+            6.327821254730225
+          ],
+          "rotation": [
+            0.0,
+            -1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            75.83562469482422,
+            53.40935134887695,
+            6.327821254730225
+          ],
+          "source": "romfs/Banc/ShadowTemple/ShadowTemple_Static.bcett.byml.zs",
+          "source_sha256": "a4233f8731ec01ef3e16cb18f1f4df66bdf802d939a1698141941963a67d1587",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 14
+          },
+          "presence": {}
+        },
+        {
+          "banc": "ShadowTemple",
+          "age": "Child",
+          "position": [
+            75.83562469482422,
+            54.20935134887695,
+            6.327821254730225
+          ],
+          "rotation": [
+            0.0,
+            -1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            75.83562469482422,
+            53.40935134887695,
+            6.327821254730225
+          ],
+          "source": "romfs/Banc/ShadowTemple/ShadowTemple_Static.bcett.byml.zs",
+          "source_sha256": "a4233f8731ec01ef3e16cb18f1f4df66bdf802d939a1698141941963a67d1587",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 14
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "8823884712433934372",
+      "label": "Shadow Temple #4",
+      "variants": [
+        {
+          "banc": "ShadowTemple",
+          "age": "Adult",
+          "position": [
+            104.61121368408203,
+            52.811215209960935,
+            -39.78573989868164
+          ],
+          "rotation": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            104.61121368408203,
+            52.01121520996094,
+            -39.78573989868164
+          ],
+          "source": "romfs/Banc/ShadowTemple/ShadowTemple_Static.bcett.byml.zs",
+          "source_sha256": "a4233f8731ec01ef3e16cb18f1f4df66bdf802d939a1698141941963a67d1587",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 17
+          },
+          "presence": {}
+        },
+        {
+          "banc": "ShadowTemple",
+          "age": "Child",
+          "position": [
+            104.61121368408203,
+            52.811215209960935,
+            -39.78573989868164
+          ],
+          "rotation": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            104.61121368408203,
+            52.01121520996094,
+            -39.78573989868164
+          ],
+          "source": "romfs/Banc/ShadowTemple/ShadowTemple_Static.bcett.byml.zs",
+          "source_sha256": "a4233f8731ec01ef3e16cb18f1f4df66bdf802d939a1698141941963a67d1587",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 17
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "16933078188088206331",
+      "label": "Shadow Temple #5",
+      "variants": [
+        {
+          "banc": "ShadowTemple",
+          "age": "Adult",
+          "position": [
+            179.78692626953125,
+            63.27434616088867,
+            96.86360168457031
+          ],
+          "rotation": [
+            0.0,
+            1.308997631072998,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            179.78692626953125,
+            62.47434616088867,
+            96.86360168457031
+          ],
+          "source": "romfs/Banc/ShadowTemple/ShadowTemple_Static.bcett.byml.zs",
+          "source_sha256": "a4233f8731ec01ef3e16cb18f1f4df66bdf802d939a1698141941963a67d1587",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 31
+          },
+          "presence": {}
+        },
+        {
+          "banc": "ShadowTemple",
+          "age": "Child",
+          "position": [
+            179.78692626953125,
+            63.27434616088867,
+            96.86360168457031
+          ],
+          "rotation": [
+            0.0,
+            1.308997631072998,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            179.78692626953125,
+            62.47434616088867,
+            96.86360168457031
+          ],
+          "source": "romfs/Banc/ShadowTemple/ShadowTemple_Static.bcett.byml.zs",
+          "source_sha256": "a4233f8731ec01ef3e16cb18f1f4df66bdf802d939a1698141941963a67d1587",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 31
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "10127391959410674946",
+      "label": "Spirit Temple #1",
+      "variants": [
+        {
+          "banc": "SpiritTemple",
+          "age": "Adult",
+          "position": [
+            -55.689632415771484,
+            137.42864685058595,
+            -7.304373741149902
+          ],
+          "rotation": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -55.689632415771484,
+            136.62864685058594,
+            -7.304373741149902
+          ],
+          "source": "romfs/Banc/SpiritTemple/SpiritTemple_Static.bcett.byml.zs",
+          "source_sha256": "91f8755833e6ea776b22417ae6f01a58c25cb7f944c116184e8b64d7e8d0c8cd",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 10
+          },
+          "presence": {}
+        },
+        {
+          "banc": "SpiritTemple",
+          "age": "Child",
+          "position": [
+            -55.689632415771484,
+            137.42864685058595,
+            -7.304373741149902
+          ],
+          "rotation": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -55.689632415771484,
+            136.62864685058594,
+            -7.304373741149902
+          ],
+          "source": "romfs/Banc/SpiritTemple/SpiritTemple_Static.bcett.byml.zs",
+          "source_sha256": "91f8755833e6ea776b22417ae6f01a58c25cb7f944c116184e8b64d7e8d0c8cd",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 10
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "5086449036385341804",
+      "label": "Spirit Temple #2",
+      "variants": [
+        {
+          "banc": "SpiritTemple",
+          "age": "Adult",
+          "position": [
+            -23.085262298583984,
+            130.46792297363282,
+            -66.67888641357422
+          ],
+          "rotation": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -23.085262298583984,
+            129.6679229736328,
+            -66.67888641357422
+          ],
+          "source": "romfs/Banc/SpiritTemple/SpiritTemple_Static.bcett.byml.zs",
+          "source_sha256": "91f8755833e6ea776b22417ae6f01a58c25cb7f944c116184e8b64d7e8d0c8cd",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 7
+          },
+          "presence": {}
+        },
+        {
+          "banc": "SpiritTemple",
+          "age": "Child",
+          "position": [
+            -23.085262298583984,
+            130.46792297363282,
+            -66.67888641357422
+          ],
+          "rotation": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -23.085262298583984,
+            129.6679229736328,
+            -66.67888641357422
+          ],
+          "source": "romfs/Banc/SpiritTemple/SpiritTemple_Static.bcett.byml.zs",
+          "source_sha256": "91f8755833e6ea776b22417ae6f01a58c25cb7f944c116184e8b64d7e8d0c8cd",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 7
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "10530233152473742636",
+      "label": "Spirit Temple #3",
+      "variants": [
+        {
+          "banc": "SpiritTemple",
+          "age": "Adult",
+          "position": [
+            -9.585224151611328,
+            108.22214965820312,
+            -55.99749755859375
+          ],
+          "rotation": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -9.585224151611328,
+            107.42214965820312,
+            -55.99749755859375
+          ],
+          "source": "romfs/Banc/SpiritTemple/SpiritTemple_Static.bcett.byml.zs",
+          "source_sha256": "91f8755833e6ea776b22417ae6f01a58c25cb7f944c116184e8b64d7e8d0c8cd",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 4
+          },
+          "presence": {}
+        },
+        {
+          "banc": "SpiritTemple",
+          "age": "Child",
+          "position": [
+            -9.585224151611328,
+            108.22214965820312,
+            -55.99749755859375
+          ],
+          "rotation": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -9.585224151611328,
+            107.42214965820312,
+            -55.99749755859375
+          ],
+          "source": "romfs/Banc/SpiritTemple/SpiritTemple_Static.bcett.byml.zs",
+          "source_sha256": "91f8755833e6ea776b22417ae6f01a58c25cb7f944c116184e8b64d7e8d0c8cd",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 4
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "12959656942046734931",
+      "label": "Spirit Temple #4",
+      "variants": [
+        {
+          "banc": "SpiritTemple",
+          "age": "Adult",
+          "position": [
+            14.746406555175781,
+            115.95298461914062,
+            -68.7867660522461
+          ],
+          "rotation": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            14.746406555175781,
+            115.15298461914062,
+            -68.7867660522461
+          ],
+          "source": "romfs/Banc/SpiritTemple/SpiritTemple_Static.bcett.byml.zs",
+          "source_sha256": "91f8755833e6ea776b22417ae6f01a58c25cb7f944c116184e8b64d7e8d0c8cd",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 7
+          },
+          "presence": {}
+        },
+        {
+          "banc": "SpiritTemple",
+          "age": "Child",
+          "position": [
+            14.746406555175781,
+            115.95298461914062,
+            -68.7867660522461
+          ],
+          "rotation": [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            14.746406555175781,
+            115.15298461914062,
+            -68.7867660522461
+          ],
+          "source": "romfs/Banc/SpiritTemple/SpiritTemple_Static.bcett.byml.zs",
+          "source_sha256": "91f8755833e6ea776b22417ae6f01a58c25cb7f944c116184e8b64d7e8d0c8cd",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 7
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "8120267919866495114",
+      "label": "Spirit Temple #5",
+      "variants": [
+        {
+          "banc": "SpiritTemple",
+          "age": "Adult",
+          "position": [
+            38.95558547973633,
+            104.97094421386718,
+            -62.89006042480469
+          ],
+          "rotation": [
+            0.0,
+            -1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            38.95558547973633,
+            104.17094421386719,
+            -62.89006042480469
+          ],
+          "source": "romfs/Banc/SpiritTemple/SpiritTemple_Static.bcett.byml.zs",
+          "source_sha256": "91f8755833e6ea776b22417ae6f01a58c25cb7f944c116184e8b64d7e8d0c8cd",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 15
+          },
+          "presence": {}
+        },
+        {
+          "banc": "SpiritTemple",
+          "age": "Child",
+          "position": [
+            38.95558547973633,
+            104.97094421386718,
+            -62.89006042480469
+          ],
+          "rotation": [
+            0.0,
+            -1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            38.95558547973633,
+            104.17094421386719,
+            -62.89006042480469
+          ],
+          "source": "romfs/Banc/SpiritTemple/SpiritTemple_Static.bcett.byml.zs",
+          "source_sha256": "91f8755833e6ea776b22417ae6f01a58c25cb7f944c116184e8b64d7e8d0c8cd",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 15
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "15506432733081566465",
+      "label": "Water Temple #1",
+      "variants": [
+        {
+          "banc": "WaterTemple",
+          "age": "Adult",
+          "position": [
+            -54.54180145263672,
+            114.80733947753906,
+            -59.25239944458008
+          ],
+          "rotation": [
+            0.0,
+            0.19719740748405457,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -54.54180145263672,
+            114.00733947753906,
+            -59.25239944458008
+          ],
+          "source": "romfs/Banc/WaterTemple/WaterTemple_Static.bcett.byml.zs",
+          "source_sha256": "7defc8b0e7d4b1fb187ce892037fa829d7d5d02e1b8a37456fbd3a59ac26d80c",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 21
+          },
+          "presence": {}
+        },
+        {
+          "banc": "WaterTemple",
+          "age": "Child",
+          "position": [
+            -54.54180145263672,
+            114.80733947753906,
+            -59.25239944458008
+          ],
+          "rotation": [
+            0.0,
+            0.19719740748405457,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -54.54180145263672,
+            114.00733947753906,
+            -59.25239944458008
+          ],
+          "source": "romfs/Banc/WaterTemple/WaterTemple_Static.bcett.byml.zs",
+          "source_sha256": "7defc8b0e7d4b1fb187ce892037fa829d7d5d02e1b8a37456fbd3a59ac26d80c",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 21
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "11571778270592589517",
+      "label": "Water Temple #2",
+      "variants": [
+        {
+          "banc": "WaterTemple",
+          "age": "Adult",
+          "position": [
+            -1.1885554790496826,
+            126.75437622070312,
+            -7.896000385284424
+          ],
+          "rotation": [
+            0.0,
+            0.7853982448577881,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -1.1885554790496826,
+            125.95437622070312,
+            -7.896000385284424
+          ],
+          "source": "romfs/Banc/WaterTemple/WaterTemple_Static.bcett.byml.zs",
+          "source_sha256": "7defc8b0e7d4b1fb187ce892037fa829d7d5d02e1b8a37456fbd3a59ac26d80c",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 1
+          },
+          "presence": {}
+        },
+        {
+          "banc": "WaterTemple",
+          "age": "Child",
+          "position": [
+            -1.1885554790496826,
+            126.75437622070312,
+            -7.896000385284424
+          ],
+          "rotation": [
+            0.0,
+            0.7853982448577881,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -1.1885554790496826,
+            125.95437622070312,
+            -7.896000385284424
+          ],
+          "source": "romfs/Banc/WaterTemple/WaterTemple_Static.bcett.byml.zs",
+          "source_sha256": "7defc8b0e7d4b1fb187ce892037fa829d7d5d02e1b8a37456fbd3a59ac26d80c",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 1
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "16157272130665282352",
+      "label": "Water Temple #3",
+      "variants": [
+        {
+          "banc": "WaterTemple",
+          "age": "Adult",
+          "position": [
+            1.3956254720687866,
+            95.95240478515625,
+            0.5450186729431152
+          ],
+          "rotation": [
+            0.0,
+            1.448446273803711,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            1.3956254720687866,
+            95.15240478515625,
+            0.5450186729431152
+          ],
+          "source": "romfs/Banc/WaterTemple/WaterTemple_Static.bcett.byml.zs",
+          "source_sha256": "7defc8b0e7d4b1fb187ce892037fa829d7d5d02e1b8a37456fbd3a59ac26d80c",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 2
+          },
+          "presence": {}
+        },
+        {
+          "banc": "WaterTemple",
+          "age": "Child",
+          "position": [
+            1.3956254720687866,
+            95.95240478515625,
+            0.5450186729431152
+          ],
+          "rotation": [
+            0.0,
+            1.448446273803711,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            1.3956254720687866,
+            95.15240478515625,
+            0.5450186729431152
+          ],
+          "source": "romfs/Banc/WaterTemple/WaterTemple_Static.bcett.byml.zs",
+          "source_sha256": "7defc8b0e7d4b1fb187ce892037fa829d7d5d02e1b8a37456fbd3a59ac26d80c",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 2
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "186694424287048567",
+      "label": "Water Temple #4",
+      "variants": [
+        {
+          "banc": "WaterTemple",
+          "age": "Adult",
+          "position": [
+            18.645626068115234,
+            108.3,
+            -65.66000366210938
+          ],
+          "rotation": [
+            0.0,
+            1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            18.645626068115234,
+            107.5,
+            -65.66000366210938
+          ],
+          "source": "romfs/Banc/WaterTemple/WaterTemple_Static.bcett.byml.zs",
+          "source_sha256": "7defc8b0e7d4b1fb187ce892037fa829d7d5d02e1b8a37456fbd3a59ac26d80c",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 24
+          },
+          "presence": {}
+        },
+        {
+          "banc": "WaterTemple",
+          "age": "Child",
+          "position": [
+            18.645626068115234,
+            108.3,
+            -65.66000366210938
+          ],
+          "rotation": [
+            0.0,
+            1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            18.645626068115234,
+            107.5,
+            -65.66000366210938
+          ],
+          "source": "romfs/Banc/WaterTemple/WaterTemple_Static.bcett.byml.zs",
+          "source_sha256": "7defc8b0e7d4b1fb187ce892037fa829d7d5d02e1b8a37456fbd3a59ac26d80c",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 24
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "4399424945134189769",
+      "label": "Water Temple #5",
+      "variants": [
+        {
+          "banc": "WaterTemple",
+          "age": "Adult",
+          "position": [
+            35.07986831665039,
+            113.3,
+            -9.548903465270996
+          ],
+          "rotation": [
+            0.0,
+            1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            35.07986831665039,
+            112.5,
+            -9.548903465270996
+          ],
+          "source": "romfs/Banc/WaterTemple/WaterTemple_Static.bcett.byml.zs",
+          "source_sha256": "7defc8b0e7d4b1fb187ce892037fa829d7d5d02e1b8a37456fbd3a59ac26d80c",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 25,
+            "Enemy_Skulltula_Gold_IsAgonyStoneDungeonRoomLimit": true
+          },
+          "presence": {}
+        },
+        {
+          "banc": "WaterTemple",
+          "age": "Child",
+          "position": [
+            35.07986831665039,
+            113.3,
+            -9.548903465270996
+          ],
+          "rotation": [
+            0.0,
+            1.570796251296997,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            35.07986831665039,
+            112.5,
+            -9.548903465270996
+          ],
+          "source": "romfs/Banc/WaterTemple/WaterTemple_Static.bcett.byml.zs",
+          "source_sha256": "7defc8b0e7d4b1fb187ce892037fa829d7d5d02e1b8a37456fbd3a59ac26d80c",
+          "conditions": {
+            "DefaultDungeonRoomIndex": 25,
+            "Enemy_Skulltula_Gold_IsAgonyStoneDungeonRoomLimit": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "9600417828645642589",
+      "label": "Zora Domain #1",
+      "variants": [
+        {
+          "banc": "ZoraDomain_Adult",
+          "age": "Adult",
+          "position": [
+            17.287803649902344,
+            116.2747085571289,
+            2.7248196601867676
+          ],
+          "rotation": [
+            0.0,
+            0.8726644515991211,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            17.287803649902344,
+            115.4747085571289,
+            2.7248196601867676
+          ],
+          "source": "romfs/Banc/ZoraDomain/ZoraDomain_Adult_Static.bcett.byml.zs",
+          "source_sha256": "fe1698ee0554e32641f64e4ec3499d536c5f4ab85bf544bd9a1cabdda48ab11c",
+          "conditions": {},
+          "presence": {}
+        },
+        {
+          "banc": "ZoraDomain_Adult_Alternative",
+          "age": "Adult",
+          "position": [
+            17.287803649902344,
+            116.2747085571289,
+            2.7248196601867676
+          ],
+          "rotation": [
+            0.0,
+            0.8726644515991211,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            17.287803649902344,
+            115.4747085571289,
+            2.7248196601867676
+          ],
+          "source": "romfs/Banc/ZoraDomain/ZoraDomain_Adult_Alternative_Static.bcett.byml.zs",
+          "source_sha256": "0fe7927b430e296bc18cc4609cf18e2dfb187b7497b546e3d18c0a0dd4c6c68f",
+          "conditions": {},
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "7152962033963346563",
+      "label": "Zora Fountain #1",
+      "variants": [
+        {
+          "banc": "ZoraFountain_Child",
+          "age": "Child",
+          "position": [
+            14.036932945251465,
+            108.58923797607422,
+            22.81756019592285
+          ],
+          "rotation": [
+            0.0,
+            0.4918304681777954,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            14.036932945251465,
+            107.78923797607422,
+            22.81756019592285
+          ],
+          "source": "romfs/Banc/ZoraFountain/ZoraFountain_Child_Static.bcett.byml.zs",
+          "source_sha256": "e751503dadaf97f2514b7a1a101877f57c11a7ce801d3c51057ca6560646bb5c",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "17355397719442343054",
+      "label": "Zora Fountain #2",
+      "variants": [
+        {
+          "banc": "ZoraFountain_Child",
+          "age": "Child",
+          "position": [
+            49.30533981323242,
+            111.16543273925781,
+            32.040775299072266
+          ],
+          "rotation": [
+            0.0,
+            0.7354281544685364,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            49.30533981323242,
+            110.36543273925781,
+            32.040775299072266
+          ],
+          "source": "romfs/Banc/ZoraFountain/ZoraFountain_Child_Static.bcett.byml.zs",
+          "source_sha256": "e751503dadaf97f2514b7a1a101877f57c11a7ce801d3c51057ca6560646bb5c",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearJumpHight": 0.10000000149011612,
+            "Enemy_Skulltula_Gold_AppearJumpSpeed": 2.0,
+            "Enemy_Skulltula_Gold_AppearPlayerCheck": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true,
+            "Enemy_Skulltula_Gold_AppearWarpRotOffset": 45.0
+          },
+          "presence": {}
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "9537398183107003742",
+      "label": "Zora Fountain #3",
+      "variants": [
+        {
+          "banc": "ZoraFountain_Adult",
+          "age": "Adult",
+          "position": [
+            79.96245574951172,
+            134.15884094238282,
+            12.896195411682129
+          ],
+          "rotation": [
+            0.0,
+            0.26738160848617554,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            79.96245574951172,
+            133.3588409423828,
+            12.896195411682129
+          ],
+          "source": "romfs/Banc/ZoraFountain/ZoraFountain_Adult_Static.bcett.byml.zs",
+          "source_sha256": "631e5a178fc54bcddbf6c42305649d9f3b4daf3fe19c9316614a81e1458c22b0",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        },
+        {
+          "banc": "ZoraFountain_Child",
+          "age": "Child",
+          "position": [
+            79.9628677368164,
+            134.15609436035157,
+            12.899026870727539
+          ],
+          "rotation": [
+            0.0,
+            0.26738160848617554,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            79.9628677368164,
+            133.35609436035156,
+            12.899026870727539
+          ],
+          "source": "romfs/Banc/ZoraFountain/ZoraFountain_Child_Static.bcett.byml.zs",
+          "source_sha256": "e751503dadaf97f2514b7a1a101877f57c11a7ce801d3c51057ca6560646bb5c",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "12370559827741970774",
+      "label": "Zora River #1",
+      "variants": [
+        {
+          "banc": "ZoraRiver_Child",
+          "age": "Child",
+          "position": [
+            -54.55933380126953,
+            101.4044692993164,
+            -11.857033729553223
+          ],
+          "rotation": [
+            0.0,
+            0.3573741018772125,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -54.55933380126953,
+            100.6044692993164,
+            -11.857033729553223
+          ],
+          "source": "romfs/Banc/ZoraRiver/ZoraRiver_Child_Static.bcett.byml.zs",
+          "source_sha256": "9a7e799f2fef2acbc476712bfc77be523cc92fb82d806245e4b21ec0b5b91676",
+          "conditions": {
+            "Enemy_Skulltula_Gold_AppearPlayerCheck": true,
+            "Enemy_Skulltula_Gold_AppearPopOut": true,
+            "Enemy_Skulltula_Gold_AvoidTargetAngle": 90.0,
+            "Enemy_Skulltula_Gold_IsMagicBeanSoil": true
+          },
+          "presence": {
+            "FlagName": "Gimmick_MagicBeanSoil_ZoraRiver02",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        }
+      ],
+      "notes": [
+        "release bugs into soil"
+      ]
+    },
+    {
+      "id": "10917372215719266172",
+      "label": "Zora River #2",
+      "variants": [
+        {
+          "banc": "ZoraRiver_Adult",
+          "age": "Adult",
+          "position": [
+            -35.0,
+            119.55,
+            12.50000286102295
+          ],
+          "rotation": [
+            0.0,
+            -6.6002361555513294e-15,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -35.0,
+            118.75,
+            12.50000286102295
+          ],
+          "source": "romfs/Banc/ZoraRiver/ZoraRiver_Adult_Static.bcett.byml.zs",
+          "source_sha256": "f1e56fd6a2c367fbc0a7cdaba858c3713227dcb6661026ce792ee55f2671e635",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "9450239379321634455",
+      "label": "Zora River #3",
+      "variants": [
+        {
+          "banc": "ZoraRiver_Adult",
+          "age": "Adult",
+          "position": [
+            76.28485107421875,
+            127.60093383789062,
+            -46.406898498535156
+          ],
+          "rotation": [
+            0.0,
+            -0.4933125376701355,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            76.28485107421875,
+            126.80093383789062,
+            -46.406898498535156
+          ],
+          "source": "romfs/Banc/ZoraRiver/ZoraRiver_Adult_Static.bcett.byml.zs",
+          "source_sha256": "f1e56fd6a2c367fbc0a7cdaba858c3713227dcb6661026ce792ee55f2671e635",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    },
+    {
+      "id": "8695975724114049706",
+      "label": "Zora River #4",
+      "variants": [
+        {
+          "banc": "ZoraRiver_Child",
+          "age": "Child",
+          "position": [
+            112.59999084472656,
+            112.60000305175781,
+            -48.800010681152344
+          ],
+          "rotation": [
+            0.0,
+            1.4461159706115723,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            112.59999084472656,
+            111.80000305175781,
+            -48.800010681152344
+          ],
+          "source": "romfs/Banc/ZoraRiver/ZoraRiver_Child_Static.bcett.byml.zs",
+          "source_sha256": "9a7e799f2fef2acbc476712bfc77be523cc92fb82d806245e4b21ec0b5b91676",
+          "conditions": {
+            "Enemy_Skulltula_Gold_Nocturnal": true
+          },
+          "presence": {}
+        }
+      ],
+      "notes": [
+        "night"
+      ]
+    }
+  ],
+  "beans": [
+    {
+      "id": "12044463103654268862",
+      "label": "Death Mountain Crater #1",
+      "variants": [
+        {
+          "banc": "DeathMountainCrater_Adult",
+          "age": "Adult",
+          "position": [
+            3.75,
+            111.74210815429687,
+            -0.75
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            3.75,
+            110.94210815429688,
+            -0.75
+          ],
+          "source": "romfs/Banc/DeathMountainCrater/DeathMountainCrater_Adult_Static.bcett.byml.zs",
+          "source_sha256": "fe55388f505ba9e16cce21e748a0f684b5c6d181289b8b31a41768650d6f3d89",
+          "conditions": {
+            "DiveInsectGameData": "Gimmick_MagicBeanSoil_DeathMountainCrater"
+          },
+          "presence": {
+            "FlagName": "Sequence_IsChildhood",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        },
+        {
+          "banc": "DeathMountainCrater_Child",
+          "age": "Child",
+          "position": [
+            3.75,
+            111.74210815429687,
+            -0.75
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            3.75,
+            110.94210815429688,
+            -0.75
+          ],
+          "source": "romfs/Banc/DeathMountainCrater/DeathMountainCrater_Child_Static.bcett.byml.zs",
+          "source_sha256": "5dfce425917a46e6610776f38b32ea41a221825d87427dca5f757afead0a93ad",
+          "conditions": {
+            "DiveInsectGameData": "Gimmick_MagicBeanSoil_DeathMountainCrater"
+          },
+          "presence": {
+            "FlagName": "Sequence_IsChildhood",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        }
+      ],
+      "plant_flag": {
+        "hash": "562fab76",
+        "index": 9239,
+        "instance_name": "12044463103654268862",
+        "instance_hash": "41bfc82d",
+        "parent_hash": "820c6b5e"
+      },
+      "notes": [
+        "plant as Child; grown platform as Adult"
+      ]
+    },
+    {
+      "id": "18350441421271687772",
+      "label": "Death Mountain Trail #1",
+      "variants": [
+        {
+          "banc": "DeathMountainTrail_Adult",
+          "age": "Adult",
+          "position": [
+            -45.49999237060547,
+            109.71514587402343,
+            -20.249996185302734
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -45.49999237060547,
+            108.91514587402344,
+            -20.249996185302734
+          ],
+          "source": "romfs/Banc/DeathMountainTrail/DeathMountainTrail_Adult_Static.bcett.byml.zs",
+          "source_sha256": "bfd0fcfbb26bc9461d3b31b4825791de63f075a7427a7de1ae199bf1a6ac8c17",
+          "conditions": {
+            "DiveInsectGameData": "Gimmick_MagicBeanSoil_DeathMountainTrail"
+          },
+          "presence": {
+            "FlagName": "Sequence_IsChildhood",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        },
+        {
+          "banc": "DeathMountainTrail_Child",
+          "age": "Child",
+          "position": [
+            -45.49999237060547,
+            109.71514587402343,
+            -20.249996185302734
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -45.49999237060547,
+            108.91514587402344,
+            -20.249996185302734
+          ],
+          "source": "romfs/Banc/DeathMountainTrail/DeathMountainTrail_Child_Static.bcett.byml.zs",
+          "source_sha256": "71256fb47486c60c7a8b5e655213e48d25458a1abc218764e8e6bdad837328bc",
+          "conditions": {
+            "DiveInsectGameData": "Gimmick_MagicBeanSoil_DeathMountainTrail"
+          },
+          "presence": {
+            "FlagName": "Sequence_IsChildhood",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        }
+      ],
+      "plant_flag": {
+        "hash": "f2ceba92",
+        "index": 9244,
+        "instance_name": "18350441421271687772",
+        "instance_hash": "39aa122c",
+        "parent_hash": "820c6b5e"
+      },
+      "notes": [
+        "plant as Child; grown platform as Adult"
+      ]
+    },
+    {
+      "id": "14429198438059673734",
+      "label": "Desert Colossus #1",
+      "variants": [
+        {
+          "banc": "DesertColossus_Adult",
+          "age": "Adult",
+          "position": [
+            -157.4656524658203,
+            96.17831878662109,
+            17.18413543701172
+          ],
+          "rotation": [
+            0.0,
+            -1.5669673681259155,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -157.4656524658203,
+            95.3783187866211,
+            17.18413543701172
+          ],
+          "source": "romfs/Banc/DesertColossus/DesertColossus_Adult_Static.bcett.byml.zs",
+          "source_sha256": "f819af51e71344fba55e39713d5fe314be7c9ab47aa6f9da209f54a77baf5d3a",
+          "conditions": {
+            "DiveInsectGameData": "Gimmick_MagicBeanSoil_DesertColossus"
+          },
+          "presence": {
+            "FlagName": "Sequence_IsChildhood",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        },
+        {
+          "banc": "DesertColossus_Child",
+          "age": "Child",
+          "position": [
+            -157.4656524658203,
+            96.17831878662109,
+            17.18413543701172
+          ],
+          "rotation": [
+            0.0,
+            -1.5669673681259155,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -157.4656524658203,
+            95.3783187866211,
+            17.18413543701172
+          ],
+          "source": "romfs/Banc/DesertColossus/DesertColossus_Child_Static.bcett.byml.zs",
+          "source_sha256": "128ba04e40af0c41c031512df9641a7c1fe039f58ab95b75d7aa2f90c50c43c3",
+          "conditions": {
+            "DiveInsectGameData": "Gimmick_MagicBeanSoil_DesertColossus"
+          },
+          "presence": {
+            "FlagName": "Sequence_IsChildhood",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        }
+      ],
+      "plant_flag": {
+        "hash": "2a1c58ce",
+        "index": 9240,
+        "instance_name": "14429198438059673734",
+        "instance_hash": "0e620e1c",
+        "parent_hash": "820c6b5e"
+      },
+      "notes": [
+        "plant as Child; grown platform as Adult"
+      ]
+    },
+    {
+      "id": "10857724324414230743",
+      "label": "Gerudo Valley #1",
+      "variants": [
+        {
+          "banc": "GerudoValley_Adult",
+          "age": "Adult",
+          "position": [
+            -11.040997505187988,
+            48.56062774658203,
+            2.4471940994262695
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -11.040997505187988,
+            47.76062774658203,
+            2.4471940994262695
+          ],
+          "source": "romfs/Banc/GerudoValley/GerudoValley_Adult_Static.bcett.byml.zs",
+          "source_sha256": "def6548b1b1939dc64bdf7be99076947feb53e6e98cc57699bee1ab94ee5e30f",
+          "conditions": {
+            "DiveInsectGameData": "Gimmick_MagicBeanSoil_GerudoValley"
+          },
+          "presence": {
+            "FlagName": "Sequence_IsChildhood",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        },
+        {
+          "banc": "GerudoValley_Child",
+          "age": "Child",
+          "position": [
+            -11.040997505187988,
+            48.56062774658203,
+            2.4471940994262695
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -11.040997505187988,
+            47.76062774658203,
+            2.4471940994262695
+          ],
+          "source": "romfs/Banc/GerudoValley/GerudoValley_Child_Static.bcett.byml.zs",
+          "source_sha256": "5607b9788547dc99850708066182efae213bf25348656a783f256e378fa19679",
+          "conditions": {
+            "DiveInsectGameData": "Gimmick_MagicBeanSoil_GerudoValley"
+          },
+          "presence": {
+            "FlagName": "Sequence_IsChildhood",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        }
+      ],
+      "plant_flag": {
+        "hash": "50a1775e",
+        "index": 9238,
+        "instance_name": "10857724324414230743",
+        "instance_hash": "90cdfd1b",
+        "parent_hash": "820c6b5e"
+      },
+      "notes": [
+        "plant as Child; grown platform as Adult"
+      ]
+    },
+    {
+      "id": "17500344509500247365",
+      "label": "Graveyard #1",
+      "variants": [
+        {
+          "banc": "Graveyard_Adult",
+          "age": "Adult",
+          "position": [
+            -12.147199630737305,
+            103.88879852294922,
+            -12.197487831115723
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -12.147199630737305,
+            103.08879852294922,
+            -12.197487831115723
+          ],
+          "source": "romfs/Banc/Graveyard/Graveyard_Adult_Static.bcett.byml.zs",
+          "source_sha256": "42f60b5695eb6b4615e7de4aee842ba836fdfd3d14bd00cb2b0245de09e11280",
+          "conditions": {
+            "DiveInsectGameData": "Gimmick_MagicBeanSoil_Graveyard"
+          },
+          "presence": {
+            "FlagName": "Sequence_IsChildhood",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        },
+        {
+          "banc": "Graveyard_Child",
+          "age": "Child",
+          "position": [
+            -12.147199630737305,
+            103.88879852294922,
+            -12.197487831115723
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -12.147199630737305,
+            103.08879852294922,
+            -12.197487831115723
+          ],
+          "source": "romfs/Banc/Graveyard/Graveyard_Child_Static.bcett.byml.zs",
+          "source_sha256": "548ab2521b54062b04c3b85e93b3cc338e940e8e340f75f42308eaf5a4acbf79",
+          "conditions": {
+            "DiveInsectGameData": "Gimmick_MagicBeanSoil_Graveyard"
+          },
+          "presence": {
+            "FlagName": "Sequence_IsChildhood",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        }
+      ],
+      "plant_flag": {
+        "hash": "274b7e3d",
+        "index": 9242,
+        "instance_name": "17500344509500247365",
+        "instance_hash": "9b07de55",
+        "parent_hash": "820c6b5e"
+      },
+      "notes": [
+        "plant as Child; grown platform as Adult"
+      ]
+    },
+    {
+      "id": "6833516270248855649",
+      "label": "Hyrule Field #1",
+      "variants": [
+        {
+          "banc": "HyruleField_Adult",
+          "age": "Adult",
+          "position": [
+            -167.69866943359375,
+            138.42120056152345,
+            413.4832763671875
+          ],
+          "rotation": [
+            0.0,
+            -0.727434515953064,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -167.69866943359375,
+            137.62120056152344,
+            413.4832763671875
+          ],
+          "source": "romfs/Banc/HyruleField/HyruleField_Adult_Static.bcett.byml.zs",
+          "source_sha256": "7de30a3fc8f5cf19d17ebc6310b72e2b1508f030f2990a544022529740b4802c",
+          "conditions": {
+            "DiveInsectGameData": "Gimmick_MagicBeanSoil_LakeHylia"
+          },
+          "presence": {
+            "FlagName": "Sequence_IsChildhood",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        },
+        {
+          "banc": "HyruleField_Child",
+          "age": "Child",
+          "position": [
+            -167.69866943359375,
+            138.42120056152345,
+            413.4832763671875
+          ],
+          "rotation": [
+            0.0,
+            -0.727434515953064,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -167.69866943359375,
+            137.62120056152344,
+            413.4832763671875
+          ],
+          "source": "romfs/Banc/HyruleField/HyruleField_Child_Static.bcett.byml.zs",
+          "source_sha256": "0d423073dd50bed456b06c7a0421cd98044800c8c577b7052e9a266e3bf28b4f",
+          "conditions": {
+            "DiveInsectGameData": "Gimmick_MagicBeanSoil_LakeHylia"
+          },
+          "presence": {
+            "FlagName": "Sequence_IsChildhood",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        }
+      ],
+      "plant_flag": {
+        "hash": "b0377637",
+        "index": 9247,
+        "instance_name": "6833516270248855649",
+        "instance_hash": "815433ec",
+        "parent_hash": "820c6b5e"
+      },
+      "notes": [
+        "plant as Child; grown platform as Adult"
+      ]
+    },
+    {
+      "id": "9976156629905609191",
+      "label": "Kokiri Forest #1",
+      "variants": [
+        {
+          "banc": "KokiriForest_Adult",
+          "age": "Adult",
+          "position": [
+            -116.08963012695312,
+            120.08399658203125,
+            -56.43204879760742
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -116.08963012695312,
+            119.28399658203125,
+            -56.43204879760742
+          ],
+          "source": "romfs/Banc/KokiriForest/KokiriForest_Adult_Static.bcett.byml.zs",
+          "source_sha256": "8f055ded716b20e103e48c62c166196d8fcc8ad71012fc94aecd3390c3e9f2fd",
+          "conditions": {},
+          "presence": {}
+        },
+        {
+          "banc": "KokiriForest_Child",
+          "age": "Child",
+          "position": [
+            -116.08963012695312,
+            120.08399658203125,
+            -56.43204879760742
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -116.08963012695312,
+            119.28399658203125,
+            -56.43204879760742
+          ],
+          "source": "romfs/Banc/KokiriForest/KokiriForest_Child_Static.bcett.byml.zs",
+          "source_sha256": "008869c0349bce0ac82378391e8bd79b5e9862c481bf4fe2816d9212ff9d291b",
+          "conditions": {},
+          "presence": {}
+        }
+      ],
+      "plant_flag": {
+        "hash": "e7bb7f2f",
+        "index": 9248,
+        "instance_name": "9976156629905609191",
+        "instance_hash": "d3b28b0f",
+        "parent_hash": "820c6b5e"
+      },
+      "notes": [
+        "plant as Child; grown platform as Adult"
+      ]
+    },
+    {
+      "id": "6092667454768667954",
+      "label": "Kokiri Forest #2",
+      "variants": [
+        {
+          "banc": "KokiriForest_Adult",
+          "age": "Adult",
+          "position": [
+            8.242212295532227,
+            113.15700988769531,
+            -23.305742263793945
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            8.242212295532227,
+            112.35700988769531,
+            -23.305742263793945
+          ],
+          "source": "romfs/Banc/KokiriForest/KokiriForest_Adult_Static.bcett.byml.zs",
+          "source_sha256": "8f055ded716b20e103e48c62c166196d8fcc8ad71012fc94aecd3390c3e9f2fd",
+          "conditions": {
+            "DiveInsectGameData": "Gimmick_MagicBeanSoil_KokiriForest"
+          },
+          "presence": {
+            "FlagName": "Sequence_IsChildhood",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        },
+        {
+          "banc": "KokiriForest_Child",
+          "age": "Child",
+          "position": [
+            8.242212295532227,
+            113.15700988769531,
+            -23.305742263793945
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            8.242212295532227,
+            112.35700988769531,
+            -23.305742263793945
+          ],
+          "source": "romfs/Banc/KokiriForest/KokiriForest_Child_Static.bcett.byml.zs",
+          "source_sha256": "008869c0349bce0ac82378391e8bd79b5e9862c481bf4fe2816d9212ff9d291b",
+          "conditions": {
+            "DiveInsectGameData": "Gimmick_MagicBeanSoil_KokiriForest"
+          },
+          "presence": {
+            "FlagName": "Sequence_IsChildhood",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        }
+      ],
+      "plant_flag": {
+        "hash": "b55acadd",
+        "index": 9246,
+        "instance_name": "6092667454768667954",
+        "instance_hash": "ef729864",
+        "parent_hash": "820c6b5e"
+      },
+      "notes": [
+        "plant as Child; grown platform as Adult"
+      ]
+    },
+    {
+      "id": "5234955674857122897",
+      "label": "Lost Wood #1",
+      "variants": [
+        {
+          "banc": "LostWood_Adult",
+          "age": "Adult",
+          "position": [
+            -33.187705993652344,
+            100.68764953613281,
+            31.416748046875
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -33.187705993652344,
+            99.88764953613281,
+            31.416748046875
+          ],
+          "source": "romfs/Banc/LostWood/LostWood_Adult_Static.bcett.byml.zs",
+          "source_sha256": "5e415ea7611fc7fa31eb1360a2f813cbdf5e1ca4c14391d0e2d3cf86301025e1",
+          "conditions": {
+            "DiveInsectGameData": "Gimmick_MagicBeanSoil_LostWood02"
+          },
+          "presence": {
+            "FlagName": "Sequence_IsChildhood",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        },
+        {
+          "banc": "LostWood_Child",
+          "age": "Child",
+          "position": [
+            -33.187705993652344,
+            100.68764953613281,
+            31.416748046875
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -33.187705993652344,
+            99.88764953613281,
+            31.416748046875
+          ],
+          "source": "romfs/Banc/LostWood/LostWood_Child_Static.bcett.byml.zs",
+          "source_sha256": "5cdb3934979554aca0074245784afe8459860aed0b8cc8821b341ef7d3592592",
+          "conditions": {
+            "DiveInsectGameData": "Gimmick_MagicBeanSoil_LostWood02"
+          },
+          "presence": {
+            "FlagName": "Sequence_IsChildhood",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        }
+      ],
+      "plant_flag": {
+        "hash": "5ebf7c8b",
+        "index": 9245,
+        "instance_name": "5234955674857122897",
+        "instance_hash": "c5dee3e8",
+        "parent_hash": "820c6b5e"
+      },
+      "notes": [
+        "plant as Child; grown platform as Adult"
+      ]
+    },
+    {
+      "id": "176409868210268833",
+      "label": "Lost Wood #2",
+      "variants": [
+        {
+          "banc": "LostWood_Adult",
+          "age": "Adult",
+          "position": [
+            10.871164321899414,
+            100.29453735351562,
+            -52.065940856933594
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            10.871164321899414,
+            99.49453735351562,
+            -52.065940856933594
+          ],
+          "source": "romfs/Banc/LostWood/LostWood_Adult_Static.bcett.byml.zs",
+          "source_sha256": "5e415ea7611fc7fa31eb1360a2f813cbdf5e1ca4c14391d0e2d3cf86301025e1",
+          "conditions": {
+            "DiveInsectGameData": "Gimmick_MagicBeanSoil_LostWood01"
+          },
+          "presence": {
+            "FlagName": "Sequence_IsChildhood",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        },
+        {
+          "banc": "LostWood_Child",
+          "age": "Child",
+          "position": [
+            10.871164321899414,
+            100.29453735351562,
+            -52.065940856933594
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            10.871164321899414,
+            99.49453735351562,
+            -52.065940856933594
+          ],
+          "source": "romfs/Banc/LostWood/LostWood_Child_Static.bcett.byml.zs",
+          "source_sha256": "5cdb3934979554aca0074245784afe8459860aed0b8cc8821b341ef7d3592592",
+          "conditions": {
+            "DiveInsectGameData": "Gimmick_MagicBeanSoil_LostWood01"
+          },
+          "presence": {
+            "FlagName": "Sequence_IsChildhood",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        }
+      ],
+      "plant_flag": {
+        "hash": "610eb13c",
+        "index": 9243,
+        "instance_name": "176409868210268833",
+        "instance_hash": "5f8b86d0",
+        "parent_hash": "820c6b5e"
+      },
+      "notes": [
+        "plant as Child; grown platform as Adult"
+      ]
+    },
+    {
+      "id": "17092212646454540992",
+      "label": "Zora River #1",
+      "variants": [
+        {
+          "banc": "ZoraRiver_Adult",
+          "age": "Adult",
+          "position": [
+            -54.563167572021484,
+            101.12389831542968,
+            -11.864729881286621
+          ],
+          "rotation": [
+            0.0,
+            0.3573741316795349,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -54.563167572021484,
+            100.32389831542969,
+            -11.864729881286621
+          ],
+          "source": "romfs/Banc/ZoraRiver/ZoraRiver_Adult_Static.bcett.byml.zs",
+          "source_sha256": "f1e56fd6a2c367fbc0a7cdaba858c3713227dcb6661026ce792ee55f2671e635",
+          "conditions": {
+            "DiveInsectGameData": "Gimmick_MagicBeanSoil_ZoraRiver02"
+          },
+          "presence": {
+            "FlagName": "Sequence_IsChildhood",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        },
+        {
+          "banc": "ZoraRiver_Child",
+          "age": "Child",
+          "position": [
+            -54.563167572021484,
+            101.12389831542968,
+            -11.864729881286621
+          ],
+          "rotation": [
+            0.0,
+            0.3573741316795349,
+            0.0
+          ],
+          "rotation_units": "radians",
+          "entry": "",
+          "actor_position": [
+            -54.563167572021484,
+            100.32389831542969,
+            -11.864729881286621
+          ],
+          "source": "romfs/Banc/ZoraRiver/ZoraRiver_Child_Static.bcett.byml.zs",
+          "source_sha256": "9a7e799f2fef2acbc476712bfc77be523cc92fb82d806245e4b21ec0b5b91676",
+          "conditions": {
+            "DiveInsectGameData": "Gimmick_MagicBeanSoil_ZoraRiver02"
+          },
+          "presence": {
+            "FlagName": "Sequence_IsChildhood",
+            "IsCheckLazy": false,
+            "IsNegation": false
+          }
+        }
+      ],
+      "plant_flag": {
+        "hash": "5eea40a6",
+        "index": 9241,
+        "instance_name": "17092212646454540992",
+        "instance_hash": "14235422",
+        "parent_hash": "820c6b5e"
+      },
+      "notes": [
+        "plant as Child; grown platform as Adult"
+      ]
+    }
+  ]
+}

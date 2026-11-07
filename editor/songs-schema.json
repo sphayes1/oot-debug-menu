@@ -1,0 +1,162 @@
+{
+  "version": 1,
+  "scorebook_sha256": "ffde1e84667ca8117d8a6e9d9cc3efe70c9ed4d5f9efeaaab6ee0a52a4981014",
+  "songs": [
+    {
+      "id": "ZeldaLullaby",
+      "label": "Zelda's Lullaby",
+      "actor": "Item_Melody_ZeldaLullaby",
+      "hash": "01c20002",
+      "index": 8915,
+      "color": [
+        0.8,
+        0.35,
+        0.8,
+        1
+      ]
+    },
+    {
+      "id": "EponaSong",
+      "label": "Epona's Song",
+      "actor": "Item_Melody_EponaSong",
+      "hash": "b492ac33",
+      "index": 8903,
+      "color": [
+        0.95,
+        0.55,
+        0.28,
+        1
+      ]
+    },
+    {
+      "id": "SariaSong",
+      "label": "Saria's Song",
+      "actor": "Item_Melody_SariaSong",
+      "hash": "d3f8bfcc",
+      "index": 8907,
+      "color": [
+        0.4,
+        0.85,
+        0.4,
+        1
+      ]
+    },
+    {
+      "id": "SunSong",
+      "label": "Sun's Song",
+      "actor": "Item_Melody_SunSong",
+      "hash": "165dd1ad",
+      "index": 8912,
+      "color": [
+        0.95,
+        0.85,
+        0.3,
+        1
+      ]
+    },
+    {
+      "id": "TimeSong",
+      "label": "Song of Time",
+      "actor": "Item_Melody_TimeSong",
+      "hash": "03b3450e",
+      "index": 8913,
+      "color": [
+        0.4,
+        0.65,
+        1.0,
+        1
+      ]
+    },
+    {
+      "id": "StormSong",
+      "label": "Song of Storms",
+      "actor": "Item_Melody_StormSong",
+      "hash": "2b39dd4f",
+      "index": 8911,
+      "color": [
+        0.6,
+        0.6,
+        0.9,
+        1
+      ]
+    },
+    {
+      "id": "ForestMinuet",
+      "label": "Minuet of Forest",
+      "actor": "Item_Melody_ForestMinuet",
+      "hash": "dc0a0b54",
+      "index": 8905,
+      "color": [
+        0.4,
+        0.85,
+        0.4,
+        1
+      ]
+    },
+    {
+      "id": "FireBolero",
+      "label": "Bolero of Fire",
+      "actor": "Item_Melody_FireBolero",
+      "hash": "49041ab9",
+      "index": 8904,
+      "color": [
+        0.95,
+        0.3,
+        0.25,
+        1
+      ]
+    },
+    {
+      "id": "WaterSerenade",
+      "label": "Serenade of Water",
+      "actor": "Item_Melody_WaterSerenade",
+      "hash": "3fa63986",
+      "index": 8914,
+      "color": [
+        0.3,
+        0.6,
+        1.0,
+        1
+      ]
+    },
+    {
+      "id": "SpiritRequiem",
+      "label": "Requiem of Spirit",
+      "actor": "Item_Melody_SpiritRequiem",
+      "hash": "802a36a8",
+      "index": 8910,
+      "color": [
+        0.95,
+        0.65,
+        0.25,
+        1
+      ]
+    },
+    {
+      "id": "ShadowNocturne",
+      "label": "Nocturne of Shadow",
+      "actor": "Item_Melody_ShadowNocturne",
+      "hash": "c2fb95f4",
+      "index": 8909,
+      "color": [
+        0.7,
+        0.4,
+        0.85,
+        1
+      ]
+    },
+    {
+      "id": "LightPrelude",
+      "label": "Prelude of Light",
+      "actor": "Item_Melody_LightPrelude",
+      "hash": "d6320ba4",
+      "index": 8906,
+      "color": [
+        0.95,
+        0.85,
+        0.35,
+        1
+      ]
+    }
+  ]
+}
