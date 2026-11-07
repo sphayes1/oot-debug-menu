@@ -1,0 +1,953 @@
+{
+  "version": 1,
+  "label": "Hand selected dynamic actors",
+  "status": "Selected data matches; additional gameplay capability is unverified",
+  "nup_toc_sha256": "c60730417594ad6d37ccf35385f885fa44a587e52cf949585c11b8ef83331a63",
+  "source_catalog_sha256": "70e291260316a4adb55e66452d9cbd68ef59aa68c9de8c6620662eb35208428a",
+  "profiles_compared": 8373,
+  "reference_actors": [
+    "Obj_TBox_A_01",
+    "Obj_TBox_A_02",
+    "Obj_Tombstone_A_01",
+    "Obj_Plant_MagicBeanLeaf_A_01"
+  ],
+  "shared_reference_features": [
+    "added_dynamic_body",
+    "dynamic_contact",
+    "dynamic_surface"
+  ],
+  "chest_like_bone_tracked_matches": [
+    "Obj_FireTemple_MoveFloor_A_02",
+    "Obj_ForestTemple_SwitchShutter_A_02",
+    "Obj_ShadowTemple_FallingFloor_A_01",
+    "Obj_WaterTemple_Fountain_A_01"
+  ],
+  "groups": {
+    "Movable blocks and statues": 14,
+    "Other selected dynamic surfaces": 21,
+    "Treasure chests": 13,
+    "Movable graves": 3
+  },
+  "selected_count": 51,
+  "direct_placement_rows": 419,
+  "actors": [
+    {
+      "actor": "Obj_AmosStatue_A_01",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": true,
+        "added_dynamic_body": true,
+        "movable_box_family": true,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Movable blocks and statues",
+      "reason": "Shared movable-grave physics inheritance and dynamic support body",
+      "placements": 15,
+      "source": "romfs/Pack/Actor/Obj_AmosStatue_A_01.pack.zs",
+      "sha256": "758bf699160f91e8689240808673a65a110a2391e16b864cdb2f4fae50e75769"
+    },
+    {
+      "actor": "Obj_BrokenBox_A_03",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Other selected dynamic surfaces",
+      "reason": "Breakable wooden crate; dynamic body and contact collection",
+      "placements": 6,
+      "source": "romfs/Pack/Actor/Obj_BrokenBox_A_03.pack.zs",
+      "sha256": "f2c5f68dccc9541e30274547b7acb244daae5544188840f198c660d691c3fc67"
+    },
+    {
+      "actor": "Obj_DodongoCave_MoveFloor_A_01",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Other selected dynamic surfaces",
+      "reason": "Lift; dynamic support body and contact collection",
+      "placements": 3,
+      "source": "romfs/Pack/Actor/Obj_DodongoCave_MoveFloor_A_01.pack.zs",
+      "sha256": "289bb496cf38bb3872948c15f526066a9fbde5c826dcec2e0207bdda4731f3ea"
+    },
+    {
+      "actor": "Obj_DodongoCave_MoveFloor_A_02",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Other selected dynamic surfaces",
+      "reason": "Lift; dynamic support body and contact collection",
+      "placements": 1,
+      "source": "romfs/Pack/Actor/Obj_DodongoCave_MoveFloor_A_02.pack.zs",
+      "sha256": "5a25e9a5d748f0e5d67d3133bd44fdecb74d4509d5945e3bbbde90719c477199"
+    },
+    {
+      "actor": "Obj_FireTemple_HammerSlipPillar_A_01",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": false,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": true,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Other selected dynamic surfaces",
+      "reason": "Hammer pillar; combined dynamic and kinematic collision bodies",
+      "placements": 19,
+      "source": "romfs/Pack/Actor/Obj_FireTemple_HammerSlipPillar_A_01.pack.zs",
+      "sha256": "f4af478e18e968f301be1c1a895a8a0d8f4fabb98336f3b3429d9d0211bfdd80"
+    },
+    {
+      "actor": "Obj_FireTemple_HammerSlipPillar_A_02",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": false,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Other selected dynamic surfaces",
+      "reason": "Hammer pillar; dynamic support body",
+      "placements": 13,
+      "source": "romfs/Pack/Actor/Obj_FireTemple_HammerSlipPillar_A_02.pack.zs",
+      "sha256": "ee436e27fa6df70b3961ac668ad4d774203edcb62761c9e74148fc8549856e5a"
+    },
+    {
+      "actor": "Obj_FireTemple_MovableBox_A_01",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": true,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Movable blocks and statues",
+      "reason": "Shared movable-grave physics inheritance and dynamic support body",
+      "placements": 1,
+      "source": "romfs/Pack/Actor/Obj_FireTemple_MovableBox_A_01.pack.zs",
+      "sha256": "a7e048cf2623b883a511f11f10e8004da44f9c7c3e955dbdad8545a5801fcd68"
+    },
+    {
+      "actor": "Obj_FireTemple_MovableBox_A_02",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": true,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Movable blocks and statues",
+      "reason": "Shared movable-grave physics inheritance and dynamic support body",
+      "placements": 2,
+      "source": "romfs/Pack/Actor/Obj_FireTemple_MovableBox_A_02.pack.zs",
+      "sha256": "99ad982a72ebaf924893d4a43c24c328ee67289fc08908c5c710c8f27de1ea7d"
+    },
+    {
+      "actor": "Obj_FireTemple_MoveFloor_A_02",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": false,
+        "bone_tracked_dynamic": true,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Other selected dynamic surfaces",
+      "reason": "Moving floor; bone-tracked dynamic body, like the chest lid pattern",
+      "placements": 2,
+      "source": "romfs/Pack/Actor/Obj_FireTemple_MoveFloor_A_02.pack.zs",
+      "sha256": "6a06dffc8e23645b2ee3216a7276b5ccce5d4b3e7f341227dd4953c1146c68e7"
+    },
+    {
+      "actor": "Obj_FireTemple_RiseFloor_A_01",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": false,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Other selected dynamic surfaces",
+      "reason": "Rising floor; dynamic support body",
+      "placements": 1,
+      "source": "romfs/Pack/Actor/Obj_FireTemple_RiseFloor_A_01.pack.zs",
+      "sha256": "2ef4233e84e0091c4051120011d9dade4a8c18ce7a4970025a866ca92e4462a5"
+    },
+    {
+      "actor": "Obj_FireTemple_RiseFloor_A_03",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Other selected dynamic surfaces",
+      "reason": "Rising floor; dynamic support body and contact collection",
+      "placements": 1,
+      "source": "romfs/Pack/Actor/Obj_FireTemple_RiseFloor_A_03.pack.zs",
+      "sha256": "a120851e3239149bf0603c645067a850fb4533d29bc8a9870e31b08356f40ec3"
+    },
+    {
+      "actor": "Obj_ForestTemple_MovableBox_A_01",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": true,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Movable blocks and statues",
+      "reason": "Shared movable-grave physics inheritance and dynamic support body",
+      "placements": 2,
+      "source": "romfs/Pack/Actor/Obj_ForestTemple_MovableBox_A_01.pack.zs",
+      "sha256": "ebf8fbf1bcb9cbb4a42cd1ff92ff2176e0bfe844dd6f349c39fa55fca38affdc"
+    },
+    {
+      "actor": "Obj_ForestTemple_MovableBox_A_02",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": true,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Movable blocks and statues",
+      "reason": "Shared movable-grave physics inheritance and dynamic support body",
+      "placements": 2,
+      "source": "romfs/Pack/Actor/Obj_ForestTemple_MovableBox_A_02.pack.zs",
+      "sha256": "78817b7e5f0de40c6a85a9bbf7568751992f33fd8523dd3219ab3cedbd1babf6"
+    },
+    {
+      "actor": "Obj_ForestTemple_MovableBox_A_03",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": true,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Movable blocks and statues",
+      "reason": "Shared movable-grave physics inheritance and dynamic support body",
+      "placements": 2,
+      "source": "romfs/Pack/Actor/Obj_ForestTemple_MovableBox_A_03.pack.zs",
+      "sha256": "49ee32614a9af19e06f321473b5a96ec9e8384bef5975fb46ccfea0a7e1352fe"
+    },
+    {
+      "actor": "Obj_ForestTemple_MovableBox_A_04",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": true,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Movable blocks and statues",
+      "reason": "Shared movable-grave physics inheritance and dynamic support body",
+      "placements": 2,
+      "source": "romfs/Pack/Actor/Obj_ForestTemple_MovableBox_A_04.pack.zs",
+      "sha256": "07d11e57b912dd27dc5c4149a37593446225c6b0ec2ecb0b3e4866793c736a86"
+    },
+    {
+      "actor": "Obj_ForestTemple_MovableBox_A_05",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": true,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Movable blocks and statues",
+      "reason": "Shared movable-grave physics inheritance and dynamic support body",
+      "placements": 1,
+      "source": "romfs/Pack/Actor/Obj_ForestTemple_MovableBox_A_05.pack.zs",
+      "sha256": "71cb68898571122f1d3d16b6064bbee21705f7c3b0f14ec32d76277c17c7445a"
+    },
+    {
+      "actor": "Obj_ForestTemple_SwitchShutter_A_02",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": false,
+        "bone_tracked_dynamic": true,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Other selected dynamic surfaces",
+      "reason": "Moving shutter; bone-tracked dynamic body, like the chest lid pattern",
+      "placements": 1,
+      "source": "romfs/Pack/Actor/Obj_ForestTemple_SwitchShutter_A_02.pack.zs",
+      "sha256": "2745d956f6bfc45b52a727888a03f7242afebf0c2b2f57ef901a8fbb9488905e"
+    },
+    {
+      "actor": "Obj_Goron_Statue_A_01",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": true,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Movable blocks and statues",
+      "reason": "Shared movable-grave physics inheritance and dynamic support body",
+      "placements": 2,
+      "source": "romfs/Pack/Actor/Obj_Goron_Statue_A_01.pack.zs",
+      "sha256": "683a7db211769e60f7462099eff2ff672abe9ed088afd7512c205b17cb5dff61"
+    },
+    {
+      "actor": "Obj_HrlCity_Shop_TBox_A_01",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": true,
+        "dynamic_and_kinematic": true,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": true
+      },
+      "selected": true,
+      "group": "Treasure chests",
+      "reason": "Treasure-box logic/controller family with a dynamic cover body",
+      "placements": 10,
+      "source": "romfs/Pack/Actor/Obj_HrlCity_Shop_TBox_A_01.pack.zs",
+      "sha256": "23f64104e843cf10e478b0b23bdba8023439e7c68d7815b46b6fa0790407b5dc"
+    },
+    {
+      "actor": "Obj_HrlCity_Shop_TBox_A_02",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": true,
+        "dynamic_and_kinematic": true,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": true
+      },
+      "selected": true,
+      "group": "Treasure chests",
+      "reason": "Treasure-box logic/controller family with a dynamic cover body",
+      "placements": 2,
+      "source": "romfs/Pack/Actor/Obj_HrlCity_Shop_TBox_A_02.pack.zs",
+      "sha256": "258074b2f3f81fa60dfae7e3b4ed3e7a7d07ee500df8f0e0c32eb49b78dffcc9"
+    },
+    {
+      "actor": "Obj_InsideTheDekuTree_FallingFloor_A_01",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Other selected dynamic surfaces",
+      "reason": "Falling floor; dynamic support body and contact collection",
+      "placements": 1,
+      "source": "romfs/Pack/Actor/Obj_InsideTheDekuTree_FallingFloor_A_01.pack.zs",
+      "sha256": "05c4a5918b96e9fc7a2ef70bccc1b63c758c2325d3da366fa9483708128531f6"
+    },
+    {
+      "actor": "Obj_LonLonRanch_MovableBox_A_01",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": true,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Movable blocks and statues",
+      "reason": "Shared movable-grave physics inheritance and dynamic support body",
+      "placements": 9,
+      "source": "romfs/Pack/Actor/Obj_LonLonRanch_MovableBox_A_01.pack.zs",
+      "sha256": "81dab75d89997e9b702c4d90ee51fee5b6d1a5424fc7eb1296d3dfdc2a093938"
+    },
+    {
+      "actor": "Obj_MovableBox_A_01",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": true,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Movable blocks and statues",
+      "reason": "Shared movable-grave physics inheritance and dynamic support body",
+      "placements": 7,
+      "source": "romfs/Pack/Actor/Obj_MovableBox_A_01.pack.zs",
+      "sha256": "5f3807b432bb663bbfd8dc25d7cba3690e323399fa9abe8e2d10f5244b5a66bf"
+    },
+    {
+      "actor": "Obj_MovableBox_A_04",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": true,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Movable blocks and statues",
+      "reason": "Shared movable-grave physics inheritance and dynamic support body",
+      "placements": 4,
+      "source": "romfs/Pack/Actor/Obj_MovableBox_A_04.pack.zs",
+      "sha256": "764fe68318fa15b1a3553de380ac46154dcc5c54bc1a4197a172d65300b2fec0"
+    },
+    {
+      "actor": "Obj_MovableBox_A_05",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": true,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Movable blocks and statues",
+      "reason": "Shared movable-grave physics inheritance and dynamic support body",
+      "placements": 9,
+      "source": "romfs/Pack/Actor/Obj_MovableBox_A_05.pack.zs",
+      "sha256": "1d4fb00f04d176931ecca61b5af9189fc3499697177a1db096b0a07aadcb0f2f"
+    },
+    {
+      "actor": "Obj_Plant_MagicBeanLeaf_A_01",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Other selected dynamic surfaces",
+      "reason": "Adult bean platform; reference dynamic support body",
+      "placements": 0,
+      "source": "romfs/Pack/Actor/Obj_Plant_MagicBeanLeaf_A_01.pack.zs",
+      "sha256": "e5e2677665cd4b737558fa3402fd42d09f6045a0a6affe957267283d44b36d68"
+    },
+    {
+      "actor": "Obj_ShadowTemple_FallingFloor_A_01",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": true,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Other selected dynamic surfaces",
+      "reason": "Falling floor; bone-tracked dynamic support body",
+      "placements": 1,
+      "source": "romfs/Pack/Actor/Obj_ShadowTemple_FallingFloor_A_01.pack.zs",
+      "sha256": "1e149cd8c42cb6751007517908d819d907352f647df45c3b59ecc5b0df1cdcb0"
+    },
+    {
+      "actor": "Obj_ShadowTemple_MoveFloor_A_03",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": false,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Other selected dynamic surfaces",
+      "reason": "Moving floor; dynamic support body",
+      "placements": 3,
+      "source": "romfs/Pack/Actor/Obj_ShadowTemple_MoveFloor_A_03.pack.zs",
+      "sha256": "29c6cd34d5366d3ce3c3bd6309648c682cccb7711d317fa738f452a60c5566a9"
+    },
+    {
+      "actor": "Obj_ShadowTemple_MoveFloor_A_04",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": false,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Other selected dynamic surfaces",
+      "reason": "Moving floor; dynamic support body",
+      "placements": 1,
+      "source": "romfs/Pack/Actor/Obj_ShadowTemple_MoveFloor_A_04.pack.zs",
+      "sha256": "61722838e6e4ca32fe206a398746f8043f3bfff050a2712714412e0590ed2135"
+    },
+    {
+      "actor": "Obj_ShadowTemple_Statue_A_01",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": false,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": true,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Other selected dynamic surfaces",
+      "reason": "Moving statue; combined dynamic and kinematic collision bodies",
+      "placements": 1,
+      "source": "romfs/Pack/Actor/Obj_ShadowTemple_Statue_A_01.pack.zs",
+      "sha256": "f5ad9029243237ffd6454885c6bdecefbe9d49989dd1e21d932087e9486cf0f6"
+    },
+    {
+      "actor": "Obj_SliderBox_A_01",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Other selected dynamic surfaces",
+      "reason": "Sliding ice block; dynamic support bodies and contact collection",
+      "placements": 5,
+      "source": "romfs/Pack/Actor/Obj_SliderBox_A_01.pack.zs",
+      "sha256": "a6a22f924422b2be1cd9e835ce546e3918b9794d4f15a45815a3f78b5a7266a6"
+    },
+    {
+      "actor": "Obj_SpiritTemple_MovableBox_A_01",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": true,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Movable blocks and statues",
+      "reason": "Shared movable-grave physics inheritance and dynamic support body",
+      "placements": 5,
+      "source": "romfs/Pack/Actor/Obj_SpiritTemple_MovableBox_A_01.pack.zs",
+      "sha256": "ede03199e2d178c5ed97ab9ed4481363b0037c093c3068a4fb9dd7a1f4de59e5"
+    },
+    {
+      "actor": "Obj_TBox_A_01",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": true,
+        "dynamic_and_kinematic": true,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": true
+      },
+      "selected": true,
+      "group": "Treasure chests",
+      "reason": "Treasure-box logic/controller family with a dynamic cover body",
+      "placements": 107,
+      "source": "romfs/Pack/Actor/Obj_TBox_A_01.pack.zs",
+      "sha256": "7dfc96eff40743c65404f6b2c5ebb178c05e207fbfc419824a28b6010244b001"
+    },
+    {
+      "actor": "Obj_TBox_A_01_NoBake",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": true,
+        "dynamic_and_kinematic": true,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": true
+      },
+      "selected": true,
+      "group": "Treasure chests",
+      "reason": "Treasure-box logic/controller family with a dynamic cover body",
+      "placements": 49,
+      "source": "romfs/Pack/Actor/Obj_TBox_A_01_NoBake.pack.zs",
+      "sha256": "23384f313d0f46b93217d627263c71127e2fa6023703f069896d95251020e6ae"
+    },
+    {
+      "actor": "Obj_TBox_A_01_memo11",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": true,
+        "dynamic_and_kinematic": true,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": true
+      },
+      "selected": true,
+      "group": "Treasure chests",
+      "reason": "Treasure-box logic/controller family with a dynamic cover body",
+      "placements": 2,
+      "source": "romfs/Pack/Actor/Obj_TBox_A_01_memo11.pack.zs",
+      "sha256": "d2c8c53fd4a5e3203a3edd299cbb687226c89b30924026770d78504ef5312ac0"
+    },
+    {
+      "actor": "Obj_TBox_A_02",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": true,
+        "dynamic_and_kinematic": true,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": true
+      },
+      "selected": true,
+      "group": "Treasure chests",
+      "reason": "Treasure-box logic/controller family with a dynamic cover body",
+      "placements": 28,
+      "source": "romfs/Pack/Actor/Obj_TBox_A_02.pack.zs",
+      "sha256": "f4512f3dd147fe5ee97dfc4fb43aa92a6dc99dafae6e05d88d0430126e2e9dde"
+    },
+    {
+      "actor": "Obj_TBox_A_02_NoBake",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": true,
+        "dynamic_and_kinematic": true,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": true
+      },
+      "selected": true,
+      "group": "Treasure chests",
+      "reason": "Treasure-box logic/controller family with a dynamic cover body",
+      "placements": 17,
+      "source": "romfs/Pack/Actor/Obj_TBox_A_02_NoBake.pack.zs",
+      "sha256": "0de1588c5f59ebedde53352da749c54736ae0479728d716c5dae4ba1b754096d"
+    },
+    {
+      "actor": "Obj_TBox_A_03",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": true,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": true
+      },
+      "selected": true,
+      "group": "Treasure chests",
+      "reason": "Treasure-box logic/controller family with a dynamic cover body",
+      "placements": 4,
+      "source": "romfs/Pack/Actor/Obj_TBox_A_03.pack.zs",
+      "sha256": "17e7e8e030442c4ac202380a712d59e57c3264659e0f6e619337878e53f27919"
+    },
+    {
+      "actor": "Obj_TBox_A_03_NoBake",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": true,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": true
+      },
+      "selected": true,
+      "group": "Treasure chests",
+      "reason": "Treasure-box logic/controller family with a dynamic cover body",
+      "placements": 2,
+      "source": "romfs/Pack/Actor/Obj_TBox_A_03_NoBake.pack.zs",
+      "sha256": "605393e316311af067ebbf0c5eb7103ce13f5c1419642c647b668cc6afd776b9"
+    },
+    {
+      "actor": "Obj_TBox_A_04",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": true,
+        "dynamic_and_kinematic": true,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": true
+      },
+      "selected": true,
+      "group": "Treasure chests",
+      "reason": "Treasure-box logic/controller family with a dynamic cover body",
+      "placements": 6,
+      "source": "romfs/Pack/Actor/Obj_TBox_A_04.pack.zs",
+      "sha256": "adbccf1892ecb3b423797a23b5e8e02e8424b35ea30604c73728a3ded77918f2"
+    },
+    {
+      "actor": "Obj_TBox_A_06",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": true,
+        "dynamic_and_kinematic": true,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": true
+      },
+      "selected": true,
+      "group": "Treasure chests",
+      "reason": "Treasure-box logic/controller family with a dynamic cover body",
+      "placements": 8,
+      "source": "romfs/Pack/Actor/Obj_TBox_A_06.pack.zs",
+      "sha256": "f99f4d37202ae741ccab8c1929aa7059f16afc5b7949f2a5d5c6e081e67e9dd4"
+    },
+    {
+      "actor": "Obj_TBox_A_06_NoBake",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": true,
+        "dynamic_and_kinematic": true,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": true
+      },
+      "selected": true,
+      "group": "Treasure chests",
+      "reason": "Treasure-box logic/controller family with a dynamic cover body",
+      "placements": 1,
+      "source": "romfs/Pack/Actor/Obj_TBox_A_06_NoBake.pack.zs",
+      "sha256": "c6f88abce813c94fb78472e172e7a39f31c73da5eb7fb73e85f9f6052c41223a"
+    },
+    {
+      "actor": "Obj_TBox_GlassTruth_A_01",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": true,
+        "dynamic_and_kinematic": true,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": true
+      },
+      "selected": true,
+      "group": "Treasure chests",
+      "reason": "Treasure-box logic/controller family with a dynamic cover body",
+      "placements": 11,
+      "source": "romfs/Pack/Actor/Obj_TBox_GlassTruth_A_01.pack.zs",
+      "sha256": "76d78ff70076d25e2bc8a60cef9fa1493a6ac5a9ec6f36454ba492b2c6d1e576"
+    },
+    {
+      "actor": "Obj_Tombstone_A_01",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": true,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Movable graves",
+      "reason": "Reference movable-grave family with dynamic physical body",
+      "placements": 34,
+      "source": "romfs/Pack/Actor/Obj_Tombstone_A_01.pack.zs",
+      "sha256": "3a73427f51084f57d3593d185b5a1605035b450739b6f6c27be18369628a9b50"
+    },
+    {
+      "actor": "Obj_Tombstone_A_02",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": true,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Movable graves",
+      "reason": "Reference movable-grave family with dynamic physical body",
+      "placements": 1,
+      "source": "romfs/Pack/Actor/Obj_Tombstone_A_02.pack.zs",
+      "sha256": "de90490f112cd3725c2573fa0111460df8e112df7f5b0dd71951c08c1990b401"
+    },
+    {
+      "actor": "Obj_Tombstone_A_03",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": true,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": true,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Movable graves",
+      "reason": "Reference movable-grave family with dynamic physical body",
+      "placements": 2,
+      "source": "romfs/Pack/Actor/Obj_Tombstone_A_03.pack.zs",
+      "sha256": "1a37314297326b0833ddfb1744ad3d483e24f69cc5820970ff3c15661025179a"
+    },
+    {
+      "actor": "Obj_WaterTemple_FloatFloor_A_02",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": false,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Other selected dynamic surfaces",
+      "reason": "Floating floor; dynamic support body",
+      "placements": 5,
+      "source": "romfs/Pack/Actor/Obj_WaterTemple_FloatFloor_A_02.pack.zs",
+      "sha256": "caa0171c67636aaf21a7f49a8eea889ac40440e580e309ee1024fa9db1b2bf2d"
+    },
+    {
+      "actor": "Obj_WaterTemple_FloatFloor_A_03",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": false,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Other selected dynamic surfaces",
+      "reason": "Floating floor; dynamic support body",
+      "placements": 1,
+      "source": "romfs/Pack/Actor/Obj_WaterTemple_FloatFloor_A_03.pack.zs",
+      "sha256": "136de53e40719b6a3fbdf4634d1ff491c425f0568919ec9fd30aa836b55517b1"
+    },
+    {
+      "actor": "Obj_WaterTemple_FloatFloor_HookShot_A_01",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": false,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Other selected dynamic surfaces",
+      "reason": "Hookshot floating platform; dynamic support body (spawned definition)",
+      "placements": 0,
+      "source": "romfs/Pack/Actor/Obj_WaterTemple_FloatFloor_HookShot_A_01.pack.zs",
+      "sha256": "6fe5bf7da646f1d4c14967ccc1b13dd963963ca645b0854ebaeddf69473ed4a8"
+    },
+    {
+      "actor": "Obj_WaterTemple_FloatFloor_HookShot_A_02",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": false,
+        "bone_tracked_dynamic": false,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Other selected dynamic surfaces",
+      "reason": "Hookshot floating platform; dynamic support body",
+      "placements": 1,
+      "source": "romfs/Pack/Actor/Obj_WaterTemple_FloatFloor_HookShot_A_02.pack.zs",
+      "sha256": "df8087d893a5ed7d8e68dfbde703a06fa7ef8fd90b488cd76da1c3f37498dd01"
+    },
+    {
+      "actor": "Obj_WaterTemple_Fountain_A_01",
+      "features": {
+        "dynamic_surface": true,
+        "dynamic_contact": false,
+        "bone_tracked_dynamic": true,
+        "dynamic_and_kinematic": false,
+        "added_dynamic_body": true,
+        "movable_box_family": false,
+        "chest_family": false
+      },
+      "selected": true,
+      "group": "Other selected dynamic surfaces",
+      "reason": "Fountain platform; bone-tracked dynamic body, like the chest lid pattern",
+      "placements": 6,
+      "source": "romfs/Pack/Actor/Obj_WaterTemple_Fountain_A_01.pack.zs",
+      "sha256": "7d6fee358d27eb0467d49127e6a52c1d6f56c40c6cadd8d6c0040c3a531bbcb0"
+    }
+  ]
+}
