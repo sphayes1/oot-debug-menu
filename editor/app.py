@@ -14,6 +14,8 @@ from native_ui import native_message, whole_heart_maximum
 from teleport_ui import TeleportPanel
 from position_ui import PositionPanel
 from songs_ui import SongsPanel
+from camera_ui import CameraPanel
+from collision_ui import CollisionPanel
 from songs import Songs
 from collectibles import BeanState
 
@@ -55,9 +57,13 @@ class Editor:
         self.teleport_panel = TeleportPanel(self)
         self.position_panel = PositionPanel(self)
         self.songs_panel = SongsPanel(self)
+        self.camera_panel = CameraPanel(self)
+        self.collision_panel = CollisionPanel(self)
         self.location_reader = None
         from hotkeys import HotkeysPanel
         self.hotkeys_panel = HotkeysPanel(self)
+        from controller_ui import ControllerPanel
+        self.controller_panel = ControllerPanel(self)
         from actor_catalog_ui import ActorsPanel
         self.actors_panel = ActorsPanel(self)
         for entries in json.loads((backend.ROOT/'research/pouch-ui-table.json').read_text(encoding='utf-8')).values():
@@ -67,6 +73,11 @@ class Editor:
                         self.actor_ages.setdefault(actor['ActorShort'],set()).update(age for age in ('Adult','Child') if actor.get('IsUsable'+age,False))
 
     def submit(self, label, operation):
+        if label != 'Refresh' and not label.startswith(('Camera ', 'Collision ')) and self.camera_panel.camera.active:
+            original = operation
+            def operation():
+                self.camera_panel.stop()
+                return original()
         if self.future is None:
             self.operation = label
             self.future = self.worker.submit(operation)
@@ -94,12 +105,18 @@ class Editor:
                     if result.get('values') is not None:
                         self.values = result['values']
                         self.connected = True
+                elif isinstance(result, dict) and result.get('kind') == 'collision':
+                    self.collision_panel.accept(result)
+                elif isinstance(result, dict) and result.get('kind') == 'camera':
+                    self.camera_panel.accept(result)
+                    self.message = result['message']
+                    self.error = False
                 elif isinstance(result, dict) and 'items' in result:
                     self.values = result
                     self.connected = True
                 if self.operation == 'Live edit' and self.binding.last_edit is not None:
                     self.native_undo_blocked = False
-                if self.operation != 'Refresh' and not native_result:
+                if self.operation not in ('Refresh', 'Camera flight', 'Collision snapshot') and not native_result and not (isinstance(result, dict) and result.get('kind') == 'camera'):
                     self.message = self.operation+' complete.'
                     self.error = False
             except Exception as exc:
@@ -110,7 +127,8 @@ class Editor:
                 if self.operation in ('Connect','Refresh'):
                     self.connected = False
             self.future = None
-            self.last_poll = time.monotonic()
+            if self.operation != 'Collision snapshot':
+                self.last_poll = time.monotonic()
         if self.future is None and self.pending:
             self.submit(*self.pending.pop(0))
         if self.connected and self.future is None and time.monotonic()-self.last_poll > 1:
@@ -118,6 +136,15 @@ class Editor:
 
     def connect(self):
         values = self.binding.connect()
+        camera = self.camera_panel.camera
+        if camera.session_id is not None and camera.session_id != tuple(self.binding.session_id):
+            camera.active = False
+            camera.previous = None
+            camera.session_id = None
+        if camera.session_id is None:
+            from camera import FLAG, SENTINEL
+            if self.camera_panel.camera.fields.field('String64', FLAG) == SENTINEL:
+                self.camera_panel.stop()
         values['songs'] = self.songs.view()
         values['beans'] = BeanState(self.binding).view()
         from location_capture import LocationCapture
@@ -144,6 +171,7 @@ class Editor:
         return values
 
     def read_values(self):
+        self.camera_panel.camera.check()
         values = self.binding.view()
         values['songs'] = self.songs.view()
         values['beans'] = BeanState(self.binding).view()
@@ -299,7 +327,7 @@ class Editor:
         if clicked:
             imgui.open_popup('contents')
         if owned:self.assignment_border(slot)
-        if imgui.is_item_hovered():imgui.set_tooltip(slot+' — '+(state['content'] if owned else 'absent')+'\nClick to choose contents')
+        if imgui.is_item_hovered():imgui.set_tooltip(slot+' â€” '+(state['content'] if owned else 'absent')+'\nClick to choose contents')
         if imgui.begin_popup('contents'):
             if imgui.button('##None',(46,46)):
                 self.edit({'items':{slot:False}})
@@ -534,7 +562,8 @@ class Editor:
     def gui(self):
         self.pump()
         self.hotkeys_panel.pump()
-        busy=(self.future is not None and self.operation!='Refresh') or bool(self.pending)
+        self.controller_panel.pump()
+        busy=(self.future is not None and self.operation not in ('Refresh', 'Camera flight', 'Collision snapshot')) or bool(self.pending)
         imgui.text('Ocarina Debug Menu')
         imgui.same_line()
         imgui.text_colored((.45,.85,.55,1) if self.connected else (1,.7,.3,1),
@@ -551,6 +580,8 @@ class Editor:
         imgui.end_disabled()
         imgui.same_line()
         self.hotkeys_panel.draw()
+        imgui.same_line()
+        self.controller_panel.draw()
         imgui.text_colored((1,.45,.4,1) if self.error else (.7,.8,.9,1),self.message)
         if self.future is not None and self.operation!='Refresh':
             imgui.same_line()
@@ -568,6 +599,12 @@ class Editor:
         if imgui.begin_tab_bar('SaveEditorTabs'):
             if imgui.begin_tab_item('Actors')[0]:
                 self.actors_panel.draw()
+                imgui.end_tab_item()
+            if imgui.begin_tab_item('Collision')[0]:
+                self.collision_panel.draw()
+                imgui.end_tab_item()
+            if imgui.begin_tab_item('Camera')[0]:
+                self.camera_panel.draw()
                 imgui.end_tab_item()
             imgui.begin_disabled(not self.connected or busy)
             if imgui.begin_tab_item('Teleport')[0]:
@@ -603,6 +640,7 @@ class Editor:
                 imgui.end_tab_item()
             imgui.end_disabled()
             imgui.end_tab_bar()
+        self.collision_panel.tick()
 
 def main():
     backend.prepare_profile()
@@ -613,6 +651,7 @@ def main():
     params.app_window_params.window_geometry.size = (920,680)
     params.app_window_params.restore_previous_geometry = True
     params.callbacks.show_gui = editor.gui
+    editor.runner_params = params
     def fonts():
         import os
         font=Path(os.environ.get('WINDIR','C:/Windows'))/'Fonts/segoeui.ttf'
@@ -626,7 +665,15 @@ def main():
     params.callbacks.post_init = style
     params.fps_idling.fps_idle = 20
     try:hello_imgui.run(params)
-    finally:editor.hotkeys_panel.hotkeys.close()
+    finally:
+        editor.controller_panel.close()
+        editor.collision_panel.close()
+        editor.hotkeys_panel.hotkeys.close()
+        try:
+            editor.worker.submit(editor.camera_panel.stop).result(timeout=8)
+        except Exception:
+            logging.exception('Camera cleanup failed; use Restore normal camera after reconnecting')
+        editor.worker.shutdown(wait=False, cancel_futures=False)
 
 if __name__ == '__main__':
     try:main()

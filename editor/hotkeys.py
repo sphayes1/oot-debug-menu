@@ -108,7 +108,7 @@ class HotkeysPanel:
 
     def pump(self):
         e=self.editor;session=e.binding.session_id if e.connected else None
-        idle=(e.future is None or e.operation=='Refresh') and not e.pending
+        idle=(e.future is None or e.operation in ('Refresh','Camera flight','Collision snapshot')) and not e.pending
         self.hotkeys.context(session[0] if session else None,e.connected and idle)
         for action,pid,stamp in self.hotkeys.take():
             if not session or session[0]!=pid or not idle or time.monotonic()-stamp>2:continue
@@ -116,11 +116,13 @@ class HotkeysPanel:
 
     def queue(self,action):
         e=self.editor;e.native_undo_blocked=True
-        def job():
-            from save_actions import SaveActions
-            SaveActions(e.binding).run(action)
-            return e.connect()
-        e.submit('Quick save' if action=='save' else 'Load latest save',job)
+        e.submit('Quick save' if action=='save' else 'Load latest save',lambda:self.perform(action))
+
+    def perform(self,action):
+        from save_actions import SaveActions
+        self.editor.native_undo_blocked=True
+        SaveActions(self.editor.binding).run(action)
+        return self.editor.connect()
 
     def draw(self):
         from imgui_bundle import imgui
