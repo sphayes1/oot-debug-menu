@@ -94,7 +94,7 @@ settings are preserved. Paths in this example are placeholders:
 .venv\Scripts\python tools\setup_game.py --nup "D:\Games\Ocarina.nup" --emulator "D:\Emulator\eden-cli.exe" --config "D:\Emulator\sdl2-config.ini"
 ```
 
-Setup verifies source-member hashes and generates only the five debug override
+Setup verifies source-member hashes and generates only the six debug override
 files in `editor/runtime/load`. Original game files are read only. It starts an
 empty, independent NAND profile; no existing save is imported or overwritten.
 To use existing progress, close the game and copy your save into that profile.
