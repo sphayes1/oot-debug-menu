@@ -1,7 +1,7 @@
 # OOT Debug Menu
 
 A standalone Dear ImGui companion for live inventory, equipment, songs,
-teleports, age switching, position editing and actor exploration in the inspected
+teleports, free-flight camera, age switching, position editing and actor exploration in the inspected
 Ocarina of Time revision. Windows x64 is the currently tested platform.
 
 ## Play with the portable download
@@ -25,8 +25,8 @@ Click an image to view it at full size.
 | --- | --- |
 | [![Inventory menu](docs/screenshots/inventory.png)](docs/screenshots/inventory.png) | [![Teleport menu](docs/screenshots/teleport.png)](docs/screenshots/teleport.png) |
 
-**[See all six menu screenshots](docs/SCREENSHOTS.md)**, including the actor
-catalogue, equipment, songs and general controls. These are menu-only captures
+**[See all nine menu screenshots](docs/SCREENSHOTS.md)**, including the actor
+catalogue, equipment, songs, free camera, controller settings and collision controls. These are menu-only captures
 from the renderer, without a mouse pointer or computer-use overlay. Public
 downloads use original text badges instead of extracted item artwork.
 
@@ -43,6 +43,11 @@ paths; it preserves rendering and input settings from the INI you provide.
 - Area/entrance teleports and persistent custom location bookmarks.
 - Child/Adult switching with captured scene, position and facing restoration.
 - Live XYZ reading/editing and per-axis ±1, ±10 and ±100 nudges.
+- Free-flight debug camera and Teleport Link to camera, with keyboard/mouse controls.
+- [Customizable controller shortcuts](docs/CONTROLLER.md) and twin-stick camera flight;
+  LB + Minus enters, B exits, A teleports and exits; four shoulders + D-pad Left/Right saves/loads.
+- [Collision overlay](docs/COLLISION.md) while controlling Link or flying the debug camera;
+  reads geometry from your NUP automatically, with surface/zone filters and X-ray.
 - 100 Gold Skulltula and 11 bean-patch destinations; selected/all-bean planting.
 - 8,373 indexed actor definitions and 120,834 original placement records, with
   name/type/area/era/physics filters and placement teleports.
@@ -88,7 +93,7 @@ settings are preserved. Paths in this example are placeholders:
 .venv\Scripts\python tools\setup_game.py --nup "D:\Games\Ocarina.nup" --emulator "D:\Emulator\eden-cli.exe" --config "D:\Emulator\sdl2-config.ini"
 ```
 
-Setup verifies source-member hashes and generates only the four debug override
+Setup verifies source-member hashes and generates only the five debug override
 files in `editor/runtime/load`. Original game files are read only. It starts an
 empty, independent NAND profile; no existing save is imported or overwritten.
 To use existing progress, close the game and copy your save into that profile.
