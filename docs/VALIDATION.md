@@ -1,30 +1,38 @@
-# Extraction validation
+# Validation
 
-Validated locally on Windows x64 with Python 3.10.6 on November 7, 2026.
+Release 0.2.0 was checked on Windows x64 with Python 3.10 on November 8, 2026.
 
-- 166 tests collected. All 166 pass with the optional private screenshots supplied
-  locally. Without those screenshots, 165 pass and one recognition case skips. The
-  private fixtures are ignored and are not part of the repository.
-- `run.py --self-check` initializes the ImGui client, schemas, generated badges
-  and read-only actor catalogue without launching or modifying a game.
-- The three NUP-based binary patch recipes plus authored IPS patch reconstruct
-  all four accepted debug overrides exactly: 1,384,766 total output bytes. Every
-  source and output hash matches the accepted debug manifest.
-- The complete debug bridge delta passes `git apply --check` against the pinned
-  upstream archive and applies successfully. Its ten resulting source files are
-  checked against the recorded LF-normalized output hashes. A fresh full emulator rebuild and
-  gameplay test of that extracted delta remain to be performed.
-- Boundary tests check storage rebasing, renderer/input-setting preservation,
-  debug environment ownership and the absence of performance mod files from the
-  debug manifest. The source audit rejects tracked credentials, runtime files,
-  private fixtures, emulator binaries and extracted game assets.
+- 204 editor tests pass with the optional private recognition fixtures present.
+  Those fixtures remain ignored; the recognition case skips when absent.
+- The offline self-check initializes the client, native dependencies, schemas,
+  generated badges and read-only actor catalogue without launching a game.
+- Focused native C++ tests cover controller chords, held-button suppression,
+  input capture, scripted-input ordering, recording, lease expiry and ownership.
+- Both mainline and optimized controller/debug bridge builds compiled. Their
+  additive patches were applied to exact base sources and all output hashes
+  verified. The public optimized recipe excludes private performance tools.
+- Five debug overrides reconstruct locally from source-checked recipes. The
+  native free camera adds the EventCamera pack. Original game files stay intact.
+- Live copied-save checks covered camera movement, teleport with normal-view
+  restoration, normal save and newest-save load with confirmations automated.
+  During long frame-timed input and those actions, 1,413 controller heartbeats
+  completed with zero errors and a maximum response time of 94 ms.
+- Collision was observed aligned over Castle Town with Link movement and native
+  free-camera movement. Nearby Hyrule Field tile decoding was checked offline.
+- Controller settings rendered correctly; polling reported game focus and
+  advancing mapped samples. Physical controller presses have not been observed.
+  Short automated keyboard chords produced no held SDL samples and are not
+  counted as successful physical-controller validation.
+- Boundary tests/audits check storage rebasing, renderer/input preservation,
+  allowed debug source paths, patch hashes, catalogue integrity and absence of
+  keys, runtime files and extracted game assets from tracked source.
 
-Earlier live gameplay checks established the original debug implementation's
-inventory, ocarina/song, teleport, age, position, collectibles and hotkey behavior.
-The standalone extraction has not yet replaced that working session. GitHub CI
-results should be reported separately once this repository has been pushed.
+Release ZIP validation uses fresh extraction and checks CRC, every file hash,
+embedded Python/native imports, generated badges and setup against the local
+NUP. Receipts record the exact source commit/emulator hash. Gameplay is reported
+separately from package integrity and imports.
 
-Public release packaging additionally verifies the isolated setup dependencies,
-including oead's privately named runtime DLL. External optimized-profile tests
-cover source/output hashes, output-path bounds and rejection of custom settings
-in mainline. Actual release ZIP receipts record their own validation results.
+Saves use the game's normal path. Teleport still allows gravity/loading zones.
+Collision is authored geometry, with runtime moving/destroyed/conditional state
+untracked. Read [controller](CONTROLLER.md), [camera](FREE-CAMERA.md) and
+[collision](COLLISION.md) guides. These checks are not a performance benchmark.

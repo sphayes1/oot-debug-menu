@@ -85,14 +85,35 @@ controller profile for future launches. Keyboard controls remain available throu
 | Save current location | Add your current scene, coordinates and facing to your bookmarks. |
 | Change age | Reload as Child/Adult Link and restore your location. |
 | Position controls | Read/edit X, Y and Z; use the nudge buttons for small changes. |
+| Camera | Toggle free flight, then optionally teleport Link to the camera. |
+| Collision | Show collision over gameplay; keep controlling Link or use free flight. |
 | Actors | Search actors and teleport to their original map placements. |
 | Hotkeys... | Configure quick save and load. |
+| Controller... | Customize controller camera controls and save/load combinations. |
 
 Actor destinations are original map positions. Moving, spawned or conditionally
 visible actors may be elsewhere or absent. **Allow any era** is an experimental
 override; keep it off for normal use.
 
+For free flight, keep the **Camera** tab focused in the debug-menu window.
+Use **WASD** to fly, **Q/E** for down/up, hold the **right mouse button** to look,
+and hold **Shift** to move faster. **Escape** restores the normal camera.
+**Teleport Link to camera** moves Link to that viewpoint; he can fall or enter a
+loading zone there. See [free-camera controls](FREE-CAMERA.md) for details.
+
+For collision, open **Collision** and check **Show collision overlay**. The menu
+reads your selected NUP automatically; the first area can take a few seconds.
+Click the game to play normally, or switch to **Camera** to fly with collision
+still visible. Use windowed or borderless mode. Uncheck the toggle or close the
+menu to remove it. See [collision controls and coverage](COLLISION.md).
+
 ## Save your progress
+
+Controller defaults: **LB/L + Minus** enters free camera, **B** exits and **A**
+teleports and exits. Left stick moves, right stick looks, LT/RT fly down/up.
+Hold **all four shoulder buttons + D-pad Left** to quick save, or **D-pad Right**
+to load. Focus the game and release the chord after pressing it. **Controller...**
+lets you change these combinations and flight settings; see [controller guide](CONTROLLER.md).
 
 Use the game's normal Save option, or press **Ctrl+Alt+F5** while the game has
 focus. **Ctrl+Alt+F9** loads the newest save, including autosaves. The shortcuts

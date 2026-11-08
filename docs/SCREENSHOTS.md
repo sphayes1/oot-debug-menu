@@ -45,6 +45,26 @@ are visibly disabled in the interface.
 
 [![General player controls](screenshots/general.png)](screenshots/general.png)
 
+## Camera
+
+Native free-flight toggle, movement speed, keyboard/mouse controls and teleport-to-camera.
+
+[![Free-flight camera controls](screenshots/camera.png)](screenshots/camera.png)
+
+## Collision controls
+
+Toggle a click-through gameplay overlay, select terrain/wall/zone layers and
+adjust distance, translucent faces and X-ray. This screenshot shows the menu only.
+
+[![Collision overlay controls](screenshots/collision.png)](screenshots/collision.png)
+
+## Controller settings
+
+Customize camera and save/load chords, stick assignment, up/down buttons,
+deadzone, look speed and inversion. Controller names follow emulator mappings.
+
+[![Controller bindings and flight settings](screenshots/controller.png)](screenshots/controller.png)
+
 ## Refreshing the screenshots
 
 Developers can export another tab from a configured public portable folder
