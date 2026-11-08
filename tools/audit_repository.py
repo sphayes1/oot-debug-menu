@@ -9,11 +9,18 @@ def main():
     blocked={'.keys','.nup','.nsp','.xci','.sav','.exe','.dll','.pdb','.png','.ainb','.zs','.sqlite3'}
     secret=re.compile(rb'-----BEGIN [A-Z ]*PRIVATE KEY-----|github_pat_[A-Za-z0-9_]{40,}|gh[pousr]_[A-Za-z0-9]{25,}')
     size=0
+    screenshot_manifest=ROOT/'docs/screenshots/manifest.json'
+    screenshots=json.loads(screenshot_manifest.read_text()) if screenshot_manifest.exists() else {'screenshots':[]}
+    screenshot_hashes={row['file']:row['sha256'] for row in screenshots['screenshots']}
     for relative in paths:
-        assert relative.suffix.lower() not in blocked,str(relative)
+        is_screenshot=relative.parent==Path('docs/screenshots') and relative.name in screenshot_hashes
+        assert relative.suffix.lower() not in blocked or is_screenshot,str(relative)
         assert not {'runtime','backups','live-edits','tests-local','checkpoints','profiling','emulators'} & set(relative.parts),str(relative)
         assert relative.name not in ('settings.json','live-binding.json','session.json','hotkeys.json','locations.json'),str(relative)
         data=(ROOT/relative).read_bytes();size+=len(data)
+        if is_screenshot:
+            assert data.startswith(b'\x89PNG\r\n\x1a\n') and len(data)<1_000_000,str(relative)
+            assert hashlib.sha256(data).hexdigest()==screenshot_hashes[relative.name],str(relative)
         assert not secret.search(data),'Credential-like content in '+str(relative)
     receipt=json.loads((ROOT/'data/actor-catalog.json').read_text())
     assert hashlib.sha256(gzip.decompress((ROOT/'data/actor-catalog.sqlite3.gz').read_bytes())).hexdigest()==receipt['sha256']
