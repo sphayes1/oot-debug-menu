@@ -18,6 +18,8 @@ reconstructs game-side debug files locally rather than distributing them.
 The mainline build is an unofficial debug-enabled build of official source,
 not a byte-for-byte upstream download. Upstream's own optimizations remain part
 of mainline; only our additional performance work is omitted.
+A local variable rename is included for MSVC C4458 build compatibility and is
+recorded in the mainline bridge patch; it does not change runtime behavior.
 
 ## Reproducible packaging
 
