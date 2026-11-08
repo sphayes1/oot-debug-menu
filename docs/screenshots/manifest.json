@@ -66,6 +66,66 @@
       "width": 1280,
       "height": 960,
       "file": "general.png"
+    },
+    {
+      "tab": "Camera",
+      "method": "HelloImGui final_app_window_screenshot (renderer framebuffer)",
+      "cursor_included": false,
+      "desktop_or_game_window_included": false,
+      "source_commit": "5d2afc9535bab4e76745ef99a8c3304311e95c54",
+      "sha256": "af32565b46511ab8cb74cb4e17757ed5ce36e79b8708f3bb2a56b60273c6f373",
+      "width": 1280,
+      "height": 520,
+      "working_tree_feature": "v0.2.0-camera-collision-controller",
+      "source_files": {
+        "editor/app.py": "10dbd64786d5911e2f394d5383478575a7821f1df6e95a3e14a18b8b893edb57",
+        "editor/camera.py": "17d5590604c3c0ff80e5040c74c46b94648689818cd6d2b0e0c7124262a1a903",
+        "editor/camera_ui.py": "dccb032fc30592534393e9cd0bd6dceb7ee12cef3ad968b5bc65541bd59a534b",
+        "editor/collision_ui.py": "200d9288e8ade1187ad17f6d4c76ef00d3a677fd07e317fb2ddc5e359bc63540",
+        "editor/controller.py": "cdc094fb8bcd8686139cb4a597f050df81a7246d84367130ae8ed1e654b446f3",
+        "editor/controller_ui.py": "2654b8ce940fd4200b7818f57888fdb5f29dd1974c584d11317f52c15d975703"
+      },
+      "file": "camera.png"
+    },
+    {
+      "tab": "Collision",
+      "method": "HelloImGui final_app_window_screenshot (renderer framebuffer)",
+      "cursor_included": false,
+      "desktop_or_game_window_included": false,
+      "source_commit": "5d2afc9535bab4e76745ef99a8c3304311e95c54",
+      "sha256": "1c38a7c01c3f07650d39bea1a96e62cb2ccc8c60533386287bbc99d767352153",
+      "width": 1280,
+      "height": 800,
+      "working_tree_feature": "v0.2.0-camera-collision-controller",
+      "source_files": {
+        "editor/app.py": "10dbd64786d5911e2f394d5383478575a7821f1df6e95a3e14a18b8b893edb57",
+        "editor/camera.py": "17d5590604c3c0ff80e5040c74c46b94648689818cd6d2b0e0c7124262a1a903",
+        "editor/camera_ui.py": "dccb032fc30592534393e9cd0bd6dceb7ee12cef3ad968b5bc65541bd59a534b",
+        "editor/collision_ui.py": "200d9288e8ade1187ad17f6d4c76ef00d3a677fd07e317fb2ddc5e359bc63540",
+        "editor/controller.py": "cdc094fb8bcd8686139cb4a597f050df81a7246d84367130ae8ed1e654b446f3",
+        "editor/controller_ui.py": "2654b8ce940fd4200b7818f57888fdb5f29dd1974c584d11317f52c15d975703"
+      },
+      "file": "collision.png"
+    },
+    {
+      "tab": "Controller",
+      "method": "HelloImGui final_app_window_screenshot (renderer framebuffer)",
+      "cursor_included": false,
+      "desktop_or_game_window_included": false,
+      "source_commit": "5d2afc9535bab4e76745ef99a8c3304311e95c54",
+      "sha256": "1577bf941c4a5b14d402ff8878adffd95bc2d4bd03a1fd1057a25340f719307e",
+      "width": 410,
+      "height": 510,
+      "working_tree_feature": "v0.2.0-camera-collision-controller",
+      "source_files": {
+        "editor/app.py": "10dbd64786d5911e2f394d5383478575a7821f1df6e95a3e14a18b8b893edb57",
+        "editor/camera.py": "17d5590604c3c0ff80e5040c74c46b94648689818cd6d2b0e0c7124262a1a903",
+        "editor/camera_ui.py": "dccb032fc30592534393e9cd0bd6dceb7ee12cef3ad968b5bc65541bd59a534b",
+        "editor/collision_ui.py": "200d9288e8ade1187ad17f6d4c76ef00d3a677fd07e317fb2ddc5e359bc63540",
+        "editor/controller.py": "cdc094fb8bcd8686139cb4a597f050df81a7246d84367130ae8ed1e654b446f3",
+        "editor/controller_ui.py": "2654b8ce940fd4200b7818f57888fdb5f29dd1974c584d11317f52c15d975703"
+      },
+      "file": "controller.png"
     }
   ]
 }
