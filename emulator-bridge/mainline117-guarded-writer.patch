@@ -1,0 +1,482 @@
+--- a/src/core/debugger/nx2_debug_tools.cpp
++++ b/src/core/debugger/nx2_debug_tools.cpp
+@@ -24,10 +24,17 @@
+ #include "common/settings.h"
+ #include "common/stb.h"
+ #include "core/core.h"
++#include "core/arm/debug.h"
+ #include "core/debugger/nx2_debug_server.h"
+ #include "core/debugger/nx2_debug_tools.h"
++#include "core/debugger/nx2_inventory_word.h"
++#include "core/debugger/nx2_gamedata_int.h"
+ #include "core/frontend/framebuffer_layout.h"
++#include "core/hle/kernel/k_memory_block.h"
+ #include "core/hle/kernel/k_process.h"
++#include "core/hle/kernel/k_thread.h"
++#include "core/hle/kernel/kernel.h"
++#include "core/loader/loader.h"
+ #include "core/memory.h"
+ #include "hid_core/hid_core.h"
+ #include "video_core/gpu.h"
+@@ -159,6 +166,11 @@
+     return Settings::values.renderer_backend.GetValue() == Settings::RendererBackend::Vulkan;
+ }
+ 
++bool InventoryWritesEnabled() {
++    const char* const enabled = std::getenv("EDEN_NX2_LIVE_INVENTORY");
++    return enabled != nullptr && std::string_view{enabled} == "1";
++}
++
+ /// Waits for a future in short slices so a stopping server does not wait out the timeout.
+ template <typename T>
+ bool WaitReady(const ToolState& state, std::future<T>& future, std::chrono::milliseconds timeout) {
+@@ -198,6 +210,8 @@
+         {"renderer", IsVulkan() ? "vulkan" : "other"},
+         {"powered_on", state.system.IsPoweredOn()},
+         {"paused", state.system.IsPaused()},
++        {"live_inventory_enabled", InventoryWritesEnabled() && state.program_id == OOT_PROGRAM_ID},
++        {"gamedata_int_enqueue_enabled", InventoryWritesEnabled() && state.program_id == OOT_PROGRAM_ID},
+         {"presents", after},
+         {"fps", seconds > 0.0 ? static_cast<double>(after - before) / seconds : 0.0},
+         {"uptime_s", std::chrono::duration<double>(std::chrono::steady_clock::now() - state.start)
+@@ -501,6 +515,237 @@
+     return result;
+ }
+ 
++json CompareWrite32(ToolState& state, const json& params) {
++    Kernel::KProcess& process = Application(state);
++    const u64 address = AddressParam(params, "address");
++    const u64 expected = AddressParam(params, "expected");
++    const u64 value = AddressParam(params, "value");
++    auto& page_table = process.GetPageTable();
++    ValidateInventoryWordRequest(
++        InventoryWritesEnabled(), process.GetProgramId(), address,
++        GetInteger(page_table.GetHeapRegionStart()), page_table.GetHeapRegionSize(), expected, value);
++    if (state.program_id != OOT_PROGRAM_ID || state.stopping.load(std::memory_order_relaxed)) {
++        throw std::runtime_error{"the Ocarina debug session is not active"};
++    }
++    Kernel::KMemoryInfo info{};
++    Kernel::Svc::PageInfo page{};
++    if (page_table.QueryInfo(&info, &page, address).IsError() ||
++        info.GetState() != Kernel::KMemoryState::Normal ||
++        (info.GetPermission() & Kernel::KMemoryPermission::UserMask) !=
++            (Kernel::KMemoryPermission::UserReadWrite & Kernel::KMemoryPermission::UserMask)) {
++        throw std::runtime_error{"inventory word is not in normal writable heap memory"};
++    }
++    auto& memory = process.GetMemory();
++    if (!memory.IsValidVirtualAddressRange(address, sizeof(u32)) ||
++        GuestByte(memory, address) == nullptr) {
++        throw std::runtime_error{"inventory word is not mapped"};
++    }
++    const bool swapped =
++        memory.WriteExclusive32(address, static_cast<u32>(value), static_cast<u32>(expected));
++    const u32 actual = memory.Read32(address);
++    if (swapped) {
++        LOG_INFO(Debug_GDBStub, "OOT inventory word {:#x}: {:#x} -> {:#x} (readback {:#x})",
++                 address, expected, value, actual);
++    }
++    return {{"address", HexAddress(address)}, {"expected", expected}, {"value", value},
++            {"swapped", swapped}, {"actual", actual}, {"readback_matches", actual == value}};
++}
++
++json SetGameDataInt(ToolState& state, const json& params) {
++    auto& process = Application(state);
++    auto& table = process.GetPageTable();
++    const u64 task = AddressParam(params, "task");
++    const u64 descriptor = AddressParam(params, "int_descriptor");
++    const u64 module_base = AddressParam(params, "module_base");
++    const u64 hash = AddressParam(params, "hash");
++    const u64 index = AddressParam(params, "index");
++    const u64 expected = AddressParam(params, "expected");
++    const u64 value = AddressParam(params, "value");
++    const u64 heap = GetInteger(table.GetHeapRegionStart());
++    const u64 heap_size = table.GetHeapRegionSize();
++    ValidateInventoryWordRequest(InventoryWritesEnabled(), process.GetProgramId(), task,
++                                 heap, heap_size, expected, value);
++    ValidateGameDataIntField(hash, index, expected, value);
++    ValidateGameDataModuleBase(module_base, heap);
++    if (state.program_id != OOT_PROGRAM_ID || state.stopping.load(std::memory_order_relaxed))
++        throw std::runtime_error{"the Ocarina debug session is not active"};
++    Loader::AppLoader::Modules modules;
++    if (state.system.GetAppLoader().ReadNSOModules(modules) != Loader::ResultStatus::Success)
++        throw std::runtime_error{"GameData loader module metadata is unavailable"};
++    const auto main = modules.find(module_base);
++    if (main == modules.end() || main->second != "main" ||
++        std::count_if(modules.begin(), modules.end(), [](const auto& entry) {
++            return entry.second == "main";
++        }) != 1 ||
++        std::next(main) == modules.end() ||
++        std::next(main)->first < module_base + 0x4e842b0)
++        throw std::runtime_error{"GameData base does not match the loaded main module"};
++    const auto module_mapping = [&](u64 rva, u64 size, Kernel::Svc::MemoryPermission permission) {
++        Kernel::KMemoryInfo info{};
++        Kernel::Svc::PageInfo page{};
++        if (table.QueryInfo(&info, &page, module_base + rva).IsError())
++            throw std::runtime_error{"GameData module anchor is not mapped"};
++        const auto mapping = info.GetSvcMemoryInfo();
++        const bool permission_matches = mapping.permission == permission ||
++            (permission == Kernel::Svc::MemoryPermission::Read &&
++             mapping.permission == Kernel::Svc::MemoryPermission::ReadWrite);
++        if (!permission_matches || mapping.base_address > module_base + rva ||
++            mapping.size < size ||
++            module_base + rva - mapping.base_address > mapping.size - size)
++            throw std::runtime_error{fmt::format(
++                "GameData module anchor {:#x} permission {} or extent mismatch", rva,
++                static_cast<u32>(mapping.permission))};
++    };
++    // NX2 need not carry the legacy module-name header used by GDB discovery.
++    // Use the loader's map and verify each code/data anchor independently.
++    module_mapping(0x3b500a0, OOT_GAMEDATA_WRAPPER_SIGNATURE.size() * 4,
++                   Kernel::Svc::MemoryPermission::ReadExecute);
++    module_mapping(0x163c20, OOT_GAMEDATA_RESERVE_SIGNATURE.size() * 4,
++                   Kernel::Svc::MemoryPermission::ReadExecute);
++    module_mapping(0x163c60, OOT_GAMEDATA_COMPLETE_SIGNATURE.size() * 4,
++                   Kernel::Svc::MemoryPermission::ReadExecute);
++    module_mapping(0x4c1f280, 8, Kernel::Svc::MemoryPermission::Read);
++    module_mapping(0x4c20718, 8, Kernel::Svc::MemoryPermission::Read);
++    module_mapping(0x4c64158, 24, Kernel::Svc::MemoryPermission::Read);
++    module_mapping(0x4e842a8, 8, Kernel::Svc::MemoryPermission::ReadWrite);
++
++    // SuspendEmulation waits for application scheduler threads to leave the cores.
++    // Their contexts are saved by KScheduler::Unload before switching current thread.
++    auto stall = state.system.StallApplication();
++    SCOPE_EXIT { state.system.UnstallApplication(); };
++    auto& memory = process.GetMemory();
++    const auto writable = [&](u64 address, u64 size) {
++        if ((address & 3) != 0 || size == 0 || size > heap_size || address < heap ||
++            address - heap > heap_size - size ||
++            !memory.IsValidVirtualAddressRange(address, size))
++            throw std::runtime_error{"GameData range is outside mapped application heap"};
++        for (u64 at = address; at < address + size;) {
++            Kernel::KMemoryInfo info{};
++            Kernel::Svc::PageInfo page{};
++            if (table.QueryInfo(&info, &page, at).IsError() ||
++                info.GetState() != Kernel::KMemoryState::Normal ||
++                (info.GetPermission() & Kernel::KMemoryPermission::UserMask) !=
++                    (Kernel::KMemoryPermission::UserReadWrite & Kernel::KMemoryPermission::UserMask) ||
++                info.m_address > at || info.m_size == 0 ||
++                info.m_address + info.m_size <= at || GuestByte(memory, at) == nullptr)
++                throw std::runtime_error{"GameData range is not normal writable heap"};
++            at = (std::min)(address + size, info.m_address + info.m_size);
++        }
++    };
++    const auto fixed_string = [&](u64 address, std::string_view expected_text) {
++        std::vector<u8> data(expected_text.size() + 1);
++        if (ReadGuestMemory(memory, address, data) || data.back() != 0 ||
++            std::memcmp(data.data(), expected_text.data(), expected_text.size()) != 0)
++            throw std::runtime_error{"GameData task identity string mismatch"};
++    };
++    const auto busy = [](std::string_view reason) -> json {
++        return {{"queued", false}, {"busy", true}, {"changed", false}, {"reason", reason}};
++    };
++
++    writable(task, 0xa8);
++    writable(descriptor, 96);
++    const auto signature = [&](u64 rva, const auto& words) {
++        std::vector<u8> bytes(words.size() * sizeof(u32));
++        if (ReadGuestMemory(memory, module_base + rva, bytes) ||
++            std::memcmp(bytes.data(), words.data(), bytes.size()) != 0)
++            throw std::runtime_error{"GameData immutable code signature mismatch"};
++    };
++    signature(0x3b500a0, OOT_GAMEDATA_WRAPPER_SIGNATURE);
++    signature(0x163c20, OOT_GAMEDATA_RESERVE_SIGNATURE);
++    signature(0x163c60, OOT_GAMEDATA_COMPLETE_SIGNATURE);
++    // This endpoint is deliberately pinned to the inspected remake revision.
++    if (memory.Read64(task) != module_base + 0x4c64158 ||
++        memory.Read64(module_base + 0x4c64168) != module_base + 0x3b500a0 ||
++        memory.Read64(descriptor) != module_base + 0x4c1f280 ||
++        memory.Read32(descriptor + 8) != 1259 || descriptor < heap + 0xc8 ||
++        memory.Read64(module_base + 0x4e842a8) != descriptor - 0xc8)
++        throw std::runtime_error{"GameData task, descriptor or active manager mismatch"};
++    fixed_string(memory.Read64(task + 0x18), "GameData");
++    const u64 resource = memory.Read64(task + 0xa0);
++    writable(resource, 48);
++    if (memory.Read64(resource) != resource + 48)
++        throw std::runtime_error{"GameData resource string layout mismatch"};
++    fixed_string(memory.Read64(resource), "GameData/GameDataList.Product.110.byml");
++    const u64 bank = memory.Read64(descriptor + 16);
++    const u64 lookup = memory.Read64(descriptor + 24);
++    if (memory.Read32(descriptor + 32) != 1259 ||
++        memory.Read32(descriptor + 36) != 2518 || memory.Read32(descriptor + 40) != 512)
++        throw std::runtime_error{"GameData Int table dimensions mismatch"};
++    writable(bank, 1259 * 40);
++    writable(lookup, 2518 * 8);
++    size_t matches = 0;
++    for (u64 row = 0; row < 2518; ++row) {
++        if (memory.Read32(lookup + row * 8) == hash) {
++            if (memory.Read32(lookup + row * 8 + 4) != index)
++                throw std::runtime_error{"GameData hash/index lookup mismatch"};
++            ++matches;
++        }
++    }
++    const u64 object = bank + index * 40;
++    if (matches != 1 || memory.Read64(bank) != module_base + 0x4c20718 ||
++        memory.Read64(object) != module_base + 0x4c20718)
++        throw std::runtime_error{"GameData Int object type mismatch"};
++    const u64 input = memory.Read64(descriptor + 48);
++    writable(input, 512 * 12);
++
++    // Mapping queries may wait on kernel locks and temporarily continue suspended
++    // lock owners. Re-establish the stop after every such query, then perform the
++    // boundary checks and publication without further kernel-lock acquisition.
++    state.system.Kernel().SuspendEmulation(true);
++    if (!process.GetListLock().TryLock())
++        return busy("application thread list is being modified");
++    SCOPE_EXIT { process.GetListLock().Unlock(); };
++    // Nonblocking ownership also excludes host workers removing a thread.
++    for (const auto& thread : process.GetThreadList()) {
++        if (GameDataIntProducerPc(thread.GetContext().pc, module_base))
++            return busy("native Int producer is between reservation and epoch check");
++    }
++    if (!GameDataIntBoundaryIdle(memory.Read32(task + 0x88), memory.Read32(task + 0x98), 0))
++        return busy("GameData consumer mutex is held");
++    if (memory.Read64(module_base + 0x4e842a8) != descriptor - 0xc8 ||
++        memory.Read64(descriptor + 16) != bank || memory.Read64(descriptor + 24) != lookup ||
++        memory.Read64(descriptor + 48) != input ||
++        memory.Read64(task) != module_base + 0x4c64158 ||
++        memory.Read64(object) != module_base + 0x4c20718)
++        throw std::runtime_error{"GameData binding changed during validation"};
++    const u32 actual = memory.Read32(object + 28);
++    if (actual != expected)
++        return {{"queued", false}, {"busy", false}, {"changed", false},
++                {"reason", "expected value mismatch"}, {"actual", actual}};
++    const u32 header = memory.Read32(descriptor + 56);
++    if (!GameDataIntBoundaryIdle(0, 0, header))
++        return busy("GameData Int input queue is not empty");
++    if (memory.Read32(input) != 0 || memory.Read32(input + 4) != 0 ||
++        memory.Read32(input + 8) != 0)
++        return busy("GameData Int input slot is not cleared");
++    const u32 completed = CompletedGameDataIntHeader(header);
++    // Only zero, validated slot words change until the header publishes the complete record.
++    // No guest thread can observe this intermediate state. Roll back on CAS/readback failure.
++    bool published = false;
++    SCOPE_EXIT {
++        if (!published) {
++            memory.WriteExclusive32(input, 0, static_cast<u32>(value));
++            memory.WriteExclusive32(input + 4, 0, static_cast<u32>(hash));
++        }
++    };
++    if (!memory.WriteExclusive32(input, static_cast<u32>(value), 0) ||
++        !memory.WriteExclusive32(input + 4, static_cast<u32>(hash), 0) ||
++        memory.Read32(input) != value || memory.Read32(input + 4) != hash ||
++        memory.Read32(input + 8) != 0)
++        throw std::runtime_error{"GameData input payload CAS/readback failed"};
++    if (!memory.WriteExclusive32(descriptor + 56, completed, header))
++        throw std::runtime_error{"GameData input header CAS failed"};
++    published = true;
++    const u32 readback = memory.Read32(descriptor + 56);
++    LOG_INFO(Debug_GDBStub, "OOT queued GameData Int {:#x} index {}: {} -> {}", hash,
++             index, expected, value);
++    return {{"queued", true}, {"busy", false}, {"changed", true}, {"hash", hash},
++            {"index", index}, {"expected", expected}, {"value", value},
++            {"header_before", header}, {"header_after", readback},
++            {"readback_matches", readback == completed},
++            {"effect_verified", false}};
++}
++
+ json SearchMemory(ToolState& state, const json& params) {
+     const std::vector<u8> pattern = ParseHexBytes(params.at("pattern").get<std::string>());
+     if (pattern.size() > 256) {
+@@ -681,6 +926,8 @@
+         {"reject_shaders", handler(RejectShaders)},
+         {"sample", handler(SampleThreads)},
+         {"read_memory", handler(ReadMemory)},
++        {"compare_write32", handler(CompareWrite32)},
++        {"set_gamedata_int", handler(SetGameDataInt)},
+         {"search_memory", handler(SearchMemory)},
+         {"read_gpu_memory", handler(ReadGpuMemory)},
+         {"input", waiting(Input)},
+--- /dev/null
++++ b/src/core/debugger/nx2_inventory_word.h
+@@ -0,0 +1,35 @@
++// SPDX-FileCopyrightText: Copyright 2026 Eden Emulator Project
++// SPDX-License-Identifier: GPL-3.0-or-later
++
++#pragma once
++
++#include <cstdint>
++#include <stdexcept>
++
++namespace Core::Nx2Debug {
++
++constexpr std::uint64_t OOT_PROGRAM_ID = 0x0400486024DEC000;
++
++// Mapping and writable-page checks remain the caller's responsibility.
++inline void ValidateInventoryWordRequest(bool enabled, std::uint64_t program_id,
++                                         std::uint64_t address, std::uint64_t heap_start,
++                                         std::uint64_t heap_size, std::uint64_t expected,
++                                         std::uint64_t value) {
++    if (!enabled) {
++        throw std::runtime_error{"live inventory writes require EDEN_NX2_LIVE_INVENTORY=1"};
++    }
++    if (program_id != OOT_PROGRAM_ID) {
++        throw std::runtime_error{"live inventory writes are restricted to Ocarina of Time"};
++    }
++    if ((address >> 48) != 0 || (address & 3) != 0) {
++        throw std::runtime_error{"inventory address must be an aligned guest 32-bit word"};
++    }
++    if (heap_size < 4 || address < heap_start || address - heap_start > heap_size - 4) {
++        throw std::runtime_error{"inventory word must be entirely inside the application heap"};
++    }
++    if (expected > UINT32_MAX || value > UINT32_MAX) {
++        throw std::runtime_error{"expected and value must fit an unsigned 32-bit word"};
++    }
++}
++
++} // namespace Core::Nx2Debug
+--- /dev/null
++++ b/src/core/debugger/nx2_gamedata_int.h
+@@ -0,0 +1,77 @@
++// SPDX-FileCopyrightText: Copyright 2026 Eden Emulator Project
++// SPDX-License-Identifier: GPL-3.0-or-later
++
++#pragma once
++
++#include <cstdint>
++#include <array>
++#include <stdexcept>
++
++namespace Core::Nx2Debug {
++
++constexpr std::uint64_t OOT_BOOL_VTABLE_RVA = 0x4c20658;
++constexpr std::array<std::uint32_t, 16> OOT_GAMEDATA_WRAPPER_SIGNATURE{
++    0xd503237f, 0xa9be7bfd, 0xf9000bf3, 0x910003fd, 0xaa0003f3, 0x91020000,
++    0x9403c8ea, 0x900099a8, 0x910aa108, 0xf9400100, 0x9741262e, 0x91020260,
++    0xf9400bf3, 0xa8c27bfd, 0xd50323ff, 0x1403c8e5};
++constexpr std::array<std::uint32_t, 12> OOT_GAMEDATA_RESERVE_SIGNATURE{
++    0xb941000b, 0xb940f009, 0x12004d6a, 0x6b09015f, 0x5400044a, 0x2a0b03e8,
++    0x1100056c, 0x9104000d, 0x88a87dac, 0x6b0b011f, 0x54000301, 0xf9407c09};
++constexpr std::array<std::uint32_t, 14> OOT_GAMEDATA_COMPLETE_SIGNATURE{
++    0xb941000b, 0x2a0b03e9, 0x12045d6c, 0x1144016d, 0x6a2b015f, 0x1a8d018c,
++    0x9104000d, 0x88a97dac, 0x6b0b013f, 0x2a0903eb, 0x54ffff01, 0x4a080128,
++    0x531c7d08, 0x35000128};
++
++inline void ValidateGameDataModuleBase(std::uint64_t base, std::uint64_t heap) {
++    if (base < 0x10000 || (base & 0xfff) != 0 || base >= heap || heap - base <= 0x4e842b0)
++        throw std::runtime_error{"GameData module base is invalid"};
++}
++
++inline void ValidateGameDataIntField(std::uint64_t hash, std::uint64_t index,
++                                    std::uint64_t expected, std::uint64_t value) {
++    std::uint64_t limit = 0;
++    switch (hash) {
++    case 0x31ab5580: // Life
++        if (index != 963) throw std::runtime_error{"Life index mismatch"};
++        limit = 80;
++        break;
++    case 0xfbe01da1: // MaxLife
++        if (index != 964) throw std::runtime_error{"MaxLife index mismatch"};
++        limit = 80;
++        if (value < 12 || (value & 3) != 0)
++            throw std::runtime_error{"MaxLife must be whole hearts in [12,80]"};
++        break;
++    case 0x76b18200: // MP
++        if (index != 965) throw std::runtime_error{"MP index mismatch"};
++        limit = 48;
++        break;
++    case 0x12d63a97: // MPMax
++        if (index != 967) throw std::runtime_error{"MPMax index mismatch"};
++        limit = 48;
++        if (value != 0 && value != 24 && value != 48)
++            throw std::runtime_error{"MPMax must be 0,24,48"};
++        break;
++    default:
++        throw std::runtime_error{"GameData Int field is not allowed"};
++    }
++    if (expected > limit || value > limit)
++        throw std::runtime_error{"GameData Int value is out of range"};
++}
++
++inline bool GameDataIntProducerPc(std::uint64_t pc, std::uint64_t module_base) {
++    return pc >= module_base && pc - module_base >= 0x163c20 &&
++           pc - module_base < 0x163c98;
++}
++
++inline bool GameDataIntBoundaryIdle(std::uint32_t depth, std::uint32_t owner,
++                                    std::uint32_t header) {
++    return depth == 0 && owner == 0 && (header & 0xfffff) == 0;
++}
++
++inline std::uint32_t CompletedGameDataIntHeader(std::uint32_t header) {
++    if ((header & 0xfffff) != 0)
++        throw std::runtime_error{"GameData Int input queue is not empty"};
++    return (header & 0xf0000000) | (((header + 0x100000) & 0x0ff00000)) | 1;
++}
++
++} // namespace Core::Nx2Debug
+--- a/src/core/hle/kernel/k_light_lock.cpp
++++ b/src/core/hle/kernel/k_light_lock.cpp
+@@ -50,6 +50,13 @@
+     if (!m_tag.compare_exchange_strong(expected, 0, std::memory_order_release)) {
+         this->UnlockSlowPath(cur_thread);
+     }
++}
++
++bool KLightLock::TryLock() {
++    const uintptr_t cur_thread = reinterpret_cast<uintptr_t>(GetCurrentThreadPointer(m_kernel));
++    uintptr_t expected = 0;
++    return cur_thread != 0 &&
++           m_tag.compare_exchange_strong(expected, cur_thread, std::memory_order_acquire);
+ }
+ 
+ bool KLightLock::LockSlowPath(uintptr_t _owner, uintptr_t _cur_thread) {
+--- a/src/core/hle/kernel/k_light_lock.h
++++ b/src/core/hle/kernel/k_light_lock.h
+@@ -16,6 +16,8 @@
+     explicit KLightLock(KernelCore& kernel) : m_kernel{kernel} {}
+ 
+     void Lock();
++
++    bool TryLock();
+ 
+     void Unlock();
+ 
+--- a/src/video_core/engines/kepler_compute.cpp
++++ b/src/video_core/engines/kepler_compute.cpp
+@@ -911,8 +911,8 @@
+     if (!BypassEnabled(program_id)) {
+         return false;
+     }
+-    auto* const state = rasterizer->OotNetworkBypass();
+-    if (!state) {
++    auto* const bypass_state = rasterizer->OotNetworkBypass();
++    if (!bypass_state) {
+         return false;
+     }
+     // The tonemap pass draws before the network every frame; until it has been seen (menus, the
+@@ -920,14 +920,14 @@
+     // pass is being replaced, so a failed replacement brings the whole network back next frame.
+     Maxwell3D::Regs::RenderTargetConfig tonemapped;
+     {
+-        std::scoped_lock lock{state->mutex};
+-        tonemapped = state->tonemapped;
++        std::scoped_lock lock{bypass_state->mutex};
++        tonemapped = bypass_state->tonemapped;
+     }
+     if (tonemapped.Address() == 0) {
+         return false;
+     }
+     if (native_key == PrepassProgramKey || native_key == NetworkProgramKey) {
+-        return state->output_replaced.load(std::memory_order_relaxed);
++        return bypass_state->output_replaced.load(std::memory_order_relaxed);
+     }
+     if (native_key != OutputProgramKey) {
+         return false;
+@@ -939,7 +939,7 @@
+         tonemapped.format != Tegra::RenderTargetFormat::B10G11R11_FLOAT ||
+         tonemapped.tile_mode.is_pitch_linear || tonemapped.width != output->Width() ||
+         tonemapped.height != output->Height()) {
+-        state->output_replaced.store(false, std::memory_order_relaxed);
++        bypass_state->output_replaced.store(false, std::memory_order_relaxed);
+         static bool warned = false;
+         if (!std::exchange(warned, true)) {
+             LOG_WARNING(HW_GPU,
+@@ -984,7 +984,7 @@
+         .src_y1 = height,
+     };
+     const bool copied = rasterizer->AccelerateSurfaceCopy(source, destination, config);
+-    state->output_replaced.store(copied, std::memory_order_relaxed);
++    bypass_state->output_replaced.store(copied, std::memory_order_relaxed);
+     static bool logged = false;
+     if (!std::exchange(logged, true)) {
+         LOG_INFO(HW_GPU,

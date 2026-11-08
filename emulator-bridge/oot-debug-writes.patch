@@ -1,0 +1,1211 @@
+--- a/src/core/debugger/nx2_debug_tools.cpp
++++ b/src/core/debugger/nx2_debug_tools.cpp
+@@ -1,24 +1,40 @@
+ // SPDX-FileCopyrightText: Copyright 2026 Eden Emulator Project
+ // SPDX-License-Identifier: GPL-3.0-or-later
+ 
++#include <algorithm>
+ #include <atomic>
++#include <bit>
+ #include <charconv>
+ #include <chrono>
++#include <cmath>
+ #include <cstdlib>
++#include <cstring>
+ #include <filesystem>
+ #include <fstream>
+ #include <future>
++#include <iterator>
+ #include <thread>
+ 
+ #include "common/fs/path_util.h"
++#include "common/scope_exit.h"
+ #include "common/logging.h"
+ #include "common/scm_rev.h"
+ #include "common/settings.h"
+ #include "common/stb.h"
+ #include "core/core.h"
++#include "core/arm/debug.h"
+ #include "core/debugger/nx2_debug_server.h"
+ #include "core/debugger/nx2_debug_tools.h"
++#include "core/debugger/nx2_inventory_word.h"
++#include "core/debugger/nx2_gamedata_int.h"
+ #include "core/frontend/framebuffer_layout.h"
++#include "core/hle/kernel/k_memory_block.h"
++#include "core/hle/kernel/k_process.h"
++#include "core/hle/kernel/k_thread.h"
++#include "core/hle/kernel/kernel.h"
++#include "core/loader/loader.h"
++#include "core/memory.h"
++#include "hid_core/hid_core.h"
+ #include "video_core/gpu.h"
+ #include "video_core/nx2_debug_control.h"
+ #include "video_core/renderer_base.h"
+@@ -30,6 +46,22 @@
+ 
+ /// Lines the log ring keeps for log_tail.
+ constexpr size_t RING_LINES = 20000;
++/// Bytes one read_memory or read_gpu_memory call returns at most.
++constexpr u64 MAX_READ = 64 * 1024;
++/// Presented frames one input or input_sequence call holds at most (10 minutes at 60 fps).
++constexpr u64 MAX_INPUT_FRAMES = 36000;
++constexpr size_t MAX_INPUT_STEPS = 1000;
++
++constexpr std::array<std::pair<std::string_view, HID::NpadButton>, 16> INPUT_BUTTONS{{
++    {"A", HID::NpadButton::A},         {"B", HID::NpadButton::B},
++    {"X", HID::NpadButton::X},         {"Y", HID::NpadButton::Y},
++    {"L", HID::NpadButton::L},         {"R", HID::NpadButton::R},
++    {"ZL", HID::NpadButton::ZL},       {"ZR", HID::NpadButton::ZR},
++    {"Plus", HID::NpadButton::Plus},   {"Minus", HID::NpadButton::Minus},
++    {"Up", HID::NpadButton::Up},       {"Down", HID::NpadButton::Down},
++    {"Left", HID::NpadButton::Left},   {"Right", HID::NpadButton::Right},
++    {"StickL", HID::NpadButton::StickL}, {"StickR", HID::NpadButton::StickR},
++}};
+ 
+ struct ToolState {
+     explicit ToolState(System& system_, std::string title_, u64 program_id_,
+@@ -72,8 +104,67 @@
+     return (std::clamp)(value, low, high);
+ }
+ 
++std::string HexAddress(u64 value) {
++    return fmt::format("{:#x}", value);
++}
++
++/// An address as a JSON number or a hex string (0x optional).
++u64 AddressParam(const json& params, const char* name) {
++    const json& value = params.at(name);
++    if (value.is_number_unsigned()) {
++        return value.get<u64>();
++    }
++    if (!value.is_string()) {
++        throw std::runtime_error{fmt::format("{} must be a hex string or a non-negative number", name)};
++    }
++    const std::string text = value.get<std::string>();
++    const std::string_view view{text};
++    const std::string_view digits =
++        view.starts_with("0x") || view.starts_with("0X") ? view.substr(2) : view;
++    u64 address = 0;
++    const auto [end, error] =
++        std::from_chars(digits.data(), digits.data() + digits.size(), address, 16);
++    if (digits.empty() || error != std::errc{} || end != digits.data() + digits.size()) {
++        throw std::runtime_error{fmt::format("bad {} \"{}\": want hex, e.g. 0x8012345000", name, text)};
++    }
++    return address;
++}
++
++/// The size of a read: 1 to MAX_READ bytes, not wrapping past the end of the address space.
++u64 ReadSize(const json& params, u64 address) {
++    const json& value = params.at("size");
++    if (!value.is_number_integer() || value.get<s64>() < 1 || value.get<u64>() > MAX_READ) {
++        throw std::runtime_error{fmt::format("size must be 1 to {} bytes", MAX_READ)};
++    }
++    const u64 size = value.get<u64>();
++    if (address + size < address) {
++        throw std::runtime_error{"address + size wraps around"};
++    }
++    return size;
++}
++
++Kernel::KProcess& Application(ToolState& state) {
++    Kernel::KProcess* const process = state.system.ApplicationProcess();
++    if (process == nullptr) {
++        throw std::runtime_error{"no application process is running"};
++    }
++    return *process;
++}
++
++/// A host pointer to the byte at address, or null when its page is not mapped. GetPointerSilent
++/// reads the page entry as guest cores do, with no commit, log or GPU download; it masks the top
++/// 16 bits, so addresses there would alias and are unmapped instead.
++const u8* GuestByte(Memory::Memory& memory, u64 address) {
++    return (address >> 48) == 0 ? memory.GetPointerSilent(address) : nullptr;
++}
++
+ bool IsVulkan() {
+     return Settings::values.renderer_backend.GetValue() == Settings::RendererBackend::Vulkan;
++}
++
++bool InventoryWritesEnabled() {
++    const char* const enabled = std::getenv("EDEN_NX2_LIVE_INVENTORY");
++    return enabled != nullptr && std::string_view{enabled} == "1";
+ }
+ 
+ /// Waits for a future in short slices so a stopping server does not wait out the timeout.
+@@ -115,6 +206,8 @@
+         {"renderer", IsVulkan() ? "vulkan" : "other"},
+         {"powered_on", state.system.IsPoweredOn()},
+         {"paused", state.system.IsPaused()},
++        {"live_inventory_enabled", InventoryWritesEnabled() && state.program_id == OOT_PROGRAM_ID},
++        {"gamedata_int_enqueue_enabled", InventoryWritesEnabled() && state.program_id == OOT_PROGRAM_ID},
+         {"presents", after},
+         {"fps", seconds > 0.0 ? static_cast<double>(after - before) / seconds : 0.0},
+         {"uptime_s", std::chrono::duration<double>(std::chrono::steady_clock::now() - state.start)
+@@ -225,8 +318,10 @@
+     const auto directory = state.dump_directory / fmt::format("capture-{}-{:03}", state.session, id);
+     std::filesystem::create_directories(directory);
+     const bool sampled = params.value("sampled", false);
++    const bool buffers = params.value("buffers", false);
+     const int timeout = Param<int>(params, "timeout_s", 120, 1, 600);
+-    VideoCore::Nx2Debug::RequestCapture({.id = id, .directory = directory, .sampled = sampled});
++    VideoCore::Nx2Debug::RequestCapture(
++        {.id = id, .directory = directory, .sampled = sampled, .buffers = buffers});
+     const auto finished = VideoCore::Nx2Debug::WaitCapture(id, std::chrono::seconds{timeout});
+     if (!finished) {
+         VideoCore::Nx2Debug::CancelCapture(id);
+@@ -265,6 +360,7 @@
+     return {
+         {"directory", directory.generic_string()},
+         {"sampled", sampled},
++        {"buffers", buffers},
+         {"frame", std::move(frame)},
+         {"summary", std::move(summary)},
+         {"kinds", std::move(kinds)},
+@@ -295,9 +391,394 @@
+     return result;
+ }
+ 
++json ReadMemory(ToolState& state, const json& params) {
++    const u64 address = AddressParam(params, "address");
++    const u64 size = ReadSize(params, address);
++    const std::string as = params.value("as", std::string{"hex"});
++    static_cast<void>(FormatMemory(std::span<const u8>{}, as));
++    std::vector<u8> bytes(size);
++    if (const auto unmapped = ReadGuestMemory(Application(state).GetMemory(), address, bytes)) {
++        throw std::runtime_error{fmt::format(
++            "guest address {:#x} is not mapped (reading {} bytes at {:#x})", *unmapped, size, address)};
++    }
++    json result = {{"address", HexAddress(address)}, {"size", size}};
++    result.update(FormatMemory(bytes, as));
++    return result;
++}
++
++json CompareWrite32(ToolState& state, const json& params) {
++    Kernel::KProcess& process = Application(state);
++    const u64 address = AddressParam(params, "address");
++    const u64 expected = AddressParam(params, "expected");
++    const u64 value = AddressParam(params, "value");
++    auto& page_table = process.GetPageTable();
++    ValidateInventoryWordRequest(
++        InventoryWritesEnabled(), process.GetProgramId(), address,
++        GetInteger(page_table.GetHeapRegionStart()), page_table.GetHeapRegionSize(), expected, value);
++    if (state.program_id != OOT_PROGRAM_ID || state.stopping.load(std::memory_order_relaxed)) {
++        throw std::runtime_error{"the Ocarina debug session is not active"};
++    }
++    Kernel::KMemoryInfo info{};
++    Kernel::Svc::PageInfo page{};
++    if (page_table.QueryInfo(&info, &page, address).IsError() ||
++        info.GetState() != Kernel::KMemoryState::Normal ||
++        (info.GetPermission() & Kernel::KMemoryPermission::UserMask) !=
++            (Kernel::KMemoryPermission::UserReadWrite & Kernel::KMemoryPermission::UserMask)) {
++        throw std::runtime_error{"inventory word is not in normal writable heap memory"};
++    }
++    auto& memory = process.GetMemory();
++    if (!memory.IsValidVirtualAddressRange(address, sizeof(u32)) ||
++        GuestByte(memory, address) == nullptr) {
++        throw std::runtime_error{"inventory word is not mapped"};
++    }
++    const bool swapped =
++        memory.WriteExclusive32(address, static_cast<u32>(value), static_cast<u32>(expected));
++    const u32 actual = memory.Read32(address);
++    if (swapped) {
++        LOG_INFO(Debug_GDBStub, "OOT inventory word {:#x}: {:#x} -> {:#x} (readback {:#x})",
++                 address, expected, value, actual);
++    }
++    return {{"address", HexAddress(address)}, {"expected", expected}, {"value", value},
++            {"swapped", swapped}, {"actual", actual}, {"readback_matches", actual == value}};
++}
++
++json SetGameDataInt(ToolState& state, const json& params) {
++    auto& process = Application(state);
++    auto& table = process.GetPageTable();
++    const u64 task = AddressParam(params, "task");
++    const u64 descriptor = AddressParam(params, "int_descriptor");
++    const u64 module_base = AddressParam(params, "module_base");
++    const u64 hash = AddressParam(params, "hash");
++    const u64 index = AddressParam(params, "index");
++    const u64 expected = AddressParam(params, "expected");
++    const u64 value = AddressParam(params, "value");
++    const u64 heap = GetInteger(table.GetHeapRegionStart());
++    const u64 heap_size = table.GetHeapRegionSize();
++    ValidateInventoryWordRequest(InventoryWritesEnabled(), process.GetProgramId(), task,
++                                 heap, heap_size, expected, value);
++    ValidateGameDataIntField(hash, index, expected, value);
++    ValidateGameDataModuleBase(module_base, heap);
++    if (state.program_id != OOT_PROGRAM_ID || state.stopping.load(std::memory_order_relaxed))
++        throw std::runtime_error{"the Ocarina debug session is not active"};
++    Loader::AppLoader::Modules modules;
++    if (state.system.GetAppLoader().ReadNSOModules(modules) != Loader::ResultStatus::Success)
++        throw std::runtime_error{"GameData loader module metadata is unavailable"};
++    const auto main = modules.find(module_base);
++    if (main == modules.end() || main->second != "main" ||
++        std::count_if(modules.begin(), modules.end(), [](const auto& entry) {
++            return entry.second == "main";
++        }) != 1 ||
++        std::next(main) == modules.end() ||
++        std::next(main)->first < module_base + 0x4e842b0)
++        throw std::runtime_error{"GameData base does not match the loaded main module"};
++    const auto module_mapping = [&](u64 rva, u64 size, Kernel::Svc::MemoryPermission permission) {
++        Kernel::KMemoryInfo info{};
++        Kernel::Svc::PageInfo page{};
++        if (table.QueryInfo(&info, &page, module_base + rva).IsError())
++            throw std::runtime_error{"GameData module anchor is not mapped"};
++        const auto mapping = info.GetSvcMemoryInfo();
++        const bool permission_matches = mapping.permission == permission ||
++            (permission == Kernel::Svc::MemoryPermission::Read &&
++             mapping.permission == Kernel::Svc::MemoryPermission::ReadWrite);
++        if (!permission_matches || mapping.base_address > module_base + rva ||
++            mapping.size < size ||
++            module_base + rva - mapping.base_address > mapping.size - size)
++            throw std::runtime_error{fmt::format(
++                "GameData module anchor {:#x} permission {} or extent mismatch", rva,
++                static_cast<u32>(mapping.permission))};
++    };
++    // NX2 need not carry the legacy module-name header used by GDB discovery.
++    // Use the loader's map and verify each code/data anchor independently.
++    module_mapping(0x3b500a0, OOT_GAMEDATA_WRAPPER_SIGNATURE.size() * 4,
++                   Kernel::Svc::MemoryPermission::ReadExecute);
++    module_mapping(0x163c20, OOT_GAMEDATA_RESERVE_SIGNATURE.size() * 4,
++                   Kernel::Svc::MemoryPermission::ReadExecute);
++    module_mapping(0x163c60, OOT_GAMEDATA_COMPLETE_SIGNATURE.size() * 4,
++                   Kernel::Svc::MemoryPermission::ReadExecute);
++    module_mapping(0x4c1f280, 8, Kernel::Svc::MemoryPermission::Read);
++    module_mapping(0x4c20718, 8, Kernel::Svc::MemoryPermission::Read);
++    module_mapping(0x4c64158, 24, Kernel::Svc::MemoryPermission::Read);
++    module_mapping(0x4e842a8, 8, Kernel::Svc::MemoryPermission::ReadWrite);
++
++    // SuspendEmulation waits for application scheduler threads to leave the cores.
++    // Their contexts are saved by KScheduler::Unload before switching current thread.
++    auto stall = state.system.StallApplication();
++    SCOPE_EXIT { state.system.UnstallApplication(); };
++    auto& memory = process.GetMemory();
++    const auto writable = [&](u64 address, u64 size) {
++        if ((address & 3) != 0 || size == 0 || size > heap_size || address < heap ||
++            address - heap > heap_size - size ||
++            !memory.IsValidVirtualAddressRange(address, size))
++            throw std::runtime_error{"GameData range is outside mapped application heap"};
++        for (u64 at = address; at < address + size;) {
++            Kernel::KMemoryInfo info{};
++            Kernel::Svc::PageInfo page{};
++            if (table.QueryInfo(&info, &page, at).IsError() ||
++                info.GetState() != Kernel::KMemoryState::Normal ||
++                (info.GetPermission() & Kernel::KMemoryPermission::UserMask) !=
++                    (Kernel::KMemoryPermission::UserReadWrite & Kernel::KMemoryPermission::UserMask) ||
++                info.m_address > at || info.m_size == 0 ||
++                info.m_address + info.m_size <= at || GuestByte(memory, at) == nullptr)
++                throw std::runtime_error{"GameData range is not normal writable heap"};
++            at = (std::min)(address + size, info.m_address + info.m_size);
++        }
++    };
++    const auto fixed_string = [&](u64 address, std::string_view expected_text) {
++        std::vector<u8> data(expected_text.size() + 1);
++        if (ReadGuestMemory(memory, address, data) || data.back() != 0 ||
++            std::memcmp(data.data(), expected_text.data(), expected_text.size()) != 0)
++            throw std::runtime_error{"GameData task identity string mismatch"};
++    };
++    const auto busy = [](std::string_view reason) -> json {
++        return {{"queued", false}, {"busy", true}, {"changed", false}, {"reason", reason}};
++    };
++
++    writable(task, 0xa8);
++    writable(descriptor, 96);
++    const auto signature = [&](u64 rva, const auto& words) {
++        std::vector<u8> bytes(words.size() * sizeof(u32));
++        if (ReadGuestMemory(memory, module_base + rva, bytes) ||
++            std::memcmp(bytes.data(), words.data(), bytes.size()) != 0)
++            throw std::runtime_error{"GameData immutable code signature mismatch"};
++    };
++    signature(0x3b500a0, OOT_GAMEDATA_WRAPPER_SIGNATURE);
++    signature(0x163c20, OOT_GAMEDATA_RESERVE_SIGNATURE);
++    signature(0x163c60, OOT_GAMEDATA_COMPLETE_SIGNATURE);
++    // This endpoint is deliberately pinned to the inspected remake revision.
++    if (memory.Read64(task) != module_base + 0x4c64158 ||
++        memory.Read64(module_base + 0x4c64168) != module_base + 0x3b500a0 ||
++        memory.Read64(descriptor) != module_base + 0x4c1f280 ||
++        memory.Read32(descriptor + 8) != 1259 || descriptor < heap + 0xc8 ||
++        memory.Read64(module_base + 0x4e842a8) != descriptor - 0xc8)
++        throw std::runtime_error{"GameData task, descriptor or active manager mismatch"};
++    fixed_string(memory.Read64(task + 0x18), "GameData");
++    const u64 resource = memory.Read64(task + 0xa0);
++    writable(resource, 48);
++    if (memory.Read64(resource) != resource + 48)
++        throw std::runtime_error{"GameData resource string layout mismatch"};
++    fixed_string(memory.Read64(resource), "GameData/GameDataList.Product.110.byml");
++    const u64 bank = memory.Read64(descriptor + 16);
++    const u64 lookup = memory.Read64(descriptor + 24);
++    if (memory.Read32(descriptor + 32) != 1259 ||
++        memory.Read32(descriptor + 36) != 2518 || memory.Read32(descriptor + 40) != 512)
++        throw std::runtime_error{"GameData Int table dimensions mismatch"};
++    writable(bank, 1259 * 40);
++    writable(lookup, 2518 * 8);
++    size_t matches = 0;
++    for (u64 row = 0; row < 2518; ++row) {
++        if (memory.Read32(lookup + row * 8) == hash) {
++            if (memory.Read32(lookup + row * 8 + 4) != index)
++                throw std::runtime_error{"GameData hash/index lookup mismatch"};
++            ++matches;
++        }
++    }
++    const u64 object = bank + index * 40;
++    if (matches != 1 || memory.Read64(bank) != module_base + 0x4c20718 ||
++        memory.Read64(object) != module_base + 0x4c20718)
++        throw std::runtime_error{"GameData Int object type mismatch"};
++    const u64 input = memory.Read64(descriptor + 48);
++    writable(input, 512 * 12);
++
++    // Mapping queries may wait on kernel locks and temporarily continue suspended
++    // lock owners. Re-establish the stop after every such query, then perform the
++    // boundary checks and publication without further kernel-lock acquisition.
++    state.system.Kernel().SuspendEmulation(true);
++    if (!process.GetListLock().TryLock())
++        return busy("application thread list is being modified");
++    SCOPE_EXIT { process.GetListLock().Unlock(); };
++    // Nonblocking ownership also excludes host workers removing a thread.
++    for (const auto& thread : process.GetThreadList()) {
++        if (GameDataIntProducerPc(thread.GetContext().pc, module_base))
++            return busy("native Int producer is between reservation and epoch check");
++    }
++    if (!GameDataIntBoundaryIdle(memory.Read32(task + 0x88), memory.Read32(task + 0x98), 0))
++        return busy("GameData consumer mutex is held");
++    if (memory.Read64(module_base + 0x4e842a8) != descriptor - 0xc8 ||
++        memory.Read64(descriptor + 16) != bank || memory.Read64(descriptor + 24) != lookup ||
++        memory.Read64(descriptor + 48) != input ||
++        memory.Read64(task) != module_base + 0x4c64158 ||
++        memory.Read64(object) != module_base + 0x4c20718)
++        throw std::runtime_error{"GameData binding changed during validation"};
++    const u32 actual = memory.Read32(object + 28);
++    if (actual != expected)
++        return {{"queued", false}, {"busy", false}, {"changed", false},
++                {"reason", "expected value mismatch"}, {"actual", actual}};
++    const u32 header = memory.Read32(descriptor + 56);
++    if (!GameDataIntBoundaryIdle(0, 0, header))
++        return busy("GameData Int input queue is not empty");
++    if (memory.Read32(input) != 0 || memory.Read32(input + 4) != 0 ||
++        memory.Read32(input + 8) != 0)
++        return busy("GameData Int input slot is not cleared");
++    const u32 completed = CompletedGameDataIntHeader(header);
++    // Only zero, validated slot words change until the header publishes the complete record.
++    // No guest thread can observe this intermediate state. Roll back on CAS/readback failure.
++    bool published = false;
++    SCOPE_EXIT {
++        if (!published) {
++            memory.WriteExclusive32(input, 0, static_cast<u32>(value));
++            memory.WriteExclusive32(input + 4, 0, static_cast<u32>(hash));
++        }
++    };
++    if (!memory.WriteExclusive32(input, static_cast<u32>(value), 0) ||
++        !memory.WriteExclusive32(input + 4, static_cast<u32>(hash), 0) ||
++        memory.Read32(input) != value || memory.Read32(input + 4) != hash ||
++        memory.Read32(input + 8) != 0)
++        throw std::runtime_error{"GameData input payload CAS/readback failed"};
++    if (!memory.WriteExclusive32(descriptor + 56, completed, header))
++        throw std::runtime_error{"GameData input header CAS failed"};
++    published = true;
++    const u32 readback = memory.Read32(descriptor + 56);
++    LOG_INFO(Debug_GDBStub, "OOT queued GameData Int {:#x} index {}: {} -> {}", hash,
++             index, expected, value);
++    return {{"queued", true}, {"busy", false}, {"changed", true}, {"hash", hash},
++            {"index", index}, {"expected", expected}, {"value", value},
++            {"header_before", header}, {"header_after", readback},
++            {"readback_matches", readback == completed},
++            {"effect_verified", false}};
++}
++
++json SearchMemory(ToolState& state, const json& params) {
++    const std::vector<u8> pattern = ParseHexBytes(params.at("pattern").get<std::string>());
++    if (pattern.size() > 256) {
++        throw std::runtime_error{"the pattern is longer than 256 bytes"};
++    }
++    Kernel::KProcess& process = Application(state);
++    const std::string regions = params.value("regions", std::string{"heap"});
++    u64 region_start = 0;
++    u64 region_size = 0;
++    if (regions == "heap") {
++        region_start = GetInteger(process.GetPageTable().GetHeapRegionStart());
++        region_size = process.GetPageTable().GetHeapRegionSize();
++    } else if (regions == "all") {
++        region_start = GetInteger(process.GetPageTable().GetAddressSpaceStart());
++        region_size = process.GetPageTable().GetAddressSpaceSize();
++    } else {
++        throw std::runtime_error{fmt::format("regions \"{}\": want heap or all", regions)};
++    }
++    const u64 start = params.contains("start") ? (std::max)(region_start, AddressParam(params, "start"))
++                                               : region_start;
++    const u64 end = params.contains("end")
++                        ? (std::min)(region_start + region_size, AddressParam(params, "end"))
++                        : region_start + region_size;
++    const size_t max_hits = Param<size_t>(params, "max_hits", 64, 1, 256);
++    const int budget = Param<int>(params, "budget_ms", 2000, 1, 10000);
++    const auto begin = std::chrono::steady_clock::now();
++    const GuestSearch search =
++        SearchGuestMemory(process.GetMemory(), pattern, start, (std::max)(start, end), max_hits,
++                          begin + std::chrono::milliseconds{budget});
++    json hits = json::array();
++    for (const u64 hit : search.hits) {
++        hits.push_back(HexAddress(hit));
++    }
++    json result = {
++        {"hits", std::move(hits)},
++        {"complete", search.complete},
++        {"start", HexAddress(start)},
++        {"end", HexAddress((std::max)(start, end))},
++        {"scanned_bytes", search.scanned},
++        {"elapsed_ms", std::chrono::duration<double, std::milli>(std::chrono::steady_clock::now() -
++                                                                 begin)
++                           .count()},
++    };
++    if (!search.complete) {
++        result["next"] = HexAddress(search.next);
++    }
++    return result;
++}
++
++/// Holds the steps on player 1 (or the handheld controller when player 1 is not connected) from
++/// the next present on, and returns once they are done. The injector stops by itself after the
++/// last step; leaving this function by any path removes it.
++json RunInput(ToolState& state, const std::vector<InputStep>& steps, const json& params,
++              const ClientGone& client_gone) {
++    u64 total = 0;
++    for (const InputStep& step : steps) {
++        total += step.frames;
++    }
++    if (total > MAX_INPUT_FRAMES) {
++        throw std::runtime_error{
++            fmt::format("{} frames in total; at most {} per call", total, MAX_INPUT_FRAMES)};
++    }
++    auto& hid = state.system.HIDCore();
++    HID::EmulatedController* controller = hid.GetEmulatedController(HID::NpadIdType::Player1);
++    std::string name = "player1";
++    if (!controller->IsConnected()) {
++        controller = hid.GetEmulatedController(HID::NpadIdType::Handheld);
++        name = "handheld";
++    }
++    if (!controller->IsConnected()) {
++        throw std::runtime_error{"neither player 1 nor the handheld controller is connected"};
++    }
++    const int timeout = Param<int>(params, "timeout_s", static_cast<int>(total / 20 + 10), 1, 900);
++    const u64 start = g_nx2_present_count.load(std::memory_order_relaxed) + 1;
++    const auto script = std::make_shared<const std::vector<InputStep>>(steps);
++    controller->SetInputInjector([script, start] {
++        return InputAt(*script, start, g_nx2_present_count.load(std::memory_order_relaxed));
++    });
++    SCOPE_EXIT {
++        controller->SetInputInjector({});
++    };
++    const auto begin = std::chrono::steady_clock::now();
++    const auto deadline = begin + std::chrono::seconds{timeout};
++    for (;;) {
++        const u64 now = g_nx2_present_count.load(std::memory_order_relaxed);
++        if (now >= start + total) {
++            break;
++        }
++        if (state.stopping.load(std::memory_order_relaxed)) {
++            throw std::runtime_error{"the game is shutting down; input released"};
++        }
++        if (client_gone()) {
++            LOG_INFO(Debug, "Debug server client left during input; input released");
++            throw std::runtime_error{"the client disconnected; input released"};
++        }
++        if (std::chrono::steady_clock::now() >= deadline) {
++            throw std::runtime_error{fmt::format(
++                "{} of {} frames were presented within {} s (paused or loading?); input released",
++                now >= start ? now - start : 0, total, timeout)};
++        }
++        std::this_thread::sleep_for(2ms);
++    }
++    return {
++        {"controller", name},
++        {"steps", steps.size()},
++        {"frames", total},
++        {"first_present", start},
++        {"elapsed_s",
++         std::chrono::duration<double>(std::chrono::steady_clock::now() - begin).count()},
++    };
++}
++
++json Input(ToolState& state, const json& params, const ClientGone& client_gone) {
++    json step = params;
++    step.erase("timeout_s");
++    return RunInput(state, {ParseInputStep(step)}, params, client_gone);
++}
++
++json InputSequence(ToolState& state, const json& params, const ClientGone& client_gone) {
++    const json& list = params.at("steps");
++    if (!list.is_array() || list.empty() || list.size() > MAX_INPUT_STEPS) {
++        throw std::runtime_error{fmt::format("steps must be an array of 1 to {}", MAX_INPUT_STEPS)};
++    }
++    std::vector<InputStep> steps;
++    for (size_t index = 0; index < list.size(); ++index) {
++        try {
++            steps.push_back(ParseInputStep(list[index]));
++        } catch (const std::exception& error) {
++            throw std::runtime_error{fmt::format("step {}: {}", index, error.what())};
++        }
++    }
++    return RunInput(state, steps, params, client_gone);
++}
++
+ Handlers MakeHandlers(const std::shared_ptr<ToolState>& state) {
+     const auto handler = [&state](json (*tool)(ToolState&, const json&)) -> Handler {
+-        return [state, tool](const json& params) { return tool(*state, params); };
++        return [state, tool](const json& params, const ClientGone&) { return tool(*state, params); };
++    };
++    const auto waiting = [&state](json (*tool)(ToolState&, const json&, const ClientGone&)) -> Handler {
++        return [state, tool](const json& params, const ClientGone& client_gone) {
++            return tool(*state, params, client_gone);
++        };
+     };
+     return {
+         {"status", handler(Status)},
+@@ -306,6 +787,12 @@
+         {"log_filter", handler(LogFilter)},
+         {"capture_frame", handler(CaptureFrame)},
+         {"reject_shaders", handler(RejectShaders)},
++        {"read_memory", handler(ReadMemory)},
++        {"compare_write32", handler(CompareWrite32)},
++        {"set_gamedata_int", handler(SetGameDataInt)},
++        {"search_memory", handler(SearchMemory)},
++        {"input", waiting(Input)},
++        {"input_sequence", waiting(InputSequence)},
+     };
+ }
+ 
+@@ -326,6 +813,204 @@
+     return value;
+ }
+ 
++std::vector<u8> ParseHexBytes(std::string_view text) {
++    std::string digits;
++    const std::string_view body =
++        text.starts_with("0x") || text.starts_with("0X") ? text.substr(2) : text;
++    for (const char c : body) {
++        if (c != ' ') {
++            digits.push_back(c);
++        }
++    }
++    std::vector<u8> bytes(digits.size() / 2);
++    for (size_t i = 0; i < bytes.size(); ++i) {
++        const auto [end, error] =
++            std::from_chars(digits.data() + i * 2, digits.data() + i * 2 + 2, bytes[i], 16);
++        if (error != std::errc{} || end != digits.data() + i * 2 + 2) {
++            bytes.clear();
++            break;
++        }
++    }
++    if (bytes.empty() || digits.size() % 2 != 0) {
++        throw std::runtime_error{fmt::format(
++            "bad pattern \"{}\": want hex byte pairs in memory order (little endian: 1.0f is "
++            "0000803f)",
++            text)};
++    }
++    return bytes;
++}
++
++json FormatMemory(std::span<const u8> bytes, std::string_view as) {
++    if (as == "hex") {
++        std::string hex;
++        hex.reserve(bytes.size() * 2);
++        for (const u8 byte : bytes) {
++            fmt::format_to(std::back_inserter(hex), "{:02x}", byte);
++        }
++        return {{"hex", std::move(hex)}};
++    }
++    const size_t element = as == "u32" || as == "f32" ? 4 : as == "u64" ? 8 : 0;
++    if (element == 0) {
++        throw std::runtime_error{fmt::format("as \"{}\": want hex, u32, u64 or f32", as)};
++    }
++    if (bytes.size() % element != 0) {
++        throw std::runtime_error{fmt::format("size must be a multiple of {} for {}", element, as)};
++    }
++    json values = json::array();
++    for (size_t offset = 0; offset < bytes.size(); offset += element) {
++        if (element == 8) {
++            u64 value;
++            std::memcpy(&value, bytes.data() + offset, sizeof(value));
++            values.push_back(HexAddress(value));
++            continue;
++        }
++        u32 value;
++        std::memcpy(&value, bytes.data() + offset, sizeof(value));
++        if (as == "u32") {
++            values.push_back(value);
++            continue;
++        }
++        const float number = std::bit_cast<float>(value);
++        if (std::isnan(number)) {
++            values.push_back("nan");
++        } else if (std::isinf(number)) {
++            values.push_back(number < 0 ? "-inf" : "inf");
++        } else {
++            values.push_back(number);
++        }
++    }
++    return {{std::string{as}, std::move(values)}};
++}
++
++std::optional<u64> ReadGuestMemory(Memory::Memory& memory, u64 address, std::span<u8> out) {
++    for (size_t offset = 0; offset < out.size();) {
++        const u64 current = address + offset;
++        const size_t length = (std::min)(static_cast<size_t>(Memory::YUZU_PAGESIZE -
++                                                             (current & Memory::YUZU_PAGEMASK)),
++                                         out.size() - offset);
++        const u8* const source = GuestByte(memory, current);
++        if (source == nullptr) {
++            return current;
++        }
++        std::memcpy(out.data() + offset, source, length);
++        offset += length;
++    }
++    return std::nullopt;
++}
++
++GuestSearch SearchGuestMemory(Memory::Memory& memory, std::span<const u8> pattern, u64 start,
++                              u64 end, size_t max_hits,
++                              std::chrono::steady_clock::time_point deadline) {
++    GuestSearch search{.hits = {}, .next = end, .complete = true, .scanned = 0};
++    // The bytes of a run of mapped pages that a match starting there could still need.
++    std::vector<u8> window;
++    window.reserve(Memory::YUZU_PAGESIZE + pattern.size());
++    for (u64 address = start; address < end;) {
++        if (std::chrono::steady_clock::now() >= deadline) {
++            search.next = address - window.size();
++            search.complete = false;
++            return search;
++        }
++        const u64 page_end = (std::min)((address | Memory::YUZU_PAGEMASK) + 1, end);
++        const u8* const source = GuestByte(memory, address);
++        if (source == nullptr) {
++            window.clear();
++            address = page_end;
++            continue;
++        }
++        const u64 window_start = address - window.size();
++        const size_t length = page_end - address;
++        window.insert(window.end(), source, source + length);
++        search.scanned += length;
++        for (size_t offset = 0; offset + pattern.size() <= window.size(); ++offset) {
++            const void* const found = std::memchr(window.data() + offset, pattern[0],
++                                                  window.size() - pattern.size() + 1 - offset);
++            if (found == nullptr) {
++                break;
++            }
++            offset = static_cast<size_t>(static_cast<const u8*>(found) - window.data());
++            if (std::memcmp(window.data() + offset, pattern.data(), pattern.size()) != 0) {
++                continue;
++            }
++            search.hits.push_back(window_start + offset);
++            if (search.hits.size() >= max_hits) {
++                search.next = window_start + offset + 1;
++                search.complete = false;
++                return search;
++            }
++        }
++        window.erase(window.begin(),
++                     window.end() - static_cast<std::ptrdiff_t>(
++                                        (std::min)(pattern.size() - 1, window.size())));
++        address = page_end;
++    }
++    return search;
++}
++
++InputStep ParseInputStep(const json& step) {
++    if (!step.is_object()) {
++        throw std::runtime_error{"a step is an object"};
++    }
++    for (const auto& [key, value] : step.items()) {
++        if (key != "buttons" && key != "left_stick" && key != "right_stick" && key != "frames") {
++            throw std::runtime_error{fmt::format(
++                "unknown key \"{}\": want buttons, left_stick, right_stick, frames", key)};
++        }
++    }
++    InputStep result{.input = {}, .frames = 0};
++    const json& frames = step.at("frames");
++    if (!frames.is_number_integer() || frames.get<s64>() < 1 ||
++        frames.get<u64>() > MAX_INPUT_FRAMES) {
++        throw std::runtime_error{fmt::format("frames must be 1 to {}", MAX_INPUT_FRAMES)};
++    }
++    result.frames = frames.get<u64>();
++    for (const json& button : step.value("buttons", json::array())) {
++        const std::string text = button.is_string() ? button.get<std::string>() : button.dump();
++        const auto it = std::ranges::find(INPUT_BUTTONS, std::string_view{text},
++                                          &std::pair<std::string_view, HID::NpadButton>::first);
++        if (it == INPUT_BUTTONS.end()) {
++            std::string names;
++            for (const auto& [known, _] : INPUT_BUTTONS) {
++                names += names.empty() ? "" : ", ";
++                names += known;
++            }
++            throw std::runtime_error{fmt::format("unknown button {}: want one of {}", text, names)};
++        }
++        result.input.buttons |= it->second;
++    }
++    const auto stick = [&step](const char* key) -> std::optional<HID::AnalogStickState> {
++        if (!step.contains(key)) {
++            return std::nullopt;
++        }
++        const json& value = step.at(key);
++        const auto axis = [&](size_t index) {
++            if (!value.is_array() || value.size() != 2 || !value[index].is_number() ||
++                std::abs(value[index].get<double>()) > 1.0) {
++                throw std::runtime_error{fmt::format("{} must be [x, y] with both in -1..1", key)};
++            }
++            return static_cast<s32>(std::lround(value[index].get<double>() * HID::HID_JOYSTICK_MAX));
++        };
++        return HID::AnalogStickState{.x = axis(0), .y = axis(1)};
++    };
++    result.input.left = stick("left_stick");
++    result.input.right = stick("right_stick");
++    return result;
++}
++
++std::optional<HID::InjectedInput> InputAt(std::span<const InputStep> steps, u64 start, u64 now) {
++    if (now < start) {
++        return std::nullopt;
++    }
++    u64 end = start;
++    for (const InputStep& step : steps) {
++        end += step.frames;
++        if (now < end) {
++            return step.input;
++        }
++    }
++    return std::nullopt;
++}
++
+ Service::Service(System& system, std::string title, u64 program_id, const Endpoint& endpoint,
+                  std::string dump_directory)
+     : state{std::make_shared<ToolState>(system, std::move(title), program_id,
+--- a/src/core/debugger/nx2_debug_tools.h
++++ b/src/core/debugger/nx2_debug_tools.h
+@@ -3,14 +3,25 @@
+ 
+ #pragma once
+ 
++#include <chrono>
+ #include <memory>
++#include <optional>
++#include <span>
+ #include <string>
+ #include <string_view>
++#include <vector>
++
++#include <nlohmann/json.hpp>
+ 
+ #include "common/common_types.h"
++#include "hid_core/frontend/emulated_controller.h"
+ 
+ namespace Core {
+ class System;
++}
++
++namespace Core::Memory {
++class Memory;
+ }
+ 
+ namespace Core::Nx2Debug {
+@@ -38,6 +49,50 @@
+ /// A reject_shaders hash: exactly 16 hex digits, optionally after 0x. Throws std::runtime_error.
+ [[nodiscard]] u64 ParseShaderHash(std::string_view text);
+ 
++/// search_memory's pattern: hex digit pairs, optionally after 0x, spaces allowed. Throws
++/// std::runtime_error.
++[[nodiscard]] std::vector<u8> ParseHexBytes(std::string_view text);
++
++/// read_memory's formats: {"hex": "..."} or {"u32"|"u64"|"f32": [...]}; u64 values are hex strings
++/// and non-finite floats are "nan", "inf" or "-inf". Throws std::runtime_error when the format is
++/// unknown or the size is not a multiple of its element.
++[[nodiscard]] nlohmann::json FormatMemory(std::span<const u8> bytes, std::string_view as);
++
++/// Copies guest memory from a thread that is not a guest CPU core (docs/nx2/debug-mcp.md, "Guest
++/// and GPU memory"). Returns the first address that is not mapped; out is then partly written.
++[[nodiscard]] std::optional<u64> ReadGuestMemory(Memory::Memory& memory, u64 address,
++                                                 std::span<u8> out);
++
++struct GuestSearch {
++    std::vector<u64> hits;
++    /// Where to resume: the first address no match was looked for at; end when complete.
++    u64 next;
++    bool complete;
++    /// Mapped bytes read.
++    u64 scanned;
++};
++
++/// Finds the pattern in the mapped pages of [start, end), as ReadGuestMemory reads them. Stops at
++/// max_hits or the deadline. Matches may span pages, but not unmapped gaps.
++[[nodiscard]] GuestSearch SearchGuestMemory(Memory::Memory& memory, std::span<const u8> pattern,
++                                            u64 start, u64 end, size_t max_hits,
++                                            std::chrono::steady_clock::time_point deadline);
++
++/// One step of input or input_sequence: what to hold, for how many presented frames.
++struct InputStep {
++    HID::InjectedInput input;
++    u64 frames;
++};
++
++/// {buttons?, left_stick?, right_stick?, frames}. Sticks are [x, y] in -1..1. Throws
++/// std::runtime_error on unknown keys, buttons or out-of-range values.
++[[nodiscard]] InputStep ParseInputStep(const nlohmann::json& step);
++
++/// The input of the step active at present count now, for steps starting at present count start;
++/// nothing before start and from the end of the last step on.
++[[nodiscard]] std::optional<HID::InjectedInput> InputAt(std::span<const InputStep> steps, u64 start,
++                                                       u64 now);
++
+ /// The service when EDEN_NX2_DEBUG_SERVER is set and it can listen, otherwise null.
+ [[nodiscard]] std::unique_ptr<Service> MaybeStartService(System& system, std::string title,
+                                                          u64 program_id);
+--- a/src/core/debugger/nx2_debug_server.cpp
++++ b/src/core/debugger/nx2_debug_server.cpp
+@@ -1,6 +1,7 @@
+ // SPDX-FileCopyrightText: Copyright 2026 Eden Emulator Project
+ // SPDX-License-Identifier: GPL-3.0-or-later
+ 
++#include <array>
+ #include <charconv>
+ #include <thread>
+ 
+@@ -34,7 +35,9 @@
+                 if (!line.empty() && line.back() == '\r') {
+                     line.remove_suffix(1);
+                 }
+-                self->output = line.empty() ? std::string{} : HandleRequest(self->handlers, line);
++                self->output = line.empty() ? std::string{}
++                                            : HandleRequest(self->handlers, line,
++                                                            [&self] { return self->ClientGone(); });
+                 self->input.erase(0, length);
+                 if (self->output.empty()) {
+                     self->Read();
+@@ -46,6 +49,16 @@
+     }
+ 
+ private:
++    /// A non-blocking peek: end of stream or a reset means the client left.
++    bool ClientGone() {
++        boost::system::error_code error;
++        socket.non_blocking(true, error);
++        std::array<char, 1> byte;
++        const size_t length = socket.receive(boost::asio::buffer(byte),
++                                             tcp::socket::message_peek, error);
++        return error ? error != boost::asio::error::would_block : length == 0;
++    }
++
+     void Write() {
+         boost::asio::async_write(
+             socket, boost::asio::buffer(output),
+@@ -93,7 +106,8 @@
+     return Endpoint{std::string{host}, static_cast<u16>(port)};
+ }
+ 
+-std::string HandleRequest(const Handlers& handlers, std::string_view line) {
++std::string HandleRequest(const Handlers& handlers, std::string_view line,
++                          const ClientGone& client_gone) {
+     nlohmann::json response = {{"id", nullptr}};
+     try {
+         const nlohmann::json request = nlohmann::json::parse(line);
+@@ -110,7 +124,7 @@
+         if (!params.is_object()) {
+             throw std::runtime_error{"params is not an object"};
+         }
+-        response["result"] = it->second(params);
++        response["result"] = it->second(params, client_gone);
+     } catch (const std::exception& error) {
+         response = {{"id", response["id"]}, {"error", error.what()}};
+     }
+--- a/src/core/debugger/nx2_debug_server.h
++++ b/src/core/debugger/nx2_debug_server.h
+@@ -28,13 +28,19 @@
+ /// Parses EDEN_NX2_DEBUG_SERVER: "<port>" or "<host>:<port>". Only loopback hosts are accepted.
+ [[nodiscard]] std::optional<Endpoint> ParseEndpoint(std::string_view text, std::string& error);
+ 
++/// Whether the client of the request being handled has disconnected. A handler that waits polls
++/// it to undo what it started (input injection releases its buttons).
++using ClientGone = std::function<bool()>;
++
+ /// A tool: takes the request's params, returns its result, throws std::exception on failure.
+-using Handler = std::function<nlohmann::json(const nlohmann::json& params)>;
++using Handler =
++    std::function<nlohmann::json(const nlohmann::json& params, const ClientGone& client_gone)>;
+ using Handlers = std::map<std::string, Handler, std::less<>>;
+ 
+ /// Answers one request line, {"id":..,"method":..,"params":{..}}, with one response line (no
+ /// newline): {"id":..,"result":..} or {"id":..,"error":"..."}.
+-[[nodiscard]] std::string HandleRequest(const Handlers& handlers, std::string_view line);
++[[nodiscard]] std::string HandleRequest(const Handlers& handlers, std::string_view line,
++                                        const ClientGone& client_gone = [] { return false; });
+ 
+ [[nodiscard]] std::string Base64(std::span<const u8> data);
+ 
+--- /dev/null
++++ b/src/core/debugger/nx2_inventory_word.h
+@@ -0,0 +1,35 @@
++// SPDX-FileCopyrightText: Copyright 2026 Eden Emulator Project
++// SPDX-License-Identifier: GPL-3.0-or-later
++
++#pragma once
++
++#include <cstdint>
++#include <stdexcept>
++
++namespace Core::Nx2Debug {
++
++constexpr std::uint64_t OOT_PROGRAM_ID = 0x0400486024DEC000;
++
++// Mapping and writable-page checks remain the caller's responsibility.
++inline void ValidateInventoryWordRequest(bool enabled, std::uint64_t program_id,
++                                         std::uint64_t address, std::uint64_t heap_start,
++                                         std::uint64_t heap_size, std::uint64_t expected,
++                                         std::uint64_t value) {
++    if (!enabled) {
++        throw std::runtime_error{"live inventory writes require EDEN_NX2_LIVE_INVENTORY=1"};
++    }
++    if (program_id != OOT_PROGRAM_ID) {
++        throw std::runtime_error{"live inventory writes are restricted to Ocarina of Time"};
++    }
++    if ((address >> 48) != 0 || (address & 3) != 0) {
++        throw std::runtime_error{"inventory address must be an aligned guest 32-bit word"};
++    }
++    if (heap_size < 4 || address < heap_start || address - heap_start > heap_size - 4) {
++        throw std::runtime_error{"inventory word must be entirely inside the application heap"};
++    }
++    if (expected > UINT32_MAX || value > UINT32_MAX) {
++        throw std::runtime_error{"expected and value must fit an unsigned 32-bit word"};
++    }
++}
++
++} // namespace Core::Nx2Debug
+--- /dev/null
++++ b/src/core/debugger/nx2_gamedata_int.h
+@@ -0,0 +1,77 @@
++// SPDX-FileCopyrightText: Copyright 2026 Eden Emulator Project
++// SPDX-License-Identifier: GPL-3.0-or-later
++
++#pragma once
++
++#include <cstdint>
++#include <array>
++#include <stdexcept>
++
++namespace Core::Nx2Debug {
++
++constexpr std::uint64_t OOT_BOOL_VTABLE_RVA = 0x4c20658;
++constexpr std::array<std::uint32_t, 16> OOT_GAMEDATA_WRAPPER_SIGNATURE{
++    0xd503237f, 0xa9be7bfd, 0xf9000bf3, 0x910003fd, 0xaa0003f3, 0x91020000,
++    0x9403c8ea, 0x900099a8, 0x910aa108, 0xf9400100, 0x9741262e, 0x91020260,
++    0xf9400bf3, 0xa8c27bfd, 0xd50323ff, 0x1403c8e5};
++constexpr std::array<std::uint32_t, 12> OOT_GAMEDATA_RESERVE_SIGNATURE{
++    0xb941000b, 0xb940f009, 0x12004d6a, 0x6b09015f, 0x5400044a, 0x2a0b03e8,
++    0x1100056c, 0x9104000d, 0x88a87dac, 0x6b0b011f, 0x54000301, 0xf9407c09};
++constexpr std::array<std::uint32_t, 14> OOT_GAMEDATA_COMPLETE_SIGNATURE{
++    0xb941000b, 0x2a0b03e9, 0x12045d6c, 0x1144016d, 0x6a2b015f, 0x1a8d018c,
++    0x9104000d, 0x88a97dac, 0x6b0b013f, 0x2a0903eb, 0x54ffff01, 0x4a080128,
++    0x531c7d08, 0x35000128};
++
++inline void ValidateGameDataModuleBase(std::uint64_t base, std::uint64_t heap) {
++    if (base < 0x10000 || (base & 0xfff) != 0 || base >= heap || heap - base <= 0x4e842b0)
++        throw std::runtime_error{"GameData module base is invalid"};
++}
++
++inline void ValidateGameDataIntField(std::uint64_t hash, std::uint64_t index,
++                                    std::uint64_t expected, std::uint64_t value) {
++    std::uint64_t limit = 0;
++    switch (hash) {
++    case 0x31ab5580: // Life
++        if (index != 963) throw std::runtime_error{"Life index mismatch"};
++        limit = 80;
++        break;
++    case 0xfbe01da1: // MaxLife
++        if (index != 964) throw std::runtime_error{"MaxLife index mismatch"};
++        limit = 80;
++        if (value < 12 || (value & 3) != 0)
++            throw std::runtime_error{"MaxLife must be whole hearts in [12,80]"};
++        break;
++    case 0x76b18200: // MP
++        if (index != 965) throw std::runtime_error{"MP index mismatch"};
++        limit = 48;
++        break;
++    case 0x12d63a97: // MPMax
++        if (index != 967) throw std::runtime_error{"MPMax index mismatch"};
++        limit = 48;
++        if (value != 0 && value != 24 && value != 48)
++            throw std::runtime_error{"MPMax must be 0,24,48"};
++        break;
++    default:
++        throw std::runtime_error{"GameData Int field is not allowed"};
++    }
++    if (expected > limit || value > limit)
++        throw std::runtime_error{"GameData Int value is out of range"};
++}
++
++inline bool GameDataIntProducerPc(std::uint64_t pc, std::uint64_t module_base) {
++    return pc >= module_base && pc - module_base >= 0x163c20 &&
++           pc - module_base < 0x163c98;
++}
++
++inline bool GameDataIntBoundaryIdle(std::uint32_t depth, std::uint32_t owner,
++                                    std::uint32_t header) {
++    return depth == 0 && owner == 0 && (header & 0xfffff) == 0;
++}
++
++inline std::uint32_t CompletedGameDataIntHeader(std::uint32_t header) {
++    if ((header & 0xfffff) != 0)
++        throw std::runtime_error{"GameData Int input queue is not empty"};
++    return (header & 0xf0000000) | (((header + 0x100000) & 0x0ff00000)) | 1;
++}
++
++} // namespace Core::Nx2Debug
+--- a/src/hid_core/frontend/emulated_controller.cpp
++++ b/src/hid_core/frontend/emulated_controller.cpp
+@@ -16,7 +16,6 @@
+ #include "hid_core/hid_util.h"
+ 
+ namespace Core::HID {
+-constexpr s32 HID_JOYSTICK_MAX = 0x7fff;
+ constexpr s32 HID_TRIGGER_MAX = 0x7fff;
+ constexpr u32 TURBO_BUTTON_DELAY = 4;
+ // Use a common UUID for TAS and Virtual Gamepad
+@@ -1807,7 +1806,30 @@
+ NpadButtonState EmulatedController::GetNpadButtons() const {
+     if (is_configuring)
+         return {};
+-    return {controller.npad_button_state.raw & GetTurboButtonMask()};
++    NpadButtonState state{controller.npad_button_state.raw & GetTurboButtonMask()};
++    const auto injected = Injected();
++    if (!injected) {
++        return state;
++    }
++    state.raw |= injected->buttons;
++    const auto directions = [&state](const AnalogStickState& stick, NpadButton left,
++                                     NpadButton up, NpadButton right, NpadButton down) {
++        constexpr s32 threshold = HID_JOYSTICK_MAX / 2;
++        state.raw &= ~(left | up | right | down);
++        state.raw |= stick.x < -threshold ? left : NpadButton::None;
++        state.raw |= stick.x > threshold ? right : NpadButton::None;
++        state.raw |= stick.y > threshold ? up : NpadButton::None;
++        state.raw |= stick.y < -threshold ? down : NpadButton::None;
++    };
++    if (injected->left) {
++        directions(*injected->left, NpadButton::StickLLeft, NpadButton::StickLUp,
++                   NpadButton::StickLRight, NpadButton::StickLDown);
++    }
++    if (injected->right) {
++        directions(*injected->right, NpadButton::StickRLeft, NpadButton::StickRUp,
++                   NpadButton::StickRRight, NpadButton::StickRDown);
++    }
++    return state;
+ }
+ 
+ DebugPadButton EmulatedController::GetDebugPadButtons() const {
+@@ -1819,7 +1841,26 @@
+ AnalogSticks EmulatedController::GetSticks() const {
+     if (is_configuring)
+         return {};
+-    return controller.analog_stick_state;
++    AnalogSticks sticks = controller.analog_stick_state;
++    if (const auto injected = Injected()) {
++        sticks.left = injected->left.value_or(sticks.left);
++        sticks.right = injected->right.value_or(sticks.right);
++    }
++    return sticks;
++}
++
++void EmulatedController::SetInputInjector(InputInjector injector_) {
++    std::scoped_lock lock{injector_mutex};
++    injector = std::move(injector_);
++    has_injector.store(static_cast<bool>(injector), std::memory_order_release);
++}
++
++std::optional<InjectedInput> EmulatedController::Injected() const {
++    if (!has_injector.load(std::memory_order_acquire)) {
++        return std::nullopt;
++    }
++    std::scoped_lock lock{injector_mutex};
++    return injector ? injector() : std::nullopt;
+ }
+ 
+ NpadGcTriggerState EmulatedController::GetTriggers() const {
+--- a/src/hid_core/frontend/emulated_controller.h
++++ b/src/hid_core/frontend/emulated_controller.h
+@@ -10,6 +10,7 @@
+ #include <functional>
+ #include <memory>
+ #include <mutex>
++#include <optional>
+ #include <shared_mutex>
+ #include <vector>
+ #include <atomic>
+@@ -76,10 +77,23 @@
+ using NfcValues = Common::Input::NfcStatus;
+ using VibrationValues = std::array<Common::Input::VibrationStatus, max_emulated_controllers>;
+ 
++constexpr s32 HID_JOYSTICK_MAX = 0x7fff;
++
+ struct AnalogSticks {
+     AnalogStickState left{};
+     AnalogStickState right{};
+ };
++
++/// Input from the debug server (docs/nx2/debug-mcp.md, "Input"). Buttons are ORed into the real
++/// ones; a stick that is set replaces the real stick and its direction buttons.
++struct InjectedInput {
++    NpadButton buttons{};
++    std::optional<AnalogStickState> left;
++    std::optional<AnalogStickState> right;
++};
++
++/// Asked on every read of the npad buttons and sticks while installed: the input to apply now.
++using InputInjector = std::function<std::optional<InjectedInput>()>;
+ 
+ struct ControllerColors {
+     NpadControllerColor fullkey{};
+@@ -343,6 +357,9 @@
+     /// Returns the latest status of trigger input from the mouse
+     NpadGcTriggerState GetTriggers() const;
+ 
++    /// Installs the debug server's injector, or removes it when empty. Never changes mappings.
++    void SetInputInjector(InputInjector injector);
++
+     /// Returns the latest status of motion input from the mouse
+     MotionState GetMotions() const;
+ 
+@@ -633,8 +650,14 @@
+     StickDevices virtual_stick_devices;
+     ControllerMotionDevices virtual_motion_devices;
+ 
++    std::optional<InjectedInput> Injected() const;
++
+     mutable std::mutex callback_mutex;
+     ::Common::unordered_map<int, ControllerUpdateCallback> callback_list;
++
++    mutable std::mutex injector_mutex;
++    InputInjector injector;
++    std::atomic<bool> has_injector{};
+     int last_callback_key = 0;
+ 
+     // Stores the current status of all controller input
+--- a/src/core/hle/kernel/k_light_lock.cpp
++++ b/src/core/hle/kernel/k_light_lock.cpp
+@@ -50,6 +50,13 @@
+     if (!m_tag.compare_exchange_strong(expected, 0, std::memory_order_release)) {
+         this->UnlockSlowPath(cur_thread);
+     }
++}
++
++bool KLightLock::TryLock() {
++    const uintptr_t cur_thread = reinterpret_cast<uintptr_t>(GetCurrentThreadPointer(m_kernel));
++    uintptr_t expected = 0;
++    return cur_thread != 0 &&
++           m_tag.compare_exchange_strong(expected, cur_thread, std::memory_order_acquire);
+ }
+ 
+ bool KLightLock::LockSlowPath(uintptr_t _owner, uintptr_t _cur_thread) {
+--- a/src/core/hle/kernel/k_light_lock.h
++++ b/src/core/hle/kernel/k_light_lock.h
+@@ -16,6 +16,8 @@
+     explicit KLightLock(KernelCore& kernel) : m_kernel{kernel} {}
+ 
+     void Lock();
++
++    bool TryLock();
+ 
+     void Unlock();
+ 

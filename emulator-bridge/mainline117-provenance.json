@@ -1,0 +1,33 @@
+{
+  "upstream": "https://github.com/zortos293/Lichii",
+  "tag": "build-117",
+  "revision": "89440b29a90708c0fefc126b2bd8c7a64a996bdd",
+  "patch_sha256": "2902d8f12e80babfdd6fff3b09fbf6bfd4fc341c2d2ec368cb580d34b7bc7cf5",
+  "scope": "Guarded debug writer and nonblocking lock dependency; one behavior-preserving local variable rename for MSVC C4458 compatibility",
+  "files": [
+    {
+      "path": "src/core/debugger/nx2_debug_tools.cpp",
+      "sha256_lf": "d27f1f38e4794fe858c821ca7283673264748a102c43ebd4b829be4eef4dfa80"
+    },
+    {
+      "path": "src/core/debugger/nx2_inventory_word.h",
+      "sha256_lf": "3e7e9c4525d603c3647dde1c8e72af6d702d3d5b8f354a869ce3ee5fc256d97d"
+    },
+    {
+      "path": "src/core/debugger/nx2_gamedata_int.h",
+      "sha256_lf": "64d1db6b925b02a6e1c341cb06a2f141c0a4db32cb1d16ccc95ecad8d9e9852f"
+    },
+    {
+      "path": "src/core/hle/kernel/k_light_lock.cpp",
+      "sha256_lf": "dd5cca2e59e25beda9f7f57c54c99e80d11785107a64818a5d98d107ffd66e50"
+    },
+    {
+      "path": "src/core/hle/kernel/k_light_lock.h",
+      "sha256_lf": "915b8ca1d9bad18ec997635bd4e488e007f8003896553677a97ffe291a85a551"
+    },
+    {
+      "path": "src/video_core/engines/kepler_compute.cpp",
+      "sha256_lf": "179cff6321bdbe349eb59fe3371768aab49862925268c24705220ca54f72799f"
+    }
+  ]
+}

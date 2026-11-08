@@ -1,0 +1,58 @@
+{
+  "upstream": "zortos293/Lichii",
+  "revision": "88ffd1f312f9a38fd45575dc8e1c7d66ef9b4f6e",
+  "reference_exe_sha256": "3a830316ee3a6e113ccb2286679740cf9879dfa9ea1b7ef0b0376d313f2e2f6c",
+  "scope": "Memory reads/search, injected input, guarded writes and native queue only. No CPU sampler, GPU-memory reader or performance changes.",
+  "files": [
+    {
+      "path": "src/core/debugger/nx2_debug_tools.cpp",
+      "before_sha256": "78e3840166320af4e954cc29a480afeb1e2e5fbf1e4426e2e67e6cc3273d1c26",
+      "after_sha256": "0e0ec9152088dd0036c7d216646d1d8c4cbc7539912a2402b86b5b5a00031ac7"
+    },
+    {
+      "path": "src/core/debugger/nx2_debug_tools.h",
+      "before_sha256": "47e90b7b57e41a9233b3b815194b99ea368a798fe89d9633d10e9955c19be1b8",
+      "after_sha256": "42a66a7e6244308dcabaa12c6a93ebbf36ea53a652c86dab9d320ceaa6800911"
+    },
+    {
+      "path": "src/core/debugger/nx2_debug_server.cpp",
+      "before_sha256": "57ef4f1b02dbe517ac41b9dd4612036e6533ff77bb5d928666b467283ad62750",
+      "after_sha256": "cb5b75354acb29bce7c6f6eb5a5a4c14b32c3bb4c398de307db78558e3b62cee"
+    },
+    {
+      "path": "src/core/debugger/nx2_debug_server.h",
+      "before_sha256": "d7d1156ebcc6f4425d310447525675150534dd545c328d5dd76835f16d3fa12c",
+      "after_sha256": "cbef26902af6d3d730d7e833983f36aa7e993a7985bb7d631a001d0dcd54207e"
+    },
+    {
+      "path": "src/core/debugger/nx2_inventory_word.h",
+      "before_sha256": null,
+      "after_sha256": "3e7e9c4525d603c3647dde1c8e72af6d702d3d5b8f354a869ce3ee5fc256d97d"
+    },
+    {
+      "path": "src/core/debugger/nx2_gamedata_int.h",
+      "before_sha256": null,
+      "after_sha256": "64d1db6b925b02a6e1c341cb06a2f141c0a4db32cb1d16ccc95ecad8d9e9852f"
+    },
+    {
+      "path": "src/hid_core/frontend/emulated_controller.cpp",
+      "before_sha256": "2868500630e94aac6c95d26a432809ed18fb17658c49d351bb8318c18467242f",
+      "after_sha256": "3f60b5014d59c5a151ec5aa566977c9daa2deebd55a8d05a6e2bfd9fe6236b7e"
+    },
+    {
+      "path": "src/hid_core/frontend/emulated_controller.h",
+      "before_sha256": "dc1cacca10cbf830c817e855061df5214b44c20722827fb3677d9c1535091029",
+      "after_sha256": "ed501c7764b7631875d3cc7666bd5912d29b47e0adda2e9b79cf2d35f11f3b45"
+    },
+    {
+      "path": "src/core/hle/kernel/k_light_lock.cpp",
+      "before_sha256": "c426acae8590ff3de381cc9969a794247e1dba031a3ce96f113904505fc43320",
+      "after_sha256": "dd5cca2e59e25beda9f7f57c54c99e80d11785107a64818a5d98d107ffd66e50"
+    },
+    {
+      "path": "src/core/hle/kernel/k_light_lock.h",
+      "before_sha256": "740559e7c5b72b677b80175a1fedaf8037d45ad032a52295758fbb2c6d014945",
+      "after_sha256": "915b8ca1d9bad18ec997635bd4e488e007f8003896553677a97ffe291a85a551"
+    }
+  ]
+}
