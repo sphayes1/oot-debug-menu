@@ -38,3 +38,19 @@ The Mainline portable release uses official Lichii build 117, pinned in
 revision. It adds the guarded writer and its lock dependency. It also renames
 one local variable in `KeplerCompute::BypassOotNetwork` because MSVC rejects its
 shadowing of a class member (C4458); this rename does not change behavior.
+
+For controller camera/save shortcuts, apply the matching additive patch after
+that base: `controller-optimized.patch` after `oot-debug-writes.patch`, or
+`controller-mainline.patch` after `mainline117-guarded-writer.patch`. Their
+before/after LF hashes and patch hashes are pinned in controller-provenance.json.
+Both patch applications were reconstructed and verified against their exact
+base sources. The optimized public recipe excludes the private performance
+sampler, as before. The addon changes only four HID/debug files.
+
+`controller_debug` protocol 1 supplies mapped Player1/Handheld buttons, sticks,
+sample counts and one-shot action sequence numbers. It requires the existing
+Ocarina live-debug gate and one owned two-second capture lease. The native HID
+filter detects chords before they reach the guest, and scripted save/load input
+is applied after that filter. Other debug methods remain serialized on a single
+worker; the bounded controller heartbeat stays responsive on the IO thread.
+See [controller guide](../docs/CONTROLLER.md) and controller/test_controller.cpp.
