@@ -52,8 +52,9 @@ paths; it preserves rendering and input settings from the INI you provide.
 - 8,373 indexed actor definitions and 120,834 original placement records, with
   name/type/area/era/physics filters and placement teleports.
 - 51 hand selected dynamic actor definitions, including 13 chest variants.
-- Configurable normal save/load shortcuts with observed-menu confirmation.
-  Defaults: Ctrl+Alt+F5 and Ctrl+Alt+F9. These are not emulator save states.
+- Direct native game checkpoints on **F5** (save) / **F6** (load), with configurable
+  keyboard and controller bindings. No menus or confirmation inputs. Loading
+  reloads the area; these are not full emulator save states.
 - Explicit opt-in cross-era item and teleport overrides.
 
 ## Compatibility
@@ -121,7 +122,7 @@ private screenshots and skips when absent. See [architecture](docs/ARCHITECTURE.
 Actor locations are original map placements, not a live actor-position feed.
 Runtime-spawned actors may have no fixed destination. Additional dynamic matches
 and cross-era behavior need gameplay testing. Song removal/custom Scarecrow tunes
-are not implemented, and save-menu automation currently recognizes English menus.
+are not implemented. Direct checkpoints use the game's native save system and reload the area.
 
 ## License and provenance
 

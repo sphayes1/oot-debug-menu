@@ -8,7 +8,7 @@ TITLE='0400486024DEC000'
 DEBUG_ENV=('EDEN_NX2_DEBUG_SERVER','EDEN_NX2_DEBUG_DIR','EDEN_NX2_LIVE_INVENTORY')
 
 def configuration(text):
-    """Rebase only storage directories, preserving all unrelated INI settings."""
+    """Rebase debug storage and reserve checkpoint keys; preserve rendering."""
     if '[Data%20Storage]' not in text:
         text+='\n[Data%20Storage]\n'
     lines=text.splitlines();result=[];in_storage=False;seen=set()
@@ -29,7 +29,8 @@ def configuration(text):
                 result.append(key+'=false');continue
         result.append(line)
     if in_storage:missing()
-    return '\n'.join(result)+'\n'
+    from tools.debug_shortcuts import reserve_checkpoint_keys
+    return reserve_checkpoint_keys('\n'.join(result)+'\n')
 
 def launch_game():
     import backend

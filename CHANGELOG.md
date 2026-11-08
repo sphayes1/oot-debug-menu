@@ -1,5 +1,17 @@
 # Changes
 
+## 0.2.1 - 2026-11-08
+
+- Replace save-menu automation with direct native game checkpoints on F5/F6.
+  Controller save/load chords use the same native transport, without confirmation
+  inputs. Loading rebuilds the area; full emulator save states remain future work.
+- Archive the exact quick-save progress independently of the game's rotating slots;
+  verify and restore the archive if its native slot changes before loading.
+- Reserve F5/F6 in debug profiles; emulator Stop/Restart move to Ctrl+Shift+F5/F6.
+- Fix controller binding edits: Save binding and close persists and activates the
+  binding immediately. Show the saved camera shortcut and unsaved changes.
+- Keep performance executables/profiles unchanged and preserve normal menu loads.
+
 ## 0.2.0 — 2026-11-08
 
 - Native free-flight camera, independent of Link, with teleport-to-camera.
