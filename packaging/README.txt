@@ -21,7 +21,9 @@ KEYBOARD BASICS
 WASD: move. IJKL: camera. C: A/confirm/interact. X: B/cancel.
 V: X/jump. Z: Y/attack. Q/E: L/R. R/T: ZL/ZR. M/N: Plus/Minus.
 Arrow keys: D-pad. Left arrow: pull out an owned ocarina. Hold R: songbook.
-Ctrl+Alt+F5: quick save. Ctrl+Alt+F9: load newest save, including autosaves.
+F5: direct quick save. F6: load your last quick-save checkpoint. No menus.
+Make a checkpoint with F5 first. Loading rebuilds the area (about 11-14 seconds
+in local testing). These are game checkpoints, not full emulator save states.
 
 CONTROLLER
 If your controller already works in another Lichii setup, close the game and
@@ -61,7 +63,7 @@ Need just the menu again: Open Debug Menu.cmd.
 Need help: run Check Setup.cmd and report its message and your package version.
 
 PACKAGE VERSION
-Debug menu release: 0.2.0
+Debug menu release: 0.2.1
 Variant: @VARIANT@
 Emulator revision: @REVISION@
 Mainline uses official Lichii source plus the debug bridge. Optimized uses our

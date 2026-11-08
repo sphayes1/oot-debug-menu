@@ -128,7 +128,8 @@ def config_text(mode,settings):
     if guid:
         if not re.fullmatch(r'[0-9a-fA-F]{32}',guid):raise ValueError('Controller GUID needs32 hexadecimal digits.')
         text=re.sub(r'guid:[0-9a-fA-F]{32}','guid:'+guid.lower(),text)
-    return text
+    from tools.debug_shortcuts import reserve_checkpoint_keys
+    return reserve_checkpoint_keys(text)
 
 
 def import_controller():
