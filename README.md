@@ -16,6 +16,20 @@ Load gameplay, then click **Connect / Refresh** in the debug menu.
 download choices, keyboard/controller setup, saving and troubleshooting.
 Python is included in the portable packages.
 
+## Screenshots
+
+Inventory and teleport menus from the public client, connected to gameplay.
+Click an image to view it at full size.
+
+| Inventory and quick-use items | Coordinates, age and teleports |
+| --- | --- |
+| [![Inventory menu](docs/screenshots/inventory.png)](docs/screenshots/inventory.png) | [![Teleport menu](docs/screenshots/teleport.png)](docs/screenshots/teleport.png) |
+
+**[See all six menu screenshots](docs/SCREENSHOTS.md)**, including the actor
+catalogue, equipment, songs and general controls. These are menu-only captures
+from the renderer, without a mouse pointer or computer-use overlay. Public
+downloads use original text badges instead of extracted item artwork.
+
 This repository owns the debug client, game-side debug patch recipes and the
 emulator write-bridge delta. Rendering fixes, shader changes, FPS patches,
 timing experiments, PGO builds and performance profiles are separate projects.
