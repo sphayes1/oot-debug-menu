@@ -56,7 +56,7 @@ class ControllerPanel:
                 self.recorded.update(held)
                 if not held and self.recorded:
                     self.draft['bindings'][self.listening] = [b for b in BUTTONS if b in self.recorded]
-                    self.feedback = 'Recorded '+chord(self.draft['bindings'][self.listening])+'. Apply to save.'
+                    self.feedback = 'Recorded '+chord(self.draft['bindings'][self.listening])+'. Save binding to activate.'
                     self.cancel_recording()
             if now-self.record_started > 20:
                 self.feedback = 'Recording timed out. Try again or select the buttons below.'
@@ -79,11 +79,28 @@ class ControllerPanel:
         self.controller.recording = False
         self.recorded.clear()
 
+    def save_settings(self):
+        try:
+            self.controller.apply(self.draft)
+        except (ValueError, OSError) as exc:
+            self.feedback = 'Settings were not saved: '+str(exc)
+            return False
+        self.draft = validate_config(self.controller.config)
+        self.feedback = 'Controller settings saved and active.'
+        return True
+
+    def finish_editing(self):
+        if self.save_settings():
+            self.editing = None
+
     def draw(self):
         if imgui.button('Controller...'):
             imgui.open_popup('controller-shortcuts')
         if imgui.begin_popup('controller-shortcuts'):
             imgui.text('Controller camera and save shortcuts')
+            imgui.text_wrapped('Active camera shortcut: '+chord(self.controller.config['bindings']['enter']))
+            if self.draft != self.controller.config:
+                imgui.text_colored((1., .75, .3, 1.), 'Unsaved changes - save to activate them.')
             _, self.draft['enabled'] = imgui.checkbox('Enable controller shortcuts', self.draft['enabled'])
             imgui.text_wrapped('Button names follow the emulator mapping: L = LB, R = RB, ZL = LT, ZR = RT. A/B follow the game labels. Shortcuts need game focus; camera input is consumed before it reaches Link.')
             for action in ACTIONS:
@@ -102,7 +119,7 @@ class ControllerPanel:
                         self.recorded.clear();self.controller.recording = True
                     imgui.end_disabled()
                 else:
-                    imgui.text_wrapped('Click the game window, press the buttons together, then release them. Return here to Apply. Gameplay input is blocked while recording.')
+                    imgui.text_wrapped('Click the game window, press the buttons together, then release them. Return here and Save binding and close. Gameplay input is blocked while recording.')
                     if imgui.button('Cancel recording'):
                         self.cancel_recording()
                 selected = self.draft['bindings'][self.editing]
@@ -114,8 +131,8 @@ class ControllerPanel:
                     if changed:
                         if checked:selected.append(button)
                         else:selected.remove(button)
-                if imgui.button('Done editing'):
-                    self.editing = None
+                if imgui.button('Save binding and close'):
+                    self.finish_editing()
                 imgui.end_disabled()
             imgui.separator_text('Camera flight')
             _, index = imgui.combo('Move stick', ('left', 'right').index(self.draft['move_stick']), ['Left stick', 'Right stick'])
@@ -131,12 +148,11 @@ class ControllerPanel:
             _, self.draft['invert_y'] = imgui.checkbox('Invert vertical look', self.draft['invert_y'])
             imgui.text_wrapped('Flight speed uses the Camera tab slider. A / Teleport returns to normal view after moving Link. Save/load handles confirmations automatically; release the chord while it runs.')
             imgui.begin_disabled(bool(self.listening))
-            if imgui.button('Apply controller settings'):
-                try:self.controller.apply(self.draft);self.feedback = 'Controller settings saved.'
-                except ValueError as exc:self.feedback = str(exc)
+            if imgui.button('Save controller settings'):
+                self.save_settings()
             imgui.same_line()
             if imgui.button('Reset defaults'):
-                self.draft = validate_config(DEFAULT);self.feedback = 'Defaults restored. Apply to save.'
+                self.draft = validate_config(DEFAULT);self.feedback = 'Defaults selected. Save controller settings to activate.'
             imgui.end_disabled()
             if self.feedback:imgui.text_wrapped(self.feedback)
             imgui.text_wrapped(self.controller.error or self.controller.status)

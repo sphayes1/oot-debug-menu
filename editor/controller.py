@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent
 BUTTONS = ['A', 'B', 'X', 'Y', 'StickL', 'StickR', 'L', 'R', 'ZL', 'ZR', 'Plus', 'Minus', 'Left', 'Up', 'Right', 'Down']
 ACTIONS = ['enter', 'exit', 'teleport', 'save', 'load']
 LABELS = {'enter': 'Enter free camera', 'exit': 'Exit camera', 'teleport': 'Teleport and exit camera',
-          'save': 'Quick save', 'load': 'Load latest save'}
+          'save': 'Quick save', 'load': 'Load checkpoint'}
 FRIENDLY = {'L': 'LB / L', 'R': 'RB / R', 'ZL': 'LT / ZL', 'ZR': 'RT / ZR', 'Minus': '-', 'Plus': '+'}
 DEFAULT = {'version': 1, 'enabled': True,
            'bindings': {'enter': ['L', 'Minus'], 'exit': ['B'], 'teleport': ['A'],

@@ -88,10 +88,15 @@ class Editor:
         if self.future is not None and self.future.done():
             try:
                 result = self.future.result()
-                native_result = isinstance(result, dict) and result.get('kind') in ('native','player','position')
+                native_result = isinstance(result, dict) and result.get('kind') in ('native','player','position','checkpoint')
                 if native_result:
                     self.native_receipt = result['receipt']
-                    if result['kind'] == 'position':
+                    if result['kind'] == 'checkpoint':
+                        self.values = result['values']
+                        self.connected = True
+                        self.error = False
+                        self.message = ('Checkpoint saved' if result['action']=='save' else 'Checkpoint loaded')+f" in {self.native_receipt['seconds']:.2f} seconds."
+                    elif result['kind'] == 'position':
                         self.error = self.native_receipt['state'] != 'applied'
                         self.message = 'Position updated.' if not self.error else 'Inspect the position audit before trying again.'
                     elif result['kind'] == 'player':

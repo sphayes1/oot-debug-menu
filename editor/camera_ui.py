@@ -3,6 +3,7 @@ import math
 import time
 from imgui_bundle import imgui
 from camera import Camera, fly
+from controller import chord
 
 
 class CameraPanel:
@@ -62,7 +63,8 @@ class CameraPanel:
             e.submit('Camera disable', lambda: self.set_enabled(False))
         imgui.end_disabled()
         imgui.text_wrapped('Keep this Camera tab focused. W/S: forward/back, A/D: strafe, Q/E: down/up. Hold right mouse to look; Shift moves 4x faster. Escape restores the normal camera.')
-        imgui.text_wrapped('Controller: focus the game. LB/L + Minus enters, B exits, A teleports and restores normal view. Customize bindings and stick controls under Controller...')
+        bindings = e.controller_panel.controller.config['bindings']
+        imgui.text_wrapped('Controller: focus the game. '+chord(bindings['enter'])+' enters, '+chord(bindings['exit'])+' exits, '+chord(bindings['teleport'])+' teleports and restores normal view. Customize under Controller...')
         imgui.set_next_item_width(260)
         _, self.speed = imgui.slider_float('Speed (world units/sec)', self.speed, 1., 100., '%.1f')
         pose = self.desired or self.camera.pose

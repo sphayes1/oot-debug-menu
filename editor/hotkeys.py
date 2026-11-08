@@ -9,8 +9,10 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parent
 KEYS=[f'F{i}' for i in range(1,25) if i!=12]  # F12 is reserved by Windows.
-DEFAULT={'enabled':True,'save':{'key':'F5','ctrl':True,'alt':True,'shift':False},
-         'load':{'key':'F9','ctrl':True,'alt':True,'shift':False}}
+LEGACY_DEFAULT={'enabled':True,'save':{'key':'F5','ctrl':True,'alt':True,'shift':False},
+                'load':{'key':'F9','ctrl':True,'alt':True,'shift':False}}
+DEFAULT={'enabled':True,'save':{'key':'F5','ctrl':False,'alt':False,'shift':False},
+         'load':{'key':'F6','ctrl':False,'alt':False,'shift':False}}
 
 
 def shortcut(spec):
@@ -47,6 +49,7 @@ class Hotkeys:
         except FileNotFoundError:self.config=validate_config(DEFAULT)
         except (ValueError,TypeError) as exc:
             self.config=validate_config(DEFAULT);self.config['enabled']=False;self.error=str(exc)
+        if self.config==LEGACY_DEFAULT:self.config=validate_config(DEFAULT)
         self.thread=threading.Thread(target=self._run,daemon=True,name='oot-save-hotkeys');self.thread.start()
 
     def apply(self,config):
@@ -116,13 +119,13 @@ class HotkeysPanel:
 
     def queue(self,action):
         e=self.editor;e.native_undo_blocked=True
-        e.submit('Quick save' if action=='save' else 'Load latest save',lambda:self.perform(action))
+        e.submit('Quick save' if action=='save' else 'Load checkpoint',lambda:self.perform(action))
 
     def perform(self,action):
-        from save_actions import SaveActions
+        from direct_checkpoint import DirectCheckpoint
         self.editor.native_undo_blocked=True
-        SaveActions(self.editor.binding).run(action)
-        return self.editor.connect()
+        receipt=DirectCheckpoint(self.editor.binding).run(action)
+        return dict(kind='checkpoint',action=action,receipt=receipt,values=self.editor.connect())
 
     def draw(self):
         from imgui_bundle import imgui
@@ -130,7 +133,7 @@ class HotkeysPanel:
         if imgui.begin_popup('save-hotkeys'):
             imgui.text('Save / load shortcuts')
             _,self.draft['enabled']=imgui.checkbox('Enable while game has focus',self.draft['enabled'])
-            for action,label in [('save','Quick save'),('load','Load latest save')]:
+            for action,label in [('save','Quick save'),('load','Load checkpoint')]:
                 imgui.push_id(action);imgui.text(label)
                 spec=self.draft[action]
                 _,index=imgui.combo('Key',KEYS.index(spec['key']),KEYS);spec['key']=KEYS[index]
@@ -143,11 +146,11 @@ class HotkeysPanel:
                 except ValueError as exc:self.feedback=str(exc)
             if self.feedback:imgui.text_wrapped(self.feedback)
             if self.hotkeys.error:imgui.text_wrapped(self.hotkeys.error)
-            imgui.text_wrapped('One press completes Save / Load automatically, including confirmations. Menus briefly appear. Use English game menus and release the controls until finished. Loading uses the newest save, including autosaves.')
+            imgui.text_wrapped('Direct game checkpoints: no menus, button automation or confirmations. Save writes normal progress; load restores your last quick-save slot and reloads the area. This is not a full emulator save state. Close game menus before use. First press Save to create a checkpoint.')
             imgui.text('Current: '+shortcut(self.hotkeys.config['save'])+' / '+shortcut(self.hotkeys.config['load']))
             busy=not self.editor.connected or bool(self.editor.pending) or (self.editor.future is not None and self.editor.operation!='Refresh')
             imgui.begin_disabled(busy)
             if imgui.button('Quick save now'):self.queue('save')
             imgui.same_line()
-            if imgui.button('Load latest now'):self.queue('load')
+            if imgui.button('Load checkpoint now'):self.queue('load')
             imgui.end_disabled();imgui.end_popup()

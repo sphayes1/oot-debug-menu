@@ -107,6 +107,32 @@ class ControllerTests(unittest.TestCase):
         self.assertEqual(panel.listening,'enter')
         self.assertTrue(panel.controller.recording)
 
+    def test_finishing_up_binding_saves_and_activates_it_without_second_apply(self):
+        panel=ControllerPanel.__new__(ControllerPanel)
+        panel.controller=Controller.__new__(Controller)
+        panel.controller.config=self.config()
+        panel.draft=self.config();panel.draft['bindings']['enter']=['Up']
+        panel.editing='enter';panel.feedback=''
+        with tempfile.TemporaryDirectory() as folder, patch('controller.ROOT',Path(folder)):
+            panel.finish_editing()
+            saved=json.loads((Path(folder)/'controller-hotkeys.json').read_text())
+        self.assertEqual(saved['bindings']['enter'],['Up'])
+        self.assertEqual(panel.controller.config['bindings']['enter'],['Up'])
+        self.assertIsNone(panel.editing)
+        self.assertEqual(panel.draft,panel.controller.config)
+
+    def test_failed_binding_save_keeps_editor_open_and_old_binding_active(self):
+        for error in (ValueError('Overlapping shortcut'),OSError('Disk write failed')):
+            panel=ControllerPanel.__new__(ControllerPanel)
+            old=self.config()
+            panel.controller=SimpleNamespace(config=old,apply=Mock(side_effect=error))
+            panel.draft=self.config();panel.draft['bindings']['enter']=['Up']
+            panel.editing='enter';panel.feedback=''
+            panel.finish_editing()
+            self.assertEqual(panel.editing,'enter')
+            self.assertEqual(panel.controller.config,old)
+            self.assertIn('not saved',panel.feedback)
+
     def test_late_completion_from_old_emulator_cannot_acknowledge_new_action(self):
         c=Controller.__new__(Controller);c.completions=queue.Queue();c.context_value=((2,'new'),True,False)
         c.complete(1,False,(1,'old'))
