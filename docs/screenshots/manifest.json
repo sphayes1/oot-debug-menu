@@ -1,0 +1,71 @@
+{
+  "description": "Actual public debug-menu renderer frames; no desktop/game capture or cursor overlay",
+  "screenshots": [
+    {
+      "tab": "Inventory",
+      "method": "HelloImGui final_app_window_screenshot (renderer framebuffer)",
+      "cursor_included": false,
+      "desktop_or_game_window_included": false,
+      "source_commit": "5d2afc9535bab4e76745ef99a8c3304311e95c54",
+      "sha256": "93297b720d03a21b36c81c6f9b9b0ab9f6f1fd4c8af43bb5a16fa563b66cc7ac",
+      "width": 1280,
+      "height": 960,
+      "file": "inventory.png"
+    },
+    {
+      "tab": "Teleport",
+      "method": "HelloImGui final_app_window_screenshot (renderer framebuffer)",
+      "cursor_included": false,
+      "desktop_or_game_window_included": false,
+      "source_commit": "5d2afc9535bab4e76745ef99a8c3304311e95c54",
+      "sha256": "c5bd22980f0565cbd4fd7ab39ed7120c237f6db9beb070f1249dcb4ff1c1e20c",
+      "width": 1280,
+      "height": 960,
+      "file": "teleport.png"
+    },
+    {
+      "tab": "Actors",
+      "method": "HelloImGui final_app_window_screenshot (renderer framebuffer)",
+      "cursor_included": false,
+      "desktop_or_game_window_included": false,
+      "source_commit": "5d2afc9535bab4e76745ef99a8c3304311e95c54",
+      "sha256": "906b2664f96b5974c793f28ce0b3b390705a1e5731cd43febf3bdce76c7b99e9",
+      "width": 1280,
+      "height": 960,
+      "file": "actors.png"
+    },
+    {
+      "tab": "Equipment",
+      "method": "HelloImGui final_app_window_screenshot (renderer framebuffer)",
+      "cursor_included": false,
+      "desktop_or_game_window_included": false,
+      "source_commit": "5d2afc9535bab4e76745ef99a8c3304311e95c54",
+      "sha256": "50531961507cfe53472d378618f4f9b7d0851d335c475558af5e7a1781a66b14",
+      "width": 1280,
+      "height": 960,
+      "file": "equipment.png"
+    },
+    {
+      "tab": "Songs",
+      "method": "HelloImGui final_app_window_screenshot (renderer framebuffer)",
+      "cursor_included": false,
+      "desktop_or_game_window_included": false,
+      "source_commit": "5d2afc9535bab4e76745ef99a8c3304311e95c54",
+      "sha256": "0ba54432b842284d968a581356b0e1554aa6b04a30670999c9c7fc7b1ce6bf60",
+      "width": 1280,
+      "height": 960,
+      "file": "songs.png"
+    },
+    {
+      "tab": "General",
+      "method": "HelloImGui final_app_window_screenshot (renderer framebuffer)",
+      "cursor_included": false,
+      "desktop_or_game_window_included": false,
+      "source_commit": "5d2afc9535bab4e76745ef99a8c3304311e95c54",
+      "sha256": "4db1b7fabfed7f28f22e5ab29d35f0f7517fba12877b010be05431ab4992b23d",
+      "width": 1280,
+      "height": 960,
+      "file": "general.png"
+    }
+  ]
+}
