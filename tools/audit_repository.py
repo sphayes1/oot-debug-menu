@@ -16,7 +16,7 @@ def main():
         is_screenshot=relative.parent==Path('docs/screenshots') and relative.name in screenshot_hashes
         assert relative.suffix.lower() not in blocked or is_screenshot,str(relative)
         assert not {'runtime','backups','live-edits','tests-local','checkpoints','profiling','emulators'} & set(relative.parts),str(relative)
-        assert relative.name not in ('settings.json','live-binding.json','session.json','hotkeys.json','locations.json'),str(relative)
+        assert relative.name not in ('settings.json','live-binding.json','session.json','hotkeys.json','controller-hotkeys.json','locations.json'),str(relative)
         data=(ROOT/relative).read_bytes();size+=len(data)
         if is_screenshot:
             assert data.startswith(b'\x89PNG\r\n\x1a\n') and len(data)<1_000_000,str(relative)
@@ -38,7 +38,17 @@ def main():
     removed=[line[1:] for line in compatibility.splitlines() if line.startswith('-') and not line.startswith('---')]
     added=[line[1:] for line in compatibility.splitlines() if line.startswith('+') and not line.startswith('+++')]
     assert len(removed)==7 and added==[re.sub(r'\bstate\b','bypass_state',line) for line in removed]
+    controller=json.loads((ROOT/'emulator-bridge/controller-provenance.json').read_text())
+    controller_paths={'src/core/debugger/nx2_debug_tools.cpp','src/core/debugger/nx2_debug_server.cpp',
+                      'src/hid_core/frontend/emulated_controller.cpp','src/hid_core/frontend/debug_controller.h'}
+    for variant in ('optimized','mainline'):
+        text=(ROOT/('emulator-bridge/controller-'+variant+'.patch')).read_text(encoding='utf-8')
+        assert hashlib.sha256(text.encode()).hexdigest()==controller[variant]['patch_sha256']
+        assert set(re.findall(r'^\+\+\+ b/(.+)$',text,re.M))==controller_paths
+        assert {row['path'] for row in controller[variant]['files']}==controller_paths
+        added='\n'.join(line[1:] for line in text.splitlines() if line.startswith('+') and not line.startswith('+++'))
+        assert 'Nx2Sampler' not in added and 'RequestGpuRead' not in added
     print(json.dumps(dict(tracked_files=len(paths),tracked_bytes=size,source_boundary_audit='passed',
-        catalogue_hash='passed',debug_bridge_changed_files=len(changed)),indent=2))
+        catalogue_hash='passed',debug_bridge_changed_files=len(changed),controller_addons='four debug/HID files each; hashes passed'),indent=2))
 
 if __name__=='__main__':main()

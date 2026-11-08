@@ -24,7 +24,7 @@ def main():
     emulator=args.emulator_dir.resolve();exe=emulator/'eden-cli.exe'
     if sha(exe.read_bytes())!=spec['emulator_sha256']:raise ValueError('Emulator does not match reviewed profile')
     data=exe.read_bytes()
-    if not all(word in data for word in (b'compare_write32',b'live_inventory_enabled',b'input_sequence')):
+    if not all(word in data for word in (b'compare_write32',b'live_inventory_enabled',b'input_sequence',b'controller_debug')):
         raise ValueError('Emulator lacks required debug bridge capabilities')
     prepare()
     args.output.mkdir(parents=True,exist_ok=True)
@@ -35,7 +35,7 @@ def main():
         p=out/rel;p.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,p)
     def text(rel,value):
         p=out/rel;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(value,encoding='utf-8')
-    modules='app assignments backend bottles capacities enhancements equipment_sync live location_capture locations native_ui native_requests notifications ocarinas player_life player_magic position position_ui presentation songs songs_ui teleport teleport_ui age_switch collectibles collectibles_ui hotkeys save_actions actor_catalog actor_catalog_ui'.split()
+    modules='app assignments backend bottles capacities enhancements equipment_sync live location_capture locations native_ui native_requests notifications ocarinas player_life player_magic position position_ui presentation songs songs_ui teleport teleport_ui age_switch collectibles collectibles_ui hotkeys save_actions actor_catalog actor_catalog_ui camera camera_ui collision collision_ui collision_geometry collision_scene collision_overlay controller controller_ui'.split()
     for name_ in modules:copy(ROOT/'editor'/(name_+'.py'),'editor/'+name_+'.py')
     for name_ in ('catalog.json','live-schema.json','songs-schema.json','teleport-presets.json','collectibles.json','save-menu-patterns.json'):
         copy(ROOT/'editor'/name_,'editor/'+name_)
@@ -56,7 +56,7 @@ def main():
     text('emulator-profile.json',json.dumps(spec,indent=2)+'\n')
     receipt=json.loads((ROOT/'data/actor-catalog.json').read_text())
     commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
-    package=dict(version=1,variant=args.variant,debug_source_commit=commit,emulator_sha256=spec['emulator_sha256'],
+    package=dict(version=1,release_version='0.2.0',variant=args.variant,debug_source_commit=commit,emulator_sha256=spec['emulator_sha256'],
         emulator_revision=spec['revision'],environment=spec.get('environment',{}),
         game_main_sha256=json.loads((ROOT/'mods/manifest.json').read_text())['original_main_sha256'],
         actor_catalog={k:receipt[k] for k in ('sha256','actors','placements','hand_selected','hand_selection_sha256')},

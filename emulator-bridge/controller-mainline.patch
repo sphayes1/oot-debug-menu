@@ -1,0 +1,304 @@
+--- a/src/core/debugger/nx2_debug_tools.cpp
++++ b/src/core/debugger/nx2_debug_tools.cpp
+@@ -37,6 +37,7 @@
+ #include "core/loader/loader.h"
+ #include "core/memory.h"
+ #include "hid_core/hid_core.h"
++#include "hid_core/frontend/debug_controller.h"
+ #include "video_core/gpu.h"
+ #include "video_core/nx2_debug_control.h"
+ #include "video_core/renderer_base.h"
+@@ -907,6 +908,39 @@
+     return RunInput(state, steps, params, client_gone);
+ }
+ 
++// Gated mapped-controller endpoint. One owned lease; physical input is filtered
++// before existing scripted injection, so native Save/Load automation still works.
++json ControllerDebug(ToolState& state, const json& params) {
++    if (!InventoryWritesEnabled() || state.program_id != OOT_PROGRAM_ID ||
++        state.stopping.load(std::memory_order_relaxed))
++        throw std::runtime_error{"Ocarina live debug controls are not enabled"};
++    auto& hid = state.system.HIDCore();
++    auto* controller = hid.GetEmulatedController(HID::NpadIdType::Player1);
++    const char* name = "Player1";
++    if (!controller->IsConnected()) {
++        controller = hid.GetEmulatedController(HID::NpadIdType::Handheld);
++        name = "Handheld";
++    }
++    if (!controller->IsConnected())
++        throw std::runtime_error{"neither player 1 nor handheld controller is connected"};
++    HID::DebugControls::Chords chords{};
++    const auto& list = params.at("bindings");
++    if (!list.is_array() || list.size() != chords.size())
++        throw std::runtime_error{"five controller bindings are required"};
++    for (size_t i = 0; i < chords.size(); ++i)
++        chords[i] = list[i].get<u64>();
++    const auto snapshot = HID::DebugControls::bridge.Poll(
++        controller, params.at("owner").get<std::string>(), params.value("enabled", true),
++        params.value("armed", false), chords,
++        params.contains("capture") ? std::optional{params.at("capture").get<bool>()} : std::nullopt,
++        params.contains("complete") ? std::optional{params.at("complete").get<u64>()} : std::nullopt,
++        params.value("recording", false));
++    return {{"protocol", 1}, {"controller", name}, {"buttons", snapshot.buttons},
++            {"axes", snapshot.axes}, {"sequence", snapshot.sequence}, {"samples", snapshot.samples},
++            {"action", snapshot.action}, {"camera", snapshot.camera},
++            {"blocked", snapshot.blocked}, {"lease_ms", 2000}};
++}
++
+ Handlers MakeHandlers(const std::shared_ptr<ToolState>& state) {
+     const auto handler = [&state](json (*tool)(ToolState&, const json&)) -> Handler {
+         return [state, tool](const json& params, const ClientGone&) { return tool(*state, params); };
+@@ -932,6 +966,7 @@
+         {"read_gpu_memory", handler(ReadGpuMemory)},
+         {"input", waiting(Input)},
+         {"input_sequence", waiting(InputSequence)},
++        {"controller_debug", handler(ControllerDebug)},
+     };
+ }
+ 
+--- a/src/core/debugger/nx2_debug_server.cpp
++++ b/src/core/debugger/nx2_debug_server.cpp
+@@ -21,8 +21,8 @@
+ 
+ class Session : public std::enable_shared_from_this<Session> {
+ public:
+-    explicit Session(tcp::socket socket_, const Handlers& handlers_)
+-        : socket{std::move(socket_)}, handlers{handlers_} {}
++    explicit Session(tcp::socket socket_, const Handlers& handlers_, boost::asio::thread_pool& worker_)
++        : socket{std::move(socket_)}, handlers{handlers_}, worker{worker_} {}
+ 
+     void Read() {
+         boost::asio::async_read_until(
+@@ -35,16 +35,32 @@
+                 if (!line.empty() && line.back() == '\r') {
+                     line.remove_suffix(1);
+                 }
+-                self->output = line.empty() ? std::string{}
+-                                            : HandleRequest(self->handlers, line,
+-                                                            [&self] { return self->ClientGone(); });
++                const std::string request{line};
+                 self->input.erase(0, length);
+-                if (self->output.empty()) {
++                if (request.empty()) {
+                     self->Read();
+                     return;
+                 }
+-                self->output += '\n';
+-                self->Write();
++                const auto parsed = nlohmann::json::parse(request, nullptr, false);
++                const bool control = parsed.is_object() && parsed.contains("method") &&
++                    parsed["method"].is_string() && parsed["method"] == "controller_debug";
++                const auto reply = [self](std::string value) {
++                    self->output = std::move(value);
++                    self->output += '\n';
++                    self->Write();
++                };
++                if (control) {
++                    reply(HandleRequest(self->handlers, request, [self] { return self->ClientGone(); }));
++                } else {
++                    // Preserve serial execution of every original debug operation.
++                    // Only the bounded controller heartbeat uses the IO thread.
++                    boost::asio::post(self->worker, [self, request, reply] {
++                        auto value = HandleRequest(self->handlers, request,
++                                                   [self] { return self->ClientGone(); });
++                        boost::asio::post(self->socket.get_executor(),
++                            [reply, value = std::move(value)]() mutable { reply(std::move(value)); });
++                    });
++                }
+             });
+     }
+ 
+@@ -71,6 +87,7 @@
+ 
+     tcp::socket socket;
+     const Handlers& handlers;
++    boost::asio::thread_pool& worker;
+     std::string input;
+     std::string output;
+ };
+@@ -172,6 +189,7 @@
+         if (thread.joinable()) {
+             thread.join();
+         }
++        worker.join();
+     }
+ 
+     void Accept() {
+@@ -179,13 +197,14 @@
+             if (error) {
+                 return;
+             }
+-            std::make_shared<Session>(std::move(socket), handlers)->Read();
++            std::make_shared<Session>(std::move(socket), handlers, worker)->Read();
+             Accept();
+         });
+     }
+ 
+     Handlers handlers;
+     boost::asio::io_context io;
++    boost::asio::thread_pool worker{1};
+     tcp::acceptor acceptor;
+     std::thread thread;
+ };
+--- a/src/hid_core/frontend/emulated_controller.cpp
++++ b/src/hid_core/frontend/emulated_controller.cpp
+@@ -12,6 +12,7 @@
+ #include "common/thread.h"
+ #include "common/assert.h"
+ #include "hid_core/frontend/emulated_controller.h"
++#include "hid_core/frontend/debug_controller.h"
+ #include "hid_core/frontend/input_converter.h"
+ #include "hid_core/hid_util.h"
+ 
+@@ -1807,6 +1808,9 @@
+     if (is_configuring)
+         return {};
+     NpadButtonState state{controller.npad_button_state.raw & GetTurboButtonMask()};
++    const auto& physical = controller.analog_stick_state;
++    state.raw = static_cast<NpadButton>(DebugControls::bridge.Filter(this, static_cast<u64>(state.raw),
++        {physical.left.x, physical.left.y, physical.right.x, physical.right.y}));
+     const auto injected = Injected();
+     if (!injected) {
+         return state;
+@@ -1842,6 +1846,8 @@
+     if (is_configuring)
+         return {};
+     AnalogSticks sticks = controller.analog_stick_state;
++    if (DebugControls::bridge.Blocked(this))
++        sticks = {};
+     if (const auto injected = Injected()) {
+         sticks.left = injected->left.value_or(sticks.left);
+         sticks.right = injected->right.value_or(sticks.right);
+--- /dev/null
++++ b/src/hid_core/frontend/debug_controller.h
+@@ -0,0 +1,130 @@
++// SPDX-License-Identifier: GPL-3.0-or-later
++// Debug-only mapped controller capture. No renderer/timing modifications.
++#pragma once
++#include <array>
++#include <atomic>
++#include <chrono>
++#include <cmath>
++#include <cstdint>
++#include <mutex>
++#include <optional>
++#include <stdexcept>
++#include <string>
++
++namespace Core::HID::DebugControls {
++using Clock = std::chrono::steady_clock;
++using Buttons = std::uint64_t;
++using Axes = std::array<std::int32_t, 4>;
++using Chords = std::array<Buttons, 5>; // enter, exit, teleport, save, load
++struct Snapshot {
++    Buttons buttons{};
++    Axes axes{};
++    std::uint64_t sequence{};
++    std::uint64_t samples{};
++    int action{-1};
++    bool camera{}, blocked{};
++};
++
++class Bridge {
++public:
++    Snapshot Poll(const void* device, const std::string& owner, bool enabled, bool armed,
++                  const Chords& chords, std::optional<bool> capture,
++                  std::optional<std::uint64_t> complete, bool recording,
++                  Clock::time_point now = Clock::now()) {
++        std::scoped_lock lock{mutex};
++        if (owner.size() < 16 || owner.size() > 64)
++            throw std::runtime_error{"controller owner token is invalid"};
++        if (!owner_id.empty() && owner_id != owner && now < deadline)
++            throw std::runtime_error{"controller debug controls belong to another editor"};
++        if (!enabled) {
++            target.store(nullptr, std::memory_order_release);
++            owner_id.clear();
++            state = {};
++            return state;
++        }
++        for (const auto mask : chords)
++            if (!mask || (mask & ~Buttons{0xffff}))
++                throw std::runtime_error{"invalid controller button chord"};
++        for (size_t i = 0; i < chords.size(); ++i)
++            for (size_t j = i+1; j < chords.size(); ++j)
++                if (chords[i] == chords[j])
++                    throw std::runtime_error{"controller chords must be different"};
++        if (owner_id != owner || target.load(std::memory_order_relaxed) != device || now >= deadline) {
++            state = {};
++            latch.fill(false);
++            pending = false;
++            release_gate = true; // Never trigger a chord held during connection.
++        }
++        owner_id = owner;
++        deadline = now+std::chrono::seconds{2};
++        bindings = chords;
++        is_armed = armed;
++        if (is_recording && !recording)
++            release_gate = true;
++        is_recording = recording;
++        if (complete && *complete == state.sequence && pending) {
++            pending = false;
++            state.action = -1;
++            state.camera = capture.value_or(false);
++            release_gate = !state.camera;
++        } else if (capture && !pending && state.camera != *capture) {
++            state.camera = *capture;
++            release_gate = !state.camera;
++        }
++        state.blocked = state.camera || pending || release_gate || is_recording;
++        target.store(device, std::memory_order_release);
++        return state;
++    }
++
++    Buttons Filter(const void* device, Buttons buttons, const Axes& axes,
++                   Clock::time_point now = Clock::now()) {
++        if (target.load(std::memory_order_acquire) != device)
++            return buttons;
++        std::scoped_lock lock{mutex};
++        if (now >= deadline) {
++            target.store(nullptr, std::memory_order_release);
++            return buttons; // Fail open when the editor closes or stops polling.
++        }
++        state.buttons = buttons & 0xffff;
++        state.axes = axes;
++        ++state.samples;
++        bool neutral = state.buttons == 0;
++        for (const auto axis : axes)
++            neutral = neutral && std::abs(static_cast<double>(axis)) < 6000;
++        if (release_gate && neutral)
++            release_gate = false;
++        for (size_t i = 0; i < bindings.size(); ++i) {
++            const bool held = (state.buttons & bindings[i]) == bindings[i];
++            const bool rising = held && !latch[i];
++            latch[i] = held;
++            const bool allowed = state.camera ? (i != 0) : (i == 0 || i == 3 || i == 4);
++            if (rising && allowed && is_armed && !pending && !release_gate && !is_recording) {
++                state.action = static_cast<int>(i);
++                ++state.sequence;
++                pending = true;
++                break;
++            }
++        }
++        state.blocked = state.camera || pending || release_gate || is_recording;
++        return state.blocked ? 0 : buttons;
++    }
++
++    bool Blocked(const void* device, Clock::time_point now = Clock::now()) {
++        if (target.load(std::memory_order_acquire) != device)
++            return false;
++        std::scoped_lock lock{mutex};
++        return now < deadline && state.blocked;
++    }
++
++private:
++    std::atomic<const void*> target{};
++    std::mutex mutex;
++    std::string owner_id;
++    Clock::time_point deadline{};
++    Snapshot state{};
++    Chords bindings{};
++    std::array<bool, 5> latch{};
++    bool is_armed{}, is_recording{}, pending{}, release_gate{};
++};
++inline Bridge bridge;
++} // namespace Core::HID::DebugControls

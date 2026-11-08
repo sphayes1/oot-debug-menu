@@ -9,6 +9,8 @@ def main():
     prepare()
     if '--self-check' in sys.argv:
         import app
+        import collision, collision_scene, collision_geometry, collision_overlay
+        import glfw, OpenGL.GL
         from actor_catalog import ActorCatalog
         e=app.Editor()
         try:
@@ -16,7 +18,7 @@ def main():
             assert len(catalog.actors(candidate=1,placed_only=False))==51
             assert catalog.actors(candidate=1,placed_only=False)[0]['id']=='Obj_TBox_A_01'
         finally:
-            e.hotkeys_panel.hotkeys.close();e.worker.shutdown()
+            e.controller_panel.close();e.hotkeys_panel.hotkeys.close();e.worker.shutdown()
         print('Debug client and actor catalogue: OK; no game launched')
         return
     if '--start-game' in sys.argv:

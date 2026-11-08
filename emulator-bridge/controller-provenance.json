@@ -1,0 +1,54 @@
+{
+  "optimized": {
+    "apply_after": "oot-debug-writes.patch",
+    "files": [
+      {
+        "path": "src/core/debugger/nx2_debug_tools.cpp",
+        "before_sha256_lf": "0e0ec9152088dd0036c7d216646d1d8c4cbc7539912a2402b86b5b5a00031ac7",
+        "after_sha256_lf": "b432f036db9106ce3317f5a11ff27d902f7aa72d0dc5a272dfd144705d28da53"
+      },
+      {
+        "path": "src/core/debugger/nx2_debug_server.cpp",
+        "before_sha256_lf": "cb5b75354acb29bce7c6f6eb5a5a4c14b32c3bb4c398de307db78558e3b62cee",
+        "after_sha256_lf": "10748e28995c813933f086ca6f76f40a616925df5127c5df2b95169aac1a1b96"
+      },
+      {
+        "path": "src/hid_core/frontend/emulated_controller.cpp",
+        "before_sha256_lf": "3f60b5014d59c5a151ec5aa566977c9daa2deebd55a8d05a6e2bfd9fe6236b7e",
+        "after_sha256_lf": "3d9307bb28e40dcd9939ed0df1402851b67c734e3a0fd8d96dbc15bb4951c7ac"
+      },
+      {
+        "path": "src/hid_core/frontend/debug_controller.h",
+        "before_sha256_lf": null,
+        "after_sha256_lf": "adc44dba26df3bab5bb4585f2ed7f8d9a40b6acde9274487546bbc2d767f58d0"
+      }
+    ],
+    "patch_sha256": "534610287a35721dd756b058a35fca7983c3366fe3faafb8548043ec30aa493b"
+  },
+  "mainline": {
+    "apply_after": "mainline117-guarded-writer.patch",
+    "files": [
+      {
+        "path": "src/core/debugger/nx2_debug_tools.cpp",
+        "before_sha256_lf": "d27f1f38e4794fe858c821ca7283673264748a102c43ebd4b829be4eef4dfa80",
+        "after_sha256_lf": "ba1bc32c36ffa01a1ba2e339af0a48860e76dc126df890c2590cb15b92127b39"
+      },
+      {
+        "path": "src/core/debugger/nx2_debug_server.cpp",
+        "before_sha256_lf": "cb5b75354acb29bce7c6f6eb5a5a4c14b32c3bb4c398de307db78558e3b62cee",
+        "after_sha256_lf": "10748e28995c813933f086ca6f76f40a616925df5127c5df2b95169aac1a1b96"
+      },
+      {
+        "path": "src/hid_core/frontend/emulated_controller.cpp",
+        "before_sha256_lf": "3f60b5014d59c5a151ec5aa566977c9daa2deebd55a8d05a6e2bfd9fe6236b7e",
+        "after_sha256_lf": "3d9307bb28e40dcd9939ed0df1402851b67c734e3a0fd8d96dbc15bb4951c7ac"
+      },
+      {
+        "path": "src/hid_core/frontend/debug_controller.h",
+        "before_sha256_lf": null,
+        "after_sha256_lf": "adc44dba26df3bab5bb4585f2ed7f8d9a40b6acde9274487546bbc2d767f58d0"
+      }
+    ],
+    "patch_sha256": "bf70f2c53c0e46befadc7b6833775ae987eb2d4ad888de7506986c2a857147a9"
+  }
+}

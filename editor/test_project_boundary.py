@@ -28,10 +28,13 @@ class SeparationTest(unittest.TestCase):
     def test_game_mod_manifest_has_only_debug_files(self):
         manifest=json.loads((ROOT/'mods/manifest.json').read_text(encoding='utf-8'))
         paths={p.replace('\\','/') for p in manifest['files']}
-        self.assertEqual(len(paths),4)
+        self.assertEqual(len(paths),5)
         self.assertEqual(sum(p.startswith('exefs/') for p in paths),1)
         self.assertIn('romfs/Sequence/MainUpdate.module.ainb',paths)
         self.assertIn('romfs/Sequence/ChangeBancOnMain.module.ainb',paths)
+        self.assertIn('romfs/Pack/Actor/EventCamera.pack.zs',paths)
+        self.assertFalse(any('PlayerCamera' in p for p in paths))
+        self.assertEqual(manifest['camera_protocol'],1)
         self.assertFalse(any('Shadow' in p or 'FPS' in p or 'Controller' in p for p in paths))
 
 if __name__=='__main__':unittest.main()

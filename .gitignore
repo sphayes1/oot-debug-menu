@@ -26,3 +26,5 @@ editor/research/hotkey-*.png
 dist/
 build/
 *.egg-info/
+editor/controller-hotkeys.json
+editor/controller-hotkeys.json.tmp
