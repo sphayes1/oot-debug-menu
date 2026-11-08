@@ -24,11 +24,13 @@
 | `tools/setup_game.py` | Builds only debug overrides from the user's source members and writes ignored local settings. |
 | `mods/recipes.json`, `mods/exefs/*.ips`, `mods/manifest.json` | Minimal patch recipes, authored scene-selector patch and expected output hashes/protocol versions. |
 | `emulator-bridge/` | Source-only debug delta and pinned upstream provenance. |
-| `emulator-bridge/mainline117-guarded-writer.patch`, `mainline117-provenance.json` | Minimal five-file guarded writer port against official build117; renderer and timing source remain upstream. |
+| `emulator-bridge/mainline117-guarded-writer.patch`, `mainline117-provenance.json` | Five bridge/lock files against official build117 plus one behavior-preserving local variable rename for MSVC compatibility; upstream renderer/timing behavior is preserved. |
 | `packaging/build_release.py`, `bundle_python.py`, `portable.py` | Build either self-contained portable variant from one client source and explicit external emulator/profile inputs. |
 | `tools/apply_profile.py` | Source/output-hash-checked external emulator override application. Mainline refuses all custom environment/override entries. |
 | `docs/GETTING-STARTED.md`, portable `START HERE.txt` | Beginner download/extraction, first launch, connect, controls, save migration and troubleshooting walkthrough. |
 | `tools/controller_config.py`, portable `Import Controller Settings.cmd` | Imports only Controls from a working emulator configuration; rendering and storage settings stay intact. |
+| `docs/SCREENSHOTS.md`, `docs/screenshots/` | Six menu-only screenshots from the public renderer, with no cursor, click overlay, desktop or game window. The manifest pins each image hash and captured client revision. |
+| `tools/capture_screenshots.py` | Read-only connected-menu framebuffer export for refreshing documentation images; requires a configured public portable profile and loaded gameplay. |
 | `editor/test_*.py`, `.github/workflows/tests.yml` | Offline behavior/boundary tests and Windows CI. |
 
 All personal/runtime data belongs under ignored paths. The main development
