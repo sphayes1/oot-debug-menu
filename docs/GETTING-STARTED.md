@@ -115,9 +115,16 @@ Hold **all four shoulder buttons + D-pad Left** to quick save, or **D-pad Right*
 to load. Focus the game and release the chord after pressing it. **Controller...**
 lets you change these combinations and flight settings; see [controller guide](CONTROLLER.md).
 
-Use the game's normal Save option, or press **Ctrl+Alt+F5** while the game has
-focus. **Ctrl+Alt+F9** loads the newest save, including autosaves. The shortcuts
-handle the confirmation screens automatically; release the controls while they run.
+Press **F5** while the game has focus to create a direct checkpoint. Press **F6**
+to load that checkpoint. The same actions use the controller chords above. First
+make a checkpoint with F5; F6 does not select an unrelated autosave. No menus or
+confirmations are opened. Close game menus before using these actions.
+
+Saving measured about half a second in testing. Loading rebuilds the area and
+measured about 11-13 seconds. This is a normal game checkpoint, not a full emulator
+save state: the exact animation, enemy positions and temporary physics are not
+captured. Keyboard shortcuts can be changed in **Hotkeys...**. In this debug
+profile, emulator Stop/Restart are moved to Ctrl+Shift+F5 / Ctrl+Shift+F6.
 
 Your progress is stored in **editor\runtime\nand** inside this package.
 Close the game before backing up that folder.

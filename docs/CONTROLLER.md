@@ -26,8 +26,8 @@ and exit B do not also activate gameplay actions. Release the buttons and
 centre the sticks before resuming normal play. Recognized chords fire once
 per press and do not repeat while held.
 
-Save/load uses the existing normal-save automation and handles confirmation
-dialogs automatically. Menus briefly appear. Release the chord while it runs.
+Save/load calls the native checkpoint system directly, without menus or
+confirmation inputs. Release the chord while it runs.
 These are normal game saves, not emulator save states. Saving while in free
 camera first restores the normal view and saves Link's actual position.
 
@@ -36,7 +36,10 @@ camera first restores the normal view and saves Link's actual position.
 Click **Controller...** at the top of the debug menu. Each action has an **Edit**
 button. Either select its buttons with the checkboxes, or click **Record
 controller combination**, focus the game, press the combination and release it.
-Return to the menu and click **Apply controller settings**.
+Click **Save binding and close** to save the combination and activate it. After
+recording, return to the menu and use that button too. **Save controller settings**
+also saves all edits. The popup shows the active camera shortcut and warns when
+your draft has unsaved changes; selecting checkboxes alone does not activate them.
 
 You can also swap movement/look sticks, change up/down buttons, tune deadzone
 and look speed, or invert vertical look. Movement speed uses the existing
@@ -44,7 +47,8 @@ Camera tab slider. Settings persist in local `editor/controller-hotkeys.json`;
 existing keyboard shortcuts remain in `editor/hotkeys.json`.
 
 Empty, duplicate and overlapping shortcuts are rejected rather than silently
-choosing an action. **Reset defaults**, then **Apply**, restores the table above.
+choosing an action. A failed save keeps the binding editor open and reports the
+error. **Reset defaults**, then **Save controller settings**, restores the table above.
 
 The updated emulator bridge is required. If the Controller popup reports an
 old bridge, use a build containing `controller_debug` protocol 1. Inventory,
@@ -59,3 +63,6 @@ enabled, reconnect and use **Restore normal camera**, as with keyboard flight.
 
 Teleport remains limited to the current loaded area; gravity and loading zones
 still apply. The collision overlay can remain enabled during controller flight.
+
+Save/load chords now call native game checkpoints directly, without menu inputs.
+First make a checkpoint. Loading rebuilds the saved area; it is not a full emulator state.

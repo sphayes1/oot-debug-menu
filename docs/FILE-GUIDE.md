@@ -16,7 +16,9 @@
 | `mods/camera-protocol.json`, `docs/FREE-CAMERA.md` | Authored EventCamera graph additions, original asset hashes, native cutscene priority, mailbox ownership and live verification. The original PlayerCamera pack is unchanged. |
 | `editor/equipment_sync.py`, `songs.py`, `songs_ui.py` | One-shot equipment refresh and native fixed-song acquisition. |
 | `editor/collectibles.py`, `collectibles_ui.py` | Skulltula/bean destinations and bean planting. |
-| `editor/hotkeys.py`, `save_actions.py`, `save-menu-patterns.json` | Foreground-scoped Windows shortcuts and English game-menu recognition. Pattern data contains small recognition crops, not full screenshots. |
+| `editor/hotkeys.py`, `direct_checkpoint.py` | Foreground-scoped F5/F6 and direct native save/load requests with exact slot/revision/hash checks and checkpoint audits. Controller shortcuts use the same transport. |
+| `editor/save_actions.py`, `save-menu-patterns.json` | Legacy menu-recognition research/test harness; not called by save/load shortcuts. |
+| `tools/debug_shortcuts.py` | Reserves F5/F6 in debug profiles by moving the emulator Stop/Restart shortcuts. |
 | `editor/actor_catalog.py`, `actor_catalog_ui.py` | Indexed actor/placement queries, filters and guarded placement teleports. |
 | `editor/*schema.json`, `editor/research/*schema.json`, `editor/data/` | Revision-pinned, reverse-engineered field layouts and item metadata. |
 | `data/actor-catalog.sqlite3.gz`, `actor-catalog.json` | Compressed coordinate/physics metadata and integrity receipt; expanded locally on first run. No actor packs or models. |
