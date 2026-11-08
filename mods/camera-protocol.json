@@ -1,0 +1,583 @@
+{
+  "version": 1,
+  "source": {
+    "member": "romfs/Pack/Actor/EventCamera.pack.zs",
+    "source_pack_sha256": "7eec6f2c1ff5434ddd006dcf941e5e6e23f47bc3597501788f02f202030a08bc",
+    "source_ai_sha256": "cccc2665e973394545022d6bd59da00eb123ebe6987e968019dfbf946c8480ec",
+    "result_pack_sha256": "b8ac28509edce171216a390297057267d536a986346fcdd468e6ca6270dcf639",
+    "result_ai_sha256": "fb0faec4f0ec73cbee50a79fe9c3fb14bbc7c10e034543e4e0619393c95d6e1b"
+  },
+  "original_root": 9,
+  "new_root": 19,
+  "normal_player_camera": "unchanged",
+  "native_event_priority": true,
+  "unsaved_mailbox": {
+    "flag": "Sequence_ReservedNextStartPosName",
+    "sentinel": "__OOT_FREE_CAMERA_V1__",
+    "position": "DebugParam.OverrideTraversePos",
+    "look_at": "Sequence_ReservedNextCancelSleepRot"
+  },
+  "authored_nodes": [
+    {
+      "Node Type": "Element_StringSelector",
+      "Node Index": 12,
+      "Name": "",
+      "GUID": "cf1c8bb9-63db-5244-a563-67cad6c07220",
+      "Flags": [],
+      "Queries": [
+        13
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ],
+        "String": [
+          {
+            "Name": "InputValue",
+            "Default Value": "",
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "String": [
+            {
+              "Name": "Input",
+              "Default Value": "",
+              "Node Index": 13,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 14,
+            "Name": "",
+            "Condition": "__OOT_FREE_CAMERA_V1__"
+          },
+          {
+            "Node Index": 9,
+            "Name": "",
+            "Is Default": true
+          }
+        ],
+        "String": [
+          {
+            "Node Index": 13,
+            "Name": "Input",
+            "Unknown": 0,
+            "Default Value": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 13,
+      "Name": "QueryGetNonStructGameDataString64",
+      "GUID": "23383a3b-f868-51d5-a8f8-034110ab9805",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "DispError",
+            "Default Value": true,
+            "Flags": []
+          },
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "GameDataIndex",
+              "Default Value": -1,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Uses Default",
+                "Is Output"
+              ]
+            }
+          ],
+          "Bool": [
+            {
+              "Name": "IsDirect",
+              "Default Value": true,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Uses Default",
+                "Is Output"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "GameDataFullName",
+              "Default Value": "Sequence_ReservedNextStartPosName",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Uses Default"
+              ]
+            }
+          ]
+        },
+        "Outputs": {
+          "String": [
+            {
+              "Name": "Value",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_Simultaneous",
+      "Node Index": 14,
+      "Name": "",
+      "GUID": "81ee48f1-10e0-5207-a728-f628d4366651",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "EndPolicy",
+            "Default Value": 0,
+            "Flags": []
+          },
+          {
+            "Name": "ResultPolicy",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {},
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Child": [
+          {
+            "Node Index": 16,
+            "Name": ""
+          },
+          {
+            "Node Index": 15,
+            "Name": ""
+          }
+        ]
+      }
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 15,
+      "Name": "ExecuteCameraSetTarget",
+      "GUID": "d0b27fee-7be6-5cde-82d3-aa75af17e086",
+      "Flags": [],
+      "Queries": [
+        17,
+        18
+      ],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "CalcUp",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Uses Default",
+                "Is Output"
+              ]
+            },
+            {
+              "Name": "PreventUpFlip",
+              "Default Value": false,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Uses Default",
+                "Is Output"
+              ]
+            }
+          ],
+          "Float": [
+            {
+              "Name": "Fovy",
+              "Default Value": 0.872664626,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Uses Default"
+              ]
+            },
+            {
+              "Name": "UpFlipRad",
+              "Default Value": 999.0,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Uses Default",
+                "Is Output"
+              ]
+            }
+          ],
+          "Vector3F": [
+            {
+              "Name": "At",
+              "Default Value": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "Node Index": 18,
+              "Output Index": 0,
+              "Flags": []
+            },
+            {
+              "Name": "Pos",
+              "Default Value": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "Node Index": 17,
+              "Output Index": 0,
+              "Flags": []
+            },
+            {
+              "Name": "Up",
+              "Default Value": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Uses Default"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 16,
+      "Name": "ExecuteCameraSwitchActiveToOwn",
+      "GUID": "8336c84d-1fa9-5616-97e0-8ac30eb5421c",
+      "Flags": [],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {},
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "GameCameraType",
+              "Default Value": 1,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Uses Default"
+              ]
+            },
+            {
+              "Name": "LayerTag",
+              "Default Value": 460120899,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Uses Default"
+              ]
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 17,
+      "Name": "QueryGetNonStructGameDataVector3",
+      "GUID": "ca6182d8-19b0-5409-8815-4527303b1b97",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "DispError",
+            "Default Value": true,
+            "Flags": []
+          },
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "GameDataIndex",
+              "Default Value": -1,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Uses Default",
+                "Is Output"
+              ]
+            }
+          ],
+          "Bool": [
+            {
+              "Name": "IsDirect",
+              "Default Value": true,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Uses Default",
+                "Is Output"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "GameDataFullName",
+              "Default Value": "DebugParam.OverrideTraversePos",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Uses Default"
+              ]
+            }
+          ]
+        },
+        "Outputs": {
+          "Vector3F": [
+            {
+              "Name": "Value",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "UserDefined",
+      "Node Index": 18,
+      "Name": "QueryGetNonStructGameDataVector3",
+      "GUID": "03882f01-e71d-57f0-b0e4-f384f2afb0cf",
+      "Flags": [
+        "Is Query"
+      ],
+      "Queries": [],
+      "Attachments": [],
+      "Properties": {
+        "Bool": [
+          {
+            "Name": "DispError",
+            "Default Value": true,
+            "Flags": []
+          },
+          {
+            "Name": "OutputOnlyOnEnter",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Int": [
+            {
+              "Name": "GameDataIndex",
+              "Default Value": -1,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Uses Default",
+                "Is Output"
+              ]
+            }
+          ],
+          "Bool": [
+            {
+              "Name": "IsDirect",
+              "Default Value": true,
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Uses Default",
+                "Is Output"
+              ]
+            }
+          ],
+          "String": [
+            {
+              "Name": "GameDataFullName",
+              "Default Value": "Sequence_ReservedNextCancelSleepRot",
+              "Node Index": -1,
+              "Output Index": 0,
+              "Flags": [
+                "Uses Default"
+              ]
+            }
+          ]
+        },
+        "Outputs": {
+          "Vector3F": [
+            {
+              "Name": "Value",
+              "Is Output": true
+            }
+          ]
+        }
+      },
+      "XLink Actions": [],
+      "Plugs": {}
+    },
+    {
+      "Node Type": "Element_BoolSelector",
+      "Node Index": 19,
+      "Name": "",
+      "GUID": "8fb8e24b-7be7-503b-bc8e-cb198d33e9b5",
+      "Flags": [
+        "Is Root Node"
+      ],
+      "Queries": [
+        7
+      ],
+      "Attachments": [],
+      "Properties": {
+        "Int": [
+          {
+            "Name": "CalculateTiming",
+            "Default Value": 0,
+            "Flags": []
+          }
+        ],
+        "Bool": [
+          {
+            "Name": "ChildFrameSync",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "InputValue",
+            "Default Value": false,
+            "Flags": []
+          },
+          {
+            "Name": "IsNoSelectWhenChildBusy",
+            "Default Value": false,
+            "Flags": []
+          }
+        ]
+      },
+      "Parameters": {
+        "Inputs": {
+          "Bool": [
+            {
+              "Name": "Input",
+              "Default Value": false,
+              "Node Index": 7,
+              "Output Index": 0,
+              "Flags": []
+            }
+          ]
+        },
+        "Outputs": {}
+      },
+      "XLink Actions": [],
+      "Plugs": {
+        "Generic": [
+          {
+            "Node Index": 7,
+            "Name": "Input",
+            "Unknown 1": 0,
+            "Unknown 2": 0
+          }
+        ],
+        "Child": [
+          {
+            "Node Index": 9,
+            "Name": "True"
+          },
+          {
+            "Node Index": 12,
+            "Name": "False"
+          }
+        ]
+      }
+    }
+  ],
+  "resource_changes": [
+    {
+      "name": "Pack/Actor/EventCamera.pack",
+      "before": 14040,
+      "after": 147604
+    },
+    {
+      "name": "AI/EventCamera.root.ainb",
+      "before": 4568,
+      "after": 138108
+    }
+  ]
+}

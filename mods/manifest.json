@@ -1,5 +1,5 @@
 {
-  "state": "live-teleport-position-equipment-songs-v1",
+  "state": "live-debug-camera-v1",
   "position_protocol": 1,
   "equipment_sync_protocol": 1,
   "songs_protocol": 1,
@@ -16,12 +16,15 @@
     "ChangeBancOnMain clears trigger, consumes reserved position/rotation/entry and deletes old resident actors for explicit manual-age requests",
     "MainUpdate consumes DebugParam.IsOverrideTraversePos through native SeqOneShotSetPlayerPos, then clears the request",
     "MainUpdate consumes DebugParam.IsOverturnTerrainSetupAndLoadBanc through native SeqSyncPlayerEquipmentAndGameData(false), then clears the request",
-    "MainUpdate consumes DebugParam.IsKeepFormalFlag, dispatches a whitelisted fixed-song actor via SeqOneShotPushToPouch, then clears the request"
+    "MainUpdate consumes DebugParam.IsKeepFormalFlag, dispatches a whitelisted fixed-song actor via SeqOneShotPushToPouch, then clears the request",
+    "EventCamera supports a guarded native free-flight branch; scripted main events take priority; normal player-camera assets remain original"
   ],
   "files": {
     "exefs\\E0F3CCFAF50065AE4EA01EB5AEB13B1A45DA3348.ips": "73f5edaf09d7f4ac1ddb0aeec13c5ecc84636e23e5edc45fca411200d66570cf",
     "romfs\\Sequence\\ChangeBancOnMain.module.ainb": "f3fa7432c6ffd584603c8ee1d72411160982de31c071e7bba81abe5753d5957e",
     "romfs\\Sequence\\MainUpdate.module.ainb": "c045fcffef81cd8b2899310381aaefd37259d167c4d517f225e4807baa02e74c",
-    "romfs\\System\\Resource\\ResourceSizeTable.Product.111.Nin_Ounce_NVN2.rsizetable.zs": "d918fdd725af45b6183a5dba8313a56c71f12713859662c4c05794696706a3ea"
-  }
+    "romfs/Pack/Actor/EventCamera.pack.zs": "b8ac28509edce171216a390297057267d536a986346fcdd468e6ca6270dcf639",
+    "romfs/System/Resource/ResourceSizeTable.Product.111.Nin_Ounce_NVN2.rsizetable.zs": "90c1c15223f0846de2fab1be914d3981a117c7742a071fe36492257840e2e692"
+  },
+  "camera_protocol": 1
 }
