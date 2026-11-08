@@ -25,7 +25,12 @@ def main():
     assert 'Nx2Sampler' not in additions and 'RequestGpuRead' not in additions
     current=(ROOT/'emulator-bridge/mainline117-guarded-writer.patch').read_text(encoding='utf-8')
     current_paths=re.findall(r'^\+\+\+ b/(.+)$',current,re.M)
-    assert len(current_paths)==5 and all(p.startswith(('src/core/debugger/','src/core/hle/kernel/k_light_lock.')) for p in current_paths)
+    compatibility_path='src/video_core/engines/kepler_compute.cpp'
+    assert len(current_paths)==6 and all(p==compatibility_path or p.startswith(('src/core/debugger/','src/core/hle/kernel/k_light_lock.')) for p in current_paths)
+    compatibility=current.split('--- a/'+compatibility_path+'\n',1)[1]
+    removed=[line[1:] for line in compatibility.splitlines() if line.startswith('-') and not line.startswith('---')]
+    added=[line[1:] for line in compatibility.splitlines() if line.startswith('+') and not line.startswith('+++')]
+    assert len(removed)==7 and added==[re.sub(r'\bstate\b','bypass_state',line) for line in removed]
     print(json.dumps(dict(tracked_files=len(paths),tracked_bytes=size,source_boundary_audit='passed',
         catalogue_hash='passed',debug_bridge_changed_files=len(changed)),indent=2))
 
