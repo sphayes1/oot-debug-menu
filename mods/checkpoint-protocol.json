@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "kind": "native-game-checkpoint-not-emulator-state",
+  "title_id": "0400486024DEC000",
+  "game_main_sha256": "7db9ddfda088c22d219ef13496decd7077c68cd67d4b37f53f4ac46a082768f2",
+  "save_token": "__OOT_DIRECT_SAVE_V1__",
+  "load_token": "__OOT_DIRECT_LOAD_V1__",
+  "done_token": "__OOT_DIRECT_LOAD_DONE_V1__",
+  "payload": "Sequence_ReservedNextStartPosName / 0b570ab2",
+  "save_request": "DebugParam.IsKeepFormalFlag / da576eaa",
+  "load_request": "DebugParam.IsRequestedResetGimmick / 3fc35576",
+  "slot": "CaptionData.SelectedSavePathIndex / 2834256b",
+  "save_actions": [
+    "SeqExecuteWaitAutoSave",
+    "SeqExecuteWaitCaptionMgrStable",
+    "SeqOneShotSetMapDataForCaption",
+    "SeqQueryGameDataGetManualSaveIndex",
+    "SeqExecuteSaveGameData targets 0, 2",
+    "SeqOneShotManualSsetCaptionData"
+  ],
+  "load_path": [
+    "ChangeBancOnMain token selector",
+    "latched state transition",
+    "native confirmed PlusMenu load branch without menu-only cleanup",
+    "ChangeBanc(IsLoadFromSaveData=true, retained residents)",
+    "OnLoadGameSaveData.module",
+    "clear reserved next Banc",
+    "AfterEvent.module",
+    "done marker"
+  ],
+  "normal_menu_load": "Original cleanup branch retained as selector default",
+  "input_rpc_calls": 0,
+  "result_files": {
+    "exefs/E0F3CCFAF50065AE4EA01EB5AEB13B1A45DA3348.ips": "73f5edaf09d7f4ac1ddb0aeec13c5ecc84636e23e5edc45fca411200d66570cf",
+    "romfs/Pack/Actor/EventCamera.pack.zs": "b8ac28509edce171216a390297057267d536a986346fcdd468e6ca6270dcf639",
+    "romfs/Sequence/ChangeBancOnMain.module.ainb": "e77358b565072abf45d19b7822f0e80d54882d7d6e74d7e87ef331cd303c4cb4",
+    "romfs/Sequence/MainUpdate.module.ainb": "969b6f74318704702d98e2794cbe17508c1c3c1293e25b2e8c1b7fd038c83e66",
+    "romfs/System/Resource/ResourceSizeTable.Product.111.Nin_Ounce_NVN2.rsizetable.zs": "227585433f2a5390a47455efb3f81951661452c2e983f41e13c8ebd2bc495034",
+    "romfs/Sequence/_LocalModule_bde133631675.module.ainb": "751b1eb94d4c82a5f0f44ce2c5a71a0aa615f50f1d3b8c57f148a0b08da45718"
+  },
+  "host_checkpoint_format": 2,
+  "checkpoint_storage": "Verified immutable progress archive; exact native-slot restoration with original bytes backed up"
+}

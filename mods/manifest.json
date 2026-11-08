@@ -1,5 +1,5 @@
 {
-  "state": "live-debug-camera-v1",
+  "state": "live-direct-checkpoint-v1",
   "position_protocol": 1,
   "equipment_sync_protocol": 1,
   "songs_protocol": 1,
@@ -17,14 +17,17 @@
     "MainUpdate consumes DebugParam.IsOverrideTraversePos through native SeqOneShotSetPlayerPos, then clears the request",
     "MainUpdate consumes DebugParam.IsOverturnTerrainSetupAndLoadBanc through native SeqSyncPlayerEquipmentAndGameData(false), then clears the request",
     "MainUpdate consumes DebugParam.IsKeepFormalFlag, dispatches a whitelisted fixed-song actor via SeqOneShotPushToPouch, then clears the request",
-    "EventCamera supports a guarded native free-flight branch; scripted main events take priority; normal player-camera assets remain original"
+    "EventCamera supports a guarded native free-flight branch; scripted main events take priority; normal player-camera assets remain original",
+    "Native direct game save/load checkpoints; no input RPCs; normal menu load path retained"
   ],
   "files": {
-    "exefs\\E0F3CCFAF50065AE4EA01EB5AEB13B1A45DA3348.ips": "73f5edaf09d7f4ac1ddb0aeec13c5ecc84636e23e5edc45fca411200d66570cf",
-    "romfs\\Sequence\\ChangeBancOnMain.module.ainb": "f3fa7432c6ffd584603c8ee1d72411160982de31c071e7bba81abe5753d5957e",
-    "romfs\\Sequence\\MainUpdate.module.ainb": "c045fcffef81cd8b2899310381aaefd37259d167c4d517f225e4807baa02e74c",
+    "exefs/E0F3CCFAF50065AE4EA01EB5AEB13B1A45DA3348.ips": "73f5edaf09d7f4ac1ddb0aeec13c5ecc84636e23e5edc45fca411200d66570cf",
     "romfs/Pack/Actor/EventCamera.pack.zs": "b8ac28509edce171216a390297057267d536a986346fcdd468e6ca6270dcf639",
-    "romfs/System/Resource/ResourceSizeTable.Product.111.Nin_Ounce_NVN2.rsizetable.zs": "90c1c15223f0846de2fab1be914d3981a117c7742a071fe36492257840e2e692"
+    "romfs/Sequence/ChangeBancOnMain.module.ainb": "e77358b565072abf45d19b7822f0e80d54882d7d6e74d7e87ef331cd303c4cb4",
+    "romfs/Sequence/MainUpdate.module.ainb": "969b6f74318704702d98e2794cbe17508c1c3c1293e25b2e8c1b7fd038c83e66",
+    "romfs/System/Resource/ResourceSizeTable.Product.111.Nin_Ounce_NVN2.rsizetable.zs": "227585433f2a5390a47455efb3f81951661452c2e983f41e13c8ebd2bc495034",
+    "romfs/Sequence/_LocalModule_bde133631675.module.ainb": "751b1eb94d4c82a5f0f44ce2c5a71a0aa615f50f1d3b8c57f148a0b08da45718"
   },
-  "camera_protocol": 1
+  "camera_protocol": 1,
+  "direct_checkpoint_protocol": 1
 }
