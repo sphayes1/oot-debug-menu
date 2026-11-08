@@ -1,5 +1,5 @@
 # OOT Debug Menu
-
+Demo video: https://youtu.be/XdKqxSuwbg0
 A standalone Dear ImGui companion for live inventory, equipment, songs,
 teleports, free-flight camera, age switching, position editing and actor exploration in the inspected
 Ocarina of Time revision. Windows x64 is the currently tested platform.
