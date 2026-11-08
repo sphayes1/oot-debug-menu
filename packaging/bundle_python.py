@@ -24,7 +24,7 @@ def bundle(out,pyhome,site,emulator):
          'from pathlib import Path\nfrom ._imgui_bundle import imgui, hello_imgui, portable_file_dialogs\nhello_imgui.override_assets_folder(str(Path(__file__).parent/"assets"))\n')
     for p in (site/'imgui_bundle/assets').rglob('*'):
         if p.is_file():copy(p,Path('python/Lib/site-packages/imgui_bundle/assets')/p.relative_to(site/'imgui_bundle/assets'))
-    for folder in ('numpy','numpy.libs','PIL','zstandard','oead'):
+    for folder in ('numpy','numpy.libs','PIL','zstandard','oead','OpenGL','glfw'):
         for p in (site/folder).rglob('*'):
             if p.is_file() and not set(p.relative_to(site).parts)&{'tests','__pycache__','include','_pyinstaller','benchmarks'} and p.suffix not in ('.pyc','.pyi','.h','.lib','.pxd'):
                 copy(p,Path('python/Lib/site-packages')/p.relative_to(site))
@@ -35,7 +35,7 @@ def bundle(out,pyhome,site,emulator):
             relative=Path(row[0]);p=(site/relative).resolve()
             if relative.suffix.lower()=='.dll' and p.is_relative_to(site.resolve()) and p.is_file():
                 copy(p,Path('python/Lib/site-packages')/relative)
-    for pattern in ('numpy-*.dist-info','pillow-*.dist-info','zstandard-*.dist-info','oead-*.dist-info'):
+    for pattern in ('numpy-*.dist-info','pillow-*.dist-info','zstandard-*.dist-info','oead-*.dist-info','pyopengl-*.dist-info','PyOpenGL-*.dist-info','glfw-*.dist-info'):
         for folder in site.glob(pattern):
             for p in folder.rglob('*'):
                 if p.is_file() and ('license' in p.name.lower() or 'licenses' in p.parts):

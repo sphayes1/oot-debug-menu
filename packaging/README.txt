@@ -29,10 +29,29 @@ run Import Controller Settings.cmd. Select that emulator's configuration file.
 The import tool preserves this package's graphics/storage settings.
 Start Keyboard + Debug Menu.cmd switches back to keyboard controls.
 
+After loading gameplay, click Connect / Refresh. With the game focused:
+LB/L + Minus enters the free camera. B exits. A teleports and restores normal view.
+Left stick flies; right stick looks; LT/RT fly down/up.
+All four shoulders + D-pad Left saves; D-pad Right loads the latest save.
+Confirmations are handled automatically. Release the chord while it runs.
+Click Controller... to customize these bindings and stick settings.
+
+COLLISION
+In the Collision tab, enable Show collision overlay. Keep playing normally,
+or use the Camera tab/controller to fly through the area. Your NUP supplies
+the geometry automatically; the first visit can take several seconds.
+Use windowed or borderless mode. Moving/removed objects are not tracked live.
+
 SAVES
 Save normally in the game, or use the quick-save shortcut. Your progress is in
 editor\runtime\nand. Close the game before copying/backing up that folder.
 Mainline and Optimized use separate profiles; see START HERE.txt to move a save.
+
+UPGRADING FROM AN OLDER DOWNLOAD
+Extract the new ZIP into a new folder. Close both games before copying anything.
+Copy your old editor\runtime\nand folder into the new package's editor\runtime.
+You can also copy editor\locations.json, hotkeys.json and controller-hotkeys.json
+if present. Run the new Setup.cmd; keep the new game overrides and emulator.
 
 QUICK FIXES
 Disconnected: load gameplay until Link can move, then Connect / Refresh.
@@ -42,6 +61,7 @@ Need just the menu again: Open Debug Menu.cmd.
 Need help: run Check Setup.cmd and report its message and your package version.
 
 PACKAGE VERSION
+Debug menu release: 0.2.0
 Variant: @VARIANT@
 Emulator revision: @REVISION@
 Mainline uses official Lichii source plus the debug bridge. Optimized uses our

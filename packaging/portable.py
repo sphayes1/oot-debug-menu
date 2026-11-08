@@ -183,8 +183,9 @@ def self_check():
     import ctypes,concurrent.futures,zipfile,zstandard,oead
     import tools.setup_game,tools.apply_profile
     import backend,app,assignments,bottles,capacities,enhancements,songs,teleport
+    import collision,collision_scene,collision_geometry,collision_overlay,glfw,OpenGL.GL
     from imgui_bundle import imgui,hello_imgui,portable_file_dialogs
-    instance=app.Editor();instance.worker.shutdown()
+    instance=app.Editor();instance.controller_panel.close();instance.hotkeys_panel.hotkeys.close();instance.worker.shutdown()
     assert len(songs.SONGS)==12
     assert not instance.teleport_panel.allow_any_era
     from actor_catalog import ActorCatalog,FILTERS
