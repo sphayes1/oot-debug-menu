@@ -1,0 +1,27 @@
+{
+  "state": "live-teleport-position-equipment-songs-v1",
+  "position_protocol": 1,
+  "equipment_sync_protocol": 1,
+  "songs_protocol": 1,
+  "age_reload_protocol": 1,
+  "original_main_sha256": "7db9ddfda088c22d219ef13496decd7077c68cd67d4b37f53f4ac46a082768f2",
+  "build_id": "E0F3CCFAF50065AE4EA01EB5AEB13B1A45DA3348",
+  "selector_patch": {
+    "rva": "0x3304228",
+    "before": "0x3940a261",
+    "after": "0x3940a661"
+  },
+  "changes": [
+    "DebugParam.IsRequestedResetGimmick now selects BancChange in isolated debug profile",
+    "ChangeBancOnMain clears trigger, consumes reserved position/rotation/entry and deletes old resident actors for explicit manual-age requests",
+    "MainUpdate consumes DebugParam.IsOverrideTraversePos through native SeqOneShotSetPlayerPos, then clears the request",
+    "MainUpdate consumes DebugParam.IsOverturnTerrainSetupAndLoadBanc through native SeqSyncPlayerEquipmentAndGameData(false), then clears the request",
+    "MainUpdate consumes DebugParam.IsKeepFormalFlag, dispatches a whitelisted fixed-song actor via SeqOneShotPushToPouch, then clears the request"
+  ],
+  "files": {
+    "exefs\\E0F3CCFAF50065AE4EA01EB5AEB13B1A45DA3348.ips": "73f5edaf09d7f4ac1ddb0aeec13c5ecc84636e23e5edc45fca411200d66570cf",
+    "romfs\\Sequence\\ChangeBancOnMain.module.ainb": "f3fa7432c6ffd584603c8ee1d72411160982de31c071e7bba81abe5753d5957e",
+    "romfs\\Sequence\\MainUpdate.module.ainb": "c045fcffef81cd8b2899310381aaefd37259d167c4d517f225e4807baa02e74c",
+    "romfs\\System\\Resource\\ResourceSizeTable.Product.111.Nin_Ounce_NVN2.rsizetable.zs": "d918fdd725af45b6183a5dba8313a56c71f12713859662c4c05794696706a3ea"
+  }
+}
